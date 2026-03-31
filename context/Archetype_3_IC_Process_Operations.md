@@ -49,21 +49,3 @@ Every achievement must be expressed within 2 lines. 3 lines is acceptable only f
 **REFRAME --- same work, process contribution and outcome clearly stated:**
 
 *\"Designed structured analytics and operational reporting for external laboratory submission oversight, enabling proactive conformance risk identification. Replaced a reactive review model with a governed, repeatable operating approach.\"*
-
-**4. Pre-Generation Checklist**
-
--   Summary leads with process design and operational expertise --- not enterprise governance authority or strategic process ownership
-
--   Summary contains all four required elements defined in Section 2
-
--   Every achievement names a specific process, procedure, framework, or operating model built or improved
-
--   Every achievement states the operational problem or gap that drove the work
-
--   Outcomes are concrete and measurable where source material supports it
-
--   No achievement inflates IC contribution to imply cross-functional ownership or organizational leadership
-
--   Bullet length complies with 2-line target; 3 lines only where genuinely justified
-
-*Archetype 3 IC --- Jason Delosh CV Generation Skill --- Process & Operations*

@@ -2,7 +2,7 @@
 
 ## Objective
 
-Generate targeted CVs to secure interviews for roles that align with established experience, education, and positioning. This skill covers role understanding, fit evaluation, gap closure, content generation, and document production.
+Generate targeted CVs to secure interviews for roles that align with established experience, education, and positioning. This skill covers role understanding, fit evaluation, gap closure, content generation, document production, and a feedback mechanism to fill gaps in knowledge documents.
 
 ---
 
@@ -15,7 +15,7 @@ When in a phase, complete only steps from that phase. Do not perform steps or vo
 
 Do not proceed to the next phase without explicit approval.
 
-If something is ambiguous, ask questions immediately before moving to another step or phase.
+If something is ambiguous, ask questions immediately before moving to another step or phase.  Do not use judgment or inference without user approval.
 
 **Document Load Instructions**
 Load documents at the phase and step specified in this skill — no earlier, no later. This is a just-in-time loading workflow. Refer to `README.md` for the full loading map.
@@ -42,7 +42,7 @@ If a QC phase identifies that a step was incomplete, non-compliant, or that outp
 If any documents were loaded in the previous phase, verify Document Load Instructions were followed. State verification status for each document: document name, verification method, result (pass/fail/fallback used), and structural element confirmed. All documents must pass verification before proceeding.
 
 **QC Phases (1b, 2b, 3b, 4b, 5b)**
-All QC procedures are performed independently of steps taken in the previous non-QC phase. For each step or checklist item, identify the logical method or rule that allows independent verification. State the QC rule used and the outcome. Steps and checklist items are not considered enforced until independent QC confirms compliance.
+All QC procedures are performed independently of steps taken in the previous non-QC phase. For each step or checklist item, identify a logical method or rule that allows independent verification. State the QC rule used and the outcome. Steps and checklist items are not considered enforced until independent QC confirms compliance.
 
 State any judgment calls or inferred actions performed during this phase or the previous phase.
 
@@ -56,7 +56,7 @@ State any judgment calls or inferred actions performed during this phase or the 
 
 2. If the company name and title are not clearly stated at the beginning of the job description, request them now and do not proceed until received.
 
-3. Confirm both are in hand and state them explicitly before closing this phase.
+3. Confirm company and title information is in hand and state them explicitly before closing this phase.
 
 **Phase 1a Closing:** Follow Standard Phase Closing. Next phase is Phase 2a.
 
@@ -184,15 +184,12 @@ Perform QC per Global Rules:
 *(Only after Phase 3a and 3b have been explicitly approved)*
 *(State each step before completing the step)*
 
-**Phase Opening — state this explicitly before beginning:**
-"I am beginning CV content creation. I will: (1) load required documents, (2) confirm the active archetype instruction set, (3) load and apply the content rules file for the confirmed role level, (4) propose the experience architecture for approval, (5) generate CV content. I will not generate any content before the experience architecture is approved."
-
 **Step 1 — Load documents:**
-Load the following now. Confirm each loaded completely before proceeding:
-- `knowledge/CV_General_Lrge_Enterprise_Established.md`
-- `knowledge/CV_General_Mid_Size_Scale_Up.md`
+Load the CV reference file matching the format confirmed in Phase 2a Step 7. Confirm it loaded completely before proceeding:
+- Large Enterprise Established → `knowledge/CV_General_Lrge_Enterprise_Established.md`
+- Mid Size Scale-Up → `knowledge/CV_General_Mid_Size_Scale_Up.md`
 
-Then load the content rules file matching the role level confirmed in Phase 2a:
+Then load the content rules file matching the role level confirmed in Phase 2a Step 2:
 - AD+ roles → `context/cv_content_rules_leadership.md`
 - IC roles → `context/cv_content_rules_ic.md`
 
@@ -202,12 +199,12 @@ Confirm the content rules file loaded completely. All rules in that file apply a
 State the primary archetype document loaded in Phase 2a. Confirm it is still available in context. If not, reload it now before proceeding.
 
 **Step 3 — Experience architecture:**
+All roles in the last 10 years belong in the main experience section to demonstrate career continuity. For those roles that don't add credibility to Phase 2a critical requirements, a one-line entry may be used. A role that adds credibility to Phase 2a critical requirements belongs in the main experience section regardless of age.
+
 Before generating any content, produce a proposed experience section architecture and present for approval. For each role in the full career history, state:
 - Company name and role title
-- Proposed treatment: Full entry with bullets (main section) | One-line entry in Earlier Professional Roles | Omit entirely
+- Proposed treatment: Full entry with bullets (main section) | One-line entry in main section | One-line entry in Earlier Professional Roles | Omit entirely
 - Rationale tied to Phase 2a critical requirements
-
-All roles in the last 10 years belong in the main experience section unless there is a specific role-fit reason to exclude. A role that adds credibility to Phase 2a critical requirements belongs in the main experience section regardless of age.
 
 Wait for explicit approval of the experience architecture before proceeding to Step 4.
 
@@ -220,11 +217,9 @@ Generate complete CV content applying all rules from the active archetype instru
 
 ## Phase 4b — Quality Control for Phase 4a
 
-Document Loading: Follow Standard QC Document Verification procedure for all documents loaded in Phase 4a.
-
 Content Rules Verification: Verify the loaded content rules file was actively applied throughout generation. For each rule, state the verification method and result. Any rule that cannot be verified against the output must be flagged as non-compliant and QC Failure Recovery invoked.
 
-Archetype Checklist: Verify each item in the active archetype's pre-generation checklist was satisfied. State the verification method and result for each item.
+CV QC Checklist: Load `context/cv_qc_checklist.md` now. Apply the Universal section against the generated CV content. Then apply the archetype section matching the active archetype and role level confirmed in Phase 2a. For each item, cite specific evidence from the generated content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
 
 Perform QC per Global Rules:
 - **QC Failure Recovery**
@@ -240,14 +235,11 @@ Perform QC per Global Rules:
 *(Only after Phase 4a and 4b have been explicitly approved)*
 *(State each step before completing the step)*
 
-**Phase Opening — state this explicitly before beginning:**
-"I am beginning CV document generation. I will read the formatting specification, then generate the CV document using the content from Phase 4."
-
 **Step 1 — Load formatting specification:**
 Load `context/cv_format_spec.md` now. Confirm it loaded completely. All formatting decisions are governed by this file. It is the authoritative source — do not infer or recreate formatting from any other reference.
 
 **Step 2 — Generate document:**
-Use the docx skill (`/mnt/skills/public/docx/SKILL.md`) to generate the Word document programmatically. Apply all formatting rules from `cv_frmts/cv_format_spec.md`.
+Use the docx skill (`/mnt/skills/public/docx/SKILL.md`) to generate the Word document programmatically. Apply all formatting rules from `context/cv_format_spec.md`.
 
 Structure decisions were made in Phase 4 and govern the output. Do not default to any reference document's structure. Do not omit or collapse roles because they do not appear in a reference. A role that adds credibility to Phase 2a critical requirements belongs in the main experience section.
 
@@ -293,7 +285,22 @@ Target source documents:
 Load only the specific documents relevant to the updates being recommended. For each item, provide:
 - Target source document
 - Location within the document where the information should be inserted
-- The information, written concisely in a manner aligned with that document's conventions
+- The information, formatted per the document-specific conventions below
+
+**Document-specific format requirements:**
+
+`knowledge/Experience_Inventory.md` — Every entry must include all applicable structured tags. Do not write inventory entries as CV bullets or impact statements. The entry describes what was done; the tags enable retrieval.
+- Capability: [the capability or capabilities demonstrated — match existing tag values in the document]
+- Context: [Greenfield | Scaling | Turnaround | Mature/Enterprise]
+- Role Level: [IC | Manager | Senior Manager | Director | Senior Director | VP]
+- Outcome: [Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement]
+- Achievement: [factual, descriptive statement of what was done — not a polished CV bullet]
+
+`knowledge/CV_Verbose.md` — Entries are full narrative descriptions in CV language, written at sufficient detail to serve as source material for future tailoring. Follow the structure and voice of existing entries in the document.
+
+`knowledge/Accomplishments.md` — Follow the structure and conventions of existing entries. Include metrics where available from this session.
+
+`knowledge/Positioning.md` — Entries are strategic positioning statements, not achievement bullets. Follow the framing conventions of existing entries.
 
 Before presenting the summary, verify each recommended addition: (a) traceable to an explicit user statement or source document from this session, (b) not role-specific content unlikely to generalize, (c) does not contradict existing source document content. Any item failing verification must be flagged and excluded unless the user explicitly approves inclusion.
 

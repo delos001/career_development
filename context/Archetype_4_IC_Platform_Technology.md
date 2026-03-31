@@ -49,21 +49,3 @@ Every achievement must be expressed within 2 lines. 3 lines is acceptable only f
 **REFRAME --- same advisory work, contribution and impact clearly stated:**
 
 *\"Translated field-level risk-based monitoring workflows into platform feature requirements for an RBM technology vendor, ensuring the resulting tool was grounded in field-level monitoring practice rather than abstract design assumptions.\"*
-
-**4. Pre-Generation Checklist**
-
--   Summary leads with clinical systems expertise and technology implementation experience --- not enterprise technology strategy or platform governance
-
--   Summary contains all four required elements defined in Section 2
-
--   Technical systems, platforms, and tools are named accurately and at appropriate depth for IC level
-
--   Every achievement states a technology problem or system need before describing the contribution
-
--   Outcomes are concrete: what was enabled, what risk was reduced, what capability was delivered
-
--   No achievement inflates IC contribution to imply enterprise platform ownership or technology strategy authority
-
--   Bullet length complies with 2-line target; 3 lines only where genuinely justified
-
-*Archetype 4 IC --- Jason Delosh CV Generation Skill --- Platform & Technology*

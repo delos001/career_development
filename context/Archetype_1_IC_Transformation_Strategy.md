@@ -49,21 +49,3 @@ Every achievement must be expressed within 2 lines. 3 lines is acceptable only f
 **REFRAME --- same work, contribution framed with program impact:**
 
 *\"Developed the stakeholder engagement plan and communication materials that supported a governed data acquisition transition across five functional areas, contributing to a change management approach that produced no disruption to active submission timelines.\"*
-
-**4. Pre-Generation Checklist**
-
--   Summary leads with transformation program experience and change enablement --- not enterprise-level organizational design or strategic direction
-
--   Summary contains all four required elements defined in Section 2
-
--   Every achievement describes a specific contribution, deliverable, or action --- not a program-level outcome Jason did not own
-
--   At least one achievement shows cross-functional engagement or multi-team scope
-
--   No achievement inflates IC contribution to imply organizational leadership or strategic authority
-
--   Every achievement follows the program need to contribution to outcome framing pattern
-
--   Bullet length complies with 2-line target; 3 lines only where genuinely justified
-
-*Archetype 1 IC --- Jason Delosh CV Generation Skill --- Transformation & Strategy*

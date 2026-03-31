@@ -49,21 +49,3 @@ Every achievement must be expressed within 2 lines. 3 lines is acceptable only f
 **REFRAME --- same analytical work, outcome-focused:**
 
 *\"Applied risk-based data quality assessment methods to external laboratory submissions, replacing manual review with structured analytics that reduced a near-50% conformance failure rate to zero within two submission cycles.\"*
-
-**4. Pre-Generation Checklist**
-
--   Summary leads with clinical data expertise and technical execution --- not data strategy ownership or governance leadership
-
--   Summary contains all four required elements defined in Section 2
-
--   Technical methods and tools are represented accurately and at appropriate depth for IC level
-
--   Every achievement states a data problem or analytical need before describing the solution
-
--   Outcomes are concrete: what improved, what risk was reduced, what decision was enabled
-
--   No achievement inflates IC contribution to imply enterprise governance authority or strategic ownership
-
--   Bullet length complies with 2-line target; 3 lines only where genuinely justified
-
-*Archetype 2 IC --- Jason Delosh CV Generation Skill --- Data & Analytics*
