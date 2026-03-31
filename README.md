@@ -32,7 +32,7 @@ career_development/
 |---|---|---|
 | `skills/` | Workflow instruction sets that tell Claude what to do and how | Yes |
 | `context/` | Reference documents read by skills during execution | Yes |
-| `knowledge/` | Personal source documents (CV content, experience, positioning) | No — gitignored |
+| `knowledge/` | Personal source documents (CV content, experience, positioning) | Yes |
 | `outputs/` | Generated CV files | No — gitignored |
 
 ---
@@ -41,7 +41,7 @@ career_development/
 
 | Skill | File | Trigger |
 |---|---|---|
-| CV Generation | `skills/cv_generation.md` | Creating, tailoring, or evaluating fit for a CV or role |
+| CV Generation | `skills/cv_generation.md` | Evaluating role fit and tailoring and creating CV |
 
 ---
 
@@ -52,7 +52,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | 1a | Session start | None — job description, company, and title collected only |
-| 2a step 2 | Role level confirmed as Associate Director or above | `knowledge/CV_General_Leadership.md` |
+| 2a step 2 | If role level is confirmed as Associate Director or above | `knowledge/CV_General_Leadership.md` |
 | 2a step 6 | Archetype confirmed | Primary archetype file from `context/`; secondary if dual-archetype identified |
 | 2a step 6 | Content rules needed | `context/cv_content_rules_leadership.md` (AD+) or `context/cv_content_rules_ic.md` (IC) |
 | 3a step 1 | Fit evaluation begins | `knowledge/Experience_Inventory.md`, `knowledge/Accomplishments.md`, `knowledge/CV_Verbose.md`, `knowledge/Positioning.md` |

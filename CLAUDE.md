@@ -41,4 +41,4 @@ career_development/
 - When a skill is needed, read the corresponding file in `skills/` before doing anything else
 - Document loading follows the just-in-time map defined in `README.md`
 - Formatting is governed exclusively by `context/cv_format_spec.md`
-- Generated CVs are saved to `outputs/`
+- Generated CVs are saved to `outputs/` in .docx format
