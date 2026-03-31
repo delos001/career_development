@@ -84,7 +84,14 @@ State any judgment calls or inferred actions performed during this phase or the 
    - **Process & Operations** — process excellence, clinical operations, Lean/Six Sigma, execution and efficiency
    - **Platform & Technology** — technology strategy, platform implementation, system integration, vendor and tool ecosystem
 
-   If the role spans two archetypes, identify a primary and secondary. The primary drives section order, summary framing, and achievement selection. The secondary informs emphasis within individual achievements where both dimensions are genuinely present. State both explicitly with rationale.
+   If the role spans two archetypes, identify a primary and secondary and state both explicitly with rationale. Apply the following rules throughout all subsequent phases:
+
+   - The primary archetype governs exclusively: section order, summary framing, Core Competencies priority, and achievement selection criteria. The secondary archetype has no authority over any of these.
+   - Secondary framing appears only within individual achievements where both dimensions are genuinely present in the underlying experience — not as standalone achievements and not in the summary.
+   - No more than 2-3 achievements should carry secondary framing. If more than a third of achievements require secondary framing to be relevant, the primary archetype selection is likely wrong — flag this before proceeding and re-evaluate.
+   - When primary and secondary framing conflict within an achievement, primary wins. Do not weaken the primary message to accommodate the secondary dimension.
+   - The summary is governed exclusively by the primary archetype framing rules. The secondary archetype does not appear in the summary.
+   - Core Competencies may include 1-2 items signaling the secondary archetype capability. The secondary zone must not displace primary archetype items.
 
    Then load the archetype instruction document matching the confirmed primary archetype AND the role level confirmed in Step 2:
 
@@ -113,6 +120,14 @@ State any judgment calls or inferred actions performed during this phase or the 
 ## Phase 2b — Quality Control of Phase 2a
 
 Role Level: Confirm the role level was explicitly stated or inferred with rationale, and that explicit user agreement was obtained. If agreement is not documented, flag as a blocking issue and invoke QC Failure Recovery.
+
+Archetype Selection: Verify the primary archetype selection is defensible against the match criteria defined in the loaded archetype file. State the specific match criteria satisfied and cite the job description language that supports each. If the role does not clearly satisfy the match criteria, flag as a blocking issue — a wrong archetype selection propagates through every subsequent phase and cannot be corrected without restarting from Phase 2a.
+
+If a dual-archetype was identified: verify the secondary archetype is explicitly evidenced in the job description — not inferred from peripheral language. Confirm the primary/secondary assignment reflects which dimension the role primarily evaluates candidates on. If the secondary is weak or speculative, recommend single-archetype treatment and obtain user agreement before proceeding.
+
+Format Selection: Confirm the Large Enterprise Established vs Mid-Size Scale-Up selection is consistent with the company research completed in Phase 2a Step 4. State the specific company characteristic that drove the selection.
+
+Critical Requirements: Confirm 4-5 critical requirements were identified in Phase 2a Step 5. If fewer than 4 were identified, flag and complete before proceeding.
 
 Perform QC per Global Rules:
 - **QC Failure Recovery**
@@ -282,10 +297,10 @@ Target source documents:
 - `knowledge/CV_Verbose.md`
 - `knowledge/Experience_Inventory.md`
 
-Load only the specific documents relevant to the updates being recommended. For each item, provide:
-- Target source document
-- Location within the document where the information should be inserted
-- The information, formatted per the document-specific conventions below
+Load only the specific documents relevant to the updates being recommended.
+
+**Step 1 — Identify proposed updates:**
+For each proposed update, identify the target document, the insertion location, and the proposed content formatted per the document-specific conventions below.
 
 **Document-specific format requirements:**
 
@@ -302,8 +317,21 @@ Load only the specific documents relevant to the updates being recommended. For 
 
 `knowledge/Positioning.md` — Entries are strategic positioning statements, not achievement bullets. Follow the framing conventions of existing entries.
 
-Before presenting the summary, verify each recommended addition: (a) traceable to an explicit user statement or source document from this session, (b) not role-specific content unlikely to generalize, (c) does not contradict existing source document content. Any item failing verification must be flagged and excluded unless the user explicitly approves inclusion.
+**Step 2 — Pre-write QC:**
+Before presenting any proposed update for approval, verify each against all of the following. Flag and exclude any item that fails — do not present failed items without explicitly noting the failure and obtaining user approval to include anyway.
 
-Present the summary clearly so updates can be applied manually.
+- Traceable: directly sourced from an explicit user statement or source document from this session
+- Not role-specific: the information generalizes to future roles and sessions
+- Convention-compliant: the proposed content matches the format and voice of existing entries in the target document. For `Experience_Inventory.md`, all required tag fields must be present. For `CV_Verbose.md`, voice and structure must match existing entries.
+- Non-contradictory: does not conflict with or duplicate existing source document content
+
+**Step 3 — Present for approval:**
+Present all verified proposed updates. For each item show the target document, insertion location, and the exact content to be written. State the total number of proposed updates and request explicit approval before writing. If the user wants to review individually rather than approve all at once, present one at a time and wait for approval before proceeding to the next.
+
+**Step 4 — Write approved updates:**
+For each approved update, write the content to the target document at the specified location using the Edit tool. Write exactly what was approved — do not paraphrase or reformat at this stage.
+
+**Step 5 — Confirm changes:**
+After all writes are complete, display a summary of every change made: target document, insertion location, and the exact content written. This allows the user to review what was added before closing the session.
 
 Before closing, ask: "Is there anything else from this session — gap resolutions, framing decisions, or confirmed context — that should be captured before we close?"
