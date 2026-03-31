@@ -86,13 +86,21 @@ State any judgment calls or inferred actions performed during this phase or the 
 
    If the role spans two archetypes, identify a primary and secondary. The primary drives section order, summary framing, and achievement selection. The secondary informs emphasis within individual achievements where both dimensions are genuinely present. State both explicitly with rationale.
 
-   Then load the archetype instruction document for the confirmed primary archetype:
+   Then load the archetype instruction document matching the confirmed primary archetype AND the role level confirmed in Step 2:
+
+   Leadership (Associate Director and above):
    - Transformation & Strategy → `context/Archetype_1_Transformation_Strategy.md`
    - Data & Analytics → `context/Archetype_2_Data_Analytics.md`
    - Process & Operations → `context/Archetype_3_Process_Operations.md`
    - Platform & Technology → `context/Archetype_4_Platform_Technology.md`
 
-   If a dual-archetype was identified, also load the secondary archetype document. Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
+   Individual Contributor:
+   - Transformation & Strategy → `context/Archetype_1_IC_Transformation_Strategy.md`
+   - Data & Analytics → `context/Archetype_2_IC_Data_Analytics.md`
+   - Process & Operations → `context/Archetype_3_IC_Process_Operations.md`
+   - Platform & Technology → `context/Archetype_4_IC_Platform_Technology.md`
+
+   If a dual-archetype was identified, also load the secondary archetype document using the same role-level logic. Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
 
 7. Identify the most appropriate CV format reference and state why:
    - **Large Enterprise Established** — for established pharma, large CROs, or mature biotech

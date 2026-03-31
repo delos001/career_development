@@ -120,19 +120,19 @@ Every achievement must follow this structure:
 
 Organizational challenge or transformation need -\> Change strategy and stakeholder navigation -\> Adoption or capability outcome at scale
 
-The organizational challenge must come first. Do not lead with the solution or the output artifact. The outcome must describe adoption, organizational capability, or structural change --- not process efficiency or technical performance.
+The organizational challenge must come first. Do not lead with the solution or the output artifact. The outcome must describe adoption, organizational capability, or structural change --- not process efficiency or technical performance. Every achievement must be expressed within 2 lines. 3 lines is acceptable only for the highest-complexity achievements where scope or outcome detail cannot be compressed further. 4 or more lines is never acceptable.
 
-**Transformation Story Arc --- Apply to Most Prominent Achievements**
+**Transformation Achievement Elements --- Apply to Most Prominent Achievements**
 
-For the two or three most prominent achievements in the CV, structure the narrative using this four-part arc. This is not required for every achievement but must appear at least twice in the BioMarin experience block:
+For the two or three most prominent achievements in the CV, ensure all four elements below are present within the bullet. This is not required for every achievement but must appear at least twice in the BioMarin experience block. These are content requirements, not a sequence of sentences --- compress all four into a 2-line bullet. Do not expand each element into its own sentence. Do not write a multi-sentence narrative. The goal is a single precise bullet that signals all four dimensions:
 
--   Challenge: What organizational problem, growth pressure, or capability gap triggered the transformation?
+-   Challenge: The organizational problem, growth pressure, or capability gap that triggered the transformation
 
--   Strategy: How was the transformation approach designed? What change management model, coalition, or phased approach was used?
+-   Strategy: The change management approach, coalition, or phased design used
 
--   Execution: How was stakeholder resistance navigated? What enabled adoption despite organizational friction?
+-   Execution: How stakeholder resistance was navigated or what enabled adoption
 
--   Outcome: What sustained organizational capability resulted? What scale metrics confirm adoption?
+-   Outcome: The sustained organizational capability or scale metric that confirms adoption
 
 **Calibration Examples**
 
@@ -142,11 +142,11 @@ For the two or three most prominent achievements in the CV, structure the narrat
 
 **STRONG --- organizational challenge, change strategy, adoption at scale:**
 
-*\"Faced with a decentralized data acquisition model unable to scale with portfolio growth, built a new cross-functional capability from greenfield --- defining the operating model, governance structure, and training infrastructure --- and navigated adoption across eight global study teams despite initial resistance from established functional owners. Achieved consistent right-first-time execution within three submission cycles.\"*
+*\"Built a governed data acquisition capability from greenfield as portfolio scale outpaced existing decentralized execution, securing adoption across eight global study teams through structured change management. Achieved consistent right-first-time execution within three submission cycles.\"*
 
 **REFRAME --- same work repositioned from operational to transformation framing:**
 
-*\"Orchestrated organizational shift from fragmented, study-team-dependent data acquisition to a governed enterprise capability, navigating stakeholder resistance across five functional areas and establishing the change management framework that enabled smooth transition with no disruption to active submission timelines.\"*
+*\"Transitioned data acquisition from study-team-level execution to a governed enterprise capability as portfolio complexity grew, navigating resistance across five functional areas with no disruption to active submission timelines.\"*
 
 **7. Content to De-emphasize**
 

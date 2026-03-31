@@ -122,7 +122,7 @@ Every achievement must follow this structure:
 
 Technology risk, platform limitation, or ecosystem complexity -\> Strategy decision or governance solution -\> Organizational or capability outcome
 
-The technology problem or strategic need must come first. Do not lead with the technology solution, the vendor selected, or the system deployed. The outcome must be stated in organizational terms --- what risk was reduced, what capability was enabled, what scale was achieved --- not in technical performance terms.
+The technology problem or strategic need must come first. Do not lead with the technology solution, the vendor selected, or the system deployed. The outcome must be stated in organizational terms --- what risk was reduced, what capability was enabled, what scale was achieved --- not in technical performance terms. Every achievement must be expressed within 2 lines. 3 lines is acceptable only for the highest-complexity achievements where scope or outcome detail cannot be compressed further. 4 or more lines is never acceptable.
 
 **Domain Knowledge as a Differentiator**
 
@@ -142,11 +142,11 @@ For Platform & Technology roles in clinical pharma/biotech, deep domain knowledg
 
 **STRONG --- technology risk first, strategic decision, organizational outcome:**
 
-*\"Identified that legacy macro-driven data processes could not scale with portfolio growth and carried increasing regulatory risk as data volumes and complexity increased. Led cross-functional evaluation of modern data platform options, balancing short-term change management impact against long-term scalability and integration requirements, contributing to the enterprise selection of a Databricks-based platform to replace legacy infrastructure.\"*
+*\"Identified that legacy macro-driven data processes could not scale with portfolio growth and carried increasing regulatory risk as complexity grew. Led cross-functional platform evaluation balancing change management impact against long-term scalability, driving the enterprise selection of Databricks to replace legacy infrastructure.\"*
 
 **REFRAME --- same advisory work repositioned as technology strategy leadership:**
 
-*\"Brought clinical operations domain expertise into product design cycles for an RBM technology platform, translating field-level workflow requirements into platform features and advising developers on the operational implications of design decisions. Ensured the resulting tool reflected how risk-based monitoring was actually practiced, not how it was theorized.\"*
+*\"Brought clinical operations domain expertise into product design cycles for an RBM technology platform, translating field-level workflow requirements into platform features and advising developers on operational implications of design decisions. Ensured the resulting tool was grounded in field-level monitoring practice rather than abstract design assumptions.\"*
 
 **8. Technical Proficiencies Section --- Archetype-Specific Handling**
 

@@ -21,7 +21,11 @@ career_development/
 │   ├── Archetype_1_Transformation_Strategy.md
 │   ├── Archetype_2_Data_Analytics.md
 │   ├── Archetype_3_Process_Operations.md
-│   └── Archetype_4_Platform_Technology.md
+│   ├── Archetype_4_Platform_Technology.md
+│   ├── Archetype_1_IC_Transformation_Strategy.md
+│   ├── Archetype_2_IC_Data_Analytics.md
+│   ├── Archetype_3_IC_Process_Operations.md
+│   └── Archetype_4_IC_Platform_Technology.md
 ├── knowledge/                             ← personal source documents — gitignored
 └── outputs/                               ← generated CVs — gitignored
 ```

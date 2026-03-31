@@ -120,7 +120,7 @@ Every achievement must follow this structure:
 
 Data quality risk, governance gap, or analytical maturity problem -\> Governance/strategy/capability solution -\> Decision-relevant or organizational outcome
 
-The data problem must come first. Do not lead with the technical solution or the artifact produced. The outcome must be stated in terms of organizational impact --- what decisions became better, what risks were reduced, what scale was enabled --- not in terms of technical performance metrics.
+The data problem must come first. Do not lead with the technical solution or the artifact produced. The outcome must be stated in terms of organizational impact --- what decisions became better, what risks were reduced, what scale was enabled --- not in terms of technical performance metrics. Every achievement must be expressed within 2 lines. 3 lines is acceptable only for the highest-complexity achievements where scope or outcome detail cannot be compressed further. 4 or more lines is never acceptable.
 
 **Managing the Technical Credibility Signal**
 
@@ -142,11 +142,11 @@ This archetype has a specific tension that requires active management: Jason\'s 
 
 **STRONG --- data quality problem first, governance solution, organizational outcome:**
 
-*\"Redefined how data quality was planned and specified across global clinical programs, replacing retrospective validation practices with proactive, decision-relevant quality definitions and structured ownership models. Established a governance framework that created consistent accountability across study teams and formed the foundation for KPI-based oversight and future AI-enabled monitoring.\"*
+*\"Redefined data quality planning across global clinical programs, replacing retrospective validation with proactive quality specifications and structured ownership models. Established a governance framework creating consistent accountability across study teams and enabling KPI-based oversight.\"*
 
 **REFRAME --- same technical work repositioned as data strategy leadership:**
 
-*\"Identified a systemic data stability risk created by point-in-time data freeze controls that could not detect meaningful change in longitudinally evolving datasets. Designed and implemented a continuous data stability surveillance capability, replacing the legacy model with a risk-based assessment approach that scaled across programs and reduced rework burden on study teams.\"*
+*\"Identified a systemic data stability risk in point-in-time freeze controls that could not detect meaningful change in longitudinally evolving datasets. Replaced the legacy model with a continuous risk-based surveillance capability that scaled across programs and reduced rework burden on study teams.\"*
 
 **7. Technical Proficiencies Section --- Archetype-Specific Handling**
 

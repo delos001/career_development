@@ -120,7 +120,7 @@ Every achievement must follow this structure. Deviations require explicit justif
 
 Business problem or operational risk -\> Process/framework/governance solution -\> Measurable or organizational outcome
 
-The business problem must come first. Do not lead with the solution. Do not lead with technical execution. The outcome must be organizational or measurable --- not a description of an artifact produced.
+The business problem must come first. Do not lead with the solution. Do not lead with technical execution. The outcome must be organizational or measurable --- not a description of an artifact produced. Every achievement must be expressed within 2 lines. 3 lines is acceptable only for the highest-complexity achievements where scope or outcome detail cannot be compressed further. 4 or more lines is never acceptable.
 
 **Calibration Examples**
 
@@ -130,11 +130,11 @@ The business problem must come first. Do not lead with the solution. Do not lead
 
 **STRONG --- business problem first, process solution, organizational outcome:**
 
-*\"Eliminated recurring external laboratory data submission errors --- approaching a 50% rework rate --- by redesigning acquisition and conformance procedures, clarifying decision rights across three functional areas, and embedding governance oversight into downstream processes. Reduced rework to zero within two submission cycles.\"*
+*\"Eliminated a near-50% rework rate on external laboratory submissions by redesigning acquisition procedures, clarifying decision rights across three functional areas, and embedding governance oversight into downstream processes. Reduced rework to zero within two submission cycles.\"*
 
 **REFRAME --- same underlying work, repositioned for this archetype:**
 
-*\"Established data-driven quality surveillance for external laboratory submissions, designing analytics frameworks and operational reporting that enabled proactive identification of conformance risks and reduced submission rework. Converted an ad hoc, reactive process into a governed, repeatable operating model.\"*
+*\"Established data-driven quality surveillance for external laboratory submissions, designing analytics frameworks and operational reporting that enabled proactive identification of conformance risks and reduced submission rework. Replaced a reactive oversight model with a governed, repeatable operating capability.\"*
 
 **7. Content to De-emphasize**
 
