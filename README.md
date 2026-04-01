@@ -11,7 +11,8 @@ career_development/
 ├── CLAUDE.md                              ← project context and skill index
 ├── README.md                              ← this file
 ├── skills/                                ← workflow instruction sets
-│   └── cv_generation.md
+│   ├── cv_generation.md
+│   └── source_document_update.md
 ├── context/                               ← reference documents read by skills
 │   ├── cv_format_spec.md
 │   ├── cv_content_rules_leadership.md
@@ -47,6 +48,7 @@ career_development/
 | Skill | File | Trigger |
 |---|---|---|
 | CV Generation | `skills/cv_generation.md` | Evaluating role fit and tailoring and creating CV |
+| Source Document Update | `skills/source_document_update.md` | Capturing experience, framing decisions, or gap resolutions to source documents after any working session |
 
 ---
 
@@ -60,9 +62,8 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 2a step 2 | If role level is confirmed as Associate Director or above | `knowledge/CV_General_Leadership.md` |
 | 2a step 6 | Archetype confirmed (AD+) | Primary archetype file from `context/` (leadership version); secondary if dual-archetype identified |
 | 2a step 6 | Archetype confirmed (IC) | Primary archetype IC file from `context/` (IC version); secondary if dual-archetype identified |
-| 2a step 6 | Content rules needed | `context/cv_content_rules_leadership.md` (AD+) or `context/cv_content_rules_ic.md` (IC) |
 | 3a step 1 | Fit evaluation begins | `knowledge/Experience_Inventory.md`, `knowledge/Accomplishments.md`, `knowledge/CV_Verbose.md`, `knowledge/Positioning.md` |
-| 4a start | Content generation begins | `knowledge/CV_General_Lrge_Enterprise_Established.md` or `knowledge/CV_General_Mid_Size_Scale_Up.md` — whichever matches format confirmed in Phase 2a |
+| 4a step 1 | Content generation begins | `knowledge/CV_General_Lrge_Enterprise_Established.md` or `knowledge/CV_General_Mid_Size_Scale_Up.md` — whichever matches format confirmed in Phase 2a; `context/cv_content_rules_leadership.md` (AD+) or `context/cv_content_rules_ic.md` (IC) |
 | 4b start | QC of generated CV content | `context/cv_qc_checklist.md` |
 | 5a start | Document generation begins | `context/cv_format_spec.md` |
 | Phase 6 | Source update review | Specific knowledge docs loaded only as needed |

@@ -13,7 +13,8 @@ career_development/
 ├── CLAUDE.md                              ← this file
 ├── README.md                              ← repo orientation and document loading map
 ├── skills/                                ← workflow instruction sets
-│   └── cv_generation.md
+│   ├── cv_generation.md
+│   └── source_document_update.md
 ├── context/                               ← reference documents read by skills
 │   ├── cv_format_spec.md
 │   ├── cv_content_rules_leadership.md
@@ -38,6 +39,7 @@ career_development/
 | Skill | File | Trigger |
 |---|---|---|
 | CV Generation | `skills/cv_generation.md` | Creating, tailoring, or evaluating fit for a CV or role |
+| Source Document Update | `skills/source_document_update.md` | Capturing experience, framing decisions, or gap resolutions to source documents after any working session |
 
 ---
 

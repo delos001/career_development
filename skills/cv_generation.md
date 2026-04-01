@@ -9,13 +9,11 @@ Generate targeted CVs to secure interviews for roles that align with established
 ## Global Rules
 
 **Following Instructions**
-Follow this skill exactly. Every step is dictated by the skill. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
+Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
 
 When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
-Do not proceed to the next phase without explicit approval.
-
-If something is ambiguous, ask questions immediately before moving to another step or phase.  Do not use judgment or inference without user approval.
+If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
 
 **Document Load Instructions**
 Load documents at the phase and step specified in this skill — no earlier, no later. This is a just-in-time loading workflow. Refer to `README.md` for the full loading map.
@@ -27,7 +25,7 @@ If any document fails loading, do not proceed using partial content:
 - Confirm the full document content is readable before proceeding
 - If the bash fallback also fails, report the specific file and error — do NOT proceed until resolved
 
-This applies at any point in the skill. If a read returns incomplete content mid-phase, stop, run the fallback, confirm availability, then continue. Do not silently proceed with degraded source material.
+Document load instructions apply at any point in the skill. If a read returns incomplete content mid-phase, stop, run the fallback, confirm availability, then continue. Do not silently proceed with degraded source material.
 
 **Standard Phase Closing — Action Phases (1a, 2a, 2b, 3a, 3b, 4a, 4b, 5a, 5b)**
 At the close of each action phase:
@@ -40,11 +38,6 @@ If a QC phase identifies that a step was incomplete, non-compliant, or that outp
 
 **Standard QC Document Verification**
 If any documents were loaded in the previous phase, verify Document Load Instructions were followed. State verification status for each document: document name, verification method, result (pass/fail/fallback used), and structural element confirmed. All documents must pass verification before proceeding.
-
-**QC Phases (1b, 2b, 3b, 4b, 5b)**
-All QC procedures are performed independently of steps taken in the previous non-QC phase. For each step or checklist item, identify a logical method or rule that allows independent verification. State the QC rule used and the outcome. Steps and checklist items are not considered enforced until independent QC confirms compliance.
-
-State any judgment calls or inferred actions performed during this phase or the previous phase.
 
 ---
 
@@ -73,7 +66,7 @@ State any judgment calls or inferred actions performed during this phase or the 
 
 3. If role level is confirmed as Associate Director or above, load `knowledge/CV_General_Leadership.md` now. Confirm it loaded completely before proceeding.
 
-4. Research the company, industry, and role using web search to develop an expert-level understanding of what this position actually requires — including company stage and culture, competitive landscape, organizational context, and what success looks like in this type of role at this type of company.
+4. Research the company, industry, and role using web search to develop an expert-level understanding of what this position actually requires — including company stage, culture, competitive landscape, organizational context, and what success looks like in this type of role at this type of company.
 
 5. Identify the 4-5 most critical requirements or themes in the job description.
 
@@ -84,7 +77,7 @@ State any judgment calls or inferred actions performed during this phase or the 
    - **Process & Operations** — process excellence, clinical operations, Lean/Six Sigma, execution and efficiency
    - **Platform & Technology** — technology strategy, platform implementation, system integration, vendor and tool ecosystem
 
-   If the role spans two archetypes, identify a primary and secondary and state both explicitly with rationale. Apply the following rules throughout all subsequent phases:
+   If the role spans two archetypes, identify a primary and secondary archetypes and state both explicitly with rationale. Apply the following rules throughout all subsequent phases:
 
    - The primary archetype governs exclusively: section order, summary framing, Core Competencies priority, and achievement selection criteria. The secondary archetype has no authority over any of these.
    - Secondary framing appears only within individual achievements where both dimensions are genuinely present in the underlying experience — not as standalone achievements and not in the summary.
@@ -107,11 +100,13 @@ State any judgment calls or inferred actions performed during this phase or the 
    - Process & Operations → `context/Archetype_3_IC_Process_Operations.md`
    - Platform & Technology → `context/Archetype_4_IC_Platform_Technology.md`
 
-   If a dual-archetype was identified, also load the secondary archetype document using the same role-level logic. Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
+   If a dual-archetype was identified, also load the secondary archetype document using the same role-level logic.
+
+   Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
 
 7. Identify the most appropriate CV format reference and state why:
    - **Large Enterprise Established** — for established pharma, large CROs, or mature biotech
-   - **Mid Size Scale-Up** — for growth-stage biotech or companies undergoing significant transformation
+   - **Mid Size Scale-Up** — for growth-stage biotech OR companies undergoing significant transformation (regardless of current size or maturity)
 
 **Phase 2a Closing:** Follow Standard Phase Closing. Next phase is Phase 2b.
 
@@ -121,18 +116,19 @@ State any judgment calls or inferred actions performed during this phase or the 
 
 Role Level: Confirm the role level was explicitly stated or inferred with rationale, and that explicit user agreement was obtained. If agreement is not documented, flag as a blocking issue and invoke QC Failure Recovery.
 
+Company Research: Confirm web search was performed in Phase 2a Step 4. State the specific sources or findings that informed the role understanding and format selection. If research was not performed or cannot be evidenced, flag as a non-compliant step.
+
+Critical Requirements: Confirm 4-5 critical requirements were identified in Phase 2a Step 5. If fewer than 4 were identified, flag and complete before proceeding.
+
 Archetype Selection: Verify the primary archetype selection is defensible against the match criteria defined in the loaded archetype file. State the specific match criteria satisfied and cite the job description language that supports each. If the role does not clearly satisfy the match criteria, flag as a blocking issue — a wrong archetype selection propagates through every subsequent phase and cannot be corrected without restarting from Phase 2a.
 
 If a dual-archetype was identified: verify the secondary archetype is explicitly evidenced in the job description — not inferred from peripheral language. Confirm the primary/secondary assignment reflects which dimension the role primarily evaluates candidates on. If the secondary is weak or speculative, recommend single-archetype treatment and obtain user agreement before proceeding.
 
-Format Selection: Confirm the Large Enterprise Established vs Mid-Size Scale-Up selection is consistent with the company research completed in Phase 2a Step 4. State the specific company characteristic that drove the selection.
+Format Selection: Confirm the Large Enterprise Established vs Mid-Size Scale-Up selection is consistent with the job description and the company research completed in Phase 2a Step 4. State the specific company characteristic that drove the selection.
 
-Critical Requirements: Confirm 4-5 critical requirements were identified in Phase 2a Step 5. If fewer than 4 were identified, flag and complete before proceeding.
 
 Perform QC per Global Rules:
-- **QC Failure Recovery**
 - **Standard QC Document Verification**
-- **QC Phases**
 
 **Phase 2b Closing:** Follow Standard Phase Closing. Next phase is Phase 3a.
 
@@ -183,12 +179,20 @@ Perform QC per Global Rules:
 
 ## Phase 3b — Quality Control of Phase 3a
 
-Gaps: Enumerate every High-severity gap identified in Phase 3a. For each, confirm its documented resolution status. If any High-severity gap has no recorded resolution or user acknowledgment, flag as a blocking issue and invoke QC Failure Recovery.
+**Requirement Mapping:** Enumerate the critical requirements identified in Phase 2a. For each, confirm a source-citable match was presented in Phase 3a Step 2. A specific named achievement or deliverable traceable to a source document is required — general capability claims do not qualify. Flag any requirement without a citable match.
+
+**Gap Enumeration:** Confirm all gaps identified in Phase 3a Step 3 were included in the summary table from Step 4. For each gap, confirm the severity rating is defensible — state the specific reason severity was assigned. Flag any gap rated without clear rationale.
+
+**Gap Resolution Completeness:** Enumerate every gap from the Phase 3a summary table. For each, confirm: (a) it was worked through individually with a user response before moving to the next, and (b) the resolution is one of the three allowed states — resolved via CV language, carried by interview narrative, or unresolved with explicit user acknowledgment. Any gap without a recorded resolution or acknowledgment is a blocking issue — invoke QC Failure Recovery.
+
+**High-Severity Gaps:** Confirm every High-severity gap has an explicit resolution status. Any unresolved High-severity gap without an explicit user decision is a blocking issue — invoke QC Failure Recovery.
+
+**De-Emphasis Approvals:** Confirm any items flagged for de-emphasis in Phase 3a Step 5 received explicit user agreement. De-emphasis applied without approval is a non-compliant step — flag it.
+
+**Fit Threshold Verification:** Confirm Phase 3a Step 6 applied the threshold correctly. State: the number of critical requirements, the number with strong source-citable matches, and verify the 65% calculation. Confirm the domain exclusion check was performed. If either condition failed and the session continued, confirm explicit user approval to proceed as a speculative application was obtained and documented.
 
 Perform QC per Global Rules:
-- **QC Failure Recovery**
 - **Standard QC Document Verification**
-- **QC Phases**
 
 **Phase 3b Closing:** Follow Standard Phase Closing. Next phase is Phase 4a.
 
@@ -204,17 +208,17 @@ Load the CV reference file matching the format confirmed in Phase 2a Step 7. Con
 - Large Enterprise Established → `knowledge/CV_General_Lrge_Enterprise_Established.md`
 - Mid Size Scale-Up → `knowledge/CV_General_Mid_Size_Scale_Up.md`
 
-Then load the content rules file matching the role level confirmed in Phase 2a Step 2:
+Then load the content rules file matching the role level confirmed in Phase 2a Step 2. Confirm the content rules file loaded completely:
 - AD+ roles → `context/cv_content_rules_leadership.md`
 - IC roles → `context/cv_content_rules_ic.md`
 
-Confirm the content rules file loaded completely. All rules in that file apply actively throughout content generation — they are not pre-conditions to confirm, they are requirements to satisfy in every line generated.
+All rules in the content rules file apply actively throughout content generation — they are not pre-conditions to confirm, they are requirements to satisfy in every line generated.
 
 **Step 2 — Confirm archetype instruction set:**
 State the primary archetype document loaded in Phase 2a. Confirm it is still available in context. If not, reload it now before proceeding.
 
 **Step 3 — Experience architecture:**
-All roles in the last 10 years belong in the main experience section to demonstrate career continuity. For those roles that don't add credibility to Phase 2a critical requirements, a one-line entry may be used. A role that adds credibility to Phase 2a critical requirements belongs in the main experience section regardless of age.
+All roles in the last 10 years belong in the main experience section to demonstrate career continuity. For those roles that don't add credibility to Phase 2a critical requirements, a one or two-line summary entry may be used. A role that adds credibility to Phase 2a critical requirements belongs in the main experience section regardless of age.
 
 Before generating any content, produce a proposed experience section architecture and present for approval. For each role in the full career history, state:
 - Company name and role title
@@ -232,14 +236,14 @@ Generate complete CV content applying all rules from the active archetype instru
 
 ## Phase 4b — Quality Control for Phase 4a
 
-Content Rules Verification: Verify the loaded content rules file was actively applied throughout generation. For each rule, state the verification method and result. Any rule that cannot be verified against the output must be flagged as non-compliant and QC Failure Recovery invoked.
+**Experience Architecture Approval:** Confirm the proposed experience architecture from Step 3 was presented to the user and explicitly approved before content generation began in Step 4. If approval is not documented, flag as a blocking issue and invoke QC Failure Recovery.
 
-CV QC Checklist: Load `context/cv_qc_checklist.md` now. Apply the Universal section against the generated CV content. Then apply the archetype section matching the active archetype and role level confirmed in Phase 2a. For each item, cite specific evidence from the generated content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
+**Content Rules Verification:** Verify the loaded content rules file was actively applied throughout generation. For each rule, state the verification method and result. Any rule that cannot be verified against the output must be flagged as non-compliant and QC Failure Recovery invoked.
+
+**CV QC Checklist:** Load `context/cv_qc_checklist.md` now. Apply the Universal section against the generated CV content. Then apply the archetype section matching the active archetype and role level confirmed in Phase 2a. For each item, cite specific evidence from the generated content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
 
 Perform QC per Global Rules:
-- **QC Failure Recovery**
 - **Standard QC Document Verification**
-- **QC Phases**
 
 **Phase 4b Closing:** Follow Standard Phase Closing. Next phase is Phase 5a.
 
@@ -268,12 +272,12 @@ Save the completed CV to `outputs/` using this naming convention:
 
 ## Phase 5b — Quality Control for Phase 5a
 
-Confirm the output file was saved with the correct filename format. State the actual filename and confirm it matches the convention.
+**Document Generation:** Confirm the docx skill was used to generate the document. Confirm all formatting decisions reference `context/cv_format_spec.md` and were not inferred from any other source. If either cannot be confirmed, flag as a non-compliant step and invoke QC Failure Recovery.
+
+**Filename Convention:** Confirm the output file was saved with the correct filename format. State the actual filename and confirm it matches the convention.
 
 Perform QC per Global Rules:
-- **QC Failure Recovery**
 - **Standard QC Document Verification**
-- **QC Phases**
 
 **Phase 5b Closing:** Follow Standard Phase Closing. Next phase is Phase 6.
 
@@ -281,57 +285,6 @@ Perform QC per Global Rules:
 
 ## Phase 6 — Source Document Update
 
-Dedicated to capturing information surfaced during this session that should be added to source documents. Keeping source documents current reduces gap closure time in future sessions.
+Dedicated to capturing information surfaced during this CV session that should be added to source documents.
 
-For each source document, review this session for information meeting any of the following criteria:
-- Gap resolutions: experience, context, or framing confirmed during Phase 3 gap closure not currently in source documents
-- New achievement language: specific outcomes, metrics, or accomplishments articulated for the first time this session
-- Framing decisions: positioning or scope language confirmed that could apply to future roles
-- Corrections: any instance where source document content was found to be inaccurate, incomplete, or misleading
-
-Information that is role-specific and unlikely to generalize should not be captured.
-
-Target source documents:
-- `knowledge/Positioning.md`
-- `knowledge/Accomplishments.md`
-- `knowledge/CV_Verbose.md`
-- `knowledge/Experience_Inventory.md`
-
-Load only the specific documents relevant to the updates being recommended.
-
-**Step 1 — Identify proposed updates:**
-For each proposed update, identify the target document, the insertion location, and the proposed content formatted per the document-specific conventions below.
-
-**Document-specific format requirements:**
-
-`knowledge/Experience_Inventory.md` — Every entry must include all applicable structured tags. Do not write inventory entries as CV bullets or impact statements. The entry describes what was done; the tags enable retrieval.
-- Capability: [the capability or capabilities demonstrated — match existing tag values in the document]
-- Context: [Greenfield | Scaling | Turnaround | Mature/Enterprise]
-- Role Level: [IC | Manager | Senior Manager | Director | Senior Director | VP]
-- Outcome: [Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement]
-- Achievement: [factual, descriptive statement of what was done — not a polished CV bullet]
-
-`knowledge/CV_Verbose.md` — Entries are full narrative descriptions in CV language, written at sufficient detail to serve as source material for future tailoring. Follow the structure and voice of existing entries in the document.
-
-`knowledge/Accomplishments.md` — Follow the structure and conventions of existing entries. Include metrics where available from this session.
-
-`knowledge/Positioning.md` — Entries are strategic positioning statements, not achievement bullets. Follow the framing conventions of existing entries.
-
-**Step 2 — Pre-write QC:**
-Before presenting any proposed update for approval, verify each against all of the following. Flag and exclude any item that fails — do not present failed items without explicitly noting the failure and obtaining user approval to include anyway.
-
-- Traceable: directly sourced from an explicit user statement or source document from this session
-- Not role-specific: the information generalizes to future roles and sessions
-- Convention-compliant: the proposed content matches the format and voice of existing entries in the target document. For `Experience_Inventory.md`, all required tag fields must be present. For `CV_Verbose.md`, voice and structure must match existing entries.
-- Non-contradictory: does not conflict with or duplicate existing source document content
-
-**Step 3 — Present for approval:**
-Present all verified proposed updates. For each item show the target document, insertion location, and the exact content to be written. State the total number of proposed updates and request explicit approval before writing. If the user wants to review individually rather than approve all at once, present one at a time and wait for approval before proceeding to the next.
-
-**Step 4 — Write approved updates:**
-For each approved update, write the content to the target document at the specified location using the Edit tool. Write exactly what was approved — do not paraphrase or reformat at this stage.
-
-**Step 5 — Confirm changes:**
-After all writes are complete, display a summary of every change made: target document, insertion location, and the exact content written. This allows the user to review what was added before closing the session.
-
-Before closing, ask: "Is there anything else from this session — gap resolutions, framing decisions, or confirmed context — that should be captured before we close?"
+Load `skills/source_document_update.md` now and follow it completely. "This session" refers to all phases and interactions from Phase 1a through Phase 5b.
