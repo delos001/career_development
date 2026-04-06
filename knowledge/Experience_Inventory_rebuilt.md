@@ -311,11 +311,18 @@ Tags: Capability: Vendor Management & Oversight | Process Design & Optimization 
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Led onboarding of LLX Solutions as data management CRO partner; oversaw programming build-out; directed development of new issue reporting capabilities to improve risk identification and quality oversight visibility.**
+Impact: Transferred programming burden from internal team to LLX, freeing internal resources for higher-priority work. Doubled the number of quality checks with domain-customized logic, replacing general-purpose checks that were insufficient for proactive issue identification. Optimized reporting output for faster root cause analysis and provider communication — accelerating dataset resolution timelines, which was critical during interim analysis periods where delays risked submission schedules. Introduced longitudinal trend visibility (not previously achievable with internal capabilities), enabling structured conversations with data providers and vendor management on recurring issue patterns. LLX also assumed direct responsibility for issue communication to data providers, removing that burden from the internal data management team.
 Tags: Capability: Vendor Management & Oversight | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Capability Building | Quality Improvement
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
-**Influenced LLX Solutions partner technology investigation decisions to align with long-term organizational goals; managed LLX utilization and budget impact including resourcing consolidation decisions.**
-Tags: Capability: Vendor Management & Oversight | Financial Management & Budgeting | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Cost Savings | Efficiency Gain
+**Influenced LLX Solutions technology strategy decisions — communicated that failure to evolve their reporting platform beyond Excel-based outputs would eventually be displaced by internal capabilities; identified and escalated the strategic obsolescence risk to maintain partnership value alignment.**
+Impact: Assessment proved accurate — the partnership was subsequently ended as internal capabilities advanced. Early identification of the risk allowed for planned rather than reactive transition.
+Tags: Capability: Vendor Management & Oversight | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Risk Reduction
+
+Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
+**Analyzed LLX Solutions utilization against actual scope of work; identified two billable roles (programmer and project manager) as unutilized and provided scope-based input to inform resourcing consolidation decisions.**
+Impact: Eliminated two billable roles, reducing estimated annual billing by 30%+.
+Tags: Capability: Vendor Management & Oversight | Financial Management & Budgeting | Role Level: Director | Org Context: Scaling | Outcome: Cost Savings | Efficiency Gain
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Defined data sharing processes and agreements with LLX Solutions; set up SharePoint-based reporting sharing processes; documented data usage requirements in contract in collaboration with project management.**
@@ -326,8 +333,8 @@ Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 Tags: Capability: Vendor Management & Oversight | Stakeholder Management & Influence | Governance & Risk Management | Role Level: Director | Org Context: Scaling | Outcome: Risk Reduction | Capability Building
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
-**Contributed to SMOP Phase 2 preferred-partner laboratory evaluation — narrowing the field from approximately 40 candidate vendors to 3 preferred partners across routine, safety, and PK testing domains.**
-Context: Worked directly with vendor candidates to communicate organizational data needs, surface partnership risks, and collaborate on resolutions; most significant ongoing engagement was with LabCorp.
+**Represented Data Management Sciences in the SMOP Phase 2 preferred-partner laboratory evaluation — defined DMS assessment criteria and questions, organized and directed review of provider responses, and directly engaged with data providers during deep-dive evaluations to assess data acquisition and conformance capabilities.**
+Impact: Prior state relied on one primary central lab with ad hoc use of others — diluting negotiating leverage, limiting compliance enforcement, and concentrating risk. Narrowed field from ~40 to 3 preferred partners selected for capability fit across routine, safety, and PK domains. Preferred partner model enabled portfolio flexibility (no single-vendor dependency), preferred partnership benefits and provider attention, and study-level optimization by routing protocols to the lab best suited to their configuration. DMS evaluation focused on transfer specification conformance, issue resolution responsiveness, standards collaboration capacity, and ability to meet functional and organizational data goals.
 Tags: Capability: Vendor Management & Oversight | Strategic Planning & Roadmapping | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Cost Savings | Risk Reduction | Capability Building
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
@@ -504,6 +511,8 @@ Tags: Capability: Data & Analytics | Technology Strategy & Implementation | Role
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Designed and built longitudinal data stability surveillance proof-of-concept using R, SQL, Spotfire, and Git to mitigate submission rejection risk and eliminate costly data-freezing procedures.**
+Context: Legacy data freezing process relied on a 10-step unfreeze procedure spanning 5 people across 3 functions at the individual data point level — resource-intensive, but providing symbolic comfort rather than actual instability detection. Unexpected changes to previously submitted data continued to surface, creating downstream submission risk. Organizational resistance to replacing an embedded legacy process required top-down leadership support and data-backed evidence of legacy failure to overcome.
+Impact: Replaced the legacy freeze/unfreeze process with a just-in-time longitudinal surveillance capability that tracked and stored daily changes to critical data points, displayed full change history for the life of each data point, and aggregated contextual information to support impact analysis and decision-making. Change detection moved from effectively zero to 100%. Man-hours for freeze and unfreeze procedures reduced to zero, with resources redirected to impact analysis. Piloted on one pivotal study; adopted for that study in full; a version of the process was subsequently adopted for all laboratory data across the portfolio. Full portfolio rollout was not completed due to resource and leadership changes.
 Tags: Capability: Data & Analytics | Technology Strategy & Implementation | Role Level: Director | Org Context: Scaling | Outcome: Risk Reduction | Efficiency Gain
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
@@ -618,6 +627,21 @@ Impact: Redesigned around a "standard but flexible" principle — CDISC-aligned 
 Tags: Capability: Quality & Compliance | Process Design & Optimization | Change Management & Adoption | Role Level: Director | Org Context: Greenfield | Outcome: Quality Improvement | Efficiency Gain
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
+**Built and maintained a CDISC SDTM-aligned laboratory test mapping library — merging industry standard test nomenclature with study-specific test configurations to establish repeatable, cross-study terminology mapping.**
+Impact: Eliminated ad hoc terminology mapping decisions at the study level — reducing mapping burden, minimizing errors from inconsistent term selection, and enabling consistent cross-study analysis of laboratory data. Library grew as the study portfolio and test configurations expanded.
+Tags: Capability: Data & Analytics | Process Design & Optimization | Governance & Risk Management | Role Level: Director | Org Context: Greenfield | Outcome: Efficiency Gain | Quality Improvement | Capability Building
+
+Role: External Data Acquisition Head | BioMarin Pharmaceutical
+**Built and maintained a DTA library customized by external laboratory — applying the standard DTA template against each lab's specific capabilities, system constraints, and personnel conventions to create a durable, lab-specific configuration baseline.**
+Impact: Reduced study startup time by eliminating the need to recreate lab-specific specifications from scratch — lab standards were pre-encoded. Reduced the need for labs to change their internal processes to meet organizational requirements, protecting data quality. Enabled downstream conformance programming to map lab variable conventions to CDISC LAB model conventions automatically rather than through hardcoded logic. Library expanded as new laboratory partners were onboarded.
+Tags: Capability: Vendor Management & Oversight | Process Design & Optimization | Governance & Risk Management | Role Level: Director | Org Context: Greenfield | Outcome: Efficiency Gain | Quality Improvement | Capability Building
+
+Role: External Data Acquisition Head | BioMarin Pharmaceutical
+**Built a domain-specific conformance check library for external data acquisition — growing total check volume to 100+ checks, tripling legacy internal breadth, with checks designed to target domain-specific conformance issues rather than applying generic logic across all data domains.**
+Impact: Replaced a small, domain-agnostic legacy check set with a structured library that surfaced conformance issues the legacy checks could not detect. Tripling check breadth materially improved risk identification coverage across the external data provider portfolio.
+Tags: Capability: Quality & Compliance | Data & Analytics | Process Design & Optimization | Role Level: Director | Org Context: Greenfield | Outcome: Quality Improvement | Risk Reduction | Capability Building
+
+Role: External Data Acquisition Head | BioMarin Pharmaceutical
 **Championed integration of data acquisition workflows into downstream cross-functional processes to support data quality, AI readiness, and regulatory submission timelines.**
 Tags: Capability: Quality & Compliance | Governance & Risk Management | Strategic Planning & Roadmapping | Role Level: Director | Org Context: Greenfield | Outcome: Risk Reduction | Scalability/Growth Enablement
 
@@ -635,20 +659,14 @@ Tags: Capability: Quality & Compliance | Governance & Risk Management | Technolo
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Led comprehensive redesign of data quality surveillance planning capabilities, establishing accountability frameworks and aligning technology to process requirements.**
+Context: Legacy process required the data manager to solicit quality planning inputs from multiple functional groups independently — fragmented, single-template approach regardless of TA or domain. Study leads routinely identified missing or incorrect quality checks mid-study, a consistent cross-study pattern rather than isolated occurrences. Cross-functional accountability for data quality was absent; responsibility defaulted informally to data management.
+Impact: Rebuilt the quality planning and specification process end-to-end: created a CDASH-aligned quality check library with direct traceability between data criticality and validation effort, a quality classification system mapping objectives to responsible cross-functional teams, and a domain-flexible planning structure replacing the one-size-fits-all template. Amended SOPs and work instructions; piloted, tested, and deployed for all new studies. Materially reduced mid-study quality check volatility — the most consistent failure mode of the legacy process. Cross-functional input improved materially. Interim analysis planning became more efficient. Accountability for data quality clarified across functional boundaries. Standardizing planning processes to CDASH terminology eliminated non-standard legacy terminology that had been creating downstream programming overhead — reducing the burden on programmers implementing quality checks across studies. Applied cross-portfolio, affecting Data Management Sciences, Clinical Sciences, Statistical Sciences, Clinical Operations, and Pharmacovigilance.
 Tags: Capability: Quality & Compliance | Process Design & Optimization | Governance & Risk Management | Role Level: Director | Org Context: Scaling | Outcome: Quality Improvement | Capability Building
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
-**Redesigned the data quality initiation process; created a CDASH-aligned quality check library aligned to cross-functional accountability structures.**
-Impact: Materially reduced mid-study volatility and submission rework.
-Tags: Capability: Quality & Compliance | Process Design & Optimization | Role Level: Director | Org Context: Scaling | Outcome: Quality Improvement | Risk Reduction
-
-Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Implemented CDISC LAB model for external laboratory data acquisition, improving exchangeability and downstream CDASH/SDTM conversion readiness.**
+Impact: Replaced legacy lab data exchange format with the CDISC LAB model — the industry standard already in use by the primary central lab — eliminating the translation burden that had been a primary driver of conformance failures. The model's rich variable set created a structured "toolbox" enabling complex, protocol-specific configuration schemes while providing a verifiable framework to confirm correct lab setup before data transfer. Reduced the volume of custom programming required by the lab to manipulate inbound specifications, directly addressing a documented root cause of data quality issues. Applied prospectively to all new studies at startup across all programs; retroactively applied to 2 existing studies with active conformance failures. These implementations, combined with complementary process changes, contributed to reducing interim analysis rework from ~60% to 0%.
 Tags: Capability: Quality & Compliance | Process Design & Optimization | Role Level: Director | Org Context: Scaling | Outcome: Quality Improvement | Capability Building
-
-Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
-**Aligned data quality planning processes to CDASH standards — eliminating legacy non-standard terminology and reducing programming overhead.**
-Tags: Capability: Quality & Compliance | Process Design & Optimization | Role Level: Director | Org Context: Scaling | Outcome: Quality Improvement | Efficiency Gain
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Collaborated with EDC standards group to identify CRF library standardization gaps; provided evidence of resourcing impact from inconsistent terminology across studies; feedback was incorporated into future standard library releases.**
@@ -659,16 +677,12 @@ Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 Tags: Capability: Quality & Compliance | Risk-Based Monitoring & Quality | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Quality Improvement
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
-**Created and maintained structured data standards libraries: CDASH-aligned quality check library, CDISC laboratory test mapping library, DTA library by laboratory, and conformance check library aligned to DTS requirements.**
-Context: Constitutes a governed data dictionary and catalog infrastructure supporting right-first-time execution across the external data provider portfolio.
-Tags: Capability: Quality & Compliance | Governance & Risk Management | Process Design & Optimization | Role Level: Director | Org Context: Scaling | Outcome: Capability Building | Quality Improvement
-
-Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Performed gap analyses across data quality surveillance processes; proposed, piloted, measured, and planned implementation of improved procedures and tools.**
 Tags: Capability: Quality & Compliance | Process Design & Optimization | Role Level: Director | Org Context: Scaling | Outcome: Quality Improvement
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Digitized the data management planning oversight infrastructure: standardized documentation, built KPI-based reporting, and established metadata foundations aligned to future AI-enabled automation goals.**
+Impact: Replaced non-digitized, ad hoc planning documentation with standardized templates and structured metadata — enabling consistent data capture across studies and creating the foundation for KPI-based operational monitoring. Built reporting that surfaced process health indicators previously invisible in the legacy environment. Metadata foundations were explicitly designed to support downstream AI-enabled automation as the function matured, avoiding the need to retrofit digitization after the fact. Positioned the planning infrastructure to scale with portfolio growth without proportional increases in manual oversight effort.
 Tags: Capability: Quality & Compliance | Process Design & Optimization | Technology Strategy & Implementation | Role Level: Director | Org Context: Scaling | Outcome: Capability Building | Scalability/Growth Enablement
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
@@ -773,6 +787,12 @@ Role: External Data Acquisition Head | BioMarin Pharmaceutical
 **Developed capability roadmaps and future-state operating model options to scale data acquisition standards and operational oversight across therapeutic areas.**
 Tags: Capability: Process Design & Optimization | Strategic Planning & Roadmapping | Role Level: Director | Org Context: Greenfield | Outcome: Scalability/Growth Enablement
 
+Role: External Data Acquisition Head | BioMarin Pharmaceutical
+**Built the external data acquisition functional group's SharePoint site from greenfield — architected content structure, integrated with MS Teams, established governance and documentation organization, controlled user access and decision rights, and trained cross-functional staff.**
+Context: Legacy SharePoint existed but was not structured to support the new functional group's evolution, planning, or collaboration needs. Building from scratch enabled an optimized structure aligned to the group's governance model and project management knowledge areas, rather than forcing content into an inherited legacy structure.
+Impact: Created a flexible, purpose-built knowledge and collaboration environment for the functional group. Folder structure aligned to governance domains and divided process documentation by project management knowledge area. Access controls restricted development areas to protect stability while enabling targeted cross-functional sharing as needed. MS Teams integration enabled knowledge sharing features unavailable in the legacy environment. Provided a more effective home for process documentation, governance materials, and operational content — supporting the functional group's delivery without the constraints of the legacy structure.
+Tags: Capability: Process Design & Optimization | Governance & Risk Management | Technology Strategy & Implementation | Role Level: Director | Org Context: Greenfield | Outcome: Capability Building
+
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Developed strategic proposals to realign functional structures, role definitions, skills, and data workflow strategies to support accelerated regulatory submission goals.**
 Tags: Capability: Process Design & Optimization | Strategic Planning & Roadmapping | Organizational Design | Role Level: Director | Org Context: Scaling | Outcome: Capability Building | Scalability/Growth Enablement
@@ -780,10 +800,6 @@ Tags: Capability: Process Design & Optimization | Strategic Planning & Roadmappi
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Developed and communicated functional roadmaps and strategic narratives for the data management sciences functional group; ensured alignment between budget planning and functional priorities.**
 Tags: Capability: Process Design & Optimization | Strategic Planning & Roadmapping | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Capability Building
-
-Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
-**Built functional SharePoint site from scratch: architected content, integrated with MS Teams, developed governance and documentation structure, controlled user access and decision rights, and trained cross-functional staff.**
-Tags: Capability: Process Design & Optimization | Governance & Risk Management | Technology Strategy & Implementation | Role Level: Director | Org Context: Scaling | Outcome: Capability Building
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
 **Led cross-functional development of an Integrated Data Review Plan defining data quality standards and aligning review procedures across clinical, data management, and biostatistics functions.**
@@ -823,6 +839,7 @@ Tags: Capability: Strategic Planning & Roadmapping | Stakeholder Management & In
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Contributed to organizational growth readiness planning through industry benchmarking; produced four competency-based structural models and presented findings directly to leadership to inform new functional structure decisions.**
+Impact: Benchmarked 3 companies of comparable size and/or rare disease focus; mapped findings against existing structure, skillsets, headcount constraints, and budget environment. Produced four competency-based structural models — each defining core pillars of data acquisition, data validation, and operations with varying technology dependencies and responsibility granularity. Presented directly to leadership with recommendations focused on what the data supported. Analysis informed formation of a new functional structure aligned with organizational growth and headcount strategy — enabling the organization to pursue more programs and assets while maintaining fiscal responsibility and data quality fidelity. Scope: Data Management Sciences functional group, 5 roles, 30+ FTEs and contractors.
 Tags: Capability: Organizational Design | Strategic Planning & Roadmapping | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Capability Building
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
