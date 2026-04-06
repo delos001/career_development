@@ -30,7 +30,13 @@ Expert GCP Exam for Managers & Staff Interacting with Investigational Sites — 
 
 ---
 
-## 3. Professional Training
+## 3. Professional Affiliations
+
+Project Management Institute (PMI) — Member, 2014–2015
+
+---
+
+## 4. Professional Training
 
 Lean Six Sigma Black Belt Training — BMGI, Jun–Aug 2015
 Lean Six Sigma Green Belt Training — BMGI, Apr–Jun 2015
@@ -45,7 +51,7 @@ Current Coursework (2025):
 
 ---
 
-## 4. Technical Experience
+## 5. Technical Experience
 
 **Languages & Data Engineering:** Python, R, SQL (SQL Server, Oracle, PostgreSQL, SQLite), SAS, VBA; Pandas, NumPy; ETL/ELT transformation workflows; file parsing (.xlsx, .pdf, .txt, .csv, binary formats)
 
@@ -81,9 +87,22 @@ Current Coursework (2025):
 
 ---
 
-## 5. Therapeutic Area and Domain Exposure
+## 6. Therapeutic Area and Domain Exposure
 
-**Therapeutic Areas:** Cardiovascular | Oncology | Rare Disease | CNS | Gerontology | Immunology | Infectious Disease (Hepatitis B/C, HIV) | Ophthalmology | Endocrinology | GI | Hematology | Surgical/Perioperative | Musculoskeletal
+**Therapeutic Areas:**
+
+Cardiovascular: Atrial Fibrillation (IND), Hyperlipidemia (IND), Interventional Cardiology
+Central Nervous System: Major Depressive Disorder (IND)
+Endocrinology: Diabetes Mellitus Type II (IND)
+Gastrointestinal: Various GI surgical indications
+Hematology: Surgical Hemostasis (IND), Anemia (IND, NIH/NIA), Hemophilia
+Immunology: Lupus Erythematosus (IND)
+Infectious Disease: Hepatitis C Virus (IND), Hepatitis B Virus (HBV), HIV + Hyperlipidemia
+Musculoskeletal/Bone: Osteoporosis (IND)
+Oncology: Multiple Myeloma, Acute Myeloid Leukemia (AML)
+Ophthalmology: Age-Related Macular Degeneration (IDE)
+Peri-Operative/Surgical: Cardiovascular/Surgical Wound Infection (IND), Gastrointestinal/Surgical Wound Infection (IND), Post-operative Nausea/Vomiting (IND)
+Rare Disease: Achondroplasia, Hypochondroplasia, PKU (Phenylketonuria), various additional rare disease protocols
 
 **Trial Phases:** Phase 1 | Phase 2 | Phase 3 (pivotal) | Phase 4 / Post-Marketing
 
@@ -95,11 +114,11 @@ Current Coursework (2025):
 
 **Regulatory Frameworks:** ICH-GCP (E6, E9); FDA: 21 CFR Parts 11, 50, 54, 56, 312, 314; HIPAA; EU Clinical Trials Directive; Anti-Kickback Statute (USA); False Claims Act (USA)
 
-**Functional Domains:** Clinical Data Management, Clinical Trial Management, Clinical Operations, Risk-Based Monitoring, Data Engineering, Data Science, Vendor Oversight, Clinical Monitoring and Site Management, Site-based Research, Biostatistics interface, Regulatory Affairs interface,  Quality Assurance interface, Product Development interface,  Hands-on Clinical / Patient Care
+**Functional Domains:** Clinical Data Management, Clinical Trial Management, Clinical Operations, Risk-Based Monitoring, Data Engineering, Data Science, Vendor Oversight, Clinical Monitoring and Site Management, Site-based Research, Biostatistics interface, Regulatory Affairs interface, Quality Assurance interface, Product Development interface, Hands-on Clinical / Patient Care
 
 ---
 
-## 6. All Tasks Performed
+## 7. All Tasks Performed
 
 ---
 
@@ -190,8 +209,8 @@ Role: Clinical Research Associate I/II | The Duke Clinical Research Institute
 Tags: Capability: Clinical Trial Execution | Change Management & Adoption | Role Level: IC | Org Context: Mature/Enterprise
 
 Role: Clinical Research Associate I/II | The Duke Clinical Research Institute
-**Procured protocol-required medical equipment and supplies; negotiated with cognitive-test vendors within grant and budget specifications.**
-Tags: Capability: Clinical Trial Execution | Financial Management & Budgeting | Role Level: IC | Org Context: Mature/Enterprise
+**Procured protocol-required medical equipment and supplies; negotiated with cognitive-test and patient-reported outcome (PRO) tool vendors within grant and budget specifications; executed purchase orders for study equipment.**
+Tags: Capability: Clinical Trial Execution | Financial Management & Budgeting | Vendor Management & Oversight | Role Level: IC | Org Context: Mature/Enterprise
 
 Role: Clinical Research Associate I/II | The Duke Clinical Research Institute
 **Managed clinical activities and performance of 8–12 investigational sites simultaneously across multiple therapeutic areas and protocols from pre-enrollment through database lock.**
@@ -209,6 +228,10 @@ Tags: Capability: Clinical Trial Execution | Technology Strategy & Implementatio
 Role: Clinical Research Associate I/II | The Duke Clinical Research Institute
 **Conducted quality control and user testing of eCRF specifications, laboratory manual procedures, and lab kit content validation; developed laboratory requisition forms.**
 Tags: Capability: Clinical Trial Execution | Quality & Compliance | Role Level: IC | Org Context: Mature/Enterprise
+
+Role: Clinical Research Associate I/II | The Duke Clinical Research Institute
+**Conducted scheduled TMF quality control and audit reviews to ensure regulatory document completeness and audit readiness.**
+Tags: Capability: Quality & Compliance | Clinical Trial Execution | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Risk Reduction
 
 Role: Clinical Research Associate I/II | The Duke Clinical Research Institute
 **Reviewed and approved regulatory documents for study start-up through close-out: ICFs, FDA 1572, Financial Disclosure, laboratory certifications, IRB approvals.**
@@ -269,10 +292,12 @@ Tags: Capability: Clinical Trial Execution | Role Level: IC | Org Context: Matur
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
 **Managed end-to-end accountability for data acquisition timelines, stakeholder engagement, and program deliverables — absorbing 200+ data transfers across multiple vendors and programs in the first full year without headcount growth.**
+Context: Volume absorption occurred simultaneously with greenfield function build — no existing team, established processes, or governance infrastructure in place at the start of the role. Operational delivery and capability building were concurrent, not sequential.
 Tags: Capability: Vendor Management & Oversight | Stakeholder Management & Influence | Role Level: Director | Org Context: Greenfield | Outcome: Scalability/Growth Enablement
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
-**Applied DTA governance framework to define transfer processes, execute vendor agreements, and manage risk escalation during the Inozyme acquisition — an unplanned integration spanning 5 studies and 7+ vendors simultaneously.**
+**Applied DTA governance framework to define transfer processes, execute vendor agreements, and manage risk escalation during the Inozyme acquisition — an unplanned integration spanning 5 studies, 7+ vendors, and 30+ distinct datasets simultaneously.**
+Impact: Absorbed unplanned integration workload without additional headcount. All DTAs executed and all datasets completed test transfer and conformance evaluation ahead of planned data transfer dates for interim analysis — delivering all planning milestones on time for a 5-study, 7+ vendor integration that was not in original resource projections.
 Tags: Capability: Vendor Management & Oversight | Governance & Risk Management | Role Level: Director | Org Context: Greenfield | Outcome: Risk Reduction
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
@@ -378,7 +403,7 @@ Role: Central Statistical Monitoring Deployment Lead | Amgen (via DOCS Global)
 Tags: Capability: Risk-Based Monitoring & Quality | Stakeholder Management & Influence | Role Level: Manager | Org Context: Mature/Enterprise | Outcome: Quality Improvement
 
 Role: Central Statistical Monitoring Deployment Lead | Amgen (via DOCS Global)
-**Developed SOPs, training content, communication and stakeholder engagement plans, and signal response workflows for central statistical monitoring program.**
+**Developed SOPs, training content, interview scripts, communication and stakeholder engagement plans, and signal response workflows for central statistical monitoring program.**
 Tags: Capability: Risk-Based Monitoring & Quality | Process Design & Optimization | Change Management & Adoption | Role Level: Manager | Org Context: Mature/Enterprise | Outcome: Capability Building
 
 Role: Integrated Process Technology Specialist II | Quintiles
@@ -456,6 +481,10 @@ Tags: Capability: Clinical Trial Execution | Financial Management & Budgeting | 
 Role: Regional/Global Clinical Trial Manager | Amgen (via DOCS Global)
 **Directed and supported global recruitment targets; supported global drug supply plan development.**
 Tags: Capability: Clinical Trial Execution | Role Level: Manager | Org Context: Mature/Enterprise
+
+Role: Regional/Global Clinical Trial Manager | Amgen (via DOCS Global)
+**Managed trial master file documentation using eTMF and document management systems including Veeva Vault and ELVIS; ensured regulatory document completeness and compliance across study lifecycle.**
+Tags: Capability: Quality & Compliance | Governance & Risk Management | Clinical Trial Execution | Role Level: Manager | Org Context: Mature/Enterprise | Outcome: Risk Reduction
 
 Role: Regional/Global Clinical Trial Manager | Amgen (via DOCS Global)
 **Contributed to study and regional risk assessments and mitigation strategies; supported regulatory issues and responded to audit findings.**
@@ -542,6 +571,10 @@ Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
 Tags: Capability: Data & Analytics | Team Leadership & Development | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Efficiency Gain | Capability Building
 
 Role: Clinical Data Scientist | PRA Health Sciences
+**Led Analysis of Findings meetings to communicate holistic summaries of data findings and overall trial risk to cross-functional internal and external sponsor teams.**
+Tags: Capability: Stakeholder Management & Influence | Risk-Based Monitoring & Quality | Data & Analytics | Clinical Trial Execution | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Risk Reduction
+
+Role: Clinical Data Scientist | PRA Health Sciences
 **Contributed to development of text analysis algorithm using NLP techniques to link protocol procedures and other information to primary, secondary, and safety objectives.**
 Tags: Capability: Data & Analytics | Risk-Based Monitoring & Quality | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Capability Building
 
@@ -567,6 +600,10 @@ Role: Integrated Process Technology Specialist II | Quintiles
 Tags: Capability: Data & Analytics | Process Design & Optimization | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Capability Building
 
 Role: Integrated Process Technology Specialist II | Quintiles
+**Developed an Earned Value Management analog model to predict recruitment patterns and identify recruitment risk in a competitive, limited-population setting, and advise global project management on existing recruitment effort risk.**
+Tags: Capability: Data & Analytics | Risk-Based Monitoring & Quality | Stakeholder Management & Influence | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Risk Reduction
+
+Role: Integrated Process Technology Specialist II | Quintiles
 **Performed primary research to assess effectiveness of study processes; recommended and applied technical and analytic methodologies to improve monitoring and control capabilities.**
 Tags: Capability: Data & Analytics | Process Design & Optimization | Role Level: IC | Org Context: Mature/Enterprise
 
@@ -576,12 +613,25 @@ Tags: Capability: Data & Analytics | Process Design & Optimization | Role Level:
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
 **Redesigned, digitized, and operationalized novel data transfer agreement (DTA) process; updated SOPs and trained cross-functional staff and external providers.**
-Impact: Automated conformance surveillance capabilities and improved operational process oversight.
+Context: Prior DTA process used a generic legacy template with no CDISC alignment, no structured accommodation for provider variability, and no machine-readable design — perceived as administrative rather than a data integrity input. Generated persistent downstream conformance issues requiring ongoing manual intervention.
+Impact: Redesigned around a "standard but flexible" principle — CDISC-aligned standards with structured capture of provider-specific variability in a machine-readable format. Enabled automatic feed into programming, reducing programming time, errors, and hardcoding; supported KPI dashboard development and operational monitoring; institutionalized provider knowledge across the portfolio; and positioned the workflow for AI-enabled conformance activities downstream. Improved communication of data specification expectations with external providers — generating positive feedback from the provider network. The design's efficiency was a direct enabler of headcount-efficient volume absorption across the data transfer lifecycle.
 Tags: Capability: Quality & Compliance | Process Design & Optimization | Change Management & Adoption | Role Level: Director | Org Context: Greenfield | Outcome: Quality Improvement | Efficiency Gain
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
 **Championed integration of data acquisition workflows into downstream cross-functional processes to support data quality, AI readiness, and regulatory submission timelines.**
 Tags: Capability: Quality & Compliance | Governance & Risk Management | Strategic Planning & Roadmapping | Role Level: Director | Org Context: Greenfield | Outcome: Risk Reduction | Scalability/Growth Enablement
+
+Role: External Data Acquisition Head | BioMarin Pharmaceutical
+**Applied 21 CFR Part 11 compliance requirements across regulated clinical environments throughout career — spanning site systems, EDC platforms, data management infrastructure, and vendor technology.**
+Tags: Capability: Quality & Compliance | Governance & Risk Management | Role Level: Director | Org Context: Greenfield | Outcome: Risk Reduction
+
+Role: External Data Acquisition Head | BioMarin Pharmaceutical
+**Performed 21 CFR Part 11 compliance assessments for investigational site systems, vendor systems, and technology platforms across multiple organizations and roles.**
+Tags: Capability: Quality & Compliance | Governance & Risk Management | Technology Strategy & Implementation | Role Level: Director | Org Context: Greenfield | Outcome: Risk Reduction
+
+Role: External Data Acquisition Head | BioMarin Pharmaceutical
+**Performed ongoing 21 CFR Part 11 system oversight across EDC and data management platforms throughout career in regulated clinical environments.**
+Tags: Capability: Quality & Compliance | Governance & Risk Management | Technology Strategy & Implementation | Role Level: Director | Org Context: Greenfield | Outcome: Risk Reduction
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Led comprehensive redesign of data quality surveillance planning capabilities, establishing accountability frameworks and aligning technology to process requirements.**
@@ -651,6 +701,8 @@ Tags: Capability: Quality & Compliance | Stakeholder Management & Influence | Ro
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
 **Spearheaded Databricks deployment strategy and capability design; oversaw use-case validation and managed adoption and knowledge institutionalization planning.**
+Context: Enterprise Databricks platform selection involved multiple functional stakeholders. Role was DMS strategic lead — defining DMS requirements, use case portfolio, and adoption direction within the enterprise deployment.
+Impact: Led DMS platform evaluation across competing options and authored the recommendation that resulted in Databricks selection. Defined and prioritized a portfolio of 8 DMS use cases aligned to department goals; directed development initiation of 3 priority use cases at time of departure (EDC API connectivity, data blinding processes, data warehouse and data flow testing). Designed decision engine framework, governance and data flow processes, harmonization capabilities, and data lineage tracking architecture. Collaborated with QA and computer validation teams to produce validation documentation for live EDC API connectivity. Directed team capability testing and early-stage AI agent exploration for repeatable task automation.
 Tags: Capability: Technology Strategy & Implementation | Strategic Planning & Roadmapping | Role Level: Director | Org Context: Greenfield | Outcome: Capability Building | Scalability/Growth Enablement
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
@@ -713,6 +765,8 @@ Tags: Capability: Technology Strategy & Implementation | Change Management & Ado
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
 **Built new operating model for the external data acquisition function from greenfield: decision rights, governance frameworks, controlled documentation, and standard libraries.**
+Context: No governed external data acquisition function existed prior. External data management relied on generic templates, undocumented controlled terminology mapping, and a DTA process perceived as administrative rather than a data integrity input. Persistent, unresolved conformance issues were threatening the organization's ability to deliver complete, accurate, and on-time regulatory submissions. BioMarin's simultaneous growth strategy was expanding the volume, variety, and modality of external data — away from EDC-centric toward lab, eCOA, imaging, wearables, and PK — compounding risk without a governing structure to support it.
+Impact: Defined and built BioMarin's external data acquisition capability from greenfield — establishing the governance infrastructure, standards, and operating model within Data Management Sciences to support enterprise data quality and regulatory submission objectives. Delivered operational governance across laboratory data (200+ transfers, 12+ external providers) with initial expansion into eCOA and musculoskeletal domains (~30 datasets). Designed capability architecture for full modality expansion (imaging, PK, wearables, IXRS, external CTMS). Led a converging portfolio of distinct initiatives — CDISC standards adoption, preferred lab partner model, LLX CRO partnership, technology platform evaluation, Databricks roadmap — to position the organization for planned portfolio growth while eliminating the persistent conformance failures that prior approaches had not resolved, and ensuring complete, accurate, and on-time regulatory submissions that support patient access to BioMarin therapies.
 Tags: Capability: Process Design & Optimization | Organizational Design | Governance & Risk Management | Role Level: Director | Org Context: Greenfield | Outcome: Capability Building
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
@@ -750,6 +804,8 @@ Tags: Capability: Process Design & Optimization | Stakeholder Management & Influ
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
 **Built and scaled the external data acquisition team; delivered governance frameworks, operational processes, and training infrastructure aligned to organizational OKRs.**
+Context: Team built entirely within FSP contractor model — no FTE headcount allocation. Composition deliberately designed around specialized skill requirements rather than traditional data management staffing models.
+Impact: Built and led a lean, multidisciplinary team of 4 (data scientist, clinical programmer/data engineer, and international physician providing clinical domain expertise) — deliberately selecting against traditional data manager profiles in favor of specialists whose skills matched the technical and scientific demands of the function. Operating entirely within an FSP contractor model, the team absorbed 200+ external data transfers across a growing portfolio without FTE headcount, demonstrating that intentional capability design can substitute for proportional headcount growth.
 Tags: Capability: Organizational Design | Team Leadership & Development | Role Level: Director | Org Context: Greenfield | Outcome: Capability Building | Scalability/Growth Enablement
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
@@ -861,7 +917,7 @@ These roles are included for completeness and career continuity. No tag extracti
 
 ---
 
-## 7. Academic Coursework Detail
+## 8. Academic Coursework Detail
 
 **MS Data Science — Northwestern University (2017–2019)**
 Variable Selection Methods: Stepwise methods, Forward selection methods, Backward selection methods, Decision tree variable importance

@@ -25,7 +25,8 @@ career_development/
 │   ├── Archetype_2_IC_Data_Analytics.md
 │   ├── Archetype_3_IC_Process_Operations.md
 │   ├── Archetype_4_IC_Platform_Technology.md
-│   └── cv_qc_checklist.md
+│   ├── cv_qc_checklist.md
+│   └── cv_bullet_construction_guide.md
 ├── knowledge/                             ← personal source documents — gitignored
 └── outputs/                               ← generated CVs — gitignored
 ```
@@ -63,7 +64,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 2a step 6 | Archetype confirmed (AD+) | Primary archetype file from `context/` (leadership version); secondary if dual-archetype identified |
 | 2a step 6 | Archetype confirmed (IC) | Primary archetype IC file from `context/` (IC version); secondary if dual-archetype identified |
 | 3a step 1 | Fit evaluation begins | `knowledge/Experience_Inventory.md`, `knowledge/Accomplishments.md`, `knowledge/CV_Verbose.md`, `knowledge/Positioning.md` |
-| 4a step 1 | Content generation begins | `knowledge/CV_General_Lrge_Enterprise_Established.md` or `knowledge/CV_General_Mid_Size_Scale_Up.md` — whichever matches format confirmed in Phase 2a; `context/cv_content_rules_leadership.md` (AD+) or `context/cv_content_rules_ic.md` (IC) |
+| 4a step 1 | Content generation begins | `knowledge/CV_General_Lrge_Enterprise_Established.md` or `knowledge/CV_General_Mid_Size_Scale_Up.md` — whichever matches format confirmed in Phase 2a; `context/cv_content_rules_leadership.md` (AD+) or `context/cv_content_rules_ic.md` (IC); `context/cv_bullet_construction_guide.md` |
 | 4b start | QC of generated CV content | `context/cv_qc_checklist.md` |
 | 5a start | Document generation begins | `context/cv_format_spec.md` |
 | Phase 6 | Source update review | Specific knowledge docs loaded only as needed |
