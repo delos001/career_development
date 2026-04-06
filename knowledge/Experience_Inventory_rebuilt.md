@@ -300,9 +300,6 @@ Role: External Data Acquisition Head | BioMarin Pharmaceutical
 Impact: Absorbed unplanned integration workload without additional headcount. All DTAs executed and all datasets completed test transfer and conformance evaluation ahead of planned data transfer dates for interim analysis, delivering all planning milestones on time for a 5-study, 7+ vendor integration that was not in original resource projections.
 Tags: Capability: Vendor Management & Oversight | Governance & Risk Management | Role Level: Director | Org Context: Greenfield | Outcome: Risk Reduction
 
-Role: External Data Acquisition Head | BioMarin Pharmaceutical
-**Led multi-disciplinary team (data engineer, data scientist, physician) building fit-for-purpose data acquisition and integration workflow capabilities at scale.**
-Tags: Capability: Vendor Management & Oversight | Organizational Design | Team Leadership & Development | Role Level: Director | Org Context: Greenfield | Outcome: Capability Building
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Deployed industry-standard data exchange procedures; onboarded external CRO partner with defined data sharing agreements and structured issue reporting.**
@@ -438,10 +435,12 @@ Tags: Capability: Risk-Based Monitoring & Quality | Data & Analytics | Role Leve
 
 Role: Integrated Process Technology Specialist II | Quintiles
 **Independently selected and applied research techniques to analyze data on non-enrolling sites; advised global project manager on site closure proposal from project sponsor.**
+Impact: Designed a comparative analysis across 238 global sites pulling from CTMS and data sources to evaluate whether PI rheumatology specialty predicted enrollment performance, the basis for a sponsor-proposed site closure plan. Applied formal statistical hypothesis testing (2-proportion and mean z-tests) rather than relying on descriptive observations that superficially supported the sponsor's position. Findings produced a split conclusion: rheumatology PIs randomized more subjects and reached first randomization faster on average, but there was no statistically significant difference in the proportion of PIs from either group reaching their individual recruitment targets. Advised the global PM that the data supported prioritizing rheumatology specialists for future site additions but did not support closing existing non-rheumatology sites based on specialty alone. The study team abandoned the site closure plan.
 Tags: Capability: Risk-Based Monitoring & Quality | Data & Analytics | Stakeholder Management & Influence | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Risk Reduction
 
 Role: Integrated Process Technology Specialist II | Quintiles
 **Independently assessed effectiveness of non-enrollment booster call process through primary research analysis; advised global project manager on findings and implications for existing recruitment plan.**
+Impact: Conducted primary research analysis to assess whether the non-enrollment booster call process was producing measurable improvement in site recruitment performance. Presented findings and implications to the global project manager to inform decisions about the existing recruitment plan. Specific outcome of the recommendation is not documented; analysis provided an evidence-based input to a decision that would otherwise have been made on assumption.
 Tags: Capability: Risk-Based Monitoring & Quality | Data & Analytics | Stakeholder Management & Influence | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Risk Reduction
 
 Role: Integrated Process Technology Specialist II | Quintiles
@@ -557,6 +556,7 @@ Tags: Capability: Data & Analytics | Quality & Compliance | Role Level: IC | Org
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
 **Developed Time Series ARIMA models predicting query and data entry volumes at critical project milestones.**
+Impact: Provided management with forward-looking visibility into query and data entry volumes at critical project milestones. Models were used to anticipate unexpected workload spikes requiring resource planning and to surface early indicators of deliverable risk ahead of milestone cut-offs.
 Tags: Capability: Data & Analytics | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Risk Reduction
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
@@ -743,6 +743,7 @@ Tags: Capability: Technology Strategy & Implementation | Data & Analytics | Role
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Proposed and secured budget for proof-of-concept evaluations of technology platforms across three platforms; partnered with internal teams and external vendors to define use cases and assess fit.**
+Impact: Secured $65K in evaluation budget to assess three technology platforms. Negotiated sandbox access pricing for one platform down to $15K. Coordinated with a separate functional group conducting a parallel evaluation to share costs, maximizing scope within constrained budget. Budget authorization enabled the structured platform evaluation that ultimately resulted in Databricks selection as the enterprise intelligence platform.
 Tags: Capability: Technology Strategy & Implementation | Financial Management & Budgeting | Role Level: Director | Org Context: Scaling | Outcome: Capability Building
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
@@ -816,7 +817,7 @@ Tags: Capability: Process Design & Optimization | Stakeholder Management & Influ
 ### Organizational & Team Leadership
 
 Role: External Data Acquisition Head | BioMarin Pharmaceutical
-**Built and scaled the external data acquisition team; delivered governance frameworks, operational processes, and training infrastructure aligned to organizational OKRs.**
+**Formed and led the external data acquisition functional group from greenfield; designed team composition, delivered governance frameworks, operational processes, and training infrastructure, and directed the team's execution against organizational OKRs on an ongoing basis.**
 Context: Team built entirely within FSP contractor model; no FTE headcount allocation. Composition deliberately designed around specialized skill requirements rather than traditional data management staffing models.
 Impact: Built and led a lean, multidisciplinary team of 4 (data scientist, clinical programmer/data engineer, and international physician providing clinical domain expertise), deliberately selecting against traditional data manager profiles in favor of specialists whose skills matched the technical and scientific demands of the function. Operating entirely within an FSP contractor model, the team absorbed 200+ external data transfers across a growing portfolio without FTE headcount, demonstrating that intentional capability design can substitute for proportional headcount growth.
 Tags: Capability: Organizational Design | Team Leadership & Development | Role Level: Director | Org Context: Greenfield | Outcome: Capability Building | Scalability/Growth Enablement
