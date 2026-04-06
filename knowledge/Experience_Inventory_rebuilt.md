@@ -450,6 +450,7 @@ Tags: Capability: Risk-Based Monitoring & Quality | Process Design & Optimizatio
 
 Role: Central Statistical Monitoring Deployment Lead | Amgen (via DOCS Global)
 **Participated in governed CSM algorithm parameter optimization process: reviewed protocol requirements and study-specific logistical factors; configured algorithm parameters to reduce false positive signal rates; documented changes under version control; reviewed modifications with statistical programmers through a formal specification sign-off process.**
+Impact: Configured CSM algorithm parameters across a portfolio of studies, tailoring each configuration to study-specific factors including sample size, study logistics, and clinical criticality of targeted endpoints. Default parameters were adjusted directionally based on clinical risk: tighter thresholds for high-criticality outcomes, looser where small sample size would otherwise generate excessive false positive signal. Maintained an ongoing feedback loop with the global PM and statistics team; when study teams reported false positive signals or missed detections post-deployment, parameters were reviewed and reconfigured through the governed specification process. Work required combining clinical trial context with technical understanding of algorithm behavior to make configuration decisions that were defensible to both statisticians and clinical operations.
 Tags: Capability: Risk-Based Monitoring & Quality | Governance & Risk Management | Role Level: Manager | Org Context: Mature/Enterprise | Outcome: Quality Improvement | Risk Reduction
 
 ---
@@ -548,6 +549,7 @@ Tags: Capability: Data & Analytics | Role Level: IC | Org Context: Mature/Enterp
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
 **Designed remote data review dashboards using Spotfire with R-TERR functionality to support cross-functional clinical team data review.**
+Impact: Contributed to a cross-functional data review capability that directly enabled efficient downstream clinical data surveillance. Reliable dashboard outputs supported accurate, complete data for regulatory submissions.
 Tags: Capability: Data & Analytics | Technology Strategy & Implementation | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Efficiency Gain
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
@@ -565,10 +567,12 @@ Tags: Capability: Data & Analytics | Technology Strategy & Implementation | Role
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
 **Collaborated on Association Learning algorithm development for missing data prediction.**
+Context: Early-stage contribution to a novel approach applying association learning to EDC data to predict missing data patterns. Work was in development at time of departure; not production-ready.
 Tags: Capability: Data & Analytics | Role Level: IC | Org Context: Mature/Enterprise
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
 **Collaborated in development of International Myeloma Working Group (IMWG) Response Criteria R function.**
+Context: Novel capability for the group; intended to automate IMWG response assessment classification to support clinical data review. Contributed to code and process development. Not production-ready at time of departure.
 Tags: Capability: Data & Analytics | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Capability Building
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
@@ -581,6 +585,7 @@ Tags: Capability: Data & Analytics | Team Leadership & Development | Role Level:
 
 Role: Clinical Data Scientist | PRA Health Sciences
 **Led Analysis of Findings meetings to communicate holistic summaries of data findings and overall trial risk to cross-functional internal and external sponsor teams.**
+Context: Full-stack ownership of the Analysis of Findings process: produced all underlying programming, qualitative and quantitative analysis, trending, issue identification (clinical, safety, protocol), and visualizations, then owned meeting setup, hosting, and presentation. Recurring monthly cadence with triggered meetings as needed. Audience included study leadership from both CRO and sponsor sides, requiring findings to be communicated at a level accessible to non-technical study execution stakeholders.
 Tags: Capability: Stakeholder Management & Influence | Risk-Based Monitoring & Quality | Data & Analytics | Clinical Trial Execution | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Risk Reduction
 
 Role: Clinical Data Scientist | PRA Health Sciences
@@ -606,10 +611,12 @@ Tags: Capability: Data & Analytics | Technology Strategy & Implementation | Role
 
 Role: Integrated Process Technology Specialist II | Quintiles
 **Managed scope, development, timelines, execution, and change control of novel reporting models for key internal and external study and resource KPIs; covered study start-up, recruitment, RBM execution, database lock, data integrity, and compliance performance metrics.**
+Context: Replaced a manual, listing-based reporting approach where study teams pulled data from EDC and CTMS systems and aggregated it by hand, a process that took longer to compile than to review. Reports covered study start-up, recruitment, RBM execution, database lock, data integrity, and compliance metrics; delivered weekly to study teams and study leadership. Highly customized to individual protocol design requirements. Automated via macros so reports that previously required manual aggregation could be compiled in minutes and made immediately available to reviewers.
 Tags: Capability: Data & Analytics | Process Design & Optimization | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Capability Building
 
 Role: Integrated Process Technology Specialist II | Quintiles
 **Developed an Earned Value Management analog model to predict recruitment patterns and identify recruitment risk in a competitive, limited-population setting, and advise global project management on existing recruitment effort risk.**
+Impact: Applied to a rare disease study with a limited, competitive patient population where recruitment risk was difficult to quantify. The model surfaced and structured risk that was already sensed anecdotally by the project team, providing a quantitative basis to substantiate those concerns and enabling clearer communication of recruitment risk to global project management. Value was in making implicit risk explicit and defensible rather than relying on intuition alone.
 Tags: Capability: Data & Analytics | Risk-Based Monitoring & Quality | Stakeholder Management & Influence | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Risk Reduction
 
 Role: Integrated Process Technology Specialist II | Quintiles
@@ -756,6 +763,7 @@ Tags: Capability: Technology Strategy & Implementation | Process Design & Optimi
 
 Role: RBM Software Consultant | eClinical Solutions
 **Participated in sprint planning, requirements gathering, and feature design within agile development cycles for the Elluminate platform risk assessment tool.**
+Context: Contributed clinical and RBM subject matter expertise to agile development cycles for the Elluminate platform, informing visualization design and functionality decisions. The risk assessment tool was released to production. Also contributed detailed design input to the RACT module; that module did not reach production.
 Tags: Capability: Technology Strategy & Implementation | Role Level: IC | Org Context: Scaling
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
@@ -765,6 +773,7 @@ Tags: Capability: Technology Strategy & Implementation | Change Management & Ado
 
 Role: Integrated Process Technology Specialist II | Quintiles
 **Served as Infosario Business Champion: led enterprise-wide adoption of the Infosario Analytics platform across all programs and portfolios through global training, end-user consultation, and liaison between Data Management, project teams, and IT.**
+Context: Recruited into the Business Champion role based on existing technical programming background. Infosario replaced spreadsheet-based reporting with a platform providing real-time data and decision support across study execution, data quality, and clinical safety domains. Training scope spanned clinical operations staff across all programs and portfolios, delivered through large functional gatherings (100+ attendees) and smaller targeted sessions (~10 people). Content addressed foundational platform concepts, specific problems users were experiencing, and the value proposition of real-time data over static Excel outputs; sessions also directed users to the platform's self-serve training resources to reduce ongoing support dependency.
 Tags: Capability: Technology Strategy & Implementation | Change Management & Adoption | Stakeholder Management & Influence | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Capability Building
 
 Role: Integrated Process Technology Specialist II | Quintiles
@@ -801,7 +810,7 @@ Tags: Capability: Process Design & Optimization | Strategic Planning & Roadmappi
 
 Role: RBM & Analytics Consultant | AbbVie (via Clinical Solutions Group)
 **Led cross-functional development of an Integrated Data Review Plan defining data quality standards and aligning review procedures across clinical, data management, and biostatistics functions.**
-Context: Cross-functional data review lacked a governing framework; this work created the standards alignment.
+Context: The Integrated Data Review Plan is the governing document for cross-functional data quality surveillance, defining data quality standards, ownership, and review procedures across statistical sciences, clinical operations, data management, medical monitoring, and safety. The resulting plan also drives downstream programming, dashboard development, and tool configuration.
 Tags: Capability: Process Design & Optimization | Governance & Risk Management | Stakeholder Management & Influence | Role Level: IC | Org Context: Mature/Enterprise | Outcome: Quality Improvement
 
 Role: Clinical Data Scientist | PRA Health Sciences
@@ -895,6 +904,7 @@ Tags: Capability: Change Management & Adoption | Technology Strategy & Implement
 
 Role: Central Statistical Monitoring Deployment Lead | Amgen (via DOCS Global)
 **Led change management for CSM adoption: developed training content, communications plan, stakeholder engagement strategy, and signal response workflows.**
+Impact: Supported enterprise-level deployment of CSM as a net-new capability at Amgen, onboarding approximately 10 studies across the portfolio. The process was new not just to individual study teams but to the organization as a whole, meaning adoption work had to build foundational understanding of statistical signal concepts alongside operational procedures. Managed resistance from teams accustomed to traditional monitoring approaches while establishing the workflows and communication structures needed to make signal response actionable at the study level.
 Tags: Capability: Change Management & Adoption | Risk-Based Monitoring & Quality | Role Level: Manager | Org Context: Mature/Enterprise | Outcome: Capability Building
 
 Role: Integrated Process Technology Specialist II | Quintiles
