@@ -321,7 +321,7 @@ Tags: Capability: Vendor Management & Oversight | Stakeholder Management & Influ
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Analyzed LLX Solutions utilization against actual scope of work; identified two billable roles (programmer and project manager) as unutilized and provided scope-based input to inform resourcing consolidation decisions.**
-Impact: Eliminated two billable roles, reducing estimated annual billing by 30%+.
+Impact: Analyzed LLX utilization against actual scope; identified a programmer (~20% billing utilization) and a project manager (~10% billing utilization) as underutilized against delivered value. Eliminated both roles. Annual billing reduced to approximately $100K following consolidation.
 Tags: Capability: Vendor Management & Oversight | Financial Management & Budgeting | Role Level: Director | Org Context: Scaling | Outcome: Cost Savings | Efficiency Gain
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
@@ -461,9 +461,6 @@ Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutica
 **Held end-to-end accountability for planning, execution, monitoring/control, and close-out of data management activities for multiple pivotal Phase 3 studies per study plans and SOPs.**
 Tags: Capability: Clinical Trial Execution | Governance & Risk Management | Role Level: Senior Manager | Org Context: Scaling
 
-Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
-**Directed global matrix teams (US and offshore) across data acquisition and quality surveillance.**
-Tags: Capability: Clinical Trial Execution | Team Leadership & Development | Role Level: Senior Manager | Org Context: Scaling
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
 **Served in named roles during CDM study audits: preparation, auditor engagement, and findings response.**
@@ -471,7 +468,8 @@ Tags: Capability: Quality & Compliance | Clinical Trial Execution | Role Level: 
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
 **Participated in for-cause audit of a central laboratory vendor; performed gap analysis and supported strategy and process change for quality compliance.**
-Tags: Capability: Quality & Compliance | Vendor Management & Oversight | Role Level: Senior Manager | Org Context: Scaling | Outcome: Quality Improvement
+Impact: Audit revealed that the data provider's end-to-end workflow — from sample receipt to dataset exchange — was sufficiently opaque that their own personnel could not fully walk through it. Identified that BioMarin's own processes were compounding an already high-risk vendor data flow: specifically, requests for the provider to perform data transformation, mapping, and programmatic manipulation outside their core competency (sample testing and data delivery). Reoriented the engagement model — restricting provider requests to core competency activities and eliminating requests for data manipulation. Data provider confirmed this approach materially reduced their resource burden and configuration risk. Contributed directly to a reduction in data conformance issues and served as the foundational diagnosis driving subsequent process changes — including CDISC LAB model adoption and process improvements later extended to additional data providers. All changes directed at reducing rework and regulatory submission risk under growing study volume and increasingly endpoint-mapped data requirements.
+Tags: Capability: Quality & Compliance | Vendor Management & Oversight | Role Level: Senior Manager | Org Context: Scaling | Outcome: Quality Improvement | Risk Reduction
 
 Role: Regional/Global Clinical Trial Manager | Amgen (via DOCS Global)
 **Held end-to-end accountability for global and regional clinical trial execution: project planning, timelines, budget, stakeholder management, and risk management.**
@@ -525,10 +523,12 @@ Tags: Capability: Data & Analytics | Process Design & Optimization | Role Level:
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
 **Identified root causes of data quality issues through exploratory analysis; implemented enhanced standardized procedures to address issue trends and improve compliance.**
-Tags: Capability: Data & Analytics | Quality & Compliance | Process Design & Optimization | Role Level: Senior Manager | Org Context: Scaling | Outcome: Quality Improvement
+Impact: Self-initiated analysis after persistent data quality issues had gone unresolved through prior attempts. Systematically compared datasets against transfer specifications and statements of work across two pivotal studies, using R for programmatic analysis and Spotfire for visualization. Root causes identified: controlled terminology mapping errors, transfer specification errors, expected tests absent from specs, QC and out-of-stability results included in datasets, and undocumented requests for provider-side data manipulation. Direct outcomes: transfer specification errors eliminated for both pivotal studies, QC and out-of-stability results removed from datasets, and test results realigned to enable accurate aggregation. Surveillance approach extended to two additional studies; findings from the initial two studies proactively eliminated mapping and specification errors at startup for the later ones. Controlled terminology mapping work during this analysis revealed structural flaws in the existing practice — flagging the need for broader changes that were subsequently implemented, including CDISC LAB model adoption and elimination of provider-side data manipulation requests.
+Tags: Capability: Data & Analytics | Quality & Compliance | Process Design & Optimization | Role Level: Senior Manager | Org Context: Scaling | Outcome: Quality Improvement | Risk Reduction
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
 **Developed Spotfire dashboards to monitor operational activity status, gateway occurrences, process triggers, and data flow issues.**
+Impact: Replaced weekly-updated spreadsheets or gaps where no prior capability existed, providing near-real-time operational visibility during study team and cross-functional meetings across two pivotal studies. Designed with the explicit goal of answering questions that had not yet been asked, enabling on-the-spot decisions rather than follow-up cycles. Specific use cases: last patient visit tracking globally allowed proactive resource planning and site coordination, including early patient contact or same-day data entry support; data acquisition dashboards surfaced data loss immediately without waiting for weekly conformance reports; query and data entry volume dashboards identified sites requiring focused attention. Portfolio-wide adoption and transfer to the programming team were not achieved due to resource constraints and change resistance from a team oriented toward spreadsheet-based reporting.
 Tags: Capability: Data & Analytics | Role Level: Senior Manager | Org Context: Scaling | Outcome: Efficiency Gain
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
@@ -660,7 +660,7 @@ Tags: Capability: Quality & Compliance | Governance & Risk Management | Technolo
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Led comprehensive redesign of data quality surveillance planning capabilities, establishing accountability frameworks and aligning technology to process requirements.**
 Context: Legacy process required the data manager to solicit quality planning inputs from multiple functional groups independently — fragmented, single-template approach regardless of TA or domain. Study leads routinely identified missing or incorrect quality checks mid-study, a consistent cross-study pattern rather than isolated occurrences. Cross-functional accountability for data quality was absent; responsibility defaulted informally to data management.
-Impact: Rebuilt the quality planning and specification process end-to-end: created a CDASH-aligned quality check library with direct traceability between data criticality and validation effort, a quality classification system mapping objectives to responsible cross-functional teams, and a domain-flexible planning structure replacing the one-size-fits-all template. Amended SOPs and work instructions; piloted, tested, and deployed for all new studies. Materially reduced mid-study quality check volatility — the most consistent failure mode of the legacy process. Cross-functional input improved materially. Interim analysis planning became more efficient. Accountability for data quality clarified across functional boundaries. Standardizing planning processes to CDASH terminology eliminated non-standard legacy terminology that had been creating downstream programming overhead — reducing the burden on programmers implementing quality checks across studies. Applied cross-portfolio, affecting Data Management Sciences, Clinical Sciences, Statistical Sciences, Clinical Operations, and Pharmacovigilance.
+Impact: Rebuilt the quality planning and specification process end-to-end: created a CDASH-aligned quality check library with direct traceability between data criticality and validation effort, a quality classification system mapping objectives to responsible cross-functional teams, and a domain-flexible planning structure replacing the one-size-fits-all template. Amended SOPs and work instructions; piloted, tested, and deployed for all new studies. Cross-functional input improved materially. Interim analysis planning became more efficient. Accountability for data quality clarified across functional boundaries. Lead data managers on new studies reported materially reduced time spent correcting and reworking quality programming mid-study, a pattern that had consumed significant DM effort under the legacy process. Full attribution to the redesign alone is not claimed; alignment with a new issue management system and updated programming methods contributed concurrently. The redesign drove the structural conditions that made the improvement possible. Standardizing planning processes to CDASH terminology eliminated non-standard legacy terminology that had been creating downstream programming overhead — reducing the burden on programmers implementing quality checks across studies. Applied cross-portfolio, affecting Data Management Sciences, Clinical Sciences, Statistical Sciences, Clinical Operations, and Pharmacovigilance.
 Tags: Capability: Quality & Compliance | Process Design & Optimization | Governance & Risk Management | Role Level: Director | Org Context: Scaling | Outcome: Quality Improvement | Capability Building
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
@@ -682,7 +682,7 @@ Tags: Capability: Quality & Compliance | Process Design & Optimization | Role Le
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Digitized the data management planning oversight infrastructure: standardized documentation, built KPI-based reporting, and established metadata foundations aligned to future AI-enabled automation goals.**
-Impact: Replaced non-digitized, ad hoc planning documentation with standardized templates and structured metadata — enabling consistent data capture across studies and creating the foundation for KPI-based operational monitoring. Built reporting that surfaced process health indicators previously invisible in the legacy environment. Metadata foundations were explicitly designed to support downstream AI-enabled automation as the function matured, avoiding the need to retrofit digitization after the fact. Positioned the planning infrastructure to scale with portfolio growth without proportional increases in manual oversight effort.
+Impact: Replaced a legacy data management plan written in paragraph form where information was technically present but difficult to locate and not structured to communicate clearly across functions. Cross-functional stakeholders reported being unable to readily understand what DMS was managing or how for a given study. The digitized infrastructure replaced this with structured, navigable documentation covering data management configuration, effort, tools, repositories, and data providers, improving both internal execution and cross-functional transparency. Metadata foundations were designed to support downstream AI-enabled automation as the function matured, avoiding the need to retrofit digitization after the fact.
 Tags: Capability: Quality & Compliance | Process Design & Optimization | Technology Strategy & Implementation | Role Level: Director | Org Context: Scaling | Outcome: Capability Building | Scalability/Growth Enablement
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
@@ -701,9 +701,6 @@ Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutica
 **Partnered with clinical programmers to optimize data validation checks — reducing resource demands and enhancing programming accuracy.**
 Tags: Capability: Quality & Compliance | Stakeholder Management & Influence | Role Level: Senior Manager | Org Context: Scaling | Outcome: Efficiency Gain | Quality Improvement
 
-Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
-**Expanded SQL Server platform utilization across the data management sciences group by designing workflows and leading automation development.**
-Tags: Capability: Technology Strategy & Implementation | Process Design & Optimization | Role Level: Senior Manager | Org Context: Scaling | Outcome: Capability Building | Scalability/Growth Enablement
 
 Role: Sr. Data Scientist, Data Management Sciences | BioMarin Pharmaceutical (via Ivory Solutions)
 **Collaborated with infrastructure development team members to convey quality review processes and requirements to support data quality improvement goals.**
@@ -753,8 +750,8 @@ Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 Tags: Capability: Technology Strategy & Implementation | Strategic Planning & Roadmapping | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Capability Building
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
-**Designed workflows and use cases to expand SQL Server platform utilization; oversaw development of ETL pipelines for operational data processing.**
-Tags: Capability: Technology Strategy & Implementation | Process Design & Optimization | Role Level: Senior Manager | Org Context: Scaling | Outcome: Capability Building
+**Designed workflows and use cases to expand SQL Server platform utilization across the data management sciences group; led automation development and oversaw build of ETL pipelines for operational data processing.**
+Tags: Capability: Technology Strategy & Implementation | Process Design & Optimization | Role Level: Senior Manager | Org Context: Scaling | Outcome: Capability Building | Scalability/Growth Enablement
 
 Role: RBM Software Consultant | eClinical Solutions
 **Participated in sprint planning, requirements gathering, and feature design within agile development cycles for the Elluminate platform risk assessment tool.**
@@ -839,7 +836,7 @@ Tags: Capability: Strategic Planning & Roadmapping | Stakeholder Management & In
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Contributed to organizational growth readiness planning through industry benchmarking; produced four competency-based structural models and presented findings directly to leadership to inform new functional structure decisions.**
-Impact: Benchmarked 3 companies of comparable size and/or rare disease focus; mapped findings against existing structure, skillsets, headcount constraints, and budget environment. Produced four competency-based structural models — each defining core pillars of data acquisition, data validation, and operations with varying technology dependencies and responsibility granularity. Presented directly to leadership with recommendations focused on what the data supported. Analysis informed formation of a new functional structure aligned with organizational growth and headcount strategy — enabling the organization to pursue more programs and assets while maintaining fiscal responsibility and data quality fidelity. Scope: Data Management Sciences functional group, 5 roles, 30+ FTEs and contractors.
+Impact: Benchmarked 3 companies of comparable size and/or rare disease focus; mapped findings against existing structure, skillsets, headcount constraints, and budget environment. Produced four competency-based structural models — each defining core pillars of data acquisition, data validation, and operations with varying technology dependencies and responsibility granularity. Presented directly to leadership with recommendations focused on what the data supported. Leadership adopted a version of one of the four models, substantively aligned though not verbatim. The work provided the analytical scaffolding that enabled a meaningful structural step forward, surfacing trade-offs across skill dependencies, tooling requirements, and organizational configuration that would not otherwise have been visible to decision-makers. Scope: Data Management Sciences functional group, 5 roles, 30+ FTEs and contractors.
 Tags: Capability: Organizational Design | Strategic Planning & Roadmapping | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Capability Building
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
@@ -855,12 +852,13 @@ Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutica
 Tags: Capability: Team Leadership & Development | Organizational Design | Role Level: Senior Manager | Org Context: Scaling | Outcome: Capability Building
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
-**Collaborated with cross-functional teams to form and roll out the Genius Lounge — a cross-organizational data science knowledge-sharing initiative.**
+**Collaborated with cross-functional teams to form and roll out the Genius Lounge, a cross-organizational data science knowledge-sharing initiative.**
+Impact: Six-person cross-functional team formed to create a shared knowledge hub for data, data science, and data management topics. Contributed to topic selection, content organization, and launch activities; proposed and drove a logo design contest to build group identity. The initiative generated initial engagement but did not achieve its adoption goals. Questions and support requests dwindled over time due to insufficient adoption investment. Useful as an example of cross-functional collaboration and initiative formation, with an honest limitation: change management and sustained adoption were not sufficiently resourced to make the capability self-sustaining.
 Tags: Capability: Team Leadership & Development | Change Management & Adoption | Stakeholder Management & Influence | Role Level: Senior Manager | Org Context: Scaling | Outcome: Capability Building
 
 Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
 **Directed diverse global matrix teams (US and offshore) across data acquisition and quality surveillance; facilitated cross-functional decisions with physicians, statisticians, programmers, and PMs.**
-Tags: Capability: Team Leadership & Development | Stakeholder Management & Influence | Role Level: Senior Manager | Org Context: Scaling
+Tags: Capability: Clinical Trial Execution | Team Leadership & Development | Stakeholder Management & Influence | Role Level: Senior Manager | Org Context: Scaling
 
 Role: Clinical Data Scientist | PRA Health Sciences
 **Mentored newer team members on data analysis techniques and clinical trial processes.**
