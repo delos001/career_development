@@ -10,6 +10,7 @@ This repo supports job search and CV generation workflows. See `README.md` for f
 |---|---|---|
 | CV Generation | `skills/cv_generation.md` | Creating, tailoring, or evaluating fit for a CV or role |
 | Source Document Update | `skills/source_document_update.md` | Capturing experience, framing decisions, or gap resolutions to source documents after any working session |
+| Career Document Bootstrap | `skills/career_document_bootstrap.md` | Building the Experience Inventory from scratch using raw career source documents |
 
 ---
 
