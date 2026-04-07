@@ -26,7 +26,7 @@ career_development/
 │   ├── Archetype_3_IC_Process_Operations.md
 │   ├── Archetype_4_IC_Platform_Technology.md
 │   ├── cv_qc_checklist.md
-│   └── cv_bullet_construction_guide.md
+│   └── sources.md
 ├── knowledge/                             ← personal source documents — gitignored
 └── outputs/                               ← generated CVs — gitignored
 ```

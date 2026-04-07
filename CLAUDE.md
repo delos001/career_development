@@ -1,36 +1,6 @@
 # Career Development — Project Context
 
-## Purpose
-
-This repo supports job search and CV generation workflows. It contains personal source documents, archetype instruction sets, formatting specifications, content rules, and generated CV outputs.
-
----
-
-## Repository Structure
-
-```
-career_development/
-├── CLAUDE.md                              ← this file
-├── README.md                              ← repo orientation and document loading map
-├── skills/                                ← workflow instruction sets
-│   ├── cv_generation.md
-│   └── source_document_update.md
-├── context/                               ← reference documents read by skills
-│   ├── cv_format_spec.md
-│   ├── cv_content_rules_leadership.md
-│   ├── cv_content_rules_ic.md
-│   ├── Archetype_1_Transformation_Strategy.md
-│   ├── Archetype_2_Data_Analytics.md
-│   ├── Archetype_3_Process_Operations.md
-│   ├── Archetype_4_Platform_Technology.md
-│   ├── Archetype_1_IC_Transformation_Strategy.md
-│   ├── Archetype_2_IC_Data_Analytics.md
-│   ├── Archetype_3_IC_Process_Operations.md
-│   ├── Archetype_4_IC_Platform_Technology.md
-│   └── cv_qc_checklist.md
-├── knowledge/                             ← personal source documents — gitignored
-└── outputs/                               ← generated CVs — gitignored
-```
+This repo supports job search and CV generation workflows. See `README.md` for full repository structure and document loading map.
 
 ---
 
