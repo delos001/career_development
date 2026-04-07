@@ -31,6 +31,16 @@ At the close of each phase: list steps completed, confirm with the user whether 
 **Document Load Instructions**
 If any document fails to load completely during intake, do not proceed using partial content. Run `cat [filepath]` via Bash as a fallback. Report the specific file and error if the fallback also fails. Do not proceed until resolved.
 
+**Progressive Write Protocol — Context Management**
+This skill processes potentially large volumes of source documents and extracted entries. To prevent context overflow, extracted entries are written progressively to a staging file at `temp/inventory_staging.md` rather than held in active context throughout the session. Apply this protocol during Phase 4:
+
+- After completing extraction for each source document, append the new entries to `temp/inventory_staging.md` using the Edit tool (or Write tool if the file does not yet exist).
+- Once written, do not re-read the full staging file into active context unless a specific step requires it. Reference the file by path.
+- When a phase requires reviewing entries (Phase 4b, 4c, 4d, Phase 5), read the staging file at that point rather than relying on prior context.
+- Source documents are read one at a time and released after extraction. Do not hold multiple source documents in active context simultaneously.
+
+If context becomes constrained at any point, write current progress to the staging file, summarize where processing stopped, and surface the constraint to the user before stopping. Do not silently skip content.
+
 ---
 
 ## Reference Taxonomy
@@ -135,7 +145,7 @@ Present the proposed section list with a brief description of what belongs in ea
 *(Only after Phase 2 has been explicitly approved)*
 
 **Step 1 — Confirm source documents:**
-Ask the user to confirm which documents are being provided and their format (docx, pdf, plain text, LinkedIn export, etc.). If documents are in docx or pdf format and cannot be read directly, instruct the user to convert to plain text or markdown before proceeding. Confirm all documents are accessible before proceeding.
+Ask the user to confirm which documents are being provided and their format (docx, pdf, plain text, LinkedIn export, etc.). Attempt to read each document now to confirm it is accessible and readable. State the result for each document — accessible and readable, or failed. For any document that fails to read, instruct the user to convert it to plain text or markdown and confirm it is accessible before proceeding. Do not proceed until all documents are confirmed readable.
 
 **Step 2 — Establish deduplication approach:**
 State the deduplication strategy that will be applied during extraction:
@@ -170,8 +180,8 @@ Tags: Capability: X | Role Level: X | Org Context: X | Outcome: X
 - One discrete action per entry — do not combine multiple actions into one entry
 - Action statements describe what was done, not a polished CV bullet — these are source material, not output
 - Impact and Context are populated only if the source document states them — do not infer
-- Every entry must have all four tag dimensions. If Outcome is genuinely not determinable from the source, tag as Outcome: Unspecified — do not omit the dimension
-- Role Level tag reflects the level at which the work was performed, not the target level
+- Every entry must have all four tag dimensions. If Outcome cannot be determined from the source, make a best-effort assignment from the confirmed taxonomy and flag the entry for user review — do not omit the dimension and do not use values outside the confirmed taxonomy
+- Role Level tag reflects the level at which the work was performed, not the target level. For entries spanning a promotion within the same company, tag each entry at the level held when that work was done
 - Org Context is inferred from the source documents and career profile where not explicitly stated — flag any inferences made
 
 **Extraction process:**
@@ -182,16 +192,13 @@ Process one source document at a time. For each document:
 2. Identify all roles and the time periods covered.
 3. Extract entries role by role, most recent first.
 4. After completing each role block, check against already-extracted entries for duplicates. Resolve duplicates before moving to the next role.
-5. State the number of entries extracted from each document and the number of duplicates resolved before moving to the next document.
+5. Append the extracted entries for this document to `temp/inventory_staging.md` per the Progressive Write Protocol. State the number of entries extracted and the number of duplicates resolved. Release the source document from active context before loading the next one.
 
 After all documents are processed:
 
-6. Present a summary: total entries extracted, total roles represented, total duplicates resolved, and any entries flagged for enrichment (missing Impact or Context where enrichment is likely important based on role level and entry type).
-7. Identify enrichment priority entries — entries at Director level or above without Impact or Context that are likely to serve as anchor citations in a CV session. Do not begin enrichment here — flag them for the handoff step.
+6. Read `temp/inventory_staging.md` and present an extraction summary: total entries, total roles represented, total duplicates resolved. Identify enrichment priority entries — entries without Impact or Context at or above the target seniority level stated in the career profile from Phase 1 that are likely to serve as anchor citations in a future CV session. Flag best-effort Outcome tags for user review. Do not begin enrichment here. Present the full flagged list and obtain user review before proceeding. The user may request corrections or additions at this point.
 
-Obtain user review of the extraction summary before proceeding to assembly. The user may request corrections or additions at this point.
-
-**Phase 4 Closing:** Follow Standard Phase Closing. Next phase is Phase 5.
+**Phase 4 Closing:** Follow Standard Phase Closing. Next phase is Phase 4b.
 
 ---
 
@@ -202,13 +209,13 @@ Obtain user review of the extraction summary before proceeding to assembly. The 
 The purpose of this phase is to confirm that no roles or companies from the source documents were silently dropped during extraction.
 
 **Step 1 — Build the role coverage table:**
-From the source documents, compile a complete list of every role held at every company, in reverse chronological order. For each role, state:
+Read `temp/inventory_staging.md` to compile the list of roles and entry counts present in the extracted inventory. Then re-read each source document (one at a time) to confirm every role that appears in the source is represented in the staging file. For each role, state:
 - Company name and role title
 - Approximate time period
-- Number of entries extracted in Phase 4
-- Status: Represented | Missing | Partially Represented (entries exist but count appears low relative to source)
+- Number of entries in staging file for this role
+- Status: Represented | Missing | Partially Represented (entries exist but count appears low relative to what the source document covered for that role)
 
-Do not rely on memory or summary. Go back to the source documents to build this table.
+Do not rely on memory or summary. Read from both the staging file and the source documents to build this table.
 
 **Step 2 — Resolve gaps:**
 For any role marked Missing or Partially Represented, identify the specific source document and section where that role appears. Extract the missing entries now before proceeding. Do not defer to a later pass.
@@ -248,7 +255,7 @@ For each flagged role, return to the source documents and extract any entries th
 The purpose of this phase is to verify that extracted entries conform to the required conventions. This is an evidence-cited audit — general confirmations are not acceptable. Each check must cite specific entries.
 
 **Step 1 — Select audit sample:**
-Select a representative sample of entries for audit: at minimum, three entries per seniority level present in the inventory (IC, Manager, Senior Manager, Director, Senior Director, VP), drawn from different roles and different thematic sections. State the entries selected and why they represent a reasonable cross-section.
+Read `temp/inventory_staging.md`. Select a representative sample of entries for audit: at minimum, three entries per seniority level present in the inventory (IC, Manager, Senior Manager, Director, Senior Director, VP), drawn from different roles and different thematic sections. State the entries selected and why they represent a reasonable cross-section.
 
 **Step 2 — Run convention checks against each sampled entry:**
 
@@ -279,7 +286,7 @@ The user must review and explicitly approve the audit results before this phase 
 
 ## Phase 5 — Assembly and Write
 
-*(Only after Phase 4 has been explicitly approved)*
+*(Only after Phase 4d has been explicitly approved)*
 
 **Step 1 — Confirm output location:**
 The default output path is `knowledge/Experience_Inventory.md`. Confirm this with the user before writing.
@@ -308,7 +315,7 @@ Outcome: Capability Building | Quality Improvement | Risk Reduction | Efficiency
 3. **Professional Certifications and Training** — compact, inline where possible
 4. **Technical Experience** — tools, platforms, methodologies, standards, frameworks; sub-grouped by type relevant to the career profile
 5. **Domain and Industry Exposure** — industries, functional domains, geographies, and any domain-specific exposure relevant to the career profile (e.g., therapeutic areas for pharma, market segments for commercial roles)
-6. **All Tasks Performed** — entries organized into the thematic sections confirmed in Phase 2, reverse chronological by role within each section
+6. **All Tasks Performed** — read entries from `temp/inventory_staging.md` and organize into the thematic sections confirmed in Phase 2, reverse chronological by role within each section
 7. **Academic Coursework Detail** (optional) — include only if the user has graduate-level coursework relevant to their target roles
 
 **Step 3 — Pre-write preview and approval:**
