@@ -4,7 +4,7 @@
 
 **1. Purpose and Scope**
 
-This document is an instruction set for Phase 3 CV generation. Apply all rules in this document when the archetype identified in Phase 1 is Platform & Technology. Do not apply these rules for any other archetype. If a dual-archetype was identified in Phase 1, apply primary framing from this document and secondary framing selectively within individual achievements only where both dimensions are genuinely present in the underlying experience.
+This document is an instruction set for Phase 4a CV content generation. Apply all rules in this document when the archetype identified in Phase 2a is Platform & Technology. Do not apply these rules for any other archetype. If a dual-archetype was identified in Phase 2a, apply primary framing from this document and secondary framing selectively within individual achievements only where both dimensions are genuinely present in the underlying experience.
 
 **2. Archetype Match Criteria**
 

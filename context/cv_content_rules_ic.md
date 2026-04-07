@@ -73,6 +73,6 @@ Apply the CCAR framework. For IC bullets, Context and Challenge are compressed i
 
 ## Document Structure
 
-- Section order follows the active archetype instruction set where applicable — IC roles may have reduced section complexity relative to leadership CVs
+- Section order follows the active archetype instruction set — all four IC archetype files define the required section order explicitly
 - Target length: 2-3 pages for most IC roles — do not pad to leadership CV length
 - No unnecessary carriage returns — spacing is handled by formatting spec

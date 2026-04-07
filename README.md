@@ -78,6 +78,21 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 
 ## Notes
 
-- `knowledge/` and `outputs/` are gitignored — personal content never committed
+- `knowledge/` and `outputs/` are gitignored — personal content never committed to this repo
 - `skills/` and `context/` are committed — framework only, no personal data
 - Job descriptions are stored separately in OneDrive, not in this repo
+
+---
+
+## Knowledge Storage
+
+`knowledge/` is a separate private git repository (`career_development_knowledge`) cloned into this directory. It is gitignored by this repo and version controlled independently.
+
+**Two-repo workflow:**
+- Framework changes (skills, context, README) → commit and push in `career_development`
+- Knowledge document changes (Experience_Inventory, Accomplishments, Positioning, CV references) → commit and push from within `knowledge/` to `career_development_knowledge`
+
+**Setup on a new machine:**
+1. Clone this repo: `git clone https://github.com/delos001/career_development.git`
+2. Clone the knowledge repo into the knowledge folder: `git clone https://github.com/delos001/career_development_knowledge.git knowledge/`
+3. Create `outputs/` directory if needed (gitignored, not committed)

@@ -259,13 +259,13 @@ Perform QC per Global Rules:
 Load `context/cv_format_spec.md` now. Confirm it loaded completely. All formatting decisions are governed by this file. It is the authoritative source — do not infer or recreate formatting from any other reference.
 
 **Step 2 — Generate document:**
-Use the docx skill (`/mnt/skills/public/docx/SKILL.md`) to generate the Word document programmatically. Apply all formatting rules from `context/cv_format_spec.md`.
+Generate the Word document programmatically using Python with python-docx. Use the Python executable at `C:/Users/delos/miniconda3/envs/agents/python.exe`. Write a Python script and execute it via Bash. All formatting decisions must reference `context/cv_format_spec.md` — do not infer or recreate formatting from any other source. Use Windows-style paths (e.g., `C:/Users/delos/...`) in all Python file operations — Unix-style paths will fail.
 
 Structure decisions were made in Phase 4 and govern the output. Do not default to any reference document's structure. Do not omit or collapse roles because they do not appear in a reference. A role that adds credibility to Phase 2a critical requirements belongs in the main experience section.
 
 **Step 3 — Save output:**
 Save the completed CV to `outputs/` using this naming convention:
-`[Name]_CV_[CompanyName]_[AbbreviatedRole]_[YYYYMM].docx`
+`Jason_Delosh_CV_[CompanyName]_[AbbreviatedRole]_[YYYYMM].docx`
 
 **Phase 5a Closing:** State "File is ready for your review." Then follow Standard Phase Closing. Next phase is Phase 5b.
 
@@ -273,7 +273,7 @@ Save the completed CV to `outputs/` using this naming convention:
 
 ## Phase 5b — Quality Control for Phase 5a
 
-**Document Generation:** Confirm the docx skill was used to generate the document. Confirm all formatting decisions reference `context/cv_format_spec.md` and were not inferred from any other source. If either cannot be confirmed, flag as a non-compliant step and invoke QC Failure Recovery.
+**Document Generation:** Confirm python-docx was used to generate the document via a Python script executed through Bash. Confirm all formatting decisions reference `context/cv_format_spec.md` and were not inferred from any other source. If either cannot be confirmed, flag as a non-compliant step and invoke QC Failure Recovery.
 
 **Filename Convention:** Confirm the output file was saved with the correct filename format. State the actual filename and confirm it matches the convention.
 

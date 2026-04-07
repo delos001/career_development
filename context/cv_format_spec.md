@@ -92,23 +92,34 @@ Single-column bulleted list only. Two-column tables are never used anywhere in t
 | Hanging indent | 144 DXA |
 | Font size | 22 half-pts (11pt) |
 
-**docx-js implementation:**
-```javascript
-numbering: {
-  config: [{
-    reference: "cv-bullets",
-    levels: [{
-      level: 0,
-      format: LevelFormat.BULLET,
-      text: "\u00B7",
-      alignment: AlignmentType.LEFT,
-      style: {
-        run: { font: "Cambria", size: 22 },
-        paragraph: { indent: { left: 144, hanging: 144 } }
-      }
-    }]
-  }]
-}
+**python-docx implementation:**
+```python
+from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
+from docx.shared import Pt, Inches
+import docx
+
+# Add bullet paragraph
+def add_bullet(doc, text):
+    p = doc.add_paragraph()
+    p.style = doc.styles['Normal']
+
+    # Set indentation: left 144 DXA, hanging 144 DXA (144 DXA = 0.1 inch)
+    pPr = p._p.get_or_add_pPr()
+    ind = OxmlElement('w:ind')
+    ind.set(qn('w:left'), '144')
+    ind.set(qn('w:hanging'), '144')
+    pPr.append(ind)
+
+    # Add bullet character run (middle dot U+00B7, Cambria font, 11pt)
+    bullet_run = p.add_run('\u00B7 ')
+    bullet_run.font.name = 'Cambria'
+    bullet_run.font.size = Pt(11)
+
+    # Add bullet text run (Calibri, 11pt)
+    text_run = p.add_run(text)
+    text_run.font.name = 'Calibri'
+    text_run.font.size = Pt(11)
 ```
 
 ---
