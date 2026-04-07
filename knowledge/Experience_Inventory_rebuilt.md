@@ -471,6 +471,14 @@ Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutica
 Impact: Audit revealed that the data provider's end-to-end workflow, from sample receipt to dataset exchange, was sufficiently opaque that their own personnel could not fully walk through it. Identified that BioMarin's own processes were compounding an already high-risk vendor data flow: specifically, requests for the provider to perform data transformation, mapping, and programmatic manipulation outside their core competency (sample testing and data delivery). Reoriented the engagement model, restricting provider requests to core competency activities and eliminating requests for data manipulation. Data provider confirmed this approach materially reduced their resource burden and configuration risk. Contributed directly to a reduction in data conformance issues and served as the foundational diagnosis driving subsequent process changes, including CDISC LAB model adoption and process improvements later extended to additional data providers. All changes directed at reducing rework and regulatory submission risk under growing study volume and increasingly endpoint-mapped data requirements.
 Tags: Capability: Quality & Compliance | Vendor Management & Oversight | Role Level: Senior Manager | Org Context: Scaling | Outcome: Quality Improvement | Risk Reduction
 
+Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
+**Held eTMF accountability for pivotal studies across two parallel systems: Data Management Sciences SharePoint (primary eTMF) and Veeva Vault (mirror); accountable for completeness and GCP compliance of all filed regulatory documents; directed team adherence to ICH/GCP trial master file structure filing procedures.**
+Tags: Capability: Quality & Compliance | Governance & Risk Management | Role Level: Senior Manager | Org Context: Scaling | Outcome: Risk Reduction
+
+Role: Senior Manager, Clinical Data Management Sciences | BioMarin Pharmaceutical
+**Conducted scheduled TMF reconciliation and audit reviews at defined timepoints; identified gaps, missing documentation, and non-compliant filings; held accountable for driving resolution to closure.**
+Tags: Capability: Quality & Compliance | Governance & Risk Management | Role Level: Senior Manager | Org Context: Scaling | Outcome: Quality Improvement | Risk Reduction
+
 Role: Regional/Global Clinical Trial Manager | Amgen (via DOCS Global)
 **Held end-to-end accountability for global and regional clinical trial execution: project planning, timelines, budget, stakeholder management, and risk management.**
 Tags: Capability: Clinical Trial Execution | Governance & Risk Management | Role Level: Manager | Org Context: Mature/Enterprise
@@ -802,6 +810,7 @@ Tags: Capability: Process Design & Optimization | Governance & Risk Management |
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Developed strategic proposals to realign functional structures, role definitions, skills, and data workflow strategies to support accelerated regulatory submission goals.**
+Impact: A version of the proposed model was adopted. The work surfaced interdependencies between emerging functional pillars that had not previously been visible, and better positioned the Data Management Sciences group to move toward specialist-level execution supported by new tools and technologies.
 Tags: Capability: Process Design & Optimization | Strategic Planning & Roadmapping | Organizational Design | Role Level: Director | Org Context: Scaling | Outcome: Capability Building | Scalability/Growth Enablement
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
@@ -850,8 +859,8 @@ Impact: Benchmarked 3 companies of comparable size and/or rare disease focus; ma
 Tags: Capability: Organizational Design | Strategic Planning & Roadmapping | Stakeholder Management & Influence | Role Level: Director | Org Context: Scaling | Outcome: Capability Building
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
-**Led Data Management Sciences internship programs for 2023 and 2024: selected candidates, defined scope, and provided technical mentorship through project completion.**
-Tags: Capability: Team Leadership & Development | Role Level: Director | Org Context: Scaling | Outcome: Capability Building
+**Designed and ran the Data Management Sciences internship program for 2023 and 2024: authored job descriptions, recruited, reviewed hundreds of CVs per cycle, interviewed, and hired; identified and defined high-impact projects aligned to DMS priorities; set scope, timelines, and communication structure; trained interns; held regular progress meetings to evaluate against defined objectives and re-align direction; provided technical and leadership support through project completion; directed interns to develop and deliver a final presentation covering goals, process, outcomes, and limitations; approved content and supported delivery.**
+Tags: Capability: Team Leadership & Development | Organizational Design | Role Level: Director | Org Context: Scaling | Outcome: Capability Building
 
 Role: Associate Director, Data Quality Sciences | BioMarin Pharmaceutical
 **Established collaborative Git environment for team members; implemented version control best practices across the data sciences group.**

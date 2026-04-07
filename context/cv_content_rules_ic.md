@@ -24,6 +24,26 @@
 
 ---
 
+## Bullet Construction Framework
+
+Apply the CCAR framework. For IC bullets, Context and Challenge are compressed into a single clause.
+
+| Component | Definition |
+|---|---|
+| **Context/Challenge** | The situation, problem, or gap that drove the work. One clause is sufficient at IC level. |
+| **Action** | What specifically was done. Methods, tools, and approaches are appropriate and expected at IC level. |
+| **Result** | What improved, what risk was reduced, what was delivered. Concrete impact, not a description of the artifact produced. |
+
+**Impact statement types — use the strongest available. Never use vague category labels (improved efficiency, enhanced quality, reduced risk — these are not impact statements).**
+
+- Type 1 Quantified: hard numbers where genuinely known.
+- Type 2 Bounded Qualitative: specific, verifiable claims. "First," "only," "eliminated," "established."
+- Type 3 Contextual Narrative: before-state plus after-state. Most underused. Particularly useful for process and tooling work at IC level where hard metrics are unavailable but the change is unambiguous.
+
+**When quantitative data is not available**, in order of preference: (1) bounded qualitative claim, (2) contextual narrative with before and after state, (3) proxy metrics such as adoption rate, timeline compression, or rework elimination, (4) scope as signal when outcome is genuinely unmeasurable.
+
+---
+
 ## Bullet Formatting
 
 - Target length: 2 lines per bullet

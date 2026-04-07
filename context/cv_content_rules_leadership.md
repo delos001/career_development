@@ -25,6 +25,52 @@
 
 ---
 
+## Bullet Construction Framework
+
+**What makes a bullet leadership-level vs. IC-level — apply this calibration throughout:**
+
+| Dimension | IC | Leadership (AD+) |
+|---|---|---|
+| **Focus** | What I did; tasks and project outputs | Why it mattered strategically; enterprise or portfolio outcomes |
+| **Scope** | Departmental or project-level | Organizational, cross-functional, portfolio, or multi-year |
+| **Verb choice** | Developed, managed, supported, implemented | Championed, orchestrated, spearheaded, aligned, redesigned |
+| **Outcome type** | Metrics tied to specific deliverable | Capability shift, risk reduction, structural change, strategic enablement |
+| **Time horizon** | Immediate or project-level | Multi-year, program-level, or career-spanning |
+| **Scale signal** | Team or project size | Portfolio breadth, budget, number of studies/vendors/functions affected |
+
+A useful test: IC bullets explain what. Leadership bullets explain why it was strategically significant and anchor to organizational objectives or capabilities gained.
+
+Apply the CCAR framework to every bullet. All four components are required for leadership-level bullets.
+
+| Component | Definition | Common Failure Mode |
+|---|---|---|
+| **Context** | Organizational situation, what was inherited, scale of scope | Omitted entirely — reader cannot calibrate significance |
+| **Challenge** | The specific problem, gap, or risk that required action | Understated — makes outcomes look routine |
+| **Action** | The leadership approach and key decisions made | Over-detailed on tasks rather than decisions |
+| **Result** | What changed — structurally, operationally, or strategically | Generic category label instead of specific change |
+
+**Scale indicators belong in Context or Challenge — not in the Result.** Scale establishes seniority before the outcome is read. Priority signals:
+- Portfolio or program scope: number of studies, programs, therapeutic areas
+- Vendor or partner scope: number of external partners managed or governed
+- Team scope: direct reports, matrix team members, global reach
+- Budget scope: where known or approximately known
+- Regulatory or compliance scope: audits, frameworks governed, submission exposure
+- Organizational reach: number of functions affected, global vs. regional scope
+
+Scale does not require hard numbers. "Spanning 5 studies and 7+ vendors simultaneously" is specific enough to establish complexity.
+
+**Impact statement types — use the strongest available. Never use vague category labels (improved efficiency, enhanced quality, reduced risk — these are not impact statements).**
+
+- Type 1 Quantified: hard numbers where genuinely known. "Reduced laboratory data acquisition rework from ~50% to 0% across all governed studies."
+- Type 2 Bounded Qualitative: specific, verifiable claims. "First," "only," "eliminated," "established" are observable and defensible. "Built the first governed data exchange process in the function. No equivalent existed prior."
+- Type 3 Contextual Narrative: before-state plus after-state. Most underused and most powerful for governance and process work, where hard metrics rarely exist but the structural change is unambiguous. "Inherited a function with no governed quality planning infrastructure and submission rework as the standard correction mechanism. Redesigned from ground up; established CDASH-aligned check library, accountability frameworks, and technology alignment."
+
+**When quantitative data is not available**, in order of preference: (1) bounded qualitative claim, (2) contextual narrative with before and after state, (3) proxy metrics such as adoption rate, timeline compression, audit outcomes, or rework elimination, (4) scope as signal when outcome is genuinely unmeasurable.
+
+**Governance, process, and capability-building work is a legitimate leadership accomplishment — increasingly recognized as strategic risk management and organizational capability building. These achievements are often more defensible than outcome metrics because the structure itself is observable.** Defensibility comes from stating what structure existed before, what was established, how broadly it applied, and what risk or inefficiency it addressed. Avoid action labels with no context or outcome: "Led redesign of data quality processes" states nothing. Instead: "Inherited inconsistent, study-by-study quality planning with no cross-study accountability structure. Redesigned the initiation process, created a CDASH-aligned quality check library, and established accountability frameworks, materially reducing mid-study volatility and submission rework."
+
+---
+
 ## Bullet Formatting
 
 - Target length: 2 lines per bullet
