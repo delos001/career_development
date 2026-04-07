@@ -72,6 +72,10 @@ Before presenting any proposed update for approval, verify each against all of t
 - Not role-specific: the information generalizes to future roles and sessions
 - Convention-compliant: the proposed content matches the format and voice of existing entries in the target document. For `Experience_Inventory.md`, all required tag fields must be present and tag values must match the taxonomy header block in the document.
 - Non-contradictory: does not conflict with or duplicate existing source document content
+- Complete (Experience_Inventory.md entries only): Before writing, verify all required elements are present:
+  - Action statement: present, atomic (one discrete action), not a polished CV bullet
+  - Tags: all four dimensions present — Capability, Role Level, Org Context, and Outcome where an outcome is evident
+  - For Director-level entries and above: determine whether this entry is likely to serve as an anchor citation for a critical requirement match in a CV session. If yes, and if both Context and Impact are absent, query the user for this information before writing. Do not write a Director+ anchor entry without at least one of Context or Impact annotated. Breadth and delivery evidence entries at this level do not require annotation — use judgment based on whether the entry describes a discrete, citable accomplishment or a general responsibility.
 
 **Step 3 — Present for approval:**
 Present all verified proposed updates. For each item show the target document, insertion location, and the exact content to be written. State the total number of proposed updates and request explicit approval before writing. If the user wants to review individually rather than approve all at once, present one at a time and wait for approval before proceeding to the next.
@@ -83,3 +87,35 @@ For each approved update, write the content to the target document at the specif
 After all writes are complete, display a summary of every change made: target document, insertion location, and the exact content written. This allows the user to review what was added before closing the session.
 
 Before closing, ask: "Is there anything else from this session — gap resolutions, framing decisions, or confirmed context — that should be captured before we close?"
+
+---
+
+## Annotation Enrichment Phase
+
+A standalone process for retrospectively adding Context and Impact annotations to existing inventory entries. Invoke independently when the goal is to enrich existing entries rather than add new ones. Trigger phrases: "let's do annotation work," "enrich the inventory," "annotate the inventory."
+
+**When to annotate:** Director-level and above entries that are likely anchor citations for critical requirement matches in CV sessions. Not every entry requires annotation. Breadth and delivery evidence entries do not. The target is 2-3 anchor entries per role block.
+
+**Step 1 — Load documents:**
+Load `knowledge/Experience_Inventory.md` and `context/cv_content_rules_leadership.md`. Confirm both loaded completely.
+
+**Step 2 — Identify annotation targets:**
+For each Director-level or above role block, identify the 2-3 entries most likely to serve as anchor citations for a critical requirement match. Present the identified entries to the user and confirm the target list before proceeding. Do not begin annotation work without explicit confirmation of which entries to work on.
+
+**Step 3 — Work through entries one at a time:**
+For each confirmed target entry, present the current entry text and ask the user to describe what happened, what the outcome was, and what the before-state looked like if relevant. Extract structured facts from the narrative — specifically what was delivered vs. designed vs. planned-but-not-completed. Do not conflate these: an initiative designed but not implemented is not the same as one fully delivered.
+
+**Step 4 — Draft annotation:**
+Draft a Context annotation, an Impact annotation, or both, based on what the user provided. Apply the impact statement type hierarchy from `context/cv_content_rules_leadership.md`: quantified first, then bounded qualitative, then contextual narrative. Never use vague category labels.
+
+**Step 5 — Honesty check:**
+Before presenting for approval, verify the draft against the following: Is the scope accurate per what the user described? Does the Impact claim reflect what was actually delivered, not what was intended? Is the language defensible if questioned in an interview? Flag any overstated claims explicitly before presenting.
+
+**Step 6 — Present and confirm:**
+Present the draft annotation to the user. Wait for explicit approval before writing. If the user requests changes, revise and re-present. Do not write until approved.
+
+**Step 7 — Write:**
+Write the approved annotation to the entry in `knowledge/Experience_Inventory.md` using the Edit tool. Write exactly what was approved. Move to the next entry only after the current one is written and confirmed.
+
+**Step 8 — Close:**
+After all target entries are annotated, summarize what was written. Ask whether any additional entries should be annotated before closing.
