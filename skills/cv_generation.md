@@ -142,7 +142,6 @@ Perform QC per Global Rules:
 1. Load the following source documents now. Confirm each loaded completely before proceeding:
    - `knowledge/Experience_Inventory.md`
    - `knowledge/Accomplishments.md`
-   - `knowledge/CV_Verbose.md`
    - `knowledge/Positioning.md`
 
 2. Using the loaded source documents, map each critical requirement identified in Phase 2a to the most relevant experience, citing the source document and specific achievement. Every claim must be traceable to a source document.
