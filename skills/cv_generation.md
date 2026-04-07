@@ -190,6 +190,8 @@ Perform QC per Global Rules:
 
 **Fit Threshold Verification:** Confirm Phase 3a Step 6 applied the threshold correctly. State: the number of critical requirements, the number with strong source-citable matches, and verify the 65% calculation. Confirm the domain exclusion check was performed. If either condition failed and the session continued, confirm explicit user approval to proceed as a speculative application was obtained and documented.
 
+**Gap Analysis Persistence:** Before closing this phase, write a gap analysis file to `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md` containing: (1) the list of critical requirements from Phase 2a and the source-citable match for each, (2) the full gap summary table including severity and resolution status for every gap, (3) the fit assessment summary from Phase 3a Step 6 including the threshold calculation and overall recommendation. This file is used as input by the interview prep skill. If the outputs/ directory does not exist, create it. Confirm the file was written before closing.
+
 Perform QC per Global Rules:
 - **Standard QC Document Verification**
 
