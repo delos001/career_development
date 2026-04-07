@@ -24,10 +24,9 @@ Information that is role-specific and unlikely to generalize should not be captu
 
 ## Target Source Documents
 
-- `knowledge/Positioning.md`
-- `knowledge/Accomplishments.md`
-- `knowledge/CV_Verbose.md`
 - `knowledge/Experience_Inventory.md`
+- `knowledge/Accomplishments.md`
+- `knowledge/Positioning.md`
 
 Load only the specific documents relevant to the updates being recommended.
 
@@ -35,14 +34,25 @@ Load only the specific documents relevant to the updates being recommended.
 
 ## Document-Specific Format Requirements
 
-`knowledge/Experience_Inventory.md` — Every entry must include all applicable structured tags. Do not write inventory entries as CV bullets or impact statements. The entry describes what was done; the tags enable retrieval.
-- Capability: [the capability or capabilities demonstrated — match existing tag values in the document]
-- Context: [Greenfield | Scaling | Turnaround | Mature/Enterprise]
-- Role Level: [IC | Manager | Senior Manager | Director | Senior Director | VP]
-- Outcome: [Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement]
-- Achievement: [factual, descriptive statement of what was done — not a polished CV bullet]
+`knowledge/Experience_Inventory.md` — Entries are atomic, role-specific achievement statements. Do not write entries as polished CV bullets. The entry describes what was done; Context and Impact annotations and tags enable retrieval and bullet construction.
 
-`knowledge/CV_Verbose.md` — Entries are full narrative descriptions in CV language, written at sufficient detail to serve as source material for future tailoring. Follow the structure and voice of existing entries in the document.
+**Entry format:**
+```
+Role: Title | Company
+**[Action statement — what specifically was done, one discrete action per entry]**
+Impact: [outcome, metric, or problem solved — OPTIONAL]
+Context: [scope, org stage, or framing note — OPTIONAL]
+Tags: Capability: X | Role Level: X | Org Context: X | Outcome: X
+```
+
+**Allowed tag values — reference the Tag Taxonomy header block at the top of `knowledge/Experience_Inventory.md` for the authoritative list. Do not infer tag values from archetype files. Current values:**
+
+- Capability: Clinical Trial Execution | Risk-Based Monitoring & Quality | Data & Analytics | Quality & Compliance | Process Design & Optimization | Technology Strategy & Implementation | Vendor Management & Oversight | Organizational Design | Governance & Risk Management | Strategic Planning & Roadmapping | Change Management & Adoption | Stakeholder Management & Influence | Team Leadership & Development | Financial Management & Budgeting
+- Role Level: IC | Manager | Senior Manager | Director | Senior Director | VP
+- Org Context: Greenfield | Scaling | Turnaround | Mature/Enterprise
+- Outcome: Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings
+
+Multiple Capability and Outcome values are permitted per entry using pipe separators. Org Context and Role Level take one value per entry.
 
 `knowledge/Accomplishments.md` — Follow the structure and conventions of existing entries. Include metrics where available from this session.
 
@@ -60,7 +70,7 @@ Before presenting any proposed update for approval, verify each against all of t
 
 - Traceable: directly sourced from an explicit user statement or source document from this session
 - Not role-specific: the information generalizes to future roles and sessions
-- Convention-compliant: the proposed content matches the format and voice of existing entries in the target document. For `Experience_Inventory.md`, all required tag fields must be present. For `CV_Verbose.md`, voice and structure must match existing entries.
+- Convention-compliant: the proposed content matches the format and voice of existing entries in the target document. For `Experience_Inventory.md`, all required tag fields must be present and tag values must match the taxonomy header block in the document.
 - Non-contradictory: does not conflict with or duplicate existing source document content
 
 **Step 3 — Present for approval:**
