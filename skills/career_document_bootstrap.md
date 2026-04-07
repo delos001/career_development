@@ -340,6 +340,8 @@ State: total entries written, sections included, and the list of enrichment prio
 
 The inventory is now populated but unenriched. Entries flagged as enrichment priorities in Phase 4 are the recommended starting point.
 
-Enrichment is handled by the **Annotation Enrichment Phase** in `skills/source_document_update.md`. Invoke it independently when ready. Trigger phrase: "let's do annotation work" or "enrich the inventory."
+Ask the user: "Would you like to begin annotation enrichment now, or stop here and continue in a future session?"
 
-The enrichment phase works through priority entries one at a time, asking targeted questions to extract Impact and Context information that makes entries usable as anchor citations in CV sessions. It is iterative and can be done across multiple sessions — the inventory does not need to be fully enriched before the CV generation skill can be used.
+**If now:** Load `skills/source_document_update.md` and execute the Annotation Enrichment Phase. Use the enrichment priority entries flagged in Phase 4 as the starting target list — present them to the user as the recommended starting point rather than re-identifying targets from scratch.
+
+**If later:** Close the session. Remind the user that enrichment can be started at any time using the trigger phrase "let's do annotation work" or "enrich the inventory." Note that the CV generation skill can be used before enrichment is complete — unenriched entries are still retrievable, they just have less context for anchor citations.
