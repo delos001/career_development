@@ -10,7 +10,7 @@ This repo supports job search and CV generation workflows. See `README.md` for f
 |---|---|---|
 | CV Generation | `skills/cv_generation.md` | Creating, tailoring, or evaluating fit for a CV or role |
 | Source Document Update | `skills/source_document_update.md` | Capturing experience, framing decisions, or gap resolutions to source documents after any working session |
-| Career Document Bootstrap | `skills/career_document_bootstrap.md` | Building the Experience Inventory from scratch using raw career source documents |
+| Experience Inventory Bootstrap | `skills/experience_inventory_bootstrap.md` | Building the Experience Inventory from scratch using raw career source documents |
 | Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype when no existing archetype serves the target role |
 | Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `knowledge/Career_Narratives.md` with new stories or decisions |
 | Positioning Builder | `skills/positioning_builder.md` | Building or updating `knowledge/Positioning.md` |
