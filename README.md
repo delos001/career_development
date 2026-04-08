@@ -77,6 +77,8 @@ career_development/
 
 Documents are loaded just-in-time. This map defines what is loaded, when, and why.
 
+### cv_generation
+
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | 1a | Session start | None — job description, company, and title collected only |
@@ -88,6 +90,25 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 4b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
 | 5a start | Document generation begins | `rules/cv/format_spec.md` |
 | Phase 6 | Source update review | Specific knowledge docs loaded only as needed |
+
+### general_cv_builder
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| 1a | Session start | None — targeting context collected only |
+| 2a step 1 | Archetype selection begins | `rules/registry_archetype.md`; primary archetype file (leadership or IC); secondary if dual-archetype identified |
+| 2a step 3 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted for use in Phase 4a |
+| 3a step 1 | Source review begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 4a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
+| 5a step 1 | Document generation begins | `rules/cv/format_spec.md` |
+
+### career_narratives_builder
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| 1a step 2 | Format selection | Selected story format file from `rules/career_narratives/`; selected decision format file from `rules/career_narratives/` |
+| 1a step 3 | Adding or updating entries | `knowledge/Career_Narratives.md` |
+| 1a step 4 | Optional reference load | `knowledge/Experience_Inventory.md` (if user confirms) |
 
 **Excluded from current workflow:**
 - `rules/sources.md` — research and practitioner citations supporting all skill and rules design decisions. Not loaded by any skill. Retained for traceability.
