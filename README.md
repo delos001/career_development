@@ -14,8 +14,12 @@ career_development/
 │   ├── cv_generation.md
 │   ├── source_document_update.md
 │   ├── career_document_bootstrap.md
-│   └── archetype_creation.md
+│   ├── archetype_creation.md
+│   ├── career_narratives_builder.md
+│   ├── positioning_builder.md
+│   └── general_cv_builder.md
 ├── rules/                                 ← rule sets read by skills during execution
+│   ├── sources.md                        ← shared: research citations for all skills
 │   ├── registry_archetype.md             ← shared: archetype catalog and selection criteria
 │   ├── registry_org_type.md              ← shared: organization type catalog and selection criteria
 │   ├── Archetype_1_Transformation_Strategy.md
@@ -26,12 +30,17 @@ career_development/
 │   ├── Archetype_3_IC_Process_Operations.md
 │   ├── Archetype_4_Platform_Technology.md
 │   ├── Archetype_4_IC_Platform_Technology.md
-│   └── cv/                               ← CV skill specific rule sets
-│       ├── content_rules_leadership.md
-│       ├── content_rules_ic.md
-│       ├── format_spec.md
-│       ├── qc_checklist.md
-│       └── sources.md
+│   ├── cv/                               ← CV skill specific rule sets
+│   │   ├── content_rules_leadership.md
+│   │   ├── content_rules_ic.md
+│   │   ├── format_spec.md
+│   │   └── qc_checklist.md
+│   └── career_narratives/               ← career narratives skill specific rule sets
+│       ├── story_star.md
+│       ├── story_atola.md
+│       ├── story_personal.md
+│       ├── decision_personal.md
+│       └── decision_adr.md
 ├── knowledge/                             ← personal source documents — gitignored
 │   └── SETUP.md                          ← committed: setup instructions for new users
 └── outputs/                               ← generated CVs — gitignored
@@ -58,6 +67,9 @@ career_development/
 | Source Document Update | `skills/source_document_update.md` | Capturing experience, framing decisions, or gap resolutions to source documents after any working session |
 | Career Document Bootstrap | `skills/career_document_bootstrap.md` | Building the Experience Inventory from scratch using raw career source documents |
 | Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype when no existing archetype serves the target role |
+| Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `knowledge/Career_Narratives.md` with new stories or decisions |
+| Positioning Builder | `skills/positioning_builder.md` | Building or updating `knowledge/Positioning.md` |
+| General CV Builder | `skills/general_cv_builder.md` | Creating a generalized CV (not role-tailored) saved to `outputs/` |
 
 ---
 
@@ -78,8 +90,8 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase 6 | Source update review | Specific knowledge docs loaded only as needed |
 
 **Excluded from current workflow:**
-- `rules/cv/sources.md` — research and practitioner citations supporting workflow design decisions. Not loaded by any skill. Retained for traceability.
-- `cv_bullet_construction_guide.md` — retired. Content incorporated into content rules files. Sources moved to `rules/cv/sources.md`.
+- `rules/sources.md` — research and practitioner citations supporting all skill and rules design decisions. Not loaded by any skill. Retained for traceability.
+- `cv_bullet_construction_guide.md` — retired. Content incorporated into content rules files. Sources moved to `rules/sources.md`.
 
 ---
 
