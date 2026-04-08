@@ -25,7 +25,7 @@ Information that is role-specific and unlikely to generalize should not be captu
 ## Target Source Documents
 
 - `knowledge/Experience_Inventory.md`
-- `knowledge/Accomplishments.md`
+- `knowledge/Career_Narratives.md`
 - `knowledge/Positioning.md`
 
 Load only the specific documents relevant to the updates being recommended.
@@ -54,7 +54,7 @@ Tags: Capability: X | Role Level: X | Org Context: X | Outcome: X
 
 Multiple Capability and Outcome values are permitted per entry using pipe separators. Org Context and Role Level take one value per entry.
 
-`knowledge/Accomplishments.md` — Follow the structure and conventions of existing entries. Include metrics where available from this session.
+`knowledge/Career_Narratives.md` — Follow the structure and conventions of existing entries. Stories follow STAR format; decisions follow the decision entry format (Decision, Context, Options, Criteria, Reasoning, Pushback, Outcome, What I'd Own Differently). Include metrics where available from this session.
 
 `knowledge/Positioning.md` — Entries are strategic positioning statements, not achievement bullets. Follow the framing conventions of existing entries.
 

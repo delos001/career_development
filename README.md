@@ -68,18 +68,16 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | 1a | Session start | None — job description, company, and title collected only |
-| 2a step 2 | If role level is confirmed as Associate Director or above | `knowledge/CV_General_Leadership.md` |
-| 2a step 6 | Archetype confirmed (AD+) | `rules/registry_archetype.md`; primary archetype leadership file from `rules/`; secondary if dual-archetype identified |
-| 2a step 6 | Archetype confirmed (IC) | `rules/registry_archetype.md`; primary archetype IC file from `rules/`; secondary if dual-archetype identified |
-| 2a step 7 | Format reference selected | `rules/registry_org_type.md` |
-| 3a step 1 | Fit evaluation begins | `knowledge/Experience_Inventory.md`, `knowledge/Accomplishments.md`, `knowledge/Positioning.md` |
-| 4a step 1 | Content generation begins | CV template file from `rules/registry_org_type.md` matching format confirmed in Phase 2a; `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
+| 2a step 5 | Archetype confirmed (AD+) | `rules/registry_archetype.md`; primary archetype leadership file from `rules/`; secondary if dual-archetype identified |
+| 2a step 5 | Archetype confirmed (IC) | `rules/registry_archetype.md`; primary archetype IC file from `rules/`; secondary if dual-archetype identified |
+| 2a step 6 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted for use in Phase 4a |
+| 3a step 1 | Fit evaluation begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 4a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC); org-type framing emphasis applied from registry entry confirmed in Phase 2a |
 | 4b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
 | 5a start | Document generation begins | `rules/cv/format_spec.md` |
 | Phase 6 | Source update review | Specific knowledge docs loaded only as needed |
 
 **Excluded from current workflow:**
-- `Executive_Summary.md` — excluded pending source document consolidation review
 - `rules/cv/sources.md` — research and practitioner citations supporting workflow design decisions. Not loaded by any skill. Retained for traceability.
 - `cv_bullet_construction_guide.md` — retired. Content incorporated into content rules files. Sources moved to `rules/cv/sources.md`.
 

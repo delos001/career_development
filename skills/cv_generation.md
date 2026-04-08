@@ -55,7 +55,7 @@ If any documents were loaded in the previous phase, verify Document Load Instruc
 
 ---
 
-## Phase 2a — Alignment Analysis
+## Phase 2a — Role Classification and Context
 
 *(Only after Phase 1a has been explicitly approved)*
 *(State each step before completing the step)*
@@ -64,13 +64,11 @@ If any documents were loaded in the previous phase, verify Document Load Instruc
 
 2. Review the job description and propose the role level (IC, AD, Dir, Sr. Dir, VP, etc.). If not explicitly stated in the title, infer it from required experience, scope of responsibilities, and reporting structure. State the inferred level with rationale and obtain explicit agreement before moving forward. The agreed role level governs seniority of voice, scope framing, achievement selection, and content rules throughout all subsequent phases.
 
-3. If role level is confirmed as Associate Director or above, load `knowledge/CV_General_Leadership.md` now. Confirm it loaded completely before proceeding.
+3. Research the company, industry, and role using web search to develop an expert-level understanding of what this position actually requires — including company stage, culture, competitive landscape, organizational context, and what success looks like in this type of role at this type of company.
 
-4. Research the company, industry, and role using web search to develop an expert-level understanding of what this position actually requires — including company stage, culture, competitive landscape, organizational context, and what success looks like in this type of role at this type of company.
+4. Identify the 4-5 most critical requirements or themes in the job description.
 
-5. Identify the 4-5 most critical requirements or themes in the job description.
-
-6. Read `rules/registry_archetype.md`. Using the match criteria summaries in the registry, identify the role archetype and state the framing angle. If the role is borderline between two archetypes, note the ambiguity explicitly before proceeding.
+5. Read `rules/registry_archetype.md`. Using the match criteria summaries in the registry, identify the role archetype and state the framing angle. If the role is borderline between two archetypes, note the ambiguity explicitly before proceeding.
 
    If none of the archetypes in the registry satisfy the match criteria for this role, do not proceed with CV generation. State specifically which match criteria failed for each archetype. Inform the user that a new archetype may be needed and that `skills/archetype_creation.md` must be triggered and completed before CV generation can continue. Stop here and do not advance to any subsequent step or phase.
 
@@ -87,7 +85,7 @@ If any documents were loaded in the previous phase, verify Document Load Instruc
 
    Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
 
-7. Read `rules/registry_org_type.md`. Identify the most appropriate CV format reference and state why.
+6. Read `rules/registry_org_type.md`. Identify the most appropriate org type and state why. Note the framing emphasis for the confirmed org type — it will govern how the organizational environment and operating context are described throughout content generation.
 
 **Phase 2a Closing:** Follow Standard Phase Closing. Next phase is Phase 2b.
 
@@ -122,7 +120,7 @@ Perform QC per Global Rules:
 
 1. Load the following source documents now. Confirm each loaded completely before proceeding:
    - `knowledge/Experience_Inventory.md`
-   - `knowledge/Accomplishments.md`
+   - `knowledge/Career_Narratives.md`
    - `knowledge/Positioning.md`
 
 2. Using the loaded source documents, map each critical requirement identified in Phase 2a to the most relevant experience, citing the source document and specific achievement. Every claim must be traceable to a source document.
@@ -186,13 +184,13 @@ Perform QC per Global Rules:
 *(State each step before completing the step)*
 
 **Step 1 — Load documents:**
-Load the CV reference file matching the format confirmed in Phase 2a Step 7. The file path is listed in the registry entry for the confirmed format in `rules/registry_org_type.md`. Confirm it loaded completely before proceeding.
-
-Then load the content rules file matching the role level confirmed in Phase 2a Step 2. Confirm the content rules file loaded completely:
+Load the content rules file matching the role level confirmed in Phase 2a Step 2. Confirm the content rules file loaded completely:
 - AD+ roles → `rules/cv/content_rules_leadership.md`
 - IC roles → `rules/cv/content_rules_ic.md`
 
 All rules in the content rules file apply actively throughout content generation — they are not pre-conditions to confirm, they are requirements to satisfy in every line generated.
+
+Apply the org-type framing emphasis from the registry entry confirmed in Phase 2a Step 7 throughout content generation. Framing emphasis governs how the organizational environment and operating context are described — archetype governs achievement selection and characterization.
 
 **Step 2 — Confirm archetype instruction set:**
 State the primary archetype document loaded in Phase 2a. Confirm it is still available in context. If not, reload it now before proceeding.
