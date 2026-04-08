@@ -208,3 +208,4 @@ __marimo__/
 outputs/
 job_dsc/
 knowledge/
+!knowledge/SETUP.md

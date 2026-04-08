@@ -33,6 +33,7 @@ career_development/
 │       ├── qc_checklist.md
 │       └── sources.md
 ├── knowledge/                             ← personal source documents — gitignored
+│   └── SETUP.md                          ← committed: setup instructions for new users
 └── outputs/                               ← generated CVs — gitignored
 ```
 
