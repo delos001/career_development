@@ -97,7 +97,7 @@ A standalone process for retrospectively adding Context and Impact annotations t
 **When to annotate:** Director-level and above entries that are likely anchor citations for critical requirement matches in CV sessions. Not every entry requires annotation. Breadth and delivery evidence entries do not. The target is 2-3 anchor entries per role block.
 
 **Step 1 — Load documents:**
-Load `knowledge/Experience_Inventory.md` and `context/cv_content_rules_leadership.md`. Confirm both loaded completely.
+Load `knowledge/Experience_Inventory.md` and `rules/cv/content_rules_leadership.md`. Confirm both loaded completely.
 
 **Step 2 — Identify annotation targets:**
 For each Director-level or above role block, identify the 2-3 entries most likely to serve as anchor citations for a critical requirement match. Present the identified entries to the user and confirm the target list before proceeding. Do not begin annotation work without explicit confirmation of which entries to work on.
@@ -106,7 +106,7 @@ For each Director-level or above role block, identify the 2-3 entries most likel
 For each confirmed target entry, present the current entry text and ask the user to describe what happened, what the outcome was, and what the before-state looked like if relevant. Extract structured facts from the narrative — specifically what was delivered vs. designed vs. planned-but-not-completed. Do not conflate these: an initiative designed but not implemented is not the same as one fully delivered.
 
 **Step 4 — Draft annotation:**
-Draft a Context annotation, an Impact annotation, or both, based on what the user provided. Apply the impact statement type hierarchy from `context/cv_content_rules_leadership.md`: quantified first, then bounded qualitative, then contextual narrative. Never use vague category labels.
+Draft a Context annotation, an Impact annotation, or both, based on what the user provided. Apply the impact statement type hierarchy from `rules/cv/content_rules_leadership.md`: quantified first, then bounded qualitative, then contextual narrative. Never use vague category labels.
 
 **Step 5 — Honesty check:**
 Before presenting for approval, verify the draft against the following: Is the scope accurate per what the user described? Does the Impact claim reflect what was actually delivered, not what was intended? Is the language defensible if questioned in an interview? Flag any overstated claims explicitly before presenting.

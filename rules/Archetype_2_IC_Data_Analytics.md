@@ -4,7 +4,7 @@
 
 **1. Purpose and Scope**
 
-Apply this document when the archetype is Data & Analytics and the role level confirmed in Phase 2a is Individual Contributor. Use in combination with `context/cv_content_rules_ic.md`, which governs voice, register, and formatting. Do not apply leadership framing from `Archetype_2_Data_Analytics.md` for IC roles.
+Apply this document when the archetype is Data & Analytics and the role level confirmed in Phase 2a is Individual Contributor. Use in combination with `rules/cv/content_rules_ic.md`, which governs voice, register, and formatting. Do not apply leadership framing from `Archetype_2_Data_Analytics.md` for IC roles.
 
 **2. Archetype Match Criteria**
 
@@ -36,7 +36,7 @@ Build the CV in exactly this section order:
 
 -   5\. Certifications and Training
 
--   6\. Technical Proficiencies (last section --- given more weight than in leadership CVs; expand to fully represent analytical tools, languages, and environments per `context/cv_content_rules_ic.md`)
+-   6\. Technical Proficiencies (last section --- given more weight than in leadership CVs; expand to fully represent analytical tools, languages, and environments per `rules/cv/content_rules_ic.md`)
 
 Core Competencies should list 8 to 10 items spanning two zones: (1) clinical data and analytical capabilities --- 5 to 6 items, (2) technical credibility --- 3 to 4 items. The technical zone is more prominent for this archetype than for others at IC level. Do not list data strategy, governance leadership, or analytics capability ownership --- these are leadership-level signals.
 

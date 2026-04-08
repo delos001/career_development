@@ -70,14 +70,11 @@ If any documents were loaded in the previous phase, verify Document Load Instruc
 
 5. Identify the 4-5 most critical requirements or themes in the job description.
 
-6. Identify the role archetype from the following four options and state the framing angle:
+6. Read `rules/registry_archetype.md`. Using the match criteria summaries in the registry, identify the role archetype and state the framing angle. If the role is borderline between two archetypes, note the ambiguity explicitly before proceeding.
 
-   - **Transformation & Strategy** — enterprise-level change, operating model redesign, strategic program leadership
-   - **Data & Analytics** — clinical data strategy, data governance, analytics platform development, data science enablement
-   - **Process & Operations** — process excellence, clinical operations, Lean/Six Sigma, execution and efficiency
-   - **Platform & Technology** — technology strategy, platform implementation, system integration, vendor and tool ecosystem
+   If none of the archetypes in the registry satisfy the match criteria for this role, do not proceed with CV generation. State specifically which match criteria failed for each archetype. Inform the user that a new archetype may be needed and that `skills/archetype_creation.md` must be triggered and completed before CV generation can continue. Stop here and do not advance to any subsequent step or phase.
 
-   If the role spans two archetypes, identify a primary and secondary archetypes and state both explicitly with rationale. Apply the following rules throughout all subsequent phases:
+   If the role spans two archetypes, identify a primary and secondary archetype and state both explicitly with rationale. Apply the following rules throughout all subsequent phases:
 
    - The primary archetype governs exclusively: section order, summary framing, Core Competencies priority, and achievement selection criteria. The secondary archetype has no authority over any of these.
    - Secondary framing appears only within individual achievements where both dimensions are genuinely present in the underlying experience — not as standalone achievements and not in the summary.
@@ -86,27 +83,11 @@ If any documents were loaded in the previous phase, verify Document Load Instruc
    - The summary is governed exclusively by the primary archetype framing rules. The secondary archetype does not appear in the summary.
    - Core Competencies may include 1-2 items signaling the secondary archetype capability. The secondary zone must not displace primary archetype items.
 
-   Then load the archetype instruction document matching the confirmed primary archetype AND the role level confirmed in Step 2:
-
-   Leadership (Associate Director and above):
-   - Transformation & Strategy → `context/Archetype_1_Transformation_Strategy.md`
-   - Data & Analytics → `context/Archetype_2_Data_Analytics.md`
-   - Process & Operations → `context/Archetype_3_Process_Operations.md`
-   - Platform & Technology → `context/Archetype_4_Platform_Technology.md`
-
-   Individual Contributor:
-   - Transformation & Strategy → `context/Archetype_1_IC_Transformation_Strategy.md`
-   - Data & Analytics → `context/Archetype_2_IC_Data_Analytics.md`
-   - Process & Operations → `context/Archetype_3_IC_Process_Operations.md`
-   - Platform & Technology → `context/Archetype_4_IC_Platform_Technology.md`
-
-   If a dual-archetype was identified, also load the secondary archetype document using the same role-level logic.
+   Then load the archetype instruction document matching the confirmed primary archetype. Use the role level confirmed in Step 2 to select between the leadership and IC file — both file paths are listed in the registry entry for each archetype. If a dual-archetype was identified, also load the secondary archetype document using the same role-level logic.
 
    Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
 
-7. Identify the most appropriate CV format reference and state why:
-   - **Large Enterprise Established** — for established pharma, large CROs, or mature biotech
-   - **Mid Size Scale-Up** — for growth-stage biotech OR companies undergoing significant transformation (regardless of current size or maturity)
+7. Read `rules/registry_org_type.md`. Identify the most appropriate CV format reference and state why.
 
 **Phase 2a Closing:** Follow Standard Phase Closing. Next phase is Phase 2b.
 
@@ -205,13 +186,11 @@ Perform QC per Global Rules:
 *(State each step before completing the step)*
 
 **Step 1 — Load documents:**
-Load the CV reference file matching the format confirmed in Phase 2a Step 7. Confirm it loaded completely before proceeding:
-- Large Enterprise Established → `knowledge/CV_General_Lrge_Enterprise_Established.md`
-- Mid Size Scale-Up → `knowledge/CV_General_Mid_Size_Scale_Up.md`
+Load the CV reference file matching the format confirmed in Phase 2a Step 7. The file path is listed in the registry entry for the confirmed format in `rules/registry_org_type.md`. Confirm it loaded completely before proceeding.
 
 Then load the content rules file matching the role level confirmed in Phase 2a Step 2. Confirm the content rules file loaded completely:
-- AD+ roles → `context/cv_content_rules_leadership.md`
-- IC roles → `context/cv_content_rules_ic.md`
+- AD+ roles → `rules/cv/content_rules_leadership.md`
+- IC roles → `rules/cv/content_rules_ic.md`
 
 All rules in the content rules file apply actively throughout content generation — they are not pre-conditions to confirm, they are requirements to satisfy in every line generated.
 
@@ -241,7 +220,7 @@ Generate complete CV content applying all rules from the active archetype instru
 
 **Content Rules Verification:** Verify the loaded content rules file was actively applied throughout generation. For each rule, state the verification method and result. Any rule that cannot be verified against the output must be flagged as non-compliant and QC Failure Recovery invoked.
 
-**CV QC Checklist:** Load `context/cv_qc_checklist.md` now. Apply the Universal section against the generated CV content. Then apply the archetype section matching the active archetype and role level confirmed in Phase 2a. For each item, cite specific evidence from the generated content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
+**CV QC Checklist:** Load `rules/cv/qc_checklist.md` now. Apply the Universal section against the generated CV content. Then apply the archetype section matching the active archetype and role level confirmed in Phase 2a. For each item, cite specific evidence from the generated content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
 
 Perform QC per Global Rules:
 - **Standard QC Document Verification**
@@ -256,10 +235,10 @@ Perform QC per Global Rules:
 *(State each step before completing the step)*
 
 **Step 1 — Load formatting specification:**
-Load `context/cv_format_spec.md` now. Confirm it loaded completely. All formatting decisions are governed by this file. It is the authoritative source — do not infer or recreate formatting from any other reference.
+Load `rules/cv/format_spec.md` now. Confirm it loaded completely. All formatting decisions are governed by this file. It is the authoritative source — do not infer or recreate formatting from any other reference.
 
 **Step 2 — Generate document:**
-Generate the Word document programmatically using Python with python-docx. Use the Python executable at `C:/Users/delos/miniconda3/envs/agents/python.exe`. Write a Python script and execute it via Bash. All formatting decisions must reference `context/cv_format_spec.md` — do not infer or recreate formatting from any other source. Use Windows-style paths (e.g., `C:/Users/delos/...`) in all Python file operations — Unix-style paths will fail.
+Generate the Word document programmatically using Python with python-docx. Use the Python executable at `C:/Users/delos/miniconda3/envs/agents/python.exe`. Write a Python script and execute it via Bash. All formatting decisions must reference `rules/cv/format_spec.md` — do not infer or recreate formatting from any other source. Use Windows-style paths (e.g., `C:/Users/delos/...`) in all Python file operations — Unix-style paths will fail.
 
 Structure decisions were made in Phase 4 and govern the output. Do not default to any reference document's structure. Do not omit or collapse roles because they do not appear in a reference. A role that adds credibility to Phase 2a critical requirements belongs in the main experience section.
 
@@ -273,7 +252,7 @@ Save the completed CV to `outputs/` using this naming convention:
 
 ## Phase 5b — Quality Control for Phase 5a
 
-**Document Generation:** Confirm python-docx was used to generate the document via a Python script executed through Bash. Confirm all formatting decisions reference `context/cv_format_spec.md` and were not inferred from any other source. If either cannot be confirmed, flag as a non-compliant step and invoke QC Failure Recovery.
+**Document Generation:** Confirm python-docx was used to generate the document via a Python script executed through Bash. Confirm all formatting decisions reference `rules/cv/format_spec.md` and were not inferred from any other source. If either cannot be confirmed, flag as a non-compliant step and invoke QC Failure Recovery.
 
 **Filename Convention:** Confirm the output file was saved with the correct filename format. State the actual filename and confirm it matches the convention.
 

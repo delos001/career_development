@@ -4,7 +4,7 @@
 
 **1. Purpose and Scope**
 
-Apply this document when the archetype is Transformation & Strategy and the role level confirmed in Phase 2a is Individual Contributor. Use in combination with `context/cv_content_rules_ic.md`, which governs voice, register, and formatting. Do not apply leadership framing from `Archetype_1_Transformation_Strategy.md` for IC roles.
+Apply this document when the archetype is Transformation & Strategy and the role level confirmed in Phase 2a is Individual Contributor. Use in combination with `rules/cv/content_rules_ic.md`, which governs voice, register, and formatting. Do not apply leadership framing from `Archetype_1_Transformation_Strategy.md` for IC roles.
 
 **2. Archetype Match Criteria**
 
@@ -36,7 +36,7 @@ Build the CV in exactly this section order:
 
 -   5\. Certifications and Training
 
--   6\. Technical Proficiencies (last section --- given more weight than in leadership CVs per `context/cv_content_rules_ic.md`)
+-   6\. Technical Proficiencies (last section --- given more weight than in leadership CVs per `rules/cv/content_rules_ic.md`)
 
 Core Competencies should list 8 to 10 items and prioritize change enablement, cross-functional coordination, and execution capabilities. Technical and analytical capabilities are appropriate for this archetype at IC level where they directly supported transformation delivery. Do not list organizational design, strategic direction, or enterprise capability-building as competencies --- these are leadership-level signals.
 
@@ -130,4 +130,4 @@ Every achievement must be expressed within 2 lines. 3 lines is acceptable only f
 
 -   People management signals --- do not list team leadership, direct report management, or organizational development as competencies unless the role explicitly calls for it and source documents support it.
 
--   Technical tools section: include and give it appropriate weight per `context/cv_content_rules_ic.md`. Do not minimize technical skills for this archetype --- they are a legitimate signal of contribution depth at IC level.
+-   Technical tools section: include and give it appropriate weight per `rules/cv/content_rules_ic.md`. Do not minimize technical skills for this archetype --- they are a legitimate signal of contribution depth at IC level.
