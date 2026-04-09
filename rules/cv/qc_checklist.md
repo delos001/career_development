@@ -24,6 +24,9 @@ List the actual section order in the generated CV and confirm it matches the req
 **U6 — Technical proficiencies position**
 Confirm the Technical Proficiencies section is the last section in the document.
 
+**U7 — Selected Projects section**
+Check the Independent & Volunteer Projects section of the Experience Inventory used in Phase 3a. If entries exist there, confirm a Selected Projects section is present in the generated CV, positioned as section 4 per the active archetype. If no entries exist, confirm the Selected Projects section is absent. A present-but-empty section or a missing section when entries exist are both failures — cite the inventory status and CV structure to confirm.
+
 ---
 
 ## Archetype 1 Leadership: Transformation & Strategy

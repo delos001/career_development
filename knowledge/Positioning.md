@@ -74,6 +74,10 @@ Along the way, I targeted education directly related to the work --- an MS in Da
 
 What that arc produces is rare: I can sit with a biostatistician, a medical monitor, a regulatory affairs lead, a software engineer, a procurement director, and a site coordinator --- and speak credibly to each of them about their work, their constraints, and how it connects to the larger objective. That cross-functional fluency isn't a soft skill. It's what makes process redesign stick, technology adoption succeed, and organizational change durable.
 
+A consistent discipline in translating analytical work to non-statistical audiences: sequencing the conversation around what the audience needs to decide, not around how the analysis was built. Removing everything that does not serve that decision. Being explicit about what the data does and does not support --- including delivering more nuanced answers than the audience was expecting when the evidence requires it.
+
+A consistent operating standard across all technical and process work: documentation is not an afterthought --- it is part of the deliverable. If a process, tool, or analytical output cannot be explained, traced, and defended in an audit context, it is not finished.
+
 # INDUSTRY TRAGECTORY --- AND WHERE I FIT
 
 Clinical development is under pressure from four converging shifts:

@@ -50,7 +50,7 @@ This is the starting point for taxonomy design in Phase 2. It is not applied dir
 **Universal Dimensions — Do Not Change**
 
 - Role Level: IC | Manager | Senior Manager | Director | Senior Director | VP | C-Suite
-- Org Context: Greenfield | Scaling | Turnaround | Mature/Enterprise
+- Org Context: Greenfield | Scaling | Turnaround | Mature/Enterprise | Independent | Volunteer
 - Outcome: Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings | Revenue Growth | Customer/User Impact
 
 **Reference Capability Tags — Adapt Per Career Profile**
@@ -74,6 +74,7 @@ Operations and Quality:
 Data and Technology:
 - Data & Analytics
 - Technology Strategy & Implementation
+- AI Engineering & Development
 - Product Management
 - Software Development & Engineering
 
@@ -134,6 +135,8 @@ Obtain explicit approval. Revise and re-present if the user wants changes. Do no
 **Step 2 — Propose section architecture:**
 Propose the thematic groupings for the "All Tasks Performed" section of the inventory. Base the groupings on the confirmed Capability tags and the career profile. Group related capabilities together in a way that makes the inventory readable and navigable for a human reviewer.
 
+If the user has independent or volunteer project work — self-initiated projects, open source contributions, or volunteer roles — include an "Independent & Volunteer Projects" section as a named grouping. Entries in this section use the `Project:` header variant and are tagged with Org Context: Independent or Volunteer. If none exist at this stage, omit the section — it can be added later when entries are available.
+
 Present the proposed section list with a brief description of what belongs in each section. Obtain explicit approval. Revise if needed. This architecture governs how extracted entries are organized in the assembled document.
 
 **Phase 2 Closing:** Follow Standard Phase Closing. Next phase is Phase 3.
@@ -168,12 +171,22 @@ If more than three source documents are provided, confirm the processing order. 
 
 **Entry format — apply to every extracted entry:**
 
+For standard employment roles:
 ```
 Role: [Title] | [Company]
 **[Action statement — one discrete action, what specifically was done]**
 Impact: [outcome, metric, or problem solved — OPTIONAL, only if stated in source]
 Context: [scope, org stage, or framing note — OPTIONAL, only if stated in source]
 Tags: Capability: X | Role Level: X | Org Context: X | Outcome: X
+```
+
+For independent or volunteer project entries (Org Context: Independent or Volunteer):
+```
+Project: [Project Name]
+**[Action statement — one discrete action, what specifically was done]**
+Impact: [outcome, metric, or problem solved — OPTIONAL, only if stated in source]
+Context: [scope, org stage, or framing note — OPTIONAL, only if stated in source]
+Tags: Capability: X | Role Level: X | Org Context: Independent | Outcome: X
 ```
 
 **Extraction rules:**
@@ -307,7 +320,7 @@ Assemble the full inventory document in the following structure:
 
 Capability: [list all confirmed Capability tags separated by |]
 Role Level: IC | Manager | Senior Manager | Director | Senior Director | VP | C-Suite
-Org Context: Greenfield | Scaling | Turnaround | Mature/Enterprise
+Org Context: Greenfield | Scaling | Turnaround | Mature/Enterprise | Independent | Volunteer
 Outcome: Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings | Revenue Growth | Customer/User Impact
 ```
 

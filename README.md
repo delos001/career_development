@@ -42,7 +42,8 @@ career_development/
 │       ├── decision_personal.md
 │       └── decision_adr.md
 ├── knowledge/                             ← personal source documents — gitignored
-│   └── SETUP.md                          ← committed: setup instructions for new users
+│   ├── SETUP.md                          ← committed: setup instructions for new users
+│   └── Contact_Info.md                   ← single source of truth for CV contact line values
 └── outputs/                               ← generated CVs — gitignored
 ```
 
@@ -88,7 +89,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 3a step 1 | Fit evaluation begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
 | 4a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC); org-type framing emphasis applied from registry entry confirmed in Phase 2a |
 | 4b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
-| 5a start | Document generation begins | `rules/cv/format_spec.md` |
+| 5a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
 | Phase 6 | Source update review | Specific knowledge docs loaded only as needed |
 
 ### general_cv_builder
@@ -100,7 +101,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 2a step 3 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted for use in Phase 4a |
 | 3a step 1 | Source review begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
 | 4a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
-| 5a step 1 | Document generation begins | `rules/cv/format_spec.md` |
+| 5a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
 
 ### career_narratives_builder
 

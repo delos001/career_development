@@ -36,13 +36,22 @@ Load only the specific documents relevant to the updates being recommended.
 
 `knowledge/Experience_Inventory.md` — Entries are atomic, role-specific achievement statements. Do not write entries as polished CV bullets. The entry describes what was done; Context and Impact annotations and tags enable retrieval and bullet construction.
 
-**Entry format:**
+**Entry format — standard employment roles:**
 ```
 Role: Title | Company
 **[Action statement — what specifically was done, one discrete action per entry]**
 Impact: [outcome, metric, or problem solved — OPTIONAL]
 Context: [scope, org stage, or framing note — OPTIONAL]
 Tags: Capability: X | Role Level: X | Org Context: X | Outcome: X
+```
+
+**Entry format — independent or volunteer project entries (Org Context: Independent or Volunteer):**
+```
+Project: [Project Name]
+**[Action statement — what specifically was done, one discrete action per entry]**
+Impact: [outcome, metric, or problem solved — OPTIONAL]
+Context: [scope, org stage, or framing note — OPTIONAL]
+Tags: Capability: X | Role Level: X | Org Context: Independent | Outcome: X
 ```
 
 **Allowed tag values — reference the Tag Taxonomy header block at the top of `knowledge/Experience_Inventory.md` for the authoritative list. Do not infer tag values from archetype files. Current values:**

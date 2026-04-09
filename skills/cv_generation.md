@@ -95,9 +95,9 @@ If any documents were loaded in the previous phase, verify Document Load Instruc
 
 Role Level: Confirm the role level was explicitly stated or inferred with rationale, and that explicit user agreement was obtained. If agreement is not documented, flag as a blocking issue and invoke QC Failure Recovery.
 
-Company Research: Confirm web search was performed in Phase 2a Step 4. State the specific sources or findings that informed the role understanding and format selection. If research was not performed or cannot be evidenced, flag as a non-compliant step.
+Company Research: Confirm web search was performed in Phase 2a Step 3. State the specific sources or findings that informed the role understanding and format selection. If research was not performed or cannot be evidenced, flag as a non-compliant step.
 
-Critical Requirements: Confirm 4-5 critical requirements were identified in Phase 2a Step 5. If fewer than 4 were identified, flag and complete before proceeding.
+Critical Requirements: Confirm 4-5 critical requirements were identified in Phase 2a Step 4. If fewer than 4 were identified, flag and complete before proceeding.
 
 Archetype Selection: Verify the primary archetype selection is defensible against the match criteria defined in the loaded archetype file. State the specific match criteria satisfied and cite the job description language that supports each. If the role does not clearly satisfy the match criteria, flag as a blocking issue — a wrong archetype selection propagates through every subsequent phase and cannot be corrected without restarting from Phase 2a.
 
