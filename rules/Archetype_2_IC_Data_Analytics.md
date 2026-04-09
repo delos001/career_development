@@ -32,11 +32,13 @@ Build the CV in exactly this section order:
 
 -   3\. Professional Experience
 
--   4\. Education
+-   4\. Selected Projects (include when entries exist in the Independent & Volunteer Projects inventory section; omit if section is empty)
 
--   5\. Certifications and Training
+-   5\. Education
 
--   6\. Technical Proficiencies (last section --- given more weight than in leadership CVs; expand to fully represent analytical tools, languages, and environments per `rules/cv/content_rules_ic.md`)
+-   6\. Certifications and Training
+
+-   7\. Technical Proficiencies (last section --- given more weight than in leadership CVs; expand to fully represent analytical tools, languages, and environments per `rules/cv/content_rules_ic.md`)
 
 Core Competencies should list 8 to 10 items spanning two zones: (1) clinical data and analytical capabilities --- 5 to 6 items, (2) technical credibility --- 3 to 4 items. The technical zone is more prominent for this archetype than for others at IC level. Do not list data strategy, governance leadership, or analytics capability ownership --- these are leadership-level signals.
 

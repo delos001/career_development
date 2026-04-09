@@ -172,9 +172,14 @@ confirmation.
    - Length (3 to 4 sentences)
    - 4 required elements that must all be present in every summary
 
-4. **Section 4 — Required Section Order:** list all 6 CV sections in order.
+4. **Section 4 — Required Section Order:** list all CV sections in order.
    Specify Core Competencies item count and priority categories. Note the placement
    and visual weight of Technical Proficiencies for this archetype.
+
+   Ask explicitly: does this archetype include a Selected Projects section? If yes,
+   state its position in the section order and the selection criteria governing which
+   Independent & Volunteer Projects inventory entries to include. If no, state that
+   explicitly so the archetype file documents the omission intentionally.
 
 5. **Section 5 — Inventory Tag Priorities:** identify tags from the Experience
    Inventory taxonomy in four tiers:
@@ -217,8 +222,9 @@ section is a blocking issue.
 Section 3 (Summary Framing): confirm Lead with, Do NOT lead with, Register, Length,
 and 4 required elements are all defined. Any missing element is a blocking issue.
 
-Section 4 (Section Order): confirm exactly 6 sections are listed in order. Confirm
-Core Competencies item count is specified.
+Section 4 (Section Order): confirm all sections are listed in order. Confirm
+Core Competencies item count is specified. Confirm the Selected Projects question
+was asked and the answer — include or omit — is explicitly documented in the archetype.
 
 Section 5 (Inventory Tags): confirm all four tiers are present. Confirm tag names
 match the actual Experience Inventory taxonomy -- invented tags are a blocking issue.

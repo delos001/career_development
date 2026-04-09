@@ -54,11 +54,13 @@ Build the CV in exactly this section order. Do not reorder sections for this arc
 
 -   3\. Professional Experience
 
--   4\. Education
+-   4\. Selected Projects (include when entries exist in the Independent & Volunteer Projects inventory section; omit if section is empty)
 
--   5\. Certifications and Training
+-   5\. Education
 
--   6\. Technical Proficiencies (last section --- condensed, minimal visual weight)
+-   6\. Certifications and Training
+
+-   7\. Technical Proficiencies (last section --- condensed, minimal visual weight)
 
 Core Competencies should list 8 to 12 items and prioritize process, governance, and operational capabilities. Technical tools and analytical capabilities appear only if space permits and should not dominate the list.
 

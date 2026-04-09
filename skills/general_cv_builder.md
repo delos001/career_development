@@ -124,6 +124,8 @@ State the result of each check. Flag failures and invoke QC Failure Recovery bef
    - Which achievements within each role should be developed as full bullets versus brief mentions
    - How to apply the 10-year recency rule: all roles in the last 10 years belong in the main experience section; roles that add credibility to the archetype's core capabilities belong regardless of age
 
+   Also check the Independent & Volunteer Projects section of the inventory. If entries exist, present them separately to the user for consideration as a Selected Projects CV section. Do not fold project entries into the main experience section. Whether a Selected Projects section appears in the output is governed by the active archetype — if the archetype does not include it, flag this to the user before proceeding.
+
    Present the proposed architecture and obtain explicit user approval before proceeding to content generation.
 
 4. Note any gaps — source material that is thin or missing for the stated targeting context. Flag these for the user. Unlike `cv_generation`, there is no gap closure phase here — this CV represents what currently exists in the source documents. If gaps are significant enough to warrant source document work before generating the CV, recommend triggering the appropriate builder skill first and stopping this session.
@@ -197,6 +199,8 @@ State the result of each check. Flag failures and invoke QC Failure Recovery bef
 *(State each step before completing the step)*
 
 1. Load `rules/cv/format_spec.md` now. Confirm it loaded completely. All formatting decisions are governed by this file — do not infer or recreate formatting from any other source.
+
+   Load `knowledge/Contact_Info.md` now. Confirm it loaded completely. All contact line values — name, email, phone, LinkedIn, GitHub, and any present Website — must be sourced from this file. Do not hardcode any contact information in the generated script.
 
 2. Propose an output descriptor based on the targeting context confirmed in Phase 1a. The descriptor should reflect the combination of level, domain, and org type in a concise, readable format — for example: `Leadership_DataAnalytics_Enterprise` or `IC_Transformation_ScaleUp`. Present the proposed descriptor and obtain user confirmation or override before proceeding.
 

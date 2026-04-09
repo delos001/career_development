@@ -54,11 +54,13 @@ Build the CV in exactly this section order:
 
 -   3\. Professional Experience
 
--   4\. Education
+-   4\. Selected Projects (include when entries exist in the Independent & Volunteer Projects inventory section; omit if section is empty)
 
--   5\. Certifications and Training
+-   5\. Education
 
--   6\. Technical Proficiencies (last section --- condensed, minimal visual weight)
+-   6\. Certifications and Training
+
+-   7\. Technical Proficiencies (last section --- condensed, minimal visual weight)
 
 Core Competencies should list 8 to 12 items and prioritize transformation, change management, organizational design, and capability-building capabilities. Operational and technical capabilities appear only if they directly supported a transformation outcome and only if space permits.
 

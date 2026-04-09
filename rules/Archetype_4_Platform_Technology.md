@@ -58,11 +58,13 @@ Build the CV in exactly this section order:
 
 -   3\. Professional Experience
 
--   4\. Education
+-   4\. Selected Projects (include when entries exist in the Independent & Volunteer Projects inventory section; omit if section is empty)
 
--   5\. Certifications and Training
+-   5\. Education
 
--   6\. Technical Proficiencies (last section --- expanded relative to Process & Operations and Transformation archetypes, but still positioned last)
+-   6\. Certifications and Training
+
+-   7\. Technical Proficiencies (last section --- expanded relative to Process & Operations and Transformation archetypes, but still positioned last)
 
 Core Competencies should list 8 to 12 items spanning three zones: (1) technology strategy and platform governance --- 4 to 5 items, (2) clinical systems and domain knowledge --- 3 to 4 items, (3) analytical and process credibility --- 2 to 3 items. The third zone signals cross-functional depth without displacing the technology strategy lead. Do not let the third zone expand beyond 3 items.
 

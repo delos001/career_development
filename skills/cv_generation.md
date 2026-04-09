@@ -203,6 +203,8 @@ Before generating any content, produce a proposed experience section architectur
 - Proposed treatment: Full entry with bullets (main section) | One-line entry in main section | One-line entry in Earlier Professional Roles | Omit entirely
 - Rationale tied to Phase 2a critical requirements
 
+Also check the Independent & Volunteer Projects section of the inventory. If entries exist, present them separately to the user for consideration as a Selected Projects CV section. Do not fold project entries into the main experience section. Whether a Selected Projects section appears in the output is governed by the active archetype — if the archetype does not include it, flag this to the user before proceeding.
+
 Wait for explicit approval of the experience architecture before proceeding to Step 4.
 
 **Step 4 — Generate CV content:**
@@ -232,8 +234,10 @@ Perform QC per Global Rules:
 *(Only after Phase 4a and 4b have been explicitly approved)*
 *(State each step before completing the step)*
 
-**Step 1 — Load formatting specification:**
+**Step 1 — Load formatting specification and contact information:**
 Load `rules/cv/format_spec.md` now. Confirm it loaded completely. All formatting decisions are governed by this file. It is the authoritative source — do not infer or recreate formatting from any other reference.
+
+Load `knowledge/Contact_Info.md` now. Confirm it loaded completely. All contact line values — name, email, phone, LinkedIn, GitHub, and any present Website — must be sourced from this file. Do not hardcode any contact information in the generated script.
 
 **Step 2 — Generate document:**
 Generate the Word document programmatically using Python with python-docx. Use the Python executable at `C:/Users/delos/miniconda3/envs/agents/python.exe`. Write a Python script and execute it via Bash. All formatting decisions must reference `rules/cv/format_spec.md` — do not infer or recreate formatting from any other source. Use Windows-style paths (e.g., `C:/Users/delos/...`) in all Python file operations — Unix-style paths will fail.

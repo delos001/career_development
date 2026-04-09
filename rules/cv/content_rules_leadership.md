@@ -97,6 +97,21 @@ Scale does not require hard numbers. "Spanning 5 studies and 7+ vendors simultan
 
 ---
 
+## Selected Projects Section — Voice Exception
+
+The leadership voice rules above apply to Professional Experience entries only. Selected Projects section entries are exempt from the rule requiring organizational or governance framing.
+
+For project entries, apply these rules instead:
+
+- Voice is accurate to the work: self-directed design and build, no organizational framing required or expected
+- Focus on design complexity, technical sophistication, and capability demonstrated — not organizational impact or leadership scope
+- Do not inflate project entries with leadership language; a reviewer who understands the work will recognize the sophistication without it
+- Bullet construction follows the format spec project entry structure: brief, precise, design and capability focused
+- 2 to 4 bullets per project entry; compress rather than expand
+- If a GitHub link or portfolio URL is available in `knowledge/Contact_Info.md`, it may be referenced in the project entry as an optional pointer for reviewers who want to investigate further
+
+---
+
 ## Document Structure
 
 - Section order follows the active archetype instruction set — not any reference document's structure

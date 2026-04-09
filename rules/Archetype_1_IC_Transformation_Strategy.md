@@ -32,11 +32,13 @@ Build the CV in exactly this section order:
 
 -   3\. Professional Experience
 
--   4\. Education
+-   4\. Selected Projects (include when entries exist in the Independent & Volunteer Projects inventory section; omit if section is empty)
 
--   5\. Certifications and Training
+-   5\. Education
 
--   6\. Technical Proficiencies (last section --- given more weight than in leadership CVs per `rules/cv/content_rules_ic.md`)
+-   6\. Certifications and Training
+
+-   7\. Technical Proficiencies (last section --- given more weight than in leadership CVs per `rules/cv/content_rules_ic.md`)
 
 Core Competencies should list 8 to 10 items and prioritize change enablement, cross-functional coordination, and execution capabilities. Technical and analytical capabilities are appropriate for this archetype at IC level where they directly supported transformation delivery. Do not list organizational design, strategic direction, or enterprise capability-building as competencies --- these are leadership-level signals.
 

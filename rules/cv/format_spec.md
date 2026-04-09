@@ -154,6 +154,21 @@ Used for: Secondary earlier role entries (older/less prominent roles in the earl
 
 ---
 
+## Project Entry Structure
+
+Used for entries in the "Selected Projects" CV section. Structure differs from role entries — there is no company header or job title line.
+
+| Element | Style | Notes |
+|---|---|---|
+| Project name | Bold, 11pt, Calibri | Same style as company header. Space before: 8pt (160 DXA). |
+| Timeframe / context | Not bold, 11pt, Calibri | Rendered inline on the same line as project name, separated by a pipe ( \| ). Example: **AI-Augmented Career Development System** \| Personal Project \| 2025–Present |
+| Body text | Normal body style | Optional. Zero space before. Same style as narrative body text. |
+| Bullets | Standard bullet style | Same bullet character, indent, and font as all other bullets. |
+
+No job title line is used. The timeframe and context descriptor replace it inline.
+
+---
+
 ## Section Order
 
 Section order is governed exclusively by the archetype approved in Phase 2. This spec does not define or default section order. Refer to the approved archetype.

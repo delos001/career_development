@@ -2,11 +2,11 @@
 
 ## Tag Taxonomy
 
-**Capability:** Clinical Trial Execution | Risk-Based Monitoring & Quality | Data & Analytics | Quality & Compliance | Process Design & Optimization | Technology Strategy & Implementation | Vendor Management & Oversight | Organizational Design | Governance & Risk Management | Strategic Planning & Roadmapping | Change Management & Adoption | Stakeholder Management & Influence | Team Leadership & Development | Financial Management & Budgeting
+**Capability:** Clinical Trial Execution | Risk-Based Monitoring & Quality | Data & Analytics | Quality & Compliance | Process Design & Optimization | Technology Strategy & Implementation | Vendor Management & Oversight | Organizational Design | Governance & Risk Management | Strategic Planning & Roadmapping | Change Management & Adoption | Stakeholder Management & Influence | Team Leadership & Development | Financial Management & Budgeting | AI Engineering & Development
 
 **Role Level:** IC | Manager | Senior Manager | Director | Senior Director | VP
 
-**Org Context:** Greenfield | Scaling | Turnaround | Mature/Enterprise
+**Org Context:** Greenfield | Scaling | Turnaround | Mature/Enterprise | Independent | Volunteer
 
 **Outcome:** Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings
 
