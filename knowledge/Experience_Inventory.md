@@ -977,3 +977,30 @@ Other Solution and Process Methodology: Exploratory data analysis, Data aggregat
 Core: Organizational Behavior, Managerial Accounting, Operations Management, Business Statistics
 Project Management: Project Planning & Control, Project Risk & Quality, Advanced Project Management
 Strategy: Business Policy & Strategy, Global Business, Leadership & Ethics
+
+---
+
+## 9. Independent & Volunteer Projects
+
+Project: AI-Augmented Career Development System | Independent
+**Architected a multi-component AI workflow system with explicit separation of workflow logic (skills), output constraints (rules), and grounded source content (knowledge) — enabling modular, maintainable LLM-driven generation.**
+Context: Solo build; independent project; 2025-present. System produces role-tailored CVs, positioning statements, and career narratives from a single experience inventory source.
+Tags: Capability: AI Engineering & Development | Role Level: IC | Org Context: Independent | Outcome: Capability Building
+
+Project: AI-Augmented Career Development System | Independent
+**Designed the workflow to surface and deepen user self-knowledge — not just produce output — through structured reflection gates, role fit assessment, gap analysis dialogue, and a feedback loop that integrates session insights back into source documents.**
+Context: Each phase requires explicit user input and approval before proceeding; the process is intentionally designed to pull out thinking that the user may not have articulated before. Gap analysis is collaborative, not automated — the system surfaces gaps and guides the user through reasoning about how their experience addresses them. Insights captured back into source documents compound over time, making each future session more grounded than the last. Unlike stateless AI tools, the system is designed to get smarter with use — a compounding architecture, not a one-time output tool.
+Tags: Capability: AI Engineering & Development | Process Design & Optimization | Role Level: IC | Org Context: Independent | Outcome: Capability Building
+
+Project: AI-Augmented Career Development System | Independent
+**Implemented just-in-time document loading to manage LLM context window efficiently across multi-step generation tasks — loading only what each phase requires, when it requires it.**
+Tags: Capability: AI Engineering & Development | Role Level: IC | Org Context: Independent | Outcome: Efficiency Gain
+
+Project: AI-Augmented Career Development System | Independent
+**Built a document generation pipeline using python-docx producing format-compliant .docx output from LLM-generated content, enforced against a typographic specification derived from XML analysis of source templates.**
+Tags: Capability: AI Engineering & Development | Role Level: IC | Org Context: Independent | Outcome: Capability Building
+
+Project: AI-Augmented Career Development System | Independent
+**Designed a role archetype system where archetypes drive CV section order and content emphasis from a single experience inventory source — without modifying source documents.**
+Context: Enables role-tailored output for multiple target archetypes from one maintained source; single-source-of-truth design.
+Tags: Capability: AI Engineering & Development | Process Design & Optimization | Role Level: IC | Org Context: Independent | Outcome: Capability Building
