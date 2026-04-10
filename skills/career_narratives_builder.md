@@ -14,13 +14,14 @@ This skill handles three modes:
 ## Global Rules
 
 **Following Instructions**
-Follow this skill exactly. Do not jump phases. Do not pre-populate content before the user has confirmed candidates and structure.
+Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
 
-When in a phase, complete only steps from that phase. Do not volunteer analysis or content from future phases.
+If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
 
-If something is ambiguous, state it explicitly and resolve it with the user before proceeding.
+When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
 **Document Load Instructions**
+Document load instructions apply at any point in the skill.
 Load documents at the phase and step specified. A document is loaded completely when all content is present with identifiable structure — not just a fragment. If a document returns only fragments, run `cat [filepath]` as fallback. Do not proceed with partial content.
 
 **Standard Phase Closing**

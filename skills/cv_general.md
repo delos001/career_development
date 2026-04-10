@@ -15,11 +15,13 @@ Output is a .docx file saved to `outputs/` with a descriptor-based filename conf
 **Following Instructions**
 Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
 
+If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
+
 When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
-If something is ambiguous, state the ambiguity explicitly before moving to another step or phase.
-
 **Document Load Instructions**
+Document load instructions apply at any point in the skill.
+
 Load documents at the phase and step specified in this skill — no earlier, no later.
 
 A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure.

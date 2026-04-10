@@ -64,13 +64,14 @@ career_development/
 
 | Skill | File | Trigger |
 |---|---|---|
-| CV Generation | `skills/cv_generation.md` | Evaluating role fit and tailoring and creating CV |
+| Role Evaluation | `skills/role_evaluation.md` | Evaluating role fit against established experience and positioning; deciding whether to proceed with an application |
+| CV Targeted | `skills/cv_targeted.md` | Generating a role-tailored CV for a specific target role; requires a completed GapAnalysis file from role_evaluation |
+| CV General | `skills/cv_general.md` | Creating a generalized CV (not role-tailored) saved to `outputs/` |
 | Source Document Update | `skills/source_document_update.md` | Capturing experience, framing decisions, or gap resolutions to source documents after any working session |
 | Experience Inventory Bootstrap | `skills/experience_inventory_bootstrap.md` | Building the Experience Inventory from scratch using raw career source documents |
 | Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype when no existing archetype serves the target role |
 | Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `knowledge/Career_Narratives.md` with new stories or decisions |
 | Positioning Builder | `skills/positioning_builder.md` | Building or updating `knowledge/Positioning.md` |
-| General CV Builder | `skills/general_cv_builder.md` | Creating a generalized CV (not role-tailored) saved to `outputs/` |
 
 ---
 
@@ -78,21 +79,30 @@ career_development/
 
 Documents are loaded just-in-time. This map defines what is loaded, when, and why.
 
-### cv_generation
+### role_evaluation
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | 1a | Session start | None — job description, company, and title collected only |
 | 2a step 5 | Archetype confirmed (AD+) | `rules/registry_archetype.md`; primary archetype leadership file from `rules/`; secondary if dual-archetype identified |
 | 2a step 5 | Archetype confirmed (IC) | `rules/registry_archetype.md`; primary archetype IC file from `rules/`; secondary if dual-archetype identified |
-| 2a step 6 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted for use in Phase 4a |
+| 2a step 6 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted |
 | 3a step 1 | Fit evaluation begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
-| 4a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC); org-type framing emphasis applied from registry entry confirmed in Phase 2a |
-| 4b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
-| 5a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
-| Phase 6 | Source update review | Specific knowledge docs loaded only as needed |
+| Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
 
-### general_cv_builder
+### cv_targeted
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| 1a | Session start | `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md` |
+| 2a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
+| 2a step 2 | Archetype load | Primary archetype file (leadership or IC); secondary if dual-archetype identified in Phase 1a |
+| 2a step 3 | Source review begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 2b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
+| 3a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
+| Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
+
+### cv_general
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|

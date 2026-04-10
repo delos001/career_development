@@ -12,17 +12,15 @@ workflow without modification to any existing files other than the registry.
 ## Global Rules
 
 **Following Instructions**
-Follow this skill exactly. Steps will not be overridden by judgment without explicit
-user approval. Inference will not be applied in a way that violates this skill without
-explicit user approval.
+Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
 
-When in a phase, complete only steps from that phase. Do not perform steps or volunteer
-analysis from future phases.
+If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
 
-If something is ambiguous, state the ambiguity explicitly and do not proceed until
-resolved.
+When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
 **Document Load Instructions**
+Document load instructions apply at any point in the skill.
+
 Load documents at the phase and step specified. No earlier, no later.
 
 A document is loaded completely when all content is present with identifiable structure.

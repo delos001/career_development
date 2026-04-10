@@ -161,11 +161,12 @@ Used for entries in the "Selected Projects" CV section. Structure differs from r
 | Element | Style | Notes |
 |---|---|---|
 | Project name | Bold, 11pt, Calibri | Same style as company header. Space before: 8pt (160 DXA). |
-| Timeframe / context | Not bold, 11pt, Calibri | Rendered inline on the same line as project name, separated by a pipe ( \| ). Example: **AI-Augmented Career Development System** \| Personal Project \| 2025–Present |
+| Timeframe / context | Not bold, 11pt, Calibri | Rendered inline on the same line as project name, separated by a pipe ( \| ). |
+| Repository link | Not bold, 11pt, Calibri | Optional. Plain text URL rendered inline on the same line as project name and timeframe, separated by a pipe ( \| ). Use the specific repo URL, not the GitHub profile landing page. Example: **AI-Augmented Career Development System** \| Personal Project \| 2025–Present \| github.com/delos001/career_development |
 | Body text | Normal body style | Optional. Zero space before. Same style as narrative body text. |
 | Bullets | Standard bullet style | Same bullet character, indent, and font as all other bullets. |
 
-No job title line is used. The timeframe and context descriptor replace it inline.
+No job title line is used. The timeframe, context descriptor, and optional repository link replace it inline.
 
 ---
 

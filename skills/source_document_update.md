@@ -10,6 +10,17 @@ Invoke at the close of any session where new experience language, framing decisi
 
 ---
 
+## Global Rules
+
+**Following Instructions**
+Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
+
+If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
+
+When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
+
+---
+
 ## Criteria for Capture
 
 Review the session for information meeting any of the following criteria:
