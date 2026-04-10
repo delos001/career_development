@@ -20,6 +20,7 @@ career_development/
 │   ├── career_narratives_builder.md
 │   └── positioning_builder.md
 ├── rules/                                 ← rule sets read by skills during execution
+│   ├── global_rules.md                   ← shared: global rules loaded by every skill at execution start
 │   ├── sources.md                        ← shared: research citations for all skills
 │   ├── registry_archetype.md             ← shared: archetype catalog and selection criteria
 │   ├── registry_org_type.md              ← shared: organization type catalog and selection criteria
@@ -84,6 +85,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | None — job description, company, and title collected only |
 | 2a step 5 | Archetype confirmed (AD+) | `rules/registry_archetype.md`; primary archetype leadership file from `rules/`; secondary if dual-archetype identified |
 | 2a step 5 | Archetype confirmed (IC) | `rules/registry_archetype.md`; primary archetype IC file from `rules/`; secondary if dual-archetype identified |
@@ -95,6 +97,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md` |
 | 2a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
 | 2a step 2 | Archetype load | Primary archetype file (leadership or IC); secondary if dual-archetype identified in Phase 1a |
@@ -107,6 +110,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | None — targeting context collected only |
 | 2a step 1 | Archetype selection begins | `rules/registry_archetype.md`; primary archetype file (leadership or IC); secondary if dual-archetype identified |
 | 2a step 3 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted for use in Phase 4a |
@@ -118,6 +122,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a step 2 | Format selection | Selected story format file from `rules/career_narratives/`; selected decision format file from `rules/career_narratives/` |
 | 1a step 3 | Adding or updating entries | `knowledge/Career_Narratives.md` |
 | 1a step 4 | Optional reference load | `knowledge/Experience_Inventory.md` (if user confirms) |

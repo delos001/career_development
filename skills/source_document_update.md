@@ -12,22 +12,9 @@ Invoke at the close of any session where new experience language, framing decisi
 
 ## Global Rules
 
-**Following Instructions**
-Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
+Load `rules/global_rules.md` at the start of this skill. Confirm it loaded completely before proceeding. All rules in that file govern this skill.
 
-If something is ambiguous, do not use judgment or inference without approval and state the ambiguity explicitly before moving to another step or phase.
-
-When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
-
-**Document Load Instructions**
-Document load instructions apply at any point in the skill.
-
-Load only the documents relevant to the updates being recommended, at the point they are needed. A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure.
-
-If any document fails loading, do not proceed using partial content:
-- Run bash with `cat [filepath]` for each failed document
-- Confirm the full document content is readable before proceeding
-- If the bash fallback also fails, report the specific file and error — do NOT proceed until resolved
+*This skill uses Steps, not Phases. Standard Phase Closing does not apply.*
 
 ---
 

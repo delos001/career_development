@@ -2,7 +2,7 @@
 
 ## Objective
 
-Build a structured, tagged Experience Inventory from raw career source documents (CVs, resumes, LinkedIn exports, or similar). The output is a fully assembled `Experience_Inventory.md` file ready for use by the CV generation skill. This skill handles discovery, taxonomy design, section architecture, extraction, deduplication, and assembly. Enrichment of individual entries (adding Impact and Context annotations) is handled separately by the Annotation Enrichment Phase in `skills/source_document_update.md`.
+Build a structured, tagged Experience Inventory from raw career source documents (CVs, resumes, LinkedIn exports, or similar). The output is a fully assembled `Experience_Inventory.md` file ready for use by `cv_targeted` and `cv_general`. This skill handles discovery, taxonomy design, section architecture, extraction, deduplication, and assembly. Enrichment of individual entries (adding Impact and Context annotations) is handled separately by the Annotation Enrichment Phase in `skills/source_document_update.md`.
 
 ---
 
@@ -16,36 +16,9 @@ Build a structured, tagged Experience Inventory from raw career source documents
 
 ## Global Rules
 
-**Following Instructions**
-Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval. Do not skip phases or combine steps without explicit user approval. Do not perform extraction before taxonomy is confirmed. Do not begin assembly before extraction is complete.
+Load `rules/global_rules.md` at the start of this skill. Confirm it loaded completely before proceeding. All rules in that file govern this skill.
 
-When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
-
-**Document Load Instructions**
-Document load instructions apply at any point in the skill.
-
-Load documents at the phase and step specified in this skill — no earlier, no later. This is a just-in-time loading workflow. Refer to `README.md` for the full loading map.
-
-A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure.
-
-If any document fails loading, do not proceed using partial content:
-- Run bash with `cat [filepath]` for each failed document
-- Confirm the full document content is readable before proceeding
-- If the bash fallback also fails, report the specific file and error — do NOT proceed until resolved
-
-If a read returns incomplete content mid-phase, stop, run the fallback, confirm availability, then continue. Do not silently proceed with degraded source material.
-
-**Standard Phase Closing — Action Phases (1, 2, 3, 4, 4b, 4c, 4d, 5)**
-At the close of each action phase:
-- List steps completed and steps not completed
-- Confirm with user if any other topics relevant to this phase's outputs should be discussed
-- Obtain explicit approval before proceeding to the next phase
-
-**QC Failure Recovery**
-If a QC phase identifies that a step was incomplete, non-compliant, or that output does not conform to skill instructions, do not proceed. State the specific failure clearly, identify which step or output is affected, and present the user with options: (a) return to the prior phase and re-run the failed step, (b) accept the gap with explicit acknowledgment and proceed, or (c) stop the session. Do not invent a resolution or silently continue. Wait for explicit user direction before taking any action.
-
-**Standard QC Document Verification**
-If any documents were loaded in the previous phase, verify Document Load Instructions were followed. State verification status for each document: document name, verification method, result (pass/fail/fallback used), and structural element confirmed. All documents must pass verification before proceeding.
+**Action Phases:** 1, 2, 3, 4, 4b, 4c, 4d, 5
 
 **Separation of Concerns**
 Extraction and enrichment are separate passes. During the extraction pass, capture only what is explicitly stated in source documents. Do not infer, embellish, or add impact language not present in the source. Flag gaps — do not fill them.
@@ -326,7 +299,7 @@ The user must review and explicitly approve the audit results before this phase 
 **Step 1 — Confirm output location:**
 The default output path is `knowledge/Experience_Inventory.md`. Confirm this with the user before writing.
 
-> **Warning:** The CV generation skill loads the inventory from `knowledge/Experience_Inventory.md`. If you save to a different location, the CV generation skill will not find it and Phase 3a will fail. Only change the output path if you are setting up a different workflow or file structure, and update the skill load instructions accordingly.
+> **Warning:** The CV generation skill loads the inventory from `knowledge/Experience_Inventory.md`. If you save to a different location, cv_targeted and cv_general will not find it and Phase 3a will fail. Only change the output path if you are setting up a different workflow or file structure, and update the skill load instructions accordingly.
 
 If an `Experience_Inventory.md` already exists at the output path, warn the user before overwriting. Obtain explicit confirmation to overwrite.
 
@@ -379,4 +352,4 @@ Ask the user: "Would you like to begin annotation enrichment now, or stop here a
 
 **If now:** Load `skills/source_document_update.md` and execute the Annotation Enrichment Phase. Use the enrichment priority entries flagged in Phase 4 as the starting target list — present them to the user as the recommended starting point rather than re-identifying targets from scratch.
 
-**If later:** Close the session. Remind the user that enrichment can be started at any time using the trigger phrase "let's do annotation work" or "enrich the inventory." Note that the CV generation skill can be used before enrichment is complete — unenriched entries are still retrievable, they just have less context for anchor citations.
+**If later:** Close the session. Remind the user that enrichment can be started at any time using the trigger phrase "let's do annotation work" or "enrich the inventory." Note that cv_targeted and cv_general can be used before enrichment is complete — unenriched entries are still retrievable, they just have less context for anchor citations.
