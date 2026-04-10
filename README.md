@@ -21,14 +21,16 @@ career_development/
 │   ├── positioning_builder.md
 │   ├── interview_prep.md
 │   ├── followup.md
-│   └── career_brief.md
+│   ├── career_brief.md
+│   └── control.md
 ├── rules/                                 ← rule sets read by skills during execution
 │   ├── global_rules.md                   ← shared: global rules loaded by every skill at execution start
 │   ├── sources.md                        ← shared: research citations for all skills
 │   ├── registry_archetype.md             ← shared: archetype catalog and selection criteria
 │   ├── registry_org_type.md              ← shared: organization type catalog and selection criteria
 │   ├── registry_company_type.md          ← shared: company type catalog and adaptive research branches for interview_prep
-│   └── config.md                         ← machine-specific configuration (Python executable path); update per machine
+│   ├── config.md                         ← machine-specific configuration (Python executable path); update per machine
+│   └── registry_skills.md                ← skill catalog with triggers, dependencies, completion signals; read by control skill
 │   ├── Archetype_1_Transformation_Strategy.md
 │   ├── Archetype_1_IC_Transformation_Strategy.md
 │   ├── Archetype_2_Data_Analytics.md
@@ -85,6 +87,7 @@ career_development/
 | Interview Prep | `skills/interview_prep.md` | Generating an interview prep document and pre-populated Interview Completion template for a target role; requires a completed GapAnalysis file from role_evaluation |
 | Follow-Up Letter | `skills/followup.md` | Generating a follow-up letter for a specific interview round; requires a completed Interview Completion document from interview_prep |
 | Career Brief | `skills/career_brief.md` | Generating a short professional bio or summary paragraph for recruiter outreach, networking introductions, or speaker profiles |
+| Control | `skills/control.md` | Entry point and mid-workflow navigation aid; assesses current workflow state via file-based detection and routes to the appropriate skill; reads from registry_skills.md |
 
 ---
 
@@ -151,6 +154,13 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 4a step 2 | Completion document generation | `templates/Interview_Completion_Template.md` |
 | 4a steps 1-2 | Python script execution | `rules/config.md` |
 | Phase 5 | Source update review | Specific knowledge docs loaded only as needed |
+
+### control
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| 1a | Session start | `rules/registry_skills.md` |
 
 ### career_brief
 

@@ -19,6 +19,7 @@ This repo supports job search and CV generation workflows. See `README.md` for f
 | Interview Prep | `skills/interview_prep.md` | Generating an interview prep document and pre-populated Interview Completion template for a target role; requires a completed GapAnalysis file from role_evaluation |
 | Follow-Up Letter | `skills/followup.md` | Generating a follow-up letter for a specific interview round; requires a completed Interview Completion document from interview_prep |
 | Career Brief | `skills/career_brief.md` | Generating a short professional bio or summary paragraph for recruiter outreach, networking introductions, or speaker profiles |
+| Control | `skills/control.md` | Entry point for new users; mid-workflow navigation aid; assesses current workflow state and routes to the appropriate skill |
 
 ---
 

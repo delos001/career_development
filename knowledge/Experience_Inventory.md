@@ -1,5 +1,31 @@
 # Experience Inventory
 
+## Table of Contents
+
+- [Tag Taxonomy](#tag-taxonomy)
+- [1. Education](#1-education)
+- [2. Professional Certifications](#2-professional-certifications)
+- [3. Professional Affiliations](#3-professional-affiliations)
+- [4. Professional Training](#4-professional-training)
+- [5. Technical Experience](#5-technical-experience)
+- [6. Therapeutic Area and Domain Exposure](#6-therapeutic-area-and-domain-exposure)
+- [7. All Tasks Performed](#7-all-tasks-performed)
+  - [Clinical Monitoring and Site Management](#clinical-monitoring--site-management)
+  - [Vendor Management and Oversight](#vendor-management--oversight)
+  - [Risk-Based Monitoring and Quality](#risk-based-monitoring--quality)
+  - [Clinical Trial Management and Oversight](#clinical-trial-management--oversight)
+  - [Data Science, Analytics and Engineering](#data-science-analytics--engineering)
+  - [Data Management and Quality Surveillance](#data-management--quality-surveillance)
+  - [Technology Strategy, Evaluation and Platform](#technology-strategy-evaluation--platform)
+  - [Process Design and Governance](#process-design--governance)
+  - [Organizational and Team Leadership](#organizational--team-leadership)
+  - [Change Management, Training and Adoption](#change-management-training--adoption)
+- [Background Roles (Not Tagged)](#background-roles-not-tagged)
+- [8. Academic Coursework Detail](#8-academic-coursework-detail)
+- [9. Independent and Volunteer Projects](#9-independent--volunteer-projects)
+
+---
+
 ## Tag Taxonomy
 
 **Capability:** Clinical Trial Execution | Risk-Based Monitoring & Quality | Data & Analytics | Quality & Compliance | Process Design & Optimization | Technology Strategy & Implementation | Vendor Management & Oversight | Organizational Design | Governance & Risk Management | Strategic Planning & Roadmapping | Change Management & Adoption | Stakeholder Management & Influence | Team Leadership & Development | Financial Management & Budgeting | AI Engineering & Development
