@@ -116,6 +116,54 @@ Execute in addition to Universal:
 
 ---
 
+## Financial Services / FinTech
+
+Execute in addition to Universal:
+
+- Core business lines: banking, lending, insurance, wealth management, payments, trading
+- Regulatory environment: primary regulators (OCC, FDIC, SEC, FINRA, CFPB, FCA, etc.) and recent enforcement actions
+- Technology infrastructure and digital transformation maturity
+- Risk and compliance posture: recent audits, consent orders, or regulatory findings
+- FinTech-specific: funding stage, product-market fit, banking partner relationships if applicable
+
+---
+
+## Manufacturing / Industrial
+
+Execute in addition to Universal:
+
+- Core products, production footprint, and supply chain structure
+- Quality and regulatory standards in force (ISO, FDA, GMP, OSHA compliance posture)
+- Operational improvement history: Lean, Six Sigma, or similar programs
+- Labor relations and workforce structure
+- Automation and Industry 4.0 investment signals
+
+---
+
+## Nonprofit / Foundation
+
+Execute in addition to Universal:
+
+- Mission, focus areas, and primary beneficiaries
+- Funding sources: government grants, private philanthropy, earned revenue, endowment
+- Financial health: most recent Form 990 if available; program vs administrative expense ratio
+- Governance structure: board composition, executive leadership tenure
+- Strategic initiatives and known challenges in the sector
+
+---
+
+## Energy / Utilities
+
+Execute in addition to Universal:
+
+- Energy mix and transition posture: fossil fuel, renewable, nuclear, or hybrid
+- Regulatory environment: FERC, state PUC, EPA, or international equivalents
+- Infrastructure investment cycle and capital project pipeline
+- Sustainability commitments and ESG reporting posture
+- Grid modernization or decarbonization initiatives if applicable
+
+---
+
 ## Adding New Types
 
 When a company does not fit any existing type, create a new entry following the format above. Add the type name, a one-line description of when it applies, and the specific research branches that are relevant beyond Universal. Do not force a poor-fit match to an existing type.

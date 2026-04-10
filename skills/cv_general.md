@@ -182,7 +182,7 @@ Perform QC per Global Rules:
 
 2. Propose an output descriptor based on the targeting context confirmed in Phase 1a. The descriptor should reflect the combination of level, domain, and org type in a concise, readable format — for example: `Leadership_DataAnalytics_Enterprise` or `IC_Transformation_ScaleUp`. Present the proposed descriptor and obtain user confirmation or override before proceeding.
 
-3. Generate the Word document programmatically using Python with python-docx. Use the Python executable at `C:/Users/delos/miniconda3/envs/agents/python.exe`. Write a Python script and execute it via Bash. All formatting decisions must reference `rules/cv/format_spec.md` — do not infer or recreate formatting from any other source. Use Windows-style paths (e.g., `C:/Users/delos/...`) in all Python file operations.
+3. Generate the Word document programmatically using Python with python-docx. Load `rules/config.md` and use the Python executable path defined there. Write a Python script and execute it via Bash. All formatting decisions must reference `rules/cv/format_spec.md` — do not infer or recreate formatting from any other source. Use Windows-style paths in all Python file operations.
 
    Structure decisions were made in Phase 4a and govern the output. Do not default to any reference document's structure.
 

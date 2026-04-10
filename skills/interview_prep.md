@@ -18,7 +18,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 *(No documents are loaded before this phase)*
 
-1. Confirm a GapAnalysis file exists for the target role. If the file path is not provided, ask for the company name and role title and locate the file at `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md`. If no file is found, inform the user that `role_evaluation` must be completed before `interview_prep` can proceed. Do not continue until the file is located.
+1. Confirm a GapAnalysis file exists for the target role. If the file path is not provided, ask for the company name and role title and locate the file at `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md`. If no file is found, inform the user that `role_evaluation` must be completed before `interview_prep` can proceed. If multiple files match the company and role name (e.g., from multiple application cycles), list them and ask the user to confirm which to use. Do not continue until a single file is confirmed.
 
 2. Load the GapAnalysis file. Confirm it loaded completely.
 
@@ -31,7 +31,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
    - Application recommendation from role evaluation
    - Research sources from role evaluation (these seed company research in Phase 2a)
 
-4. Ask the user for the absolute path to the output folder where both documents will be saved. This is typically the application folder in the user's OneDrive job search directory. Do not proceed until this path is confirmed.
+4. Ask the user for the absolute path to the output folder where both documents will be saved. This is the folder where application documents for this role are stored. Do not proceed until this path is confirmed.
 
 5. Confirm all context is in hand and state it explicitly before closing.
 
@@ -48,7 +48,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
    If no existing type fits the company without forcing a poor match, do not proceed silently. Inform the user that no matching type was found, state which types were considered and why each failed, and work with the user to define a new entry. Follow the "Adding New Types" instructions at the bottom of the registry: collect the type name, a one-line description of when it applies, and the specific research branches relevant beyond Universal. Write the new entry to `rules/registry_company_type.md` and confirm it was written before proceeding.
 
-2. Execute the Universal research branches from the registry plus the branches specific to the identified company type. Record each source consulted (URL or publication name and date) as research is performed.
+2. Review the research sources extracted from the GapAnalysis file in Phase 1a. Note which topics those sources already covered. Then execute the Universal research branches from the registry plus the branches specific to the identified company type, prioritizing branches not already addressed by prior research. Do not re-research topics already well-covered by the GapAnalysis sources unless new developments warrant it. Record each source consulted (URL or publication name and date) as research is performed.
 
 3. Decompose the role beyond the job description. Using the research context, state what this role actually requires day-to-day: decision rights, stakeholder landscape, operating environment, and what success looks like in the first year. This must go materially beyond paraphrasing the JD.
 
@@ -102,18 +102,20 @@ Based on the response:
 
 Pull 6-10 relevant stories from `knowledge/Career_Narratives.md` and supporting entries from `knowledge/Experience_Inventory.md` that address the critical requirements or likely interview themes for this role. For each story: provide the formatted cue in the confirmed framework, note which critical requirement or question type it serves, and note any story that could serve an alternate format if requested later.
 
+If fewer than 6 relevant stories exist in the source documents, do not pad with irrelevant stories to hit the count. State the number of relevant stories available, identify which critical requirements lack story coverage, and flag these gaps explicitly to the user before proceeding. The user may choose to continue with the available stories or pause to add new ones via `skills/career_narratives_builder.md`.
+
 Philosophy or knowledge questions get a short conversational draft rather than a structured cue.
 
 **Step 5 — Likely questions:**
 Generate likely interview questions organized by type:
 - Behavioral (minimum 8): for each, provide a keyword cue pointing to the best story from the stories bank
-- Functional / technical (minimum 5): derived from the critical requirements; provide a brief framing note for each
+- Functional / technical (minimum 5): derive from critical requirements first. If critical requirements total fewer than 5, derive additional questions from the role decomposition and JD themes to reach the minimum. Do not force overlap or repetition.
 - Situational (minimum 3): provide a framing note for each
-- "Why this company" and "why this role": placeholder — these are completed in Step 7
-- Leadership or management questions (if role level warrants): minimum 3
+- "Why this company" and "why this role": include these as anticipated interviewer questions. The user's prepared answers are in Sections 2 and 3 of the output document — do not duplicate them here, only flag them as questions the interviewer is likely to ask.
+- Leadership or management questions (minimum 3): include this category if the role is Director level or above, or if the JD explicitly mentions direct reports, team leadership, or people management regardless of title. Omit for IC roles where the JD contains no leadership indicators.
 
 **Step 6 — Questions to ask them:**
-Generate 10-12 strong questions to ask interviewers. Questions must reference specific findings from Phase 2a research and the role decomposition — not generic. Organize by theme: role foundation and charter, team and structure, success metrics, organizational dynamics, strategic context. Flag 3-4 questions as highest priority for a short or constrained interview.
+Generate 10-12 strong questions to ask interviewers. Questions must reference specific findings from Phase 2a research and the role decomposition — not generic. Organize by theme: role foundation and charter, team and structure, success metrics, organizational dynamics, strategic context. For non-corporate environments (government, academic, nonprofit, early-stage startup), adapt themes to fit the actual operating model — substitute themes like funding model, governance structure, or mission execution as appropriate. Flag 3-4 questions as highest priority for a short or constrained interview.
 
 After presenting the generated questions, ask: "Are there specific questions you want to make sure are covered, or topics you need answers to that aren't already addressed?"
 
@@ -155,7 +157,7 @@ Collect the following from the user. Prompt for each one at a time and wait for 
 
 **Questions to Ask:** Confirm minimum 10 questions. Confirm they reference specific findings from Phase 2a. Confirm 3-4 high-priority questions are flagged. Confirm any user-raised items were addressed per the Step 6 routing logic — either added, confirmed as covered, or explicitly routed to another section.
 
-**Personal Inputs:** Confirm all four prompted sections received user input. Confirm "Why This Role" and "Why This Company" are finalized and confirmed. Confirm salary handling language is present. If employment gap was omitted, confirm user explicitly said there was no gap.
+**Personal Inputs:** Confirm all required prompted sections received user input. Confirm "Why This Role" and "Why This Company" are finalized and confirmed. Confirm salary handling language is present. If employment gap was omitted, confirm user explicitly said there was no gap.
 
 Perform QC per Global Rules:
 - **Standard QC Document Verification**
@@ -170,7 +172,7 @@ Perform QC per Global Rules:
 *(State each step before completing the step)*
 
 **Step 1 — Generate interview prep document:**
-Generate the interview prep document as a `.docx` file using Python with python-docx. Use the Python executable at `C:/Users/delos/miniconda3/envs/agents/python.exe`. Write a Python script and execute it via Bash. Use Windows-style paths in all file operations.
+Generate the interview prep document as a `.docx` file using Python with python-docx. Load `rules/config.md` and use the Python executable path defined there. Write a Python script and execute it via Bash. Use Windows-style paths in all file operations.
 
 Naming convention: `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYYMM].docx`
 
@@ -201,7 +203,7 @@ Confirm the file was written before proceeding.
 **Step 2 — Generate interview completion document:**
 Load `templates/Interview_Completion_Template.md`. Confirm it loaded completely. Use its structure as the layout guide for the generated document.
 
-Generate the Interview Completion document as a `.docx` file using Python with python-docx. Use the Python executable at `C:/Users/delos/miniconda3/envs/agents/python.exe`. Write a Python script and execute it via Bash. Use Windows-style paths in all file operations.
+Generate the Interview Completion document as a `.docx` file using Python with python-docx. Load `rules/config.md` and use the Python executable path defined there. Write a Python script and execute it via Bash. Use Windows-style paths in all file operations.
 
 Apply the following Word styles so the Navigation Pane is functional without manual formatting:
 - Document title (company and role): `Title` style
@@ -213,7 +215,7 @@ Apply the following Word styles so the Navigation Pane is functional without man
 Populate the document as follows:
 - Header fields: company name, role title, YYYYMM, GapAnalysis file path, prep document path
 - Round 1 Questions and Responses: populate with the full questions-to-ask list from Phase 3a Step 6, one question per Q field, all A fields left blank for the user to fill in
-- Rounds 2-4: leave question fields blank as in the template structure
+- Rounds 2 through N: leave question fields blank as in the template structure
 
 Save to the output folder confirmed in Phase 1a. Naming convention:
 `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYYMM].docx`

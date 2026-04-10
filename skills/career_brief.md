@@ -50,9 +50,10 @@ Apply the format confirmed in Phase 1a:
 **Short Bio format:**
 - Length: 150-200 words
 - Voice: third-person throughout; never use "I"
-- Structure: opening sentence establishes current role and domain; second sentence establishes depth and scope of experience; middle sentences highlight 2-3 signature strengths or accomplishments drawn from Positioning.md, framed for the stated context; closing sentence states professional focus or what he brings to the work
+- Structure: opening sentence establishes current role and domain; second sentence establishes depth and scope of experience; middle sentences highlight 2-3 signature strengths or accomplishments drawn from Positioning.md, framed for the stated context; closing sentence states professional focus or what [Name] brings to the work
 - Tone: confident and specific; not a list of job titles, not a CV in prose form
 - Do not open with the person's name as a standalone fragment — work the name into the first sentence naturally
+- If the user is currently unemployed, between roles, or in transition: do not open with a current role. Open with most recent role framed as recent experience, or lead with domain expertise and career focus. Do not reference the gap directly in the bio.
 
 **Professional Summary Paragraph format:**
 - Length: 4-6 lines of prose (not bullets)

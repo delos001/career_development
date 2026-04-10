@@ -28,6 +28,7 @@ career_development/
 │   ├── registry_archetype.md             ← shared: archetype catalog and selection criteria
 │   ├── registry_org_type.md              ← shared: organization type catalog and selection criteria
 │   ├── registry_company_type.md          ← shared: company type catalog and adaptive research branches for interview_prep
+│   └── config.md                         ← machine-specific configuration (Python executable path); update per machine
 │   ├── Archetype_1_Transformation_Strategy.md
 │   ├── Archetype_1_IC_Transformation_Strategy.md
 │   ├── Archetype_2_Data_Analytics.md
@@ -114,6 +115,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 2a step 3 | Source review begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
 | 2b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
 | 3a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
+| 3a step 2 | Python script execution | `rules/config.md` |
 | Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
 
 ### cv_general
@@ -127,6 +129,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 3a step 1 | Source review begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
 | 4a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
 | 5a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
+| 5a step 3 | Python script execution | `rules/config.md` |
 
 ### career_narratives_builder
 
@@ -146,6 +149,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 2a step 1 | Company type identification | `rules/registry_company_type.md` |
 | 3a step 1 | Content generation begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
 | 4a step 2 | Completion document generation | `templates/Interview_Completion_Template.md` |
+| 4a steps 1-2 | Python script execution | `rules/config.md` |
 | Phase 5 | Source update review | Specific knowledge docs loaded only as needed |
 
 ### career_brief
@@ -161,6 +165,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYYMM].docx` (extracted via python-docx from application folder) |
+| 1a step 2 | Python script execution | `rules/config.md` |
 
 ---
 

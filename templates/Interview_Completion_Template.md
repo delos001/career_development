@@ -8,6 +8,10 @@
 
 ---
 
+*Note: This template includes 4 rounds and 4 interviewer slots per round. If your process has more rounds, copy the round structure below and append additional rounds following the same format. If a panel has more than 4 interviewers, add additional numbered slots following the same structure.*
+
+---
+
 ## Round 1
 
 ### Logistics
