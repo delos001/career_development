@@ -18,12 +18,16 @@ career_development/
 │   ├── experience_inventory_bootstrap.md
 │   ├── archetype_creation.md
 │   ├── career_narratives_builder.md
-│   └── positioning_builder.md
+│   ├── positioning_builder.md
+│   ├── interview_prep.md
+│   ├── followup.md
+│   └── career_brief.md
 ├── rules/                                 ← rule sets read by skills during execution
 │   ├── global_rules.md                   ← shared: global rules loaded by every skill at execution start
 │   ├── sources.md                        ← shared: research citations for all skills
 │   ├── registry_archetype.md             ← shared: archetype catalog and selection criteria
 │   ├── registry_org_type.md              ← shared: organization type catalog and selection criteria
+│   ├── registry_company_type.md          ← shared: company type catalog and adaptive research branches for interview_prep
 │   ├── Archetype_1_Transformation_Strategy.md
 │   ├── Archetype_1_IC_Transformation_Strategy.md
 │   ├── Archetype_2_Data_Analytics.md
@@ -43,10 +47,12 @@ career_development/
 │       ├── story_personal.md
 │       ├── decision_personal.md
 │       └── decision_adr.md
+├── templates/                             ← structural templates used by skills during document generation
+│   └── Interview_Completion_Template.md  ← template for interview round tracking; pre-populated by interview_prep
 ├── knowledge/                             ← personal source documents — gitignored
 │   ├── SETUP.md                          ← committed: setup instructions for new users
 │   └── Contact_Info.md                   ← single source of truth for CV contact line values
-└── outputs/                               ← generated CVs — gitignored
+└── outputs/                               ← generated CVs and role evaluation artifacts — gitignored
 ```
 
 ---
@@ -57,8 +63,9 @@ career_development/
 |---|---|---|
 | `skills/` | Workflow instruction sets that tell Claude what to do and how | Yes |
 | `rules/` | Rule sets read by skills during execution; shared files at root, skill-specific files in subdirectories | Yes |
+| `templates/` | Structural templates used by skills to generate output documents | Yes |
 | `knowledge/` | Personal source documents (CV content, experience, positioning) | No — gitignored |
-| `outputs/` | Generated CV files | No — gitignored |
+| `outputs/` | Generated CV files and role evaluation artifacts | No — gitignored |
 
 ---
 
@@ -74,6 +81,9 @@ career_development/
 | Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype when no existing archetype serves the target role |
 | Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `knowledge/Career_Narratives.md` with new stories or decisions |
 | Positioning Builder | `skills/positioning_builder.md` | Building or updating `knowledge/Positioning.md` |
+| Interview Prep | `skills/interview_prep.md` | Generating an interview prep document and pre-populated Interview Completion template for a target role; requires a completed GapAnalysis file from role_evaluation |
+| Follow-Up Letter | `skills/followup.md` | Generating a follow-up letter for a specific interview round; requires a completed Interview Completion document from interview_prep |
+| Career Brief | `skills/career_brief.md` | Generating a short professional bio or summary paragraph for recruiter outreach, networking introductions, or speaker profiles |
 
 ---
 
@@ -126,6 +136,33 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 1a step 2 | Format selection | Selected story format file from `rules/career_narratives/`; selected decision format file from `rules/career_narratives/` |
 | 1a step 3 | Adding or updating entries | `knowledge/Career_Narratives.md` |
 | 1a step 4 | Optional reference load | `knowledge/Experience_Inventory.md` (if user confirms) |
+
+### interview_prep
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| 1a | Session start | `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md` |
+| 2a step 1 | Company type identification | `rules/registry_company_type.md` |
+| 3a step 1 | Content generation begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 4a step 2 | Completion document generation | `templates/Interview_Completion_Template.md` |
+| Phase 5 | Source update review | Specific knowledge docs loaded only as needed |
+
+### career_brief
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| 2a step 1 | Generation begins | `knowledge/Positioning.md`; `knowledge/Experience_Inventory.md` only if Positioning.md lacks sufficient specificity |
+
+### followup
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| 1a | Session start | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYYMM].docx` (extracted via python-docx from application folder) |
+
+---
 
 **Excluded from current workflow:**
 - `rules/sources.md` — research and practitioner citations supporting all skill and rules design decisions. Not loaded by any skill. Retained for traceability.

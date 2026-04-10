@@ -16,6 +16,9 @@ This repo supports job search and CV generation workflows. See `README.md` for f
 | Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype when no existing archetype serves the target role |
 | Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `knowledge/Career_Narratives.md` with new stories or decisions |
 | Positioning Builder | `skills/positioning_builder.md` | Building or updating `knowledge/Positioning.md` |
+| Interview Prep | `skills/interview_prep.md` | Generating an interview prep document and pre-populated Interview Completion template for a target role; requires a completed GapAnalysis file from role_evaluation |
+| Follow-Up Letter | `skills/followup.md` | Generating a follow-up letter for a specific interview round; requires a completed Interview Completion document from interview_prep |
+| Career Brief | `skills/career_brief.md` | Generating a short professional bio or summary paragraph for recruiter outreach, networking introductions, or speaker profiles |
 
 ---
 
