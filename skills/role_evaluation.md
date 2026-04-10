@@ -11,7 +11,7 @@ Evaluate a target role against established experience and positioning to determi
 **Following Instructions**
 Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
 
-If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
+If something is ambiguous, do not use judgment or inference without approval and state the ambiguity explicitly before moving to another step or phase.
 
 When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
@@ -184,7 +184,7 @@ Perform QC per Global Rules:
 **Fit Threshold Verification:** Confirm Phase 3a Step 6 applied the threshold correctly. State: the number of critical requirements, the number with strong source-citable matches, and verify the 65% calculation. Confirm the domain exclusion check was performed. Confirm the application recommendation outcome matches the threshold result. If the recommendation was Proceed as Speculative Application, confirm explicit user acknowledgment of risk was obtained and documented.
 
 **GapAnalysis File:** Before closing this phase, write a gap analysis file to `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md` containing:
-1. Role context: company name, role title, role level, primary archetype (and secondary if applicable, with rationale), org type, and org-type framing emphasis
+1. Role context: company name, role title, role level, primary archetype name and instruction file path for the confirmed role level (and secondary archetype name and file path if applicable, with rationale for both), org type, and org-type framing emphasis
 2. The list of critical requirements from Phase 2a and the source-citable match for each
 3. The full gap summary table including severity and resolution status for every gap
 4. The fit assessment summary from Phase 3a Step 6 including the threshold calculation and application recommendation

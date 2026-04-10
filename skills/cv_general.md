@@ -2,11 +2,11 @@
 
 ## Objective
 
-Generate a generalized CV — not tailored to a specific role or company — that represents the user's best case for a defined targeting context. Used for recruiter outreach, networking, and situations where a polished, ready-to-send CV is needed without running the full `cv_generation` workflow.
+Generate a generalized CV — not tailored to a specific role or company — that represents the user's best case for a defined targeting context. Used for recruiter outreach, networking, and situations where a polished, ready-to-send CV is needed without running the full `role_evaluation` and `cv_targeted` workflow.
 
 Output is a .docx file saved to `outputs/` with a descriptor-based filename confirmed with the user.
 
-**Boundary with `cv_generation`:** Use `cv_generation` when a specific job description is available and the goal is a role-tailored CV with fit evaluation and gap closure. Use this skill when no specific role is in hand and the goal is a strong general representation for a defined targeting context.
+**Boundary with `cv_targeted`:** Use `role_evaluation` followed by `cv_targeted` when a specific job description is available and the goal is a role-tailored CV with fit evaluation and gap closure. Use this skill when no specific role is in hand and the goal is a strong general representation for a defined targeting context.
 
 ---
 
@@ -15,14 +15,14 @@ Output is a .docx file saved to `outputs/` with a descriptor-based filename conf
 **Following Instructions**
 Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
 
-If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
+If something is ambiguous, do not use judgment or inference without approval and state the ambiguity explicitly before moving to another step or phase.
 
 When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
 **Document Load Instructions**
 Document load instructions apply at any point in the skill.
 
-Load documents at the phase and step specified in this skill — no earlier, no later.
+Load documents at the phase and step specified in this skill — no earlier, no later. This is a just-in-time loading workflow. Refer to `README.md` for the full loading map.
 
 A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure.
 
@@ -31,7 +31,9 @@ If any document fails loading, do not proceed using partial content:
 - Confirm the full document content is readable before proceeding
 - If the bash fallback also fails, report the specific file and error — do NOT proceed until resolved
 
-**Standard Phase Closing — Action Phases**
+If a read returns incomplete content mid-phase, stop, run the fallback, confirm availability, then continue. Do not silently proceed with degraded source material.
+
+**Standard Phase Closing — Action Phases (1a, 2a, 2b, 3a, 3b, 4a, 4b, 5a, 5b)**
 At the close of each action phase:
 - List steps completed and steps not completed
 - Confirm with user if any other topics relevant to this phase's outputs should be discussed
@@ -119,7 +121,7 @@ State the result of each check. Flag failures and invoke QC Failure Recovery bef
 
 2. Review the loaded source documents against the confirmed archetype's inventory tag priorities. Identify which entries, themes, and narratives are most relevant to the targeting context. State the top-tier material explicitly — these are the achievements that must be represented in the finished CV.
 
-   Unlike `cv_generation`, there is no job description to match against. The archetype's tag priorities are the primary selection guide. The user's additional targeting notes from Phase 1a provide secondary context.
+   Unlike `cv_targeted`, there is no job description to match against. The archetype's tag priorities are the primary selection guide. The user's additional targeting notes from Phase 1a provide secondary context.
 
 3. Propose the experience architecture:
    - Which roles belong in the main experience section and which receive summary treatment
@@ -130,7 +132,7 @@ State the result of each check. Flag failures and invoke QC Failure Recovery bef
 
    Present the proposed architecture and obtain explicit user approval before proceeding to content generation.
 
-4. Note any gaps — source material that is thin or missing for the stated targeting context. Flag these for the user. Unlike `cv_generation`, there is no gap closure phase here — this CV represents what currently exists in the source documents. If gaps are significant enough to warrant source document work before generating the CV, recommend triggering the appropriate builder skill first and stopping this session.
+4. Note any gaps — source material that is thin or missing for the stated targeting context. Flag these for the user. Unlike `cv_targeted`, there is no gap closure phase here — this CV represents what currently exists in the source documents. If gaps are significant enough to warrant source document work before generating the CV, recommend triggering the appropriate builder skill first and stopping this session.
 
 **Phase 3a Closing:** Follow Standard Phase Closing. Next phase is Phase 3b.
 
@@ -189,7 +191,10 @@ State the result of each check. Flag failures and invoke QC Failure Recovery bef
 
 **Source Traceability:** Verify that every achievement and claim is traceable to a source document loaded in this session or information explicitly provided by the user during this session. Flag any content that cannot be traced.
 
-State the result of each check. Flag failures and invoke QC Failure Recovery before proceeding.
+**CV QC Checklist:** Load `rules/cv/qc_checklist.md` now. Apply the Universal section against the generated CV content. Then apply the archetype section matching the active archetype and role level confirmed in Phase 1a. For each item, cite specific evidence from the generated content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
+
+Perform QC per Global Rules:
+- **Standard QC Document Verification**
 
 **Phase 4b Closing:** Follow Standard Phase Closing. Next phase is Phase 5a.
 
@@ -230,10 +235,8 @@ State the result of each check. Flag failures and invoke QC Failure Recovery.
 
 ---
 
-## Phase 6 — Source Document Update Check
+## Phase 6 — Source Document Update
 
-Review the session for any new experience language, framing decisions, or positioning insights surfaced during content generation that are not yet captured in source documents. This is particularly relevant when content generation revealed gaps, required the user to articulate something for the first time, or produced framing that should be preserved.
+Dedicated to capturing information surfaced during this CV session that should be added to source documents.
 
-Present any such items to the user. If the user confirms items worth capturing, offer to trigger `skills/source_document_update.md`.
-
-Session complete.
+Load `skills/source_document_update.md` now and follow it completely. "This session" refers to all phases and interactions from Phase 1a through Phase 5b.

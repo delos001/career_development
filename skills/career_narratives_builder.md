@@ -2,7 +2,7 @@
 
 ## Objective
 
-Build and maintain `knowledge/Career_Narratives.md` — a structured record of the most consequential situations, decisions, and outcomes from the user's career. This document serves two purposes: it is a source document for `cv_generation` when building complex, high-depth CV entries, and it is a reference for interview preparation by organizing key situations and decisions into retrievable, structured form.
+Build and maintain `knowledge/Career_Narratives.md` — a structured record of the most consequential situations, decisions, and outcomes from the user's career. This document serves two purposes: it is a source document for `cv_targeted` when building complex, high-depth CV entries, and it is a reference for interview preparation by organizing key situations and decisions into retrievable, structured form.
 
 This skill handles three modes:
 - **New document:** No Career_Narratives.md exists. Build from scratch.
@@ -16,22 +16,35 @@ This skill handles three modes:
 **Following Instructions**
 Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
 
-If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
+If something is ambiguous, do not use judgment or inference without approval and state the ambiguity explicitly before moving to another step or phase.
 
 When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
 **Document Load Instructions**
 Document load instructions apply at any point in the skill.
-Load documents at the phase and step specified. A document is loaded completely when all content is present with identifiable structure — not just a fragment. If a document returns only fragments, run `cat [filepath]` as fallback. Do not proceed with partial content.
 
-**Standard Phase Closing**
-At the close of each phase:
+Load documents at the phase and step specified in this skill — no earlier, no later. This is a just-in-time loading workflow. Refer to `README.md` for the full loading map.
+
+A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure.
+
+If any document fails loading, do not proceed using partial content:
+- Run bash with `cat [filepath]` for each failed document
+- Confirm the full document content is readable before proceeding
+- If the bash fallback also fails, report the specific file and error — do NOT proceed until resolved
+
+If a read returns incomplete content mid-phase, stop, run the fallback, confirm availability, then continue. Do not silently proceed with degraded source material.
+
+**Standard Phase Closing — Action Phases (1a, 2a, 3a, 4a, 5a)**
+At the close of each action phase:
 - List steps completed and steps not completed
 - Confirm with user if any other topics relevant to this phase's outputs should be discussed
 - Obtain explicit approval before proceeding to the next phase
 
 **QC Failure Recovery**
-If a QC phase identifies a failure, do not proceed. State the specific failure, identify the affected step or output, and present options: (a) return to the prior phase and re-run the failed step, (b) accept the gap with explicit acknowledgment, or (c) stop the session. Wait for explicit user direction before taking any action.
+If a QC phase identifies that a step was incomplete, non-compliant, or that output does not conform to skill instructions, do not proceed. State the specific failure clearly, identify which step or output is affected, and present the user with options: (a) return to the prior phase and re-run the failed step, (b) accept the gap with explicit acknowledgment and proceed, or (c) stop the session. Do not invent a resolution or silently continue. Wait for explicit user direction before taking any action.
+
+**Standard QC Document Verification**
+If any documents were loaded in the previous phase, verify Document Load Instructions were followed. State verification status for each document: document name, verification method, result (pass/fail/fallback used), and structural element confirmed. All documents must pass verification before proceeding.
 
 ---
 
@@ -162,7 +175,7 @@ For each entry developed in Phase 3a, verify:
 
 **Depth test:** Does the entry contain enough substance to support a 2-3 minute interview answer? Verify against the guidance notes in the loaded format file. An entry that describes only what happened without the thinking, tradeoffs, or reasoning behind it fails this test regardless of format.
 
-**Dual-use test:** Can `cv_generation` extract a concrete outcome and organizational impact from this entry? Can the user use this entry as a reference during an interview without reconstructing the narrative from memory? Both must be true.
+**Dual-use test:** Can `cv_targeted` extract a concrete outcome and organizational impact from this entry? Can the user use this entry as a reference during an interview without reconstructing the narrative from memory? Both must be true.
 
 **Honesty check:** Are scope claims accurate? Does the outcome reflect what was actually delivered, not what was intended? Are tradeoffs, pushback, and retrospective reflection documented honestly, or have they been softened? Flag any overstated claims before writing.
 

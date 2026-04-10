@@ -17,19 +17,41 @@ Build a structured, tagged Experience Inventory from raw career source documents
 ## Global Rules
 
 **Following Instructions**
-Follow this skill exactly. Do not skip phases or combine steps without explicit user approval. Do not perform extraction before taxonomy is confirmed. Do not begin assembly before extraction is complete.
+Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval. Do not skip phases or combine steps without explicit user approval. Do not perform extraction before taxonomy is confirmed. Do not begin assembly before extraction is complete.
+
+When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
+
+**Document Load Instructions**
+Document load instructions apply at any point in the skill.
+
+Load documents at the phase and step specified in this skill — no earlier, no later. This is a just-in-time loading workflow. Refer to `README.md` for the full loading map.
+
+A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure.
+
+If any document fails loading, do not proceed using partial content:
+- Run bash with `cat [filepath]` for each failed document
+- Confirm the full document content is readable before proceeding
+- If the bash fallback also fails, report the specific file and error — do NOT proceed until resolved
+
+If a read returns incomplete content mid-phase, stop, run the fallback, confirm availability, then continue. Do not silently proceed with degraded source material.
+
+**Standard Phase Closing — Action Phases (1, 2, 3, 4, 4b, 4c, 4d, 5)**
+At the close of each action phase:
+- List steps completed and steps not completed
+- Confirm with user if any other topics relevant to this phase's outputs should be discussed
+- Obtain explicit approval before proceeding to the next phase
+
+**QC Failure Recovery**
+If a QC phase identifies that a step was incomplete, non-compliant, or that output does not conform to skill instructions, do not proceed. State the specific failure clearly, identify which step or output is affected, and present the user with options: (a) return to the prior phase and re-run the failed step, (b) accept the gap with explicit acknowledgment and proceed, or (c) stop the session. Do not invent a resolution or silently continue. Wait for explicit user direction before taking any action.
+
+**Standard QC Document Verification**
+If any documents were loaded in the previous phase, verify Document Load Instructions were followed. State verification status for each document: document name, verification method, result (pass/fail/fallback used), and structural element confirmed. All documents must pass verification before proceeding.
 
 **Separation of Concerns**
 Extraction and enrichment are separate passes. During the extraction pass, capture only what is explicitly stated in source documents. Do not infer, embellish, or add impact language not present in the source. Flag gaps — do not fill them.
 
 **Deduplication Discipline**
 The same experience described across multiple CVs must produce one canonical entry — not one entry per CV mention. Duplicate detection is active throughout the extraction pass. When duplicates are identified and one version is clearly more detailed, keep the most detailed version and merge any complementary detail from the other. When two versions describe the same role or achievement with substantially different framing — not just different levels of detail — do not resolve autonomously. Flag the conflict, present both versions to the user, and obtain explicit direction before proceeding.
-
-**Standard Phase Closing**
-At the close of each phase: list steps completed, confirm with the user whether anything relevant to this phase's outputs should be discussed, and obtain explicit approval before proceeding to the next phase.
-
-**Document Load Instructions**
-If any document fails to load completely during intake, do not proceed using partial content. Run `cat [filepath]` via Bash as a fallback. Report the specific file and error if the fallback also fails. Do not proceed until resolved.
 
 **Progressive Write Protocol — Context Management**
 This skill processes potentially large volumes of source documents and extracted entries. To prevent context overflow, extracted entries are written progressively to a staging file at `temp/inventory_staging.md` rather than held in active context throughout the session. Apply this protocol during Phase 4:

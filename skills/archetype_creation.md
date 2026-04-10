@@ -4,8 +4,8 @@
 
 Create a new role archetype when no existing archetype in `rules/registry_archetype.md`
 serves the target role. Produces two conformant archetype files (leadership and IC
-variants) and a registry entry. Output must integrate with the existing cv_generation.md
-workflow without modification to any existing files other than the registry.
+variants) and a registry entry. Output must integrate with the existing role_evaluation.md
+and cv_general.md workflows without modification to any existing files other than the registry.
 
 ---
 
@@ -14,18 +14,23 @@ workflow without modification to any existing files other than the registry.
 **Following Instructions**
 Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
 
-If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
+If something is ambiguous, do not use judgment or inference without approval and state the ambiguity explicitly before moving to another step or phase.
 
 When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
 **Document Load Instructions**
 Document load instructions apply at any point in the skill.
 
-Load documents at the phase and step specified. No earlier, no later.
+Load documents at the phase and step specified in this skill — no earlier, no later. This is a just-in-time loading workflow. Refer to `README.md` for the full loading map.
 
-A document is loaded completely when all content is present with identifiable structure.
-If any document fails loading, run bash with `cat [filepath]` as fallback. Do not
-proceed with partial content.
+A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure.
+
+If any document fails loading, do not proceed using partial content:
+- Run bash with `cat [filepath]` for each failed document
+- Confirm the full document content is readable before proceeding
+- If the bash fallback also fails, report the specific file and error — do NOT proceed until resolved
+
+If a read returns incomplete content mid-phase, stop, run the fallback, confirm availability, then continue. Do not silently proceed with degraded source material.
 
 **Standard Phase Closing — Action Phases (1a, 1b, 2a, 3a, 4a)**
 At the close of each action phase:
@@ -35,16 +40,10 @@ At the close of each action phase:
 - Obtain explicit approval before proceeding to the next phase
 
 **QC Failure Recovery**
-If a QC phase identifies a failure, do not proceed. State the specific failure,
-identify which step or output is affected, and present options: (a) return to the
-prior phase and re-run the failed step, (b) accept the gap with explicit
-acknowledgment and proceed, or (c) stop the session. Wait for explicit user
-direction before taking any action.
+If a QC phase identifies that a step was incomplete, non-compliant, or that output does not conform to skill instructions, do not proceed. State the specific failure clearly, identify which step or output is affected, and present the user with options: (a) return to the prior phase and re-run the failed step, (b) accept the gap with explicit acknowledgment and proceed, or (c) stop the session. Do not invent a resolution or silently continue. Wait for explicit user direction before taking any action.
 
 **Standard QC Document Verification**
-If documents were loaded in the previous phase, verify load instructions were
-followed. State verification status for each document: name, verification method,
-result (pass/fail/fallback used), and structural element confirmed.
+If any documents were loaded in the previous phase, verify Document Load Instructions were followed. State verification status for each document: document name, verification method, result (pass/fail/fallback used), and structural element confirmed. All documents must pass verification before proceeding.
 
 ---
 
@@ -53,7 +52,7 @@ result (pass/fail/fallback used), and structural element confirmed.
 *(No documents loaded in this phase)*
 
 1. Identify the trigger source and state it explicitly:
-   - **Triggered from cv_generation.md:** the job description, company name, and
+   - **Triggered from role_evaluation.md or cv_general.md:** the job description, company name, and
      role title should be available in the current session. Confirm each is present.
      If any are missing, request them now and do not proceed until received.
    - **Triggered independently:** request the job description, company name, and
@@ -78,8 +77,8 @@ result (pass/fail/fallback used), and structural element confirmed.
 
 3. If any existing archetype satisfies the match criteria for this role, do not
    proceed. State which archetype fits and why. Then:
-   - If triggered from cv_generation.md: direct the user to return to Phase 2a
-     Step 6 with the identified archetype.
+   - If triggered from role_evaluation.md: direct the user to return to Phase 2a Step 5 with the identified archetype.
+   - If triggered from cv_general.md: direct the user to return to Phase 2a Step 1 with the identified archetype.
    - If triggered independently: inform the user that a new archetype is not needed.
    Stop here in either case.
 
@@ -300,10 +299,7 @@ the name slug matches the approved archetype name.
 
 1. Confirm both archetype files and the registry entry are verified and in place.
 
-2. If triggered from cv_generation.md: the new archetype is now available. Direct
-   the user to return to cv_generation.md Phase 2a Step 6 and re-evaluate the role
-   against the updated registry. The new archetype should now satisfy the match
-   criteria for the role.
+2. If triggered from role_evaluation.md: the new archetype is now available. Direct the user to return to role_evaluation.md Phase 2a Step 5 and re-evaluate the role against the updated registry. The new archetype should now satisfy the match criteria for the role.
+   If triggered from cv_general.md: direct the user to return to cv_general.md Phase 2a Step 1 and re-evaluate the archetype selection against the updated registry.
 
-3. If triggered independently: the new archetype is available for future CV
-   generation sessions. No further action required.
+3. If triggered independently: the new archetype is available for future sessions. No further action required.

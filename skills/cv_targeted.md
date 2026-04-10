@@ -80,7 +80,7 @@ All rules in the content rules file apply actively throughout content generation
 Apply the org-type framing emphasis from Phase 1a throughout content generation. Framing emphasis governs how the organizational environment and operating context are described — archetype governs achievement selection and characterization.
 
 **Step 2 — Load archetype instruction set:**
-Load the archetype instruction document matching the primary archetype confirmed in Phase 1a. Use the role level from Phase 1a to select between the leadership and IC file — both file paths are listed in the registry entry for each archetype. If a secondary archetype was identified in Phase 1a, also load that document using the same role-level logic. Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
+Load the archetype instruction document using the file path provided in the GapAnalysis file for the primary archetype. If a secondary archetype was identified in Phase 1a, load that document using its file path from the GapAnalysis file as well. Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
 
 **Step 3 — Load source documents:**
 Load the following source documents now. Confirm each loaded completely before proceeding:

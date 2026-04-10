@@ -15,9 +15,19 @@ Invoke at the close of any session where new experience language, framing decisi
 **Following Instructions**
 Follow this skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates this skill without explicit user approval.
 
-If something is ambiguous, do not use judement or inference without approval and state the ambiguit explicitly before moving to another step or phase.
+If something is ambiguous, do not use judgment or inference without approval and state the ambiguity explicitly before moving to another step or phase.
 
 When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
+
+**Document Load Instructions**
+Document load instructions apply at any point in the skill.
+
+Load only the documents relevant to the updates being recommended, at the point they are needed. A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure.
+
+If any document fails loading, do not proceed using partial content:
+- Run bash with `cat [filepath]` for each failed document
+- Confirm the full document content is readable before proceeding
+- If the bash fallback also fails, report the specific file and error — do NOT proceed until resolved
 
 ---
 

@@ -11,13 +11,14 @@ career_development/
 ├── CLAUDE.md                              ← project context and skill index
 ├── README.md                              ← this file
 ├── skills/                                ← workflow instruction sets
-│   ├── cv_generation.md
+│   ├── role_evaluation.md
+│   ├── cv_targeted.md
+│   ├── cv_general.md
 │   ├── source_document_update.md
 │   ├── experience_inventory_bootstrap.md
 │   ├── archetype_creation.md
 │   ├── career_narratives_builder.md
-│   ├── positioning_builder.md
-│   └── general_cv_builder.md
+│   └── positioning_builder.md
 ├── rules/                                 ← rule sets read by skills during execution
 │   ├── sources.md                        ← shared: research citations for all skills
 │   ├── registry_archetype.md             ← shared: archetype catalog and selection criteria
