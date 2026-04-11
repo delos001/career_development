@@ -119,9 +119,8 @@ explanation of why this archetype is distinct.
 
 *(Only after Phase 2a and 2b have been explicitly approved)*
 
-Draft all seven sections required by the archetype file structure. Present each
-section to the user as it is drafted. Do not advance to the next section without
-confirmation.
+Draft the following required sections. Present each section to the user as it is
+drafted. Do not advance to the next section without confirmation.
 
 1. **Section 1 — Purpose and Scope:** state when to apply this document, that it
    is a CV generation instruction set for Jason Delosh, and the dual-archetype rule
@@ -168,7 +167,19 @@ confirmation.
 7. **Section 7 — Content to De-emphasize:** 3-5 specific items to minimize or
    exclude, with a brief reason for each.
 
-8. **IC variant differences:** define how the IC file differs from the leadership
+8. **Conditional sections:** Evaluate whether this archetype requires either of the
+   following. If yes, draft the section and number it sequentially after Section 7.
+   If no, state explicitly that it is not needed and why.
+
+   - **Inventory Coverage Notice:** Required when the Experience Inventory does not
+     have a dedicated capability tag for this archetype's primary domain and compound
+     tag queries are needed. See Archetype 4 (Platform & Technology) for an example.
+   - **Technical Proficiencies handling:** Required when this archetype needs
+     expanded or different treatment of the Technical Proficiencies CV section beyond
+     the default "condensed, minimal visual weight." See Archetype 2 (Data &
+     Analytics) and Archetype 4 (Platform & Technology) for examples.
+
+9. **IC variant differences:** define how the IC file differs from the leadership
    file in section order, tag priorities, or framing emphasis. IC files must
    reference `rules/cv/content_rules_ic.md` in their Purpose and Scope section.
    If there are no meaningful differences, state that explicitly and note that the
@@ -183,8 +194,8 @@ confirmation.
 Perform QC per Global Rules:
 - **Standard QC Document Verification**
 
-All 7 sections: confirm each section is present and populated. A missing or empty
-section is a blocking issue.
+Sections 1-7: confirm each required section is present and populated. A missing or
+empty section is a blocking issue.
 
 Section 3 (Summary Framing): confirm Lead with, Do NOT lead with, Register, Length,
 and 4 required elements are all defined. Any missing element is a blocking issue.
@@ -202,6 +213,11 @@ required framing pattern is stated. Confirm at least 2 calibration examples are 
 
 Section 7 (De-emphasize): confirm items are specific to this archetype, not generic
 advice that would apply to any archetype.
+
+Conditional sections: if an Inventory Coverage Notice or Technical Proficiencies
+handling section was included, confirm it is justified by the archetype's specific
+needs. If either was evaluated and deemed unnecessary, confirm that determination
+is documented explicitly in the archetype file.
 
 IC variant: confirm differences are defined. If the IC file mirrors the leadership
 file, confirm that was explicitly stated and approved. Confirm the reference to

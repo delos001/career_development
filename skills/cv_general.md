@@ -45,12 +45,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
    If the user's stated targeting context does not satisfy the match criteria for any archetype, do not proceed. State specifically which criteria failed for each archetype. Inform the user that a new archetype may be needed and that `skills/archetype_creation.md` must be triggered and completed before this skill can continue.
 
-   If a dual-archetype is identified, apply the following rules throughout all subsequent phases:
-   - The primary archetype governs exclusively: section order, summary framing, Core Competencies priority, and achievement selection criteria
-   - Secondary framing appears only within individual achievements where both dimensions are genuinely present in the underlying experience — not as standalone achievements and not in the summary
-   - No more than 2-3 achievements should carry secondary framing
-   - When primary and secondary framing conflict within an achievement, primary wins
-   - The summary is governed exclusively by the primary archetype framing rules
+   If a dual-archetype is identified, apply the Dual-Archetype Handling Rules from `rules/global_rules.md` throughout all subsequent phases.
 
    Obtain explicit user agreement on the archetype selection before proceeding.
 
@@ -186,7 +181,7 @@ Perform QC per Global Rules:
 
    Structure decisions were made in Phase 4a and govern the output. Do not default to any reference document's structure.
 
-4. Save the completed CV to `outputs\` using this naming convention: `CV_General_[descriptor].docx` where descriptor is the confirmed value from Step 2.
+4. Save the completed CV to `outputs/` using this naming convention: `CV_General_[descriptor]_[YYYYMM].docx` where descriptor is the confirmed value from Step 2.
 
 **Phase 5a Closing:** Follow Standard Phase Closing. Next phase is Phase 5b.
 
@@ -195,7 +190,7 @@ Perform QC per Global Rules:
 ## Phase 5b — Quality Control of Phase 5a
 
 Verify the generated document against `rules/cv/format_spec.md`. Confirm:
-- File saved to `outputs\` with the confirmed filename
+- File saved to `outputs/` with the confirmed filename
 - Document structure matches the approved section order from the archetype
 - Formatting elements (fonts, spacing, bullet style, header treatment) conform to the format spec
 - No content was altered during document generation relative to the approved Phase 4a output

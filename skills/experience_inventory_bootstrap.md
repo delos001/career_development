@@ -21,7 +21,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 **Action Phases:** 1, 2, 3, 4, 4b, 4c, 4d, 5
 
 **Separation of Concerns**
-Extraction and enrichment are separate passes. During the extraction pass, capture only what is explicitly stated in source documents. Do not infer, embellish, or add impact language not present in the source. Flag gaps — do not fill them.
+Extraction and enrichment are separate passes. During the extraction pass, capture only what is explicitly stated in source documents. Do not infer, embellish, or add impact language not present in the source. Flag gaps; do not fill them. Extracted entries are raw source material, not polished CV bullets. CV content rules (`rules/cv/content_rules_leadership.md` and `rules/cv/content_rules_ic.md`) do not apply during extraction; they govern only CV generation skills.
 
 **Deduplication Discipline**
 The same experience described across multiple CVs must produce one canonical entry — not one entry per CV mention. Duplicate detection is active throughout the extraction pass. When duplicates are identified and one version is clearly more detailed, keep the most detailed version and merge any complementary detail from the other. When two versions describe the same role or achievement with substantially different framing — not just different levels of detail — do not resolve autonomously. Flag the conflict, present both versions to the user, and obtain explicit direction before proceeding.

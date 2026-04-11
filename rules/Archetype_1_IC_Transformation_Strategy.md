@@ -4,7 +4,7 @@
 
 **1. Purpose and Scope**
 
-Apply this document when the archetype is Transformation & Strategy and the role level confirmed in Phase 2a is Individual Contributor. Use in combination with `rules/cv/content_rules_ic.md`, which governs voice, register, and formatting. Do not apply leadership framing from `Archetype_1_Transformation_Strategy.md` for IC roles.
+Apply this document when the confirmed archetype is Transformation & Strategy and the confirmed role level is Individual Contributor. Use in combination with `rules/cv/content_rules_ic.md`, which governs voice, register, and formatting. Do not apply leadership framing from `Archetype_1_Transformation_Strategy.md` for IC roles.
 
 **2. Archetype Match Criteria**
 
@@ -98,7 +98,7 @@ Required elements --- all four must be present:
 
 -   One forward-looking statement connecting Jason's transformation execution experience to the specific program need stated or implied in the job description
 
-**3. Achievement Framing Rules**
+**6. Achievement Framing Rules**
 
 Every achievement must follow this structure:
 

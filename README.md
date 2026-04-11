@@ -29,8 +29,8 @@ career_development/
 │   ├── registry_archetype.md             ← shared: archetype catalog and selection criteria
 │   ├── registry_org_type.md              ← shared: organization type catalog and selection criteria
 │   ├── registry_company_type.md          ← shared: company type catalog and adaptive research branches for interview_prep
+│   ├── registry_skills.md                ← skill catalog with triggers, dependencies, completion signals; read by control skill
 │   ├── config.md                         ← machine-specific configuration (Python executable path); update per machine
-│   └── registry_skills.md                ← skill catalog with triggers, dependencies, completion signals; read by control skill
 │   ├── Archetype_1_Transformation_Strategy.md
 │   ├── Archetype_1_IC_Transformation_Strategy.md
 │   ├── Archetype_2_Data_Analytics.md
@@ -176,6 +176,39 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYYMM].docx` (extracted via python-docx from application folder) |
 | 1a step 2 | Python script execution | `rules/config.md` |
+
+### source_document_update
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| Step 1 | Identifying updates | Target source documents loaded as needed: `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| Annotation Step 1 | Annotation enrichment | `knowledge/Experience_Inventory.md`; `rules/cv/content_rules_leadership.md` |
+
+### experience_inventory_bootstrap
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| Phase 4 | Extraction pass | Source documents provided by user (one at a time per Progressive Write Protocol) |
+| Phase 4b | Structural reconciliation | `temp/inventory_staging.md`; source documents re-read for coverage verification |
+
+### archetype_creation
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| 1b step 1 | Boundary validation | `rules/registry_archetype.md` |
+| 3a step 5 | Tag verification (if needed) | `knowledge/Experience_Inventory.md` |
+| 4a step 1 | File creation | `rules/registry_archetype.md` |
+
+### positioning_builder
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| 1a step 2 | Existing document load (if applicable) | `knowledge/Positioning.md` |
+| 1a step 3 | Optional reference load | `knowledge/Experience_Inventory.md`; `knowledge/Career_Narratives.md` (if user confirms) |
 
 ---
 

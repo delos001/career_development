@@ -132,7 +132,7 @@ Apply the guidance notes in the loaded format file throughout. Flag any field th
 After completing a draft, ask whether the entry has enough depth to support a real interview answer, or whether any field needs to be developed further before moving on.
 
 **Step 3 — Assign tags (stories only):**
-After completing the story draft, assign tags covering: capability area, context type (Greenfield, Scaling, Turnaround, Mature/Enterprise), outcome type, and tools or methods if they materially explain how the outcome was achieved. Model tagging on existing entries in the loaded document where available.
+After completing the story draft, assign tags using the Experience Inventory taxonomy dimensions: Capability, Role Level, Org Context (Greenfield, Scaling, Turnaround, Mature/Enterprise, Independent, Volunteer), and Outcome. Model tagging on existing entries in the loaded document where available.
 
 **Phase 3a Closing:** Follow Standard Phase Closing. Next phase is Phase 4a.
 

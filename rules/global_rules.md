@@ -12,6 +12,8 @@ If something is ambiguous, do not use judgment or inference without approval and
 
 When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
+State each step before completing it. The user should know what is about to happen before it happens.
+
 ---
 
 ## Document Load Instructions
@@ -51,6 +53,19 @@ If a QC phase identifies that a step was incomplete, non-compliant, or that outp
 ## Standard QC Document Verification
 
 If any documents were loaded in the previous phase, verify Document Load Instructions were followed. State verification status for each document: document name, verification method, result (pass/fail/fallback used), and structural element confirmed. All documents must pass verification before proceeding.
+
+---
+
+## Dual-Archetype Handling Rules
+
+When a role or targeting context spans two archetypes, identify a primary and secondary archetype and state both explicitly with rationale. Apply the following rules throughout all subsequent phases:
+
+- The primary archetype governs exclusively: section order, summary framing, Core Competencies priority, and achievement selection criteria. The secondary archetype has no authority over any of these.
+- Secondary framing appears only within individual achievements where both dimensions are genuinely present in the underlying experience. Not as standalone achievements and not in the summary.
+- No more than 2-3 achievements should carry secondary framing. If more than a third of achievements require secondary framing to be relevant, the primary archetype selection is likely wrong. Flag this before proceeding and re-evaluate.
+- When primary and secondary framing conflict within an achievement, primary wins. Do not weaken the primary message to accommodate the secondary dimension.
+- The summary is governed exclusively by the primary archetype framing rules. The secondary archetype does not appear in the summary.
+- Core Competencies may include 1-2 items signaling the secondary archetype capability. The secondary zone must not displace primary archetype items.
 
 ---
 

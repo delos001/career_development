@@ -1,6 +1,6 @@
 # CV Generation QC Checklist
 
-> Load this file at the start of Phase 4b. Apply the Universal section first against all generated content. Then apply only the archetype section matching the active archetype and role level confirmed in Phase 2a. For each item, cite specific evidence from the generated CV content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
+> Load this file at the QC phase following CV content generation. Apply the Universal section first against all generated content. Then apply only the archetype section matching the active archetype and confirmed role level. For each item, cite specific evidence from the generated CV content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
 
 ---
 

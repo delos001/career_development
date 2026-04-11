@@ -10,7 +10,7 @@ Evaluate a target role against established experience and positioning to determi
 
 Load `rules/global_rules.md` at the start of this skill. Confirm it loaded completely before proceeding. All rules in that file govern this skill.
 
-**Action Phases:** 1a, 2a, 2b, 3a, 3b
+**Action Phases:** 1a, 2a, 2b, 3a, 3b, 4
 
 **Session Continuity**
 A session log persists work across multiple sessions. At the start of every session, before Phase 1a, check for existing session logs in `outputs/` matching `SessionLog_*.md`. If one or more exist, list them and ask whether this is a new evaluation or a resume of an existing one. If resuming, load the identified log, state the last completed phase, confirm the resume point with the user, and skip to the next incomplete phase. If starting new, proceed to Phase 1a.
@@ -54,14 +54,7 @@ Naming convention: `SessionLog_[Company]_[Role]_[YYYYMM].md`
 
    If none of the archetypes in the registry satisfy the match criteria for this role, do not proceed. State specifically which match criteria failed for each archetype. Inform the user that a new archetype may be needed and that `skills/archetype_creation.md` must be triggered and completed before role evaluation can continue. Stop here and do not advance to any subsequent step or phase.
 
-   If the role spans two archetypes, identify a primary and secondary archetype and state both explicitly with rationale. Apply the following rules throughout all subsequent phases:
-
-   - The primary archetype governs exclusively: section order, summary framing, Core Competencies priority, and achievement selection criteria. The secondary archetype has no authority over any of these.
-   - Secondary framing appears only within individual achievements where both dimensions are genuinely present in the underlying experience — not as standalone achievements and not in the summary.
-   - No more than 2-3 achievements should carry secondary framing. If more than a third of achievements require secondary framing to be relevant, the primary archetype selection is likely wrong — flag this before proceeding and re-evaluate.
-   - When primary and secondary framing conflict within an achievement, primary wins. Do not weaken the primary message to accommodate the secondary dimension.
-   - The summary is governed exclusively by the primary archetype framing rules. The secondary archetype does not appear in the summary.
-   - Core Competencies may include 1-2 items signaling the secondary archetype capability. The secondary zone must not displace primary archetype items.
+   If the role spans two archetypes, identify a primary and secondary archetype and state both explicitly with rationale. Apply the Dual-Archetype Handling Rules from `rules/global_rules.md` throughout all subsequent phases.
 
    Then load the archetype instruction document matching the confirmed primary archetype. Use the role level confirmed in Step 2 to select between the leadership and IC file — both file paths are listed in the registry entry for each archetype. If a dual-archetype was identified, also load the secondary archetype document using the same role-level logic.
 

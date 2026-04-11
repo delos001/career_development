@@ -258,7 +258,7 @@ The control skill uses the following ordered checks to determine where a user is
 **Trigger:** New experience descriptions, framing decisions, gap resolutions, or positioning language surfaced during any session that should be captured in source documents before the session closes; also triggered explicitly by other skills at Phase close.
 
 **Prerequisites:**
-- `knowledge/Experience_Inventory.md`
+- At least one target source document exists: `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, or `knowledge/Positioning.md`
 
 **Completion Signal:** No specific file signal — source documents are updated in place.
 

@@ -4,7 +4,7 @@
 
 **1. Purpose and Scope**
 
-This document is an instruction set for Phase 4a CV content generation. Apply all rules in this document when the archetype identified in Phase 2a is Process & Operations. Do not apply these rules for any other archetype. If a dual-archetype was identified in Phase 2a, apply primary framing from this document and secondary framing selectively within individual achievements only where both dimensions are genuinely present in the underlying experience.
+This document is an instruction set for CV content generation. Apply all rules in this document when the confirmed archetype is Process & Operations. Do not apply these rules for any other archetype. If a dual-archetype was identified, apply primary framing from this document and secondary framing selectively within individual achievements only where both dimensions are genuinely present in the underlying experience.
 
 **2. Archetype Match Criteria**
 
@@ -20,7 +20,7 @@ Confirm this is the correct archetype before proceeding. The role must center on
 
 -   CRO and vendor oversight models and external interface process management
 
-If the role centers primarily on technology platform ownership, data strategy, or organizational transformation, verify the archetype assignment from Phase 1 before applying these instructions.
+If the role centers primarily on technology platform ownership, data strategy, or organizational transformation, verify the archetype assignment before applying these instructions.
 
 **3. Summary Framing Rules**
 
