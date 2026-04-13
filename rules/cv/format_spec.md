@@ -179,10 +179,10 @@ Section order is governed exclusively by the archetype approved in Phase 2. This
 ## Output File Naming
 
 ```
-Jason_Delosh_CV_[CompanyName]_[AbbreviatedRole]_[YYYYMM].docx
+Jason_Delosh_CV_[CompanyName]_[AbbreviatedRole]_[YYYY-MM].docx
 ```
 
-Example: `Jason_Delosh_CV_Pfizer_VPDataOps_202603.docx`
+Example: `Jason_Delosh_CV_Pfizer_VPDataOps_2026-03.docx`
 
 ---
 

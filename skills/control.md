@@ -33,7 +33,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
    While running detection, note:
    - Which knowledge source documents exist and appear populated
    - Which company/role combinations have active artifacts (GapAnalysis, CV, InterviewPrep, InterviewCompletion files)
-   - Whether any `outputs/SessionLog_[Company]_[Role]_[YYYYMM].md` files exist (in-progress role evaluation sessions)
+   - Whether any `personal/sessions/[Company]_[Role]_[YYYY-MM]_SessionLog.md` files exist (in-progress role evaluation sessions)
    - Whether any InterviewCompletion documents have populated rounds (follow-up available)
 
 4. If multiple active roles are detected, list them. You will ask the user which to focus on in Phase 2a before routing.
@@ -92,7 +92,7 @@ If multiple active roles were detected in Phase 1a, ask which to focus on before
 ---
 
 **Active SessionLog detected:**
-A `SessionLog_[Company]_[Role]_[YYYYMM].md` exists in `outputs/`. State:
+A `[Company]_[Role]_[YYYY-MM]_SessionLog.md` exists in `personal/sessions/`. State:
 
 "There is an active role evaluation session in progress for [Company] — [Role]. You can resume it by triggering `role_evaluation` — it will detect the session log and pick up from where you left off."
 
@@ -119,7 +119,7 @@ When the prerequisite skill completes and the user returns to the control skill,
 
 **Standalone request — career_brief or cv_general:**
 Confirm the required knowledge documents exist per the registry entry:
-- `career_brief`: requires `knowledge/Positioning.md`
+- `career_brief`: requires `personal/knowledge/Positioning.md`
 - `cv_general`: requires all three knowledge documents
 
 If prerequisites exist, route directly. If not, identify the gap and route to the appropriate builder first.
@@ -127,7 +127,7 @@ If prerequisites exist, route directly. If not, identify the gap and route to th
 ---
 
 **Source document update request:**
-Confirm `knowledge/Experience_Inventory.md` exists. If yes, route directly to `source_document_update`. If not, inform the user that the Experience Inventory must be built first via `experience_inventory_bootstrap`.
+Confirm `personal/knowledge/Experience_Inventory.md` exists. If yes, route directly to `source_document_update`. If not, inform the user that the Experience Inventory must be built first via `experience_inventory_bootstrap`.
 
 ---
 
@@ -148,10 +148,10 @@ Every routing outcome ends with three items stated explicitly:
 
 1. **Skill to invoke:** `skills/[filename].md`
 2. **What to bring:** File paths, context, or inputs the skill will need at Phase 1 (e.g., GapAnalysis file path, application folder path, job description)
-3. **State note:** Any relevant context from state detection (e.g., "The GapAnalysis for this role is at `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md`"; "This is your first session for this role — no prior artifacts exist")
+3. **State note:** Any relevant context from state detection (e.g., "The GapAnalysis for this role is at `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`"; "This is your first session for this role — no prior artifacts exist")
 
 Example handoff:
-> Invoke `skills/interview_prep.md`. Bring the GapAnalysis file at `outputs/GapAnalysis_Fortrea_ClinDataStratDelivLead_202503.md` and the absolute path to your Fortrea application folder. This is a new prep session — no InterviewPrep document exists yet for this role.
+> Invoke `skills/interview_prep.md`. Bring the GapAnalysis file at `personal/sessions/Fortrea_ClinDataStratDelivLead_2025-03_GapAnalysis.md` and the absolute path to your Fortrea application folder. This is a new prep session — no InterviewPrep document exists yet for this role.
 
 ---
 

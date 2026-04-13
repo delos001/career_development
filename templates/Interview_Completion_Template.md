@@ -1,9 +1,9 @@
-# Interview Completion — [Company] — [Role] — [YYYYMM]
+# Interview Completion — [Company] — [Role] — [YYYY-MM]
 
 ## Application Reference
 - Company: [Company]
 - Job Title: [Role]
-- GapAnalysis File: outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md
+- GapAnalysis File: personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md
 - Interview Prep File: [Path to InterviewPrep document]
 
 ---

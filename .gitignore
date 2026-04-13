@@ -206,7 +206,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 outputs/
+personal/
 job_dsc/
 temp/
-knowledge/
-!knowledge/SETUP.md

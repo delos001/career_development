@@ -52,10 +52,12 @@ career_development/
 │       └── decision_adr.md
 ├── templates/                             ← structural templates used by skills during document generation
 │   └── Interview_Completion_Template.md  ← template for interview round tracking; pre-populated by interview_prep
-├── knowledge/                             ← personal source documents — gitignored
-│   ├── SETUP.md                          ← committed: setup instructions for new users
-│   └── Contact_Info.md                   ← single source of truth for CV contact line values
-└── outputs/                               ← generated CVs and role evaluation artifacts — gitignored
+├── personal/                              ← personal data root — gitignored (separate private repo `career_development_knowledge` mounted here)
+│   ├── knowledge/                         ← master source documents (Experience, Narratives, Positioning, Contact)
+│   │   ├── SETUP.md                       ← committed inside nested repo: setup instructions for new users
+│   │   └── Contact_Info.md                ← single source of truth for CV contact line values
+│   └── sessions/                          ← transactional session artifacts (SessionLog, GapAnalysis, ContentDecisions)
+└── outputs/                               ← generated deliverables only (CV .docx files) — gitignored
 ```
 
 ---
@@ -67,8 +69,9 @@ career_development/
 | `skills/` | Workflow instruction sets that tell Claude what to do and how | Yes |
 | `rules/` | Rule sets read by skills during execution; shared files at root, skill-specific files in subdirectories | Yes |
 | `templates/` | Structural templates used by skills to generate output documents | Yes |
-| `knowledge/` | Personal source documents (CV content, experience, positioning) | No — gitignored |
-| `outputs/` | Generated CV files and role evaluation artifacts | No — gitignored |
+| `personal/knowledge/` | Master source documents (CV content, experience, positioning); nested private repo | No — gitignored |
+| `personal/sessions/` | Transactional session artifacts: SessionLog, GapAnalysis, ContentDecisions | No — gitignored |
+| `outputs/` | Generated deliverables only (CV `.docx` files) | No — gitignored |
 
 ---
 
@@ -82,8 +85,8 @@ career_development/
 | Source Document Update | `skills/source_document_update.md` | Capturing experience, framing decisions, or gap resolutions to source documents after any working session |
 | Experience Inventory Bootstrap | `skills/experience_inventory_bootstrap.md` | Building the Experience Inventory from scratch using raw career source documents |
 | Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype when no existing archetype serves the target role |
-| Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `knowledge/Career_Narratives.md` with new stories or decisions |
-| Positioning Builder | `skills/positioning_builder.md` | Building or updating `knowledge/Positioning.md` |
+| Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `personal/knowledge/Career_Narratives.md` with new stories or decisions |
+| Positioning Builder | `skills/positioning_builder.md` | Building or updating `personal/knowledge/Positioning.md` |
 | Interview Prep | `skills/interview_prep.md` | Generating an interview prep document and pre-populated Interview Completion template for a target role; requires a completed GapAnalysis file from role_evaluation |
 | Follow-Up Letter | `skills/followup.md` | Generating a follow-up letter for a specific interview round; requires a completed Interview Completion document from interview_prep |
 | Career Brief | `skills/career_brief.md` | Generating a short professional bio or summary paragraph for recruiter outreach, networking introductions, or speaker profiles |
@@ -104,7 +107,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 2a step 5 | Archetype confirmed (AD+) | `rules/registry_archetype.md`; primary archetype leadership file from `rules/`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 5 | Archetype confirmed (IC) | `rules/registry_archetype.md`; primary archetype IC file from `rules/`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 6 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted |
-| 3a step 1 | Fit evaluation begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 3a step 1 | Fit evaluation begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
 | 3b | Gap rating judgment QC | `rules/judgment_qc.md` |
 | Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
 
@@ -113,13 +116,13 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a | Session start | `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md` |
+| 1a | Session start | `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` |
 | 2a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
 | 2a step 2 | Archetype load | Primary archetype file (leadership or IC); secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified in Phase 1a |
-| 2a step 3 | Source review begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 2a step 3 | Source review begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
 | 2a step 4 | Experience architecture judgment QC | `rules/judgment_qc.md` (retained through Phase 2b) |
 | 2b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
-| 3a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
+| 3a step 1 | Document generation begins | `rules/cv/format_spec.md`; `personal/knowledge/Contact_Info.md` |
 | 3a step 2 | Python script execution | `rules/config.md` |
 | Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
 
@@ -131,10 +134,10 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 1a | Session start | None — targeting context collected only |
 | 2a step 1 | Archetype selection begins | `rules/registry_archetype.md`; primary archetype file (leadership or IC); secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 3 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted for use in Phase 4a |
-| 3a step 1 | Source review begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 3a step 1 | Source review begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
 | 3a step 3 | Experience architecture judgment QC | `rules/judgment_qc.md` (retained through Phase 4b) |
 | 4a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
-| 5a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
+| 5a step 1 | Document generation begins | `rules/cv/format_spec.md`; `personal/knowledge/Contact_Info.md` |
 | 5a step 3 | Python script execution | `rules/config.md` |
 
 ### career_narratives_builder
@@ -143,17 +146,17 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a step 2 | Format selection | Selected story format file from `rules/career_narratives/`; selected decision format file from `rules/career_narratives/` |
-| 1a step 3 | Adding or updating entries | `knowledge/Career_Narratives.md` |
-| 1a step 4 | Optional reference load | `knowledge/Experience_Inventory.md` (if user confirms) |
+| 1a step 3 | Adding or updating entries | `personal/knowledge/Career_Narratives.md` |
+| 1a step 4 | Optional reference load | `personal/knowledge/Experience_Inventory.md` (if user confirms) |
 
 ### interview_prep
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a | Session start | `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md` |
+| 1a | Session start | `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` |
 | 2a step 1 | Company type identification | `rules/registry_company_type.md` |
-| 3a step 1 | Content generation begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 3a step 1 | Content generation begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
 | 4a step 2 | Completion document generation | `templates/Interview_Completion_Template.md` |
 | 4a steps 1-2 | Python script execution | `rules/config.md` |
 | Phase 5 | Source update review | Specific knowledge docs loaded only as needed |
@@ -170,14 +173,14 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 2a step 1 | Generation begins | `knowledge/Positioning.md`; `knowledge/Experience_Inventory.md` only if Positioning.md lacks sufficient specificity |
+| 2a step 1 | Generation begins | `personal/knowledge/Positioning.md`; `personal/knowledge/Experience_Inventory.md` only if Positioning.md lacks sufficient specificity |
 
 ### followup
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a | Session start | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYYMM].docx` (extracted via python-docx from application folder) |
+| 1a | Session start | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].docx` (extracted via python-docx from application folder) |
 | 1a step 2 | Python script execution | `rules/config.md` |
 
 ### source_document_update
@@ -185,8 +188,8 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| Step 1 | Identifying updates | Target source documents loaded as needed: `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
-| Annotation Step 1 | Annotation enrichment | `knowledge/Experience_Inventory.md`; `rules/cv/content_rules_leadership.md` |
+| Step 1 | Identifying updates | Target source documents loaded as needed: `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
+| Annotation Step 1 | Annotation enrichment | `personal/knowledge/Experience_Inventory.md`; `rules/cv/content_rules_leadership.md` |
 
 ### experience_inventory_bootstrap
 
@@ -202,7 +205,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1b step 1 | Boundary validation | `rules/registry_archetype.md` |
-| 3a step 5 | Tag verification (if needed) | `knowledge/Experience_Inventory.md` |
+| 3a step 5 | Tag verification (if needed) | `personal/knowledge/Experience_Inventory.md` |
 | 4a step 1 | File creation | `rules/registry_archetype.md` |
 
 ### positioning_builder
@@ -210,8 +213,8 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a step 2 | Existing document load (if applicable) | `knowledge/Positioning.md` |
-| 1a step 3 | Optional reference load | `knowledge/Experience_Inventory.md`; `knowledge/Career_Narratives.md` (if user confirms) |
+| 1a step 2 | Existing document load (if applicable) | `personal/knowledge/Positioning.md` |
+| 1a step 3 | Optional reference load | `personal/knowledge/Experience_Inventory.md`; `personal/knowledge/Career_Narratives.md` (if user confirms) |
 
 ---
 
@@ -219,7 +222,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 
 The three knowledge documents carry schema metadata that skills read and write. Any skill that adds, cites, or revises content in these files must follow the contract below.
 
-### `knowledge/Experience_Inventory.md`
+### `personal/knowledge/Experience_Inventory.md`
 
 - Tag Taxonomy header block at the top of the file is the authoritative source for controlled Capability, Role Level, Org Context, and Outcome values. Skills must not infer tag values from any other source.
 - Classification appears on separate lines per entry: `Capability:`, `Role Level:`, `Org Context:`, and (optional) `Outcome:`. No inline `Tags:` line. Capability and Outcome allow pipe-separated multi-values on their line; Role Level and Org Context take one value each. Omit the `Outcome:` line entirely when no genuine organizational outcome is attached.
@@ -227,7 +230,7 @@ The three knowledge documents carry schema metadata that skills read and write. 
 - `Added` is stamped by `experience_inventory_bootstrap` at extraction and by `source_document_update` when new entries are added post-session. Historical entries imported before the schema change carry `Added: pre-2026-04`.
 - `Last Used` is stamped only by output-producing skills at session close, only after explicit user acceptance of the final output: `cv_targeted` Phase 3a, `cv_general` Phase 5a, `interview_prep` Phase 4a. A single YYYY-MM is overwritten each time — no history.
 
-### `knowledge/Career_Narratives.md`
+### `personal/knowledge/Career_Narratives.md`
 
 - Tag Taxonomy header block at the top of the file is the authoritative source for controlled Capability (shared with Experience_Inventory), Archetype (mirrors `rules/registry_archetype.md`), and Era (by company) values. Free-text values are not permitted; unmatched values trigger either a mapping decision or a taxonomy extension.
 - Every story and decision entry carries a 5-line metadata block directly under the `## [Title]` heading: `Tags:`, `Archetype:`, `Era:`, `Added: YYYY-MM`, `Last Used:`. Entry headings are the title alone — no sequential numbering.
@@ -235,7 +238,7 @@ The three knowledge documents carry schema metadata that skills read and write. 
 - `Last Used` is stamped only by `interview_prep` at session close, only after explicit user acceptance of the prep doc. `cv_targeted` and `cv_general` load narratives for reference but do not stamp narrative Last Used.
 - Body structure per entry is governed by the format file loaded from `rules/career_narratives/` at session start (STAR, ATOLA, Personal for stories; ADR, Personal for decisions).
 
-### `knowledge/Positioning.md`
+### `personal/knowledge/Positioning.md`
 
 - Read whole; no per-entry tags or dates. Single metadata line at the top: `Last Revised: YYYY-MM`, immediately under the document title.
 - `positioning_builder` updates this line on every Phase 6a write. `source_document_update` does not update this line — incremental positioning edits made via that skill should be followed by a positioning_builder pass when accumulated changes warrant a revised date.
@@ -250,21 +253,27 @@ The three knowledge documents carry schema metadata that skills read and write. 
 
 ## Notes
 
-- `knowledge/` and `outputs/` are gitignored — personal content never committed to this repo
+- `personal/` and `outputs/` are gitignored — personal content never committed to the framework repo
 - `skills/` and `rules/` are committed — framework only, no personal data
 - Job descriptions are stored separately in OneDrive, not in this repo
 
 ---
 
-## Knowledge Storage
+## Personal Data Storage
 
-`knowledge/` is a separate private git repository (`career_development_knowledge`) cloned into this directory. It is gitignored by this repo and version controlled independently.
+`personal/knowledge/` is a separate private git repository (`career_development_knowledge`) cloned into the `personal/` directory. It holds master data: Experience_Inventory, Career_Narratives, Positioning, Contact_Info. It is gitignored by this framework repo and version controlled independently.
+
+`personal/sessions/` holds transactional session artifacts written by skills during execution: SessionLog (role_evaluation, deleted at skill close), GapAnalysis (role_evaluation, persistent), ContentDecisions (cv_targeted, persistent). These are gitignored. Backup is the user's responsibility; tracking them in their own repo is optional.
+
+`outputs/` holds final deliverables only: generated CV `.docx` files. Gitignored.
 
 **Two-repo workflow:**
 - Framework changes (skills, rules, README) → commit and push in `career_development`
-- Knowledge document changes (Experience_Inventory, Accomplishments, Positioning, CV references) → commit and push from within `knowledge/` to `career_development_knowledge`
+- Master data changes (Experience_Inventory, Career_Narratives, Positioning, Contact_Info) → commit and push from within `personal/knowledge/` to `career_development_knowledge`
 
 **Setup on a new machine:**
 1. Clone this repo: `git clone https://github.com/delos001/career_development.git`
-2. Clone the knowledge repo into the knowledge folder: `git clone https://github.com/delos001/career_development_knowledge.git knowledge/`
-3. Create `outputs/` directory if needed (gitignored, not committed)
+2. Create the `personal/` directory at the repo root.
+3. Clone the knowledge repo into `personal/knowledge/`: `git clone https://github.com/delos001/career_development_knowledge.git personal/knowledge/`
+4. Create `personal/sessions/` (gitignored, not committed).
+5. Create `outputs/` (gitignored, not committed).

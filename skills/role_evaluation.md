@@ -13,11 +13,11 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 **Action Phases:** 1a, 2a, 2b, 3a, 3b, 4
 
 **Session Continuity**
-A session log persists work across multiple sessions. At the start of every session, before Phase 1a, check for existing session logs in `outputs/` matching `SessionLog_*.md`. If one or more exist, list them and ask whether this is a new evaluation or a resume of an existing one. If resuming, load the identified log, state the last completed phase, confirm the resume point with the user, and skip to the next incomplete phase. If starting new, proceed to Phase 1a.
+A session log persists work across multiple sessions. At the start of every session, before Phase 1a, check for existing session logs in `personal/sessions/` matching `*_SessionLog.md`. If one or more exist, list them and ask whether this is a new evaluation or a resume of an existing one. If resuming, load the identified log, state the last completed phase, confirm the resume point with the user, and skip to the next incomplete phase. If starting new, proceed to Phase 1a.
 
 The session log is created at Phase 1a close, updated at the close of every subsequent action phase, and deleted at the close of Phase 4. Logging occurs at phase close only — if a session ends mid-phase, resume from the start of that phase using session log context from prior completed phases.
 
-Naming convention: `SessionLog_[Company]_[Role]_[YYYYMM].md`
+Naming convention: `[Company]_[Role]_[YYYY-MM]_SessionLog.md`
 
 ---
 
@@ -31,7 +31,7 @@ Naming convention: `SessionLog_[Company]_[Role]_[YYYYMM].md`
 
 3. Confirm company and title information is in hand and state them explicitly before closing this phase.
 
-4. Create the session log file at `outputs/SessionLog_[Company]_[Role]_[YYYYMM].md`. Write: company name, role title, session start date, and a note confirming the job description is available. Confirm the file was created before closing.
+4. Create the session log file at `personal/sessions/[Company]_[Role]_[YYYY-MM]_SessionLog.md`. Write: company name, role title, session start date, and a note confirming the job description is available. Confirm the file was created before closing.
 
 **Phase 1a Closing:** Follow Standard Phase Closing. Session log created in Step 4 — confirm before closing. Next phase is Phase 2a.
 
@@ -93,9 +93,9 @@ Perform QC per Global Rules:
 *(State each step before completing the step)*
 
 1. Load the following source documents now. Confirm each loaded completely before proceeding:
-   - `knowledge/Experience_Inventory.md`
-   - `knowledge/Career_Narratives.md`
-   - `knowledge/Positioning.md`
+   - `personal/knowledge/Experience_Inventory.md`
+   - `personal/knowledge/Career_Narratives.md`
+   - `personal/knowledge/Positioning.md`
 
 2. Using the loaded source documents, map each critical requirement identified in Phase 2a to the most relevant experience, citing the source document and specific achievement. Every claim must be traceable to a source document.
 
@@ -149,14 +149,14 @@ Perform QC per Global Rules:
 
 **Fit Threshold Verification:** Confirm Phase 3a Step 6 applied the threshold correctly. State: the number of critical requirements, the number with strong source-citable matches, and verify the 65% calculation. Confirm the domain exclusion check was performed. Confirm the application recommendation outcome matches the threshold result. If the recommendation was Proceed as Speculative Application, confirm explicit user acknowledgment of risk was obtained and documented.
 
-**GapAnalysis File:** Before closing this phase, write a gap analysis file to `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md` containing:
+**GapAnalysis File:** Before closing this phase, write a gap analysis file to `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` containing:
 1. Role context: company name, role title, role level, primary archetype name and instruction file path for the confirmed role level (and secondary archetype name and file path if applicable, with rationale for both), org type, and org-type framing emphasis
 2. The list of critical requirements from Phase 2a and the source-citable match for each
 3. The full gap summary table including severity and resolution status for every gap
 4. The fit assessment summary from Phase 3a Step 6 including the threshold calculation and application recommendation
 5. A sources section listing all research sources consulted during Phase 2a Step 3, with enough detail for the user to revisit them (URL or publication name and date)
 
-This file is the terminal output of this skill. It is used as input by `cv_targeted` and `interview_prep`. If the `outputs/` directory does not exist, create it. Confirm the file was written before closing.
+This file is the terminal output of this skill. It is used as input by `cv_targeted` and `interview_prep`. If the `personal/sessions/` directory does not exist, create it. Confirm the file was written before closing.
 
 Perform QC per Global Rules:
 - **Standard QC Document Verification**
@@ -190,4 +190,4 @@ Dedicated to capturing information surfaced during this role evaluation that sho
 
 Load `skills/source_document_update.md` now and follow it completely. "This session" refers to all phases and interactions from Phase 1a through Phase 3b.
 
-At the close of Phase 4, delete the session log file at `outputs/SessionLog_[Company]_[Role]_[YYYYMM].md`. Confirm deletion before closing.
+At the close of Phase 4, delete the session log file at `personal/sessions/[Company]_[Role]_[YYYY-MM]_SessionLog.md`. Confirm deletion before closing.

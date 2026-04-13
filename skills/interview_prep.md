@@ -18,7 +18,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 *(No documents are loaded before this phase)*
 
-1. Confirm a GapAnalysis file exists for the target role. If the file path is not provided, ask for the company name and role title and locate the file at `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md`. If no file is found, inform the user that `role_evaluation` must be completed before `interview_prep` can proceed. If multiple files match the company and role name (e.g., from multiple application cycles), list them and ask the user to confirm which to use. Do not continue until a single file is confirmed.
+1. Confirm a GapAnalysis file exists for the target role. If the file path is not provided, ask for the company name and role title and locate the file at `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`. If no file is found, inform the user that `role_evaluation` must be completed before `interview_prep` can proceed. If multiple files match the company and role name (e.g., from multiple application cycles), list them and ask the user to confirm which to use. Do not continue until a single file is confirmed.
 
 2. Load the GapAnalysis file. Confirm it loaded completely.
 
@@ -82,9 +82,9 @@ Perform QC per Global Rules:
 
 **Step 1 — Load source documents:**
 Load the following now. Confirm each loaded completely before proceeding:
-- `knowledge/Experience_Inventory.md`
-- `knowledge/Career_Narratives.md`
-- `knowledge/Positioning.md`
+- `personal/knowledge/Experience_Inventory.md`
+- `personal/knowledge/Career_Narratives.md`
+- `personal/knowledge/Positioning.md`
 
 **Step 2 — Alignment map:**
 Map each critical requirement from the GapAnalysis to the most relevant experience in the loaded source documents, citing the specific document and entry. Every claim must be traceable. No general capability statements. Label this section "Alignment Map — Why Hire You" in the output document. This is the primary answer to "why should we hire you" and "what is your strongest qualification for this role."
@@ -100,7 +100,7 @@ Based on the response:
 - If ATOLA: format all stories using the ATOLA structure (Actions, Thinking, Outcomes, Learnings, Applications). Flag any story that does not adapt cleanly to ATOLA — state why and present the best available adaptation or note if the story should be set aside
 - If another framework is named: apply it as described by the user; if the framework is unfamiliar, ask the user to describe it before generating
 
-Pull 6-10 relevant stories from `knowledge/Career_Narratives.md` and supporting entries from `knowledge/Experience_Inventory.md` that address the critical requirements or likely interview themes for this role. For each story: provide the formatted cue in the confirmed framework, note which critical requirement or question type it serves, and note any story that could serve an alternate format if requested later.
+Pull 6-10 relevant stories from `personal/knowledge/Career_Narratives.md` and supporting entries from `personal/knowledge/Experience_Inventory.md` that address the critical requirements or likely interview themes for this role. For each story: provide the formatted cue in the confirmed framework, note which critical requirement or question type it serves, and note any story that could serve an alternate format if requested later.
 
 If fewer than 6 relevant stories exist in the source documents, do not pad with irrelevant stories to hit the count. State the number of relevant stories available, identify which critical requirements lack story coverage, and flag these gaps explicitly to the user before proceeding. The user may choose to continue with the available stories or pause to add new ones via `skills/career_narratives_builder.md`.
 
@@ -174,7 +174,7 @@ Perform QC per Global Rules:
 **Step 1 — Generate interview prep document:**
 Generate the interview prep document as a `.docx` file using Python with python-docx. Load `rules/config.md` and use the Python executable path defined there. Write a Python script and execute it via Bash. Use Windows-style paths in all file operations.
 
-Naming convention: `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYYMM].docx`
+Naming convention: `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].docx`
 
 Apply the following Word styles so the Navigation Pane is functional without manual formatting:
 - Document title (company and role): `Title` style
@@ -213,17 +213,17 @@ Apply the following Word styles so the Navigation Pane is functional without man
 - Answer fields and notes: `Normal` style, left blank for user entry
 
 Populate the document as follows:
-- Header fields: company name, role title, YYYYMM, GapAnalysis file path, prep document path
+- Header fields: company name, role title, YYYY-MM, GapAnalysis file path, prep document path
 - Round 1 Questions and Responses: populate with the full questions-to-ask list from Phase 3a Step 6, one question per Q field, all A fields left blank for the user to fill in
 - Rounds 2 through N: leave question fields blank as in the template structure
 
 Save to the output folder confirmed in Phase 1a. Naming convention:
-`InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYYMM].docx`
+`InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].docx`
 
 Confirm the file was written before proceeding.
 
 **Step 3 — Update questions library:**
-Check for an existing file at `knowledge/Questions_Library.md`. If it does not exist, create it with this header:
+Check for an existing file at `personal/knowledge/Questions_Library.md`. If it does not exist, create it with this header:
 
 ```
 # Questions Library
@@ -241,8 +241,8 @@ State "Both documents are ready for your review." Ask the user to confirm accept
 
 After explicit user acceptance:
 
-1. Identify every `knowledge/Career_Narratives.md` entry cited in the Stories Bank (Phase 3a Step 4), Alignment Map (Phase 3a Step 2), or Gap Handling Language (Phase 3a Step 3). Match via entry title (the `## [Title]` heading of the narrative).
-2. Identify every `knowledge/Experience_Inventory.md` entry cited in the Alignment Map, Gap Handling Language, or supporting any Stories Bank entry. Match via the bold action statement line and the associated `Role:` line.
+1. Identify every `personal/knowledge/Career_Narratives.md` entry cited in the Stories Bank (Phase 3a Step 4), Alignment Map (Phase 3a Step 2), or Gap Handling Language (Phase 3a Step 3). Match via entry title (the `## [Title]` heading of the narrative).
+2. Identify every `personal/knowledge/Experience_Inventory.md` entry cited in the Alignment Map, Gap Handling Language, or supporting any Stories Bank entry. Match via the bold action statement line and the associated `Role:` line.
 3. For each cited narrative and inventory entry, overwrite the `Last Used:` line with the current `YYYY-MM`. Single date only — do not append or keep history.
 4. Write the updated files. State the count of narrative entries stamped, the count of inventory entries stamped, and the month written.
 
@@ -258,7 +258,7 @@ Narratives are the primary citation in this skill; inventory entries are seconda
 
 **Interview Completion Document:** Confirm python-docx was used to generate the document via a Python script executed through Bash. Confirm the file was written to the correct output path as a `.docx`. Confirm `Heading 1` was applied to round headers and `Heading 2` to sub-section headers within each round. Confirm Round 1 is pre-populated with questions from Phase 3a Step 6 and all A fields are blank. Confirm Rounds 2-4 follow the template structure. State the actual filename and confirm it matches the naming convention.
 
-**Questions Library:** Confirm `knowledge/Questions_Library.md` was updated. State the number of questions added and confirm no semantic duplicates were added.
+**Questions Library:** Confirm `personal/knowledge/Questions_Library.md` was updated. State the number of questions added and confirm no semantic duplicates were added.
 
 **Template Load:** Confirm `templates/Interview_Completion_Template.md` was loaded before generating the completion document.
 

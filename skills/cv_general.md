@@ -185,7 +185,7 @@ Perform QC per Global Rules:
 
    Structure decisions were made in Phase 4a and govern the output. Do not default to any reference document's structure.
 
-4. Save the completed CV to `outputs/` using this naming convention: `CV_General_[descriptor]_[YYYYMM].docx` where descriptor is the confirmed value from Step 2.
+4. Save the completed CV to `outputs/` using this naming convention: `CV_General_[descriptor]_[YYYY-MM].docx` where descriptor is the confirmed value from Step 2.
 
 5. **User acceptance and Last Used stamping:**
 
