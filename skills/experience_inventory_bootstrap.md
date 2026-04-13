@@ -172,7 +172,7 @@ Role: [Title] | [Company]
 **[Action statement — one discrete action, what specifically was done]**
 Impact: [outcome, metric, or problem solved — OPTIONAL, only if stated in source]
 Context: [scope, org stage, or framing note — OPTIONAL, only if stated in source]
-Tags: Capability: X | Role Level: X | Org Context: X | Outcome: X
+Tags: Capability: X | Role Level: X | Org Context: X [ | Outcome: X — OPTIONAL, include only when a genuine organizational outcome is attached ]
 Added: YYYY-MM
 Last Used:
 ```
@@ -183,7 +183,7 @@ Project: [Project Name]
 **[Action statement — one discrete action, what specifically was done]**
 Impact: [outcome, metric, or problem solved — OPTIONAL, only if stated in source]
 Context: [scope, org stage, or framing note — OPTIONAL, only if stated in source]
-Tags: Capability: X | Role Level: X | Org Context: Independent | Outcome: X
+Tags: Capability: X | Role Level: X | Org Context: Independent [ | Outcome: X — OPTIONAL, include only when a genuine organizational outcome is attached ]
 Added: YYYY-MM
 Last Used:
 ```
@@ -192,7 +192,7 @@ Last Used:
 - One discrete action per entry — do not combine multiple actions into one entry
 - Action statements describe what was done, not a polished CV bullet — these are source material, not output
 - Impact and Context are populated only if the source document states them — do not infer
-- Every entry must have all four tag dimensions. If Outcome cannot be determined from the source, make a best-effort assignment from the confirmed taxonomy and flag the entry for user review — do not omit the dimension and do not use values outside the confirmed taxonomy
+- Every entry must have Capability, Role Level, and Org Context. Outcome is optional — include an Outcome value only when the source indicates a genuine organizational outcome attached to the action (capability built, risk reduced, efficiency gained, etc.). Omit Outcome for breadth-evidence, routine-task, and "did X" entries where no such outcome exists. Do not invent outcomes to satisfy the schema; doing so pollutes the filter used by archetype-driven CV retrieval. Tag values for all dimensions must match the confirmed taxonomy — no free text
 - Role Level tag reflects the level at which the work was performed, not the target level. For entries spanning a promotion within the same company, tag each entry at the level held when that work was done
 - Org Context is inferred from the source documents and career profile where not explicitly stated — flag any inferences made
 - Every entry carries an `Added: YYYY-MM` stamp set to the current month at extraction time, and a `Last Used:` line left blank. Last Used is stamped only by output-producing skills (`cv_targeted`, `cv_general`, `interview_prep`) at session close — never during extraction or enrichment
@@ -278,7 +278,7 @@ For each entry in the sample, verify and state Pass or Fail for each of the foll
 - **Action statement voice:** The action statement describes what was done in plain terms — not a polished CV bullet. Entries written as finished resume language rather than raw source statements fail this check.
 - **Impact sourcing:** If an Impact annotation is present, confirm it was sourced from the source document, not inferred. If it cannot be traced to a source document statement, it fails.
 - **Context sourcing:** Same check as Impact sourcing.
-- **Tag completeness:** All four tag dimensions are present (Capability, Role Level, Org Context, Outcome). Any missing dimension is a failure.
+- **Tag completeness:** Capability, Role Level, and Org Context are present on every entry — any missing dimension is a failure. Outcome is optional: present on entries with a genuine organizational outcome, absent on breadth-evidence or routine-task entries. Omitted Outcome is not a failure. An Outcome value that doesn't reflect a real outcome (forced-fit to satisfy the schema) IS a failure.
 - **Tag validity:** All tag values match the confirmed taxonomy from Phase 2. Any value outside the approved taxonomy fails.
 - **Role Level accuracy:** The Role Level tag reflects the seniority at which the work was performed, not the target role level.
 - **Metadata presence:** Every entry has an `Added: YYYY-MM` line carrying the current extraction month and a `Last Used:` line (blank at extraction). Missing or malformed lines fail.
@@ -322,7 +322,9 @@ Assemble the full inventory document in the following structure:
 Capability: [list all confirmed Capability tags separated by |]
 Role Level: IC | Manager | Senior Manager | Director | Senior Director | VP | C-Suite
 Org Context: Greenfield | Scaling | Turnaround | Mature/Enterprise | Independent | Volunteer
-Outcome: Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings | Revenue Growth | Customer/User Impact
+Outcome (OPTIONAL): Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings | Revenue Growth | Customer/User Impact
+
+Tag rules: Capability, Role Level, and Org Context are required on every entry. Outcome is optional — include only when a genuine organizational outcome is attached to the action. Omit for breadth-evidence, routine-task, and "did X" entries. Do not invent outcomes to satisfy the schema; doing so pollutes the filter used by archetype-driven CV retrieval. Archetype files match against Outcome-bearing entries when their High Priority tag combinations require it; entries without Outcome are still retrievable via the other dimensions.
 
 Entry metadata: every entry under "All Tasks Performed" carries an `Added: YYYY-MM` stamp set at creation and a `Last Used: YYYY-MM` stamp updated by output-producing skills at session close. Historical entries imported before the schema change carry `Added: pre-2026-04`.
 ```

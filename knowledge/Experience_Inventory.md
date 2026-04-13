@@ -34,7 +34,9 @@
 
 **Org Context:** Greenfield | Scaling | Turnaround | Mature/Enterprise | Independent | Volunteer
 
-**Outcome:** Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings
+**Outcome (OPTIONAL):** Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings
+
+Capability, Role Level, and Org Context are required on every entry. Outcome is optional — include only when a genuine organizational outcome is attached to the action. Omit for breadth-evidence, routine-task, and "did X" entries where no such outcome exists. Do not invent outcomes to satisfy the schema; forced values pollute the filter used by archetype-driven CV retrieval. Entries without Outcome are still retrievable via the other dimensions.
 
 **Org Type (career breadth):** Biotech | Pharma | Technology | CRO | ARO | Academic/Research | Staffing/Consulting | Military | Pharmacy | Hospital | Clinic
 

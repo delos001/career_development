@@ -50,7 +50,7 @@ Role: Title | Company
 **[Action statement — what specifically was done, one discrete action per entry]**
 Impact: [outcome, metric, or problem solved — OPTIONAL]
 Context: [scope, org stage, or framing note — OPTIONAL]
-Tags: Capability: X | Role Level: X | Org Context: X | Outcome: X
+Tags: Capability: X | Role Level: X | Org Context: X [ | Outcome: X — OPTIONAL, include only when a genuine organizational outcome is attached ]
 Added: YYYY-MM
 Last Used:
 ```
@@ -61,7 +61,7 @@ Project: [Project Name]
 **[Action statement — what specifically was done, one discrete action per entry]**
 Impact: [outcome, metric, or problem solved — OPTIONAL]
 Context: [scope, org stage, or framing note — OPTIONAL]
-Tags: Capability: X | Role Level: X | Org Context: Independent | Outcome: X
+Tags: Capability: X | Role Level: X | Org Context: Independent [ | Outcome: X — OPTIONAL, include only when a genuine organizational outcome is attached ]
 Added: YYYY-MM
 Last Used:
 ```
@@ -113,7 +113,7 @@ Before presenting any proposed update for approval, verify each against all of t
 - Non-contradictory: does not conflict with or duplicate existing source document content
 - Complete (Experience_Inventory.md entries only): Before writing, verify all required elements are present:
   - Action statement: present, atomic (one discrete action), not a polished CV bullet
-  - Tags: all four dimensions present — Capability, Role Level, Org Context, and Outcome where an outcome is evident
+  - Tags: Capability, Role Level, and Org Context present on every entry. Outcome optional — include only when a genuine organizational outcome is attached to the action; omit for breadth-evidence, routine-task, and "did X" entries. Do not invent outcomes to satisfy the schema.
   - Metadata: `Added: YYYY-MM` set to current month and `Last Used:` left blank
   - For Director-level entries and above: determine whether this entry is likely to serve as an anchor citation for a critical requirement match in a CV session. If yes, and if both Context and Impact are absent, query the user for this information before writing. Do not write a Director+ anchor entry without at least one of Context or Impact annotated. Breadth and delivery evidence entries at this level do not require annotation — use judgment based on whether the entry describes a discrete, citable accomplishment or a general responsibility.
 - Complete (Career_Narratives.md entries only): the 5-line metadata block is present, all Tags/Archetype/Era values match the Tag Taxonomy header at the top of the document, `Added: YYYY-MM` is the current month, and `Last Used:` is blank.
