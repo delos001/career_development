@@ -6,6 +6,18 @@ Adapted from the Architecture Decision Record format, originally developed for s
 
 ## Format
 
+Every entry carries a 5-line metadata block directly under the `## [Title]` heading, before any section:
+
+```
+Tags: [pipe-separated Capability values]
+Archetype: [pipe-separated Archetype values]
+Era: [single Era value]
+Added: YYYY-MM
+Last Used:
+```
+
+Controlled values come from the Tag Taxonomy header at the top of `knowledge/Career_Narratives.md`. `Added` is stamped at creation (current month). `Last Used` is left blank by the builder and stamped by output-producing skills at session close.
+
 ### Context
 The situation, constraint, or organizational pressure that made a decision necessary. Include relevant background — what was the environment, what was changing, and why the decision could not be deferred.
 

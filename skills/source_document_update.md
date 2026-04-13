@@ -51,6 +51,8 @@ Role: Title | Company
 Impact: [outcome, metric, or problem solved — OPTIONAL]
 Context: [scope, org stage, or framing note — OPTIONAL]
 Tags: Capability: X | Role Level: X | Org Context: X | Outcome: X
+Added: YYYY-MM
+Last Used:
 ```
 
 **Entry format — independent or volunteer project entries (Org Context: Independent or Volunteer):**
@@ -60,7 +62,11 @@ Project: [Project Name]
 Impact: [outcome, metric, or problem solved — OPTIONAL]
 Context: [scope, org stage, or framing note — OPTIONAL]
 Tags: Capability: X | Role Level: X | Org Context: Independent | Outcome: X
+Added: YYYY-MM
+Last Used:
 ```
+
+New entries carry `Added: YYYY-MM` set to the current month; `Last Used:` is left blank. Last Used is stamped only by output-producing skills (`cv_targeted`, `cv_general`, `interview_prep`) at session close. Do not backfill Added with a reconstructed historical date; legacy entries carry `Added: pre-2026-04` from the migration.
 
 **Allowed tag values — reference the Tag Taxonomy header block at the top of `knowledge/Experience_Inventory.md` for the authoritative list. Do not infer tag values from archetype files. Current values:**
 
@@ -71,7 +77,23 @@ Tags: Capability: X | Role Level: X | Org Context: Independent | Outcome: X
 
 Multiple Capability and Outcome values are permitted per entry using pipe separators. Org Context and Role Level take one value per entry.
 
-`knowledge/Career_Narratives.md` — Follow the structure and conventions of existing entries. Stories follow STAR format; decisions follow the decision entry format (Decision, Context, Options, Criteria, Reasoning, Pushback, Outcome, What I'd Own Differently). Include metrics where available from this session.
+`knowledge/Career_Narratives.md` — Follow the structure and conventions of existing entries. Story and decision body formats are governed by files in `rules/career_narratives/`; select the format matching the existing entry being extended, or the default (STAR for stories, Personal for decisions) for new entries. Include metrics where available from this session.
+
+Every narrative entry carries a 5-line metadata block directly under the heading:
+
+```
+## [Title]
+
+Tags: [pipe-separated Capability values]
+Archetype: [pipe-separated Archetype values]
+Era: [single Era value]
+Added: YYYY-MM
+Last Used:
+
+[body content per format file]
+```
+
+Allowed metadata values must come from the Tag Taxonomy header block at the top of `knowledge/Career_Narratives.md`. Reject free-text values. If the user proposes a Capability, Archetype, or Era value not in the controlled list, flag it and ask whether to (a) map to an existing value or (b) extend the Tag Taxonomy header before proceeding. `Added: YYYY-MM` is set to the current month at creation; `Last Used:` is left blank. Entry headings are the title alone — no sequential numbering.
 
 `knowledge/Positioning.md` — Entries are strategic positioning statements, not achievement bullets. Follow the framing conventions of existing entries.
 
@@ -92,7 +114,9 @@ Before presenting any proposed update for approval, verify each against all of t
 - Complete (Experience_Inventory.md entries only): Before writing, verify all required elements are present:
   - Action statement: present, atomic (one discrete action), not a polished CV bullet
   - Tags: all four dimensions present — Capability, Role Level, Org Context, and Outcome where an outcome is evident
+  - Metadata: `Added: YYYY-MM` set to current month and `Last Used:` left blank
   - For Director-level entries and above: determine whether this entry is likely to serve as an anchor citation for a critical requirement match in a CV session. If yes, and if both Context and Impact are absent, query the user for this information before writing. Do not write a Director+ anchor entry without at least one of Context or Impact annotated. Breadth and delivery evidence entries at this level do not require annotation — use judgment based on whether the entry describes a discrete, citable accomplishment or a general responsibility.
+- Complete (Career_Narratives.md entries only): the 5-line metadata block is present, all Tags/Archetype/Era values match the Tag Taxonomy header at the top of the document, `Added: YYYY-MM` is the current month, and `Last Used:` is blank.
 
 **Step 3 — Present for approval:**
 Present all verified proposed updates. For each item show the target document, insertion location, and the exact content to be written. State the total number of proposed updates and request explicit approval before writing. If the user wants to review individually rather than approve all at once, present one at a time and wait for approval before proceeding to the next.

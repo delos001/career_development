@@ -235,7 +235,20 @@ Append the questions from Phase 3a Step 6 to the library. For each entry include
 
 Confirm the library was updated before proceeding.
 
-**Phase 4a Closing:** State "Both documents are ready for your review." Follow Standard Phase Closing. Next phase is Phase 4b.
+**Step 4 — User acceptance and Last Used stamping:**
+
+State "Both documents are ready for your review." Ask the user to confirm acceptance of the generated prep and completion documents before any metadata stamping occurs. If the user requests revisions, loop back to the appropriate earlier phase and regenerate. Do not stamp Last Used on rejected or draft output.
+
+After explicit user acceptance:
+
+1. Identify every `knowledge/Career_Narratives.md` entry cited in the Stories Bank (Phase 3a Step 4), Alignment Map (Phase 3a Step 2), or Gap Handling Language (Phase 3a Step 3). Match via entry title (the `## [Title]` heading of the narrative).
+2. Identify every `knowledge/Experience_Inventory.md` entry cited in the Alignment Map, Gap Handling Language, or supporting any Stories Bank entry. Match via the bold action statement line and the associated `Role:` line.
+3. For each cited narrative and inventory entry, overwrite the `Last Used:` line with the current `YYYY-MM`. Single date only — do not append or keep history.
+4. Write the updated files. State the count of narrative entries stamped, the count of inventory entries stamped, and the month written.
+
+Narratives are the primary citation in this skill; inventory entries are secondary. Stamp both when cited. Do not stamp entries that were loaded but not cited in the accepted output.
+
+**Phase 4a Closing:** Follow Standard Phase Closing. Next phase is Phase 4b.
 
 ---
 

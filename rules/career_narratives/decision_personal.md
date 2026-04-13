@@ -6,6 +6,18 @@ Expanded decision documentation format optimized for interview depth. Captures t
 
 ## Format
 
+Every entry carries a 5-line metadata block directly under the `## [Title]` heading, before any section:
+
+```
+Tags: [pipe-separated Capability values]
+Archetype: [pipe-separated Archetype values]
+Era: [single Era value]
+Added: YYYY-MM
+Last Used:
+```
+
+Controlled values come from the Tag Taxonomy header at the top of `knowledge/Career_Narratives.md`. `Added` is stamped at creation (current month). `Last Used` is left blank by the builder and stamped by output-producing skills at session close.
+
 ### The Decision
 A single clear statement of what was decided. One or two sentences maximum. The rest of the entry explains it — this field states it.
 

@@ -6,7 +6,17 @@ Behavioral interview story format used by AstraZeneca and similar organizations.
 
 ## Format
 
-**Tags:** [capability area, context type, outcome type — used for retrieval]
+Every entry carries a 5-line metadata block directly under the `## [Title]` heading, before any section:
+
+```
+Tags: [pipe-separated Capability values]
+Archetype: [pipe-separated Archetype values]
+Era: [single Era value]
+Added: YYYY-MM
+Last Used:
+```
+
+Controlled values come from the Tag Taxonomy header at the top of `knowledge/Career_Narratives.md`. `Added` is stamped at creation (current month). `Last Used` is left blank by the builder and stamped by output-producing skills at session close.
 
 ### Actions
 What was done. Describe the key actions taken in the situation. Be specific — this is not a summary of the situation but an account of what you did.

@@ -116,7 +116,18 @@ Structure decisions were made in Phase 2 and govern the output. Do not default t
 Save the completed CV to `outputs/` using this naming convention:
 `Jason_Delosh_CV_[CompanyName]_[AbbreviatedRole]_[YYYYMM].docx`
 
-**Phase 3a Closing:** State "File is ready for your review." Then follow Standard Phase Closing. Next phase is Phase 3b.
+**Step 4 — User acceptance and Last Used stamping:**
+State "File is ready for your review." Ask the user to confirm acceptance of the generated CV before any metadata stamping occurs. If the user requests revisions, loop back to the appropriate earlier phase and regenerate. Do not stamp Last Used on rejected or draft output.
+
+After explicit user acceptance:
+
+1. Identify every `knowledge/Experience_Inventory.md` entry cited in the Phase 2a generated content. Match via the bold action statement line and the associated `Role:` line (to disambiguate same-verb entries across different roles).
+2. For each cited entry, overwrite the `Last Used:` line with the current `YYYY-MM`. Single date only — do not append or keep history.
+3. Write the updated inventory file. State the count of entries stamped and the month written.
+
+Do not stamp entries that were not cited in the accepted output. `cv_targeted` does not stamp `Career_Narratives.md` entries — narratives are loaded as reference depth for anchor bullets, but narrative Last Used is owned by `interview_prep`.
+
+**Phase 3a Closing:** Follow Standard Phase Closing. Next phase is Phase 3b.
 
 ---
 

@@ -173,6 +173,8 @@ Role: [Title] | [Company]
 Impact: [outcome, metric, or problem solved — OPTIONAL, only if stated in source]
 Context: [scope, org stage, or framing note — OPTIONAL, only if stated in source]
 Tags: Capability: X | Role Level: X | Org Context: X | Outcome: X
+Added: YYYY-MM
+Last Used:
 ```
 
 For independent or volunteer project entries (Org Context: Independent or Volunteer):
@@ -182,6 +184,8 @@ Project: [Project Name]
 Impact: [outcome, metric, or problem solved — OPTIONAL, only if stated in source]
 Context: [scope, org stage, or framing note — OPTIONAL, only if stated in source]
 Tags: Capability: X | Role Level: X | Org Context: Independent | Outcome: X
+Added: YYYY-MM
+Last Used:
 ```
 
 **Extraction rules:**
@@ -191,6 +195,7 @@ Tags: Capability: X | Role Level: X | Org Context: Independent | Outcome: X
 - Every entry must have all four tag dimensions. If Outcome cannot be determined from the source, make a best-effort assignment from the confirmed taxonomy and flag the entry for user review — do not omit the dimension and do not use values outside the confirmed taxonomy
 - Role Level tag reflects the level at which the work was performed, not the target level. For entries spanning a promotion within the same company, tag each entry at the level held when that work was done
 - Org Context is inferred from the source documents and career profile where not explicitly stated — flag any inferences made
+- Every entry carries an `Added: YYYY-MM` stamp set to the current month at extraction time, and a `Last Used:` line left blank. Last Used is stamped only by output-producing skills (`cv_targeted`, `cv_general`, `interview_prep`) at session close — never during extraction or enrichment
 
 **Extraction process:**
 
@@ -276,6 +281,7 @@ For each entry in the sample, verify and state Pass or Fail for each of the foll
 - **Tag completeness:** All four tag dimensions are present (Capability, Role Level, Org Context, Outcome). Any missing dimension is a failure.
 - **Tag validity:** All tag values match the confirmed taxonomy from Phase 2. Any value outside the approved taxonomy fails.
 - **Role Level accuracy:** The Role Level tag reflects the seniority at which the work was performed, not the target role level.
+- **Metadata presence:** Every entry has an `Added: YYYY-MM` line carrying the current extraction month and a `Last Used:` line (blank at extraction). Missing or malformed lines fail.
 
 **Step 3 — Resolve failures and determine sweep scope:**
 If any sampled entry fails a check, identify all other entries likely affected by the same type of failure and run a targeted sweep before proceeding.
@@ -317,6 +323,8 @@ Capability: [list all confirmed Capability tags separated by |]
 Role Level: IC | Manager | Senior Manager | Director | Senior Director | VP | C-Suite
 Org Context: Greenfield | Scaling | Turnaround | Mature/Enterprise | Independent | Volunteer
 Outcome: Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings | Revenue Growth | Customer/User Impact
+
+Entry metadata: every entry under "All Tasks Performed" carries an `Added: YYYY-MM` stamp set at creation and a `Last Used: YYYY-MM` stamp updated by output-producing skills at session close. Historical entries imported before the schema change carry `Added: pre-2026-04`.
 ```
 
 2. **Education** — degrees in reverse chronological order, compact format

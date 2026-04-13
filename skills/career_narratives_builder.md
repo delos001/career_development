@@ -131,8 +131,25 @@ Apply the guidance notes in the loaded format file throughout. Flag any field th
 
 After completing a draft, ask whether the entry has enough depth to support a real interview answer, or whether any field needs to be developed further before moving on.
 
-**Step 3 — Assign tags (stories only):**
-After completing the story draft, assign tags using the Experience Inventory taxonomy dimensions: Capability, Role Level, Org Context (Greenfield, Scaling, Turnaround, Mature/Enterprise, Independent, Volunteer), and Outcome. Model tagging on existing entries in the loaded document where available.
+**Step 3 — Assign metadata block (stories AND decisions):**
+After completing the entry draft, assign the 5-line metadata block that sits directly under the entry heading. The Tag Taxonomy header at the top of `knowledge/Career_Narratives.md` is the authoritative source for controlled values; consult it before assigning.
+
+Format:
+
+```
+Tags: [pipe-separated Capability values]
+Archetype: [pipe-separated Archetype values]
+Era: [single Era value]
+Added: YYYY-MM
+Last Used:
+```
+
+Rules:
+- **Tags:** values must come from the Capability list in the Tag Taxonomy header (shared vocabulary with `Experience_Inventory.md`). Multiple allowed. Reject free-text values; if the user proposes a Capability not in the controlled list, flag it and ask whether to (a) map to an existing value or (b) extend the Tag Taxonomy header before proceeding.
+- **Archetype:** values must come from the Archetype list (mirrors `rules/registry_archetype.md`). Multiple allowed. Same free-text rejection rule.
+- **Era:** single Era value matching the company-by-era list. If the entry spans multiple eras, choose the era in which the work was primarily performed; if the user insists on multiple, pipe-separate.
+- **Added:** stamp the current YYYY-MM at entry creation. Never backfill historical entries with a constructed date — those carry `Added: pre-2026-04` from the migration.
+- **Last Used:** leave blank at creation. This field is stamped by output-producing skills (`cv_targeted`, `cv_general`, `interview_prep`) at session close, not by this skill.
 
 **Phase 3a Closing:** Follow Standard Phase Closing. Next phase is Phase 4a.
 
@@ -150,7 +167,9 @@ For each entry developed in Phase 3a, verify:
 
 **Honesty check:** Are scope claims accurate? Does the outcome reflect what was actually delivered, not what was intended? Are tradeoffs, pushback, and retrospective reflection documented honestly, or have they been softened? Flag any overstated claims before writing.
 
-**Format compliance:** Verify each entry follows the loaded format file. All fields defined by the format are present or explicitly noted as not applicable with a brief reason. Tags present on all story entries.
+**Format compliance:** Verify each entry follows the loaded format file. All fields defined by the format are present or explicitly noted as not applicable with a brief reason.
+
+**Metadata compliance:** Verify the 5-line metadata block (Tags, Archetype, Era, Added, Last Used) is present on every entry — both stories and decisions. Verify all Tags values appear in the Capability list of the Tag Taxonomy header, all Archetype values appear in the Archetype list, and Era matches a value in the Era list. Reject any free-text value not in the controlled vocabulary. Verify Added carries the current YYYY-MM and Last Used is blank for new entries.
 
 State the result of each check. Flag failures explicitly and invoke QC Failure Recovery before proceeding.
 
@@ -167,7 +186,7 @@ State the result of each check. Flag failures explicitly and invoke QC Failure R
 State whether this session will: (a) create a new document at `knowledge/Career_Narratives.md`, (b) append new entries to an existing document, or (c) replace specific existing entries. Confirm with user before writing.
 
 **Step 2 — Confirm section placement:**
-For each entry, confirm which section it belongs in (Stories or Decisions) and where within that section it will be inserted. Number new entries to follow existing ones sequentially.
+For each entry, confirm which section it belongs in (Stories or Decisions) and where within that section it will be inserted. Entries are not numbered; the heading is the title alone (e.g., `## Longitudinal Stability Surveillance`, not `## 5. Longitudinal Stability Surveillance`).
 
 **Step 3 — Write:**
 Write each approved entry to `knowledge/Career_Narratives.md` at the confirmed location. Confirm each write completed successfully before moving to the next entry.

@@ -215,6 +215,32 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 
 ---
 
+## Knowledge Document Schemas
+
+The three knowledge documents carry schema metadata that skills read and write. Any skill that adds, cites, or revises content in these files must follow the contract below.
+
+### `knowledge/Experience_Inventory.md`
+
+- Tag Taxonomy header block at the top of the file is the authoritative source for controlled Capability, Role Level, Org Context, and Outcome values. Skills must not infer tag values from any other source.
+- Every entry under "All Tasks Performed" carries `Added: YYYY-MM` (stamped at entry creation) and `Last Used:` (blank at creation, updated on use).
+- `Added` is stamped by `experience_inventory_bootstrap` at extraction and by `source_document_update` when new entries are added post-session. Historical entries imported before the schema change carry `Added: pre-2026-04`.
+- `Last Used` is stamped only by output-producing skills at session close, only after explicit user acceptance of the final output: `cv_targeted` Phase 3a, `cv_general` Phase 5a, `interview_prep` Phase 4a. A single YYYY-MM is overwritten each time — no history.
+
+### `knowledge/Career_Narratives.md`
+
+- Tag Taxonomy header block at the top of the file is the authoritative source for controlled Capability (shared with Experience_Inventory), Archetype (mirrors `rules/registry_archetype.md`), and Era (by company) values. Free-text values are not permitted; unmatched values trigger either a mapping decision or a taxonomy extension.
+- Every story and decision entry carries a 5-line metadata block directly under the `## [Title]` heading: `Tags:`, `Archetype:`, `Era:`, `Added: YYYY-MM`, `Last Used:`. Entry headings are the title alone — no sequential numbering.
+- `Added` is stamped by `career_narratives_builder` at entry creation and by `source_document_update` when new narrative entries are added post-session. Historical entries carry `Added: pre-2026-04`.
+- `Last Used` is stamped only by `interview_prep` at session close, only after explicit user acceptance of the prep doc. `cv_targeted` and `cv_general` load narratives for reference but do not stamp narrative Last Used.
+- Body structure per entry is governed by the format file loaded from `rules/career_narratives/` at session start (STAR, ATOLA, Personal for stories; ADR, Personal for decisions).
+
+### `knowledge/Positioning.md`
+
+- Read whole; no per-entry tags or dates. Single metadata line at the top: `Last Revised: YYYY-MM`, immediately under the document title.
+- `positioning_builder` updates this line on every Phase 6a write. `source_document_update` does not update this line — incremental positioning edits made via that skill should be followed by a positioning_builder pass when accumulated changes warrant a revised date.
+
+---
+
 **Excluded from current workflow:**
 - `rules/sources.md` — research and practitioner citations supporting all skill and rules design decisions. Not loaded by any skill. Retained for traceability.
 - `cv_bullet_construction_guide.md` — retired. Content incorporated into content rules files. Sources moved to `rules/sources.md`.

@@ -6,7 +6,17 @@ Standard behavioral interview story format. Widely recognized across industries 
 
 ## Format
 
-**Tags:** [capability area, context type, outcome type — used for retrieval]
+Every entry carries a 5-line metadata block directly under the `## [Title]` heading, before any section:
+
+```
+Tags: [pipe-separated Capability values]
+Archetype: [pipe-separated Archetype values]
+Era: [single Era value]
+Added: YYYY-MM
+Last Used:
+```
+
+Controlled values come from the Tag Taxonomy header at the top of `knowledge/Career_Narratives.md`. `Added` is stamped at creation (current month). `Last Used` is left blank by the builder and stamped by output-producing skills at session close.
 
 ### Situation
 Set the context. Describe the organizational environment, what existed or was happening, and what created the need for action. Include scale indicators where relevant — scope of the problem, who was affected, what was at stake.

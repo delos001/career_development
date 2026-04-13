@@ -187,6 +187,18 @@ Perform QC per Global Rules:
 
 4. Save the completed CV to `outputs/` using this naming convention: `CV_General_[descriptor]_[YYYYMM].docx` where descriptor is the confirmed value from Step 2.
 
+5. **User acceptance and Last Used stamping:**
+
+   State "File is ready for your review." Ask the user to confirm acceptance of the generated CV before any metadata stamping occurs. If the user requests revisions, loop back to the appropriate earlier phase and regenerate. Do not stamp Last Used on rejected or draft output.
+
+   After explicit user acceptance:
+
+   a. Identify every `knowledge/Experience_Inventory.md` entry cited in the Phase 4a generated content. Match via the bold action statement line and the associated `Role:` line (to disambiguate same-verb entries across different roles).
+   b. For each cited entry, overwrite the `Last Used:` line with the current `YYYY-MM`. Single date only — do not append or keep history.
+   c. Write the updated inventory file. State the count of entries stamped and the month written.
+
+   Do not stamp entries that were not cited in the accepted output. `cv_general` does not stamp `Career_Narratives.md` entries — narratives are loaded as reference depth, but narrative Last Used is owned by `interview_prep`.
+
 **Phase 5a Closing:** Follow Standard Phase Closing. Next phase is Phase 5b.
 
 ---

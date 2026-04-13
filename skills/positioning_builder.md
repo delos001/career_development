@@ -23,6 +23,18 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 ## Document Structure
 
+A complete Positioning.md opens with the document title followed by a single `Last Revised: YYYY-MM` line, then the tiered content below:
+
+```
+# MY POSITIONING
+
+Last Revised: YYYY-MM
+
+[tiered content]
+```
+
+The `Last Revised` line is the only metadata in this document. Unlike `Experience_Inventory.md` and `Career_Narratives.md`, Positioning has no per-entry tags or dates — it is read whole and revised in place. The line is updated on every write in Phase 6a.
+
 A complete Positioning.md contains three tiers of content. Not every section is required in every version of the document — the user decides what is relevant to their context. The tiers define what to build first and why each section matters.
 
 **Tier 1 — Core Identity (build first)**
@@ -200,7 +212,7 @@ State the result of each check. Flag failures explicitly and invoke QC Failure R
 State exactly which sections will be written or updated. For Update mode, confirm that only the in-scope sections will be modified — existing sections not in scope will not be touched. Confirm with user before writing.
 
 **Step 2 — Write:**
-Write each approved section to `knowledge/Positioning.md` at the correct location. For new documents, assemble all sections in tier order. For updates, insert or replace only the confirmed sections. Confirm each write completed successfully.
+Write each approved section to `knowledge/Positioning.md` at the correct location. For new documents, assemble all sections in tier order and include the top-line `Last Revised: YYYY-MM` immediately under the document title, set to the current month. For updates, insert or replace only the confirmed sections and overwrite the existing `Last Revised:` line with the current month. If the file predates the schema and has no `Last Revised:` line, add one in the canonical position (immediately under the title) during this write. Confirm each write completed successfully.
 
 **Step 3 — Handoff:**
 After all writes are complete, confirm the session is complete and summarize what was added or changed.
