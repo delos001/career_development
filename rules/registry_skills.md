@@ -160,6 +160,7 @@ The control skill uses the following ordered checks to determine where a user is
 
 **Outputs:**
 - Tailored CV `.docx` saved to `outputs/`
+- `knowledge/Experience_Inventory.md` — `Last Used: YYYY-MM` stamped on every entry cited in the accepted CV (Phase 3a closing, post user acceptance)
 
 **Typical Next Steps:** `interview_prep`
 
@@ -182,6 +183,7 @@ The control skill uses the following ordered checks to determine where a user is
 
 **Outputs:**
 - General CV `.docx` saved to `outputs/`
+- `knowledge/Experience_Inventory.md` — `Last Used: YYYY-MM` stamped on every entry cited in the accepted CV (Phase 5a closing, post user acceptance)
 
 **Typical Next Steps:** None — standalone output
 
@@ -204,6 +206,8 @@ The control skill uses the following ordered checks to determine where a user is
 - `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYYMM].docx` — reference document
 - `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYYMM].docx` — editable round-tracking document pre-populated with questions
 - `knowledge/Questions_Library.md` updated
+- `knowledge/Career_Narratives.md` — `Last Used: YYYY-MM` stamped on every narrative cited in the Stories Bank, Alignment Map, or Gap Handling Language (Phase 4a closing, post user acceptance)
+- `knowledge/Experience_Inventory.md` — `Last Used: YYYY-MM` stamped on every inventory entry cited in the Alignment Map, Gap Handling Language, or supporting a Stories Bank entry (Phase 4a closing, post user acceptance)
 
 **Typical Next Steps:** `followup` (after completing at least one interview round)
 
