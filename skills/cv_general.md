@@ -45,7 +45,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
    If the user's stated targeting context does not satisfy the match criteria for any archetype, do not proceed. State specifically which criteria failed for each archetype. Inform the user that a new archetype may be needed and that `skills/archetype_creation.md` must be triggered and completed before this skill can continue.
 
-   If a dual-archetype is identified, apply the Dual-Archetype Handling Rules from `rules/global_rules.md` throughout all subsequent phases.
+   If a dual-archetype is identified, load `rules/cv/dual_archetype.md` now and confirm it loaded completely. Apply its rules throughout all subsequent phases.
 
    Obtain explicit user agreement on the archetype selection before proceeding.
 
@@ -95,6 +95,8 @@ State the result of each check. Flag failures and invoke QC Failure Recovery bef
    - How to apply the 10-year recency rule: all roles in the last 10 years belong in the main experience section; roles that add credibility to the archetype's core capabilities belong regardless of age
 
    Also check the Independent & Volunteer Projects section of the inventory. If entries exist, present them separately to the user for consideration as a Selected Projects CV section. Do not fold project entries into the main experience section. Whether a Selected Projects section appears in the output is governed by the active archetype — if the archetype does not include it, flag this to the user before proceeding.
+
+   Before presenting the architecture to the user for approval, load `rules/judgment_qc.md` and confirm it loaded completely. Apply Mode 8 (Experience architecture miscalibration) from the Architecture-Level Check section against every role in the proposed architecture. The credibility basis for this skill is three factors taken together: the confirmed role level from Phase 1a (what candidates at this level are evaluated on), the active archetype's High Priority tag combinations, and the user's targeting context from Phase 1a. These are the native credibility frame for a non-targeted CV — this skill does not produce a role-specific CV and does not use role-specific critical requirements. Any conflict with the continuity-plus-credibility rules must be resolved and reflected in the architecture before the architecture is presented. Keep `rules/judgment_qc.md` loaded — it is re-used in Phase 4b.
 
    Present the proposed architecture and obtain explicit user approval before proceeding to content generation.
 
@@ -158,6 +160,8 @@ State the result of each check. Flag failures and invoke QC Failure Recovery bef
 **Source Traceability:** Verify that every achievement and claim is traceable to a source document loaded in this session or information explicitly provided by the user during this session. Flag any content that cannot be traced.
 
 **CV QC Checklist:** Load `rules/cv/qc_checklist.md` now. Apply the Universal section against the generated CV content. Then apply the archetype section matching the active archetype and role level confirmed in Phase 1a. For each item, cite specific evidence from the generated content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
+
+**Judgment QC:** Confirm `rules/judgment_qc.md` is still loaded from Phase 3a Step 3; if not, load it now and confirm it loaded completely. Apply Modes 1 through 6 from the Content-Level Checks section against every bullet in the generated content. For each mode, cite the specific bullet under review and the specific inventory entry (or other in-session source) that supports or contradicts the bullet. State Pass or Fail for each bullet per mode. Any Fail invokes QC Failure Recovery before this phase can close.
 
 Perform QC per Global Rules:
 - **Standard QC Document Verification**

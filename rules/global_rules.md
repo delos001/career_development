@@ -56,19 +56,6 @@ If any documents were loaded in the previous phase, verify Document Load Instruc
 
 ---
 
-## Dual-Archetype Handling Rules
-
-When a role or targeting context spans two archetypes, identify a primary and secondary archetype and state both explicitly with rationale. Apply the following rules throughout all subsequent phases:
-
-- The primary archetype governs exclusively: section order, summary framing, Core Competencies priority, and achievement selection criteria. The secondary archetype has no authority over any of these.
-- Secondary framing appears only within individual achievements where both dimensions are genuinely present in the underlying experience. Not as standalone achievements and not in the summary.
-- No more than 2-3 achievements should carry secondary framing. If more than a third of achievements require secondary framing to be relevant, the primary archetype selection is likely wrong. Flag this before proceeding and re-evaluate.
-- When primary and secondary framing conflict within an achievement, primary wins. Do not weaken the primary message to accommodate the secondary dimension.
-- The summary is governed exclusively by the primary archetype framing rules. The secondary archetype does not appear in the summary.
-- Core Competencies may include 1-2 items signaling the secondary archetype capability. The secondary zone must not displace primary archetype items.
-
----
-
 ## Workflow Context Check
 
 At the start of execution, before Phase 1a, determine whether this is a fresh invocation or a continuation of a prior session or parent workflow.

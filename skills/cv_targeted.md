@@ -51,7 +51,7 @@ All rules in the content rules file apply actively throughout content generation
 Apply the org-type framing emphasis from Phase 1a throughout content generation. Framing emphasis governs how the organizational environment and operating context are described — archetype governs achievement selection and characterization.
 
 **Step 2 — Load archetype instruction set:**
-Load the archetype instruction document using the file path provided in the GapAnalysis file for the primary archetype. If a secondary archetype was identified in Phase 1a, load that document using its file path from the GapAnalysis file as well. Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
+Load the archetype instruction document using the file path provided in the GapAnalysis file for the primary archetype. If a secondary archetype was identified in Phase 1a, load that document using its file path from the GapAnalysis file as well, and also load `rules/cv/dual_archetype.md`. Apply the dual-archetype rules throughout all subsequent phases. Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
 
 **Step 3 — Load source documents:**
 Load the following source documents now. Confirm each loaded completely before proceeding:
@@ -69,6 +69,8 @@ Before generating any content, produce a proposed experience section architectur
 
 Also check the Independent & Volunteer Projects section of the inventory. If entries exist, present them separately to the user for consideration as a Selected Projects CV section. Do not fold project entries into the main experience section. Whether a Selected Projects section appears in the output is governed by the active archetype — if the archetype does not include it, flag this to the user before proceeding.
 
+Before presenting the architecture to the user for approval, load `rules/judgment_qc.md` and confirm it loaded completely. Apply Mode 8 (Experience architecture miscalibration) from the Architecture-Level Check section against every role in the proposed architecture. Cite each role, its proposed treatment, the 10-year continuity status, and the Phase 1a critical requirement(s) it does or does not support. Any conflict with the continuity-plus-credibility rules must be resolved and reflected in the architecture before the architecture is presented. Keep `rules/judgment_qc.md` loaded — it is re-used in Phase 2b.
+
 Wait for explicit approval of the experience architecture before proceeding to Step 5.
 
 **Step 5 — Generate CV content:**
@@ -85,6 +87,8 @@ Generate complete CV content applying all rules from the active archetype instru
 **Content Rules Verification:** Verify the loaded content rules file was actively applied throughout generation. For each rule, state the verification method and result. Any rule that cannot be verified against the output must be flagged as non-compliant and QC Failure Recovery invoked.
 
 **CV QC Checklist:** Load `rules/cv/qc_checklist.md` now. Apply the Universal section against the generated CV content. Then apply the archetype section matching the active archetype and role level confirmed in Phase 1a. For each item, cite specific evidence from the generated content — a specific bullet, section, or line. General confirmations are not acceptable. State Pass or Fail for each item. Any Fail invokes QC Failure Recovery before this phase can close.
+
+**Judgment QC:** Confirm `rules/judgment_qc.md` is still loaded from Phase 2a Step 4; if not, load it now and confirm it loaded completely. Apply Modes 1 through 6 from the Content-Level Checks section against every bullet in the generated content. For each mode, cite the specific bullet under review and the specific inventory entry (or gap analysis source) that supports or contradicts the bullet. State Pass or Fail for each bullet per mode. Any Fail invokes QC Failure Recovery before this phase can close.
 
 Perform QC per Global Rules:
 - **Standard QC Document Verification**

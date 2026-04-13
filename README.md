@@ -101,10 +101,11 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | None — job description, company, and title collected only |
-| 2a step 5 | Archetype confirmed (AD+) | `rules/registry_archetype.md`; primary archetype leadership file from `rules/`; secondary if dual-archetype identified |
-| 2a step 5 | Archetype confirmed (IC) | `rules/registry_archetype.md`; primary archetype IC file from `rules/`; secondary if dual-archetype identified |
+| 2a step 5 | Archetype confirmed (AD+) | `rules/registry_archetype.md`; primary archetype leadership file from `rules/`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
+| 2a step 5 | Archetype confirmed (IC) | `rules/registry_archetype.md`; primary archetype IC file from `rules/`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 6 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted |
 | 3a step 1 | Fit evaluation begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 3b | Gap rating judgment QC | `rules/judgment_qc.md` |
 | Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
 
 ### cv_targeted
@@ -114,8 +115,9 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | `outputs/GapAnalysis_[Company]_[Role]_[YYYYMM].md` |
 | 2a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
-| 2a step 2 | Archetype load | Primary archetype file (leadership or IC); secondary if dual-archetype identified in Phase 1a |
+| 2a step 2 | Archetype load | Primary archetype file (leadership or IC); secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified in Phase 1a |
 | 2a step 3 | Source review begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 2a step 4 | Experience architecture judgment QC | `rules/judgment_qc.md` (retained through Phase 2b) |
 | 2b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
 | 3a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
 | 3a step 2 | Python script execution | `rules/config.md` |
@@ -127,9 +129,10 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | None — targeting context collected only |
-| 2a step 1 | Archetype selection begins | `rules/registry_archetype.md`; primary archetype file (leadership or IC); secondary if dual-archetype identified |
+| 2a step 1 | Archetype selection begins | `rules/registry_archetype.md`; primary archetype file (leadership or IC); secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 3 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted for use in Phase 4a |
 | 3a step 1 | Source review begins | `knowledge/Experience_Inventory.md`, `knowledge/Career_Narratives.md`, `knowledge/Positioning.md` |
+| 3a step 3 | Experience architecture judgment QC | `rules/judgment_qc.md` (retained through Phase 4b) |
 | 4a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
 | 5a step 1 | Document generation begins | `rules/cv/format_spec.md`; `knowledge/Contact_Info.md` |
 | 5a step 3 | Python script execution | `rules/config.md` |

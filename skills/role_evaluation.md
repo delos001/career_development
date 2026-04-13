@@ -54,7 +54,7 @@ Naming convention: `SessionLog_[Company]_[Role]_[YYYYMM].md`
 
    If none of the archetypes in the registry satisfy the match criteria for this role, do not proceed. State specifically which match criteria failed for each archetype. Inform the user that a new archetype may be needed and that `skills/archetype_creation.md` must be triggered and completed before role evaluation can continue. Stop here and do not advance to any subsequent step or phase.
 
-   If the role spans two archetypes, identify a primary and secondary archetype and state both explicitly with rationale. Apply the Dual-Archetype Handling Rules from `rules/global_rules.md` throughout all subsequent phases.
+   If the role spans two archetypes, identify a primary and secondary archetype and state both explicitly with rationale. Load `rules/cv/dual_archetype.md` now and confirm it loaded completely. Apply its rules throughout all subsequent phases.
 
    Then load the archetype instruction document matching the confirmed primary archetype. Use the role level confirmed in Step 2 to select between the leadership and IC file — both file paths are listed in the registry entry for each archetype. If a dual-archetype was identified, also load the secondary archetype document using the same role-level logic.
 
@@ -137,7 +137,9 @@ Perform QC per Global Rules:
 
 **Requirement Mapping:** Enumerate the critical requirements identified in Phase 2a. For each, confirm a source-citable match was presented in Phase 3a Step 2. A specific named achievement or deliverable traceable to a source document is required — general capability claims do not qualify. Flag any requirement without a citable match.
 
-**Gap Enumeration:** Confirm all gaps identified in Phase 3a Step 3 were included in the summary table from Step 4. For each gap, confirm the severity rating is defensible — state the specific reason severity was assigned. Flag any gap rated without clear rationale.
+**Gap Enumeration:** Confirm all gaps identified in Phase 3a Step 3 were included in the summary table from Step 4. Flag any gap from Step 3 that is missing from the table.
+
+**Gap Rating Judgment QC:** Load `rules/judgment_qc.md` now and confirm it loaded completely. Apply Mode 7 (Gap rating miscalibration) from the Evaluation-Level Check section against every gap row in the gap table. Cite the gap row, the job description language, the supporting inventory entries, the assessed match distance, and state the severity the evidence supports. Any gap whose stated severity does not match the severity the evidence supports is a Fail and invokes QC Failure Recovery.
 
 **Gap Resolution Completeness:** Enumerate every gap from the Phase 3a summary table. For each, confirm: (a) it was worked through individually with a user response before moving to the next, and (b) the resolution is one of the three allowed states — resolved via CV language, carried by interview narrative, or unresolved with explicit user acknowledgment. Any gap without a recorded resolution or acknowledgment is a blocking issue — invoke QC Failure Recovery.
 

@@ -46,9 +46,6 @@ Confirm stakeholder navigation, resistance management, or organizational complex
 **A1L-5 — Transformation achievement elements**
 Confirm the four transformation elements (challenge, strategy, execution, outcome) are present within at least two BioMarin achievements. Cite each achievement and identify where each element appears within the bullet.
 
-**A1L-6 — No Mature/Enterprise-only framing as transformation**
-Confirm no achievement in a Mature/Enterprise context without Greenfield or Turnaround framing is presented as a transformation achievement. List any borderline cases and state the determination.
-
 ---
 
 ## Archetype 1 IC: Transformation & Strategy
@@ -61,9 +58,6 @@ Confirm every achievement describes a specific contribution, deliverable, or act
 
 **A1I-3 — Cross-functional engagement**
 Confirm at least one achievement shows cross-functional engagement or multi-team scope. Cite the qualifying achievement.
-
-**A1I-4 — No inflated scope**
-Confirm no achievement implies organizational leadership, strategic authority, or enterprise capability ownership not present in source documents. List any borderline cases and state the determination.
 
 ---
 
@@ -84,9 +78,6 @@ Confirm at least one achievement demonstrates executive or cross-functional infl
 **A2L-5 — Capability maturity achievement**
 Confirm at least one achievement shows building or materially maturing a data or analytics capability from a greenfield or low-maturity starting point. Cite the qualifying achievement.
 
-**A2L-6 — No IC-level data science work**
-Confirm no achievement in the BioMarin or AbbVie blocks reads as IC-level data science work without governance or strategy framing. List any borderline cases and state the determination.
-
 **A2L-7 — Technical Proficiencies expansion**
 Confirm the Technical Proficiencies section includes the full languages list, ML frameworks, analytics environments, and visualization tools per archetype rules. List any category that is missing.
 
@@ -105,9 +96,6 @@ Confirm every achievement states a data problem or analytical need before descri
 
 **A2I-4 — Concrete outcomes**
 Confirm every achievement outcome is stated in concrete terms: what improved, what risk was reduced, what decision was enabled. Flag any outcome stated only as an artifact produced.
-
-**A2I-5 — No inflated scope**
-Confirm no achievement implies enterprise governance authority or strategic data ownership not present in source documents. List any borderline cases and state the determination.
 
 ---
 
@@ -144,9 +132,6 @@ Confirm every achievement states the operational problem or gap before describin
 **A3I-4 — Concrete outcomes**
 Confirm outcomes are concrete and measurable where source material supports it. Flag any outcome stated only as an artifact produced without operational impact.
 
-**A3I-5 — No inflated scope**
-Confirm no achievement implies cross-functional ownership or organizational leadership not present in source documents. List any borderline cases and state the determination.
-
 ---
 
 ## Archetype 4 Leadership: Platform & Technology
@@ -172,9 +157,6 @@ Confirm the eClinical Solutions RBM consultant role is included in the main expe
 **A4L-7 — Technical Proficiencies content**
 Confirm the Technical Proficiencies section prioritizes Clinical Systems and current platforms per archetype rules. List any required system category that is missing.
 
-**A4L-8 — No unframed hands-on work**
-Confirm no achievement from BioMarin or AbbVie leads with EDC configuration, script development, or hands-on system setup without strategic or governance reframing. List any borderline cases and state the determination.
-
 ---
 
 ## Archetype 4 IC: Platform & Technology
@@ -191,5 +173,3 @@ Confirm every achievement states a technology problem or system need before desc
 **A4I-4 — Concrete outcomes**
 Confirm every outcome is stated in concrete impact terms: what was enabled, what risk was reduced, what capability was delivered. Flag any outcome stated only as a configuration task completed.
 
-**A4I-5 — No inflated scope**
-Confirm no achievement implies enterprise platform ownership or technology strategy authority not present in source documents. List any borderline cases and state the determination.
