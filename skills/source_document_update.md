@@ -50,7 +50,10 @@ Role: Title | Company
 **[Action statement — what specifically was done, one discrete action per entry]**
 Impact: [outcome, metric, or problem solved — OPTIONAL]
 Context: [scope, org stage, or framing note — OPTIONAL]
-Tags: Capability: X | Role Level: X | Org Context: X [ | Outcome: X — OPTIONAL, include only when a genuine organizational outcome is attached ]
+Capability: X [ | Y — multiple values permitted, pipe-separated ]
+Role Level: X
+Org Context: X
+Outcome: X [ — OPTIONAL line, omit entirely when no genuine organizational outcome is attached ]
 Added: YYYY-MM
 Last Used:
 ```
@@ -61,7 +64,10 @@ Project: [Project Name]
 **[Action statement — what specifically was done, one discrete action per entry]**
 Impact: [outcome, metric, or problem solved — OPTIONAL]
 Context: [scope, org stage, or framing note — OPTIONAL]
-Tags: Capability: X | Role Level: X | Org Context: Independent [ | Outcome: X — OPTIONAL, include only when a genuine organizational outcome is attached ]
+Capability: X [ | Y — multiple values permitted, pipe-separated ]
+Role Level: X
+Org Context: Independent
+Outcome: X [ — OPTIONAL line, omit entirely when no genuine organizational outcome is attached ]
 Added: YYYY-MM
 Last Used:
 ```
@@ -75,7 +81,7 @@ New entries carry `Added: YYYY-MM` set to the current month; `Last Used:` is lef
 - Org Context: Greenfield | Scaling | Turnaround | Mature/Enterprise | Independent | Volunteer
 - Outcome: Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings
 
-Multiple Capability and Outcome values are permitted per entry using pipe separators. Org Context and Role Level take one value per entry.
+Capability and Outcome values are pipe-separated on their respective lines when multiple apply. Role Level and Org Context take one value per entry. Outcome is an optional line — omit the entire line when no genuine organizational outcome is attached.
 
 `knowledge/Career_Narratives.md` — Follow the structure and conventions of existing entries. Story and decision body formats are governed by files in `rules/career_narratives/`; select the format matching the existing entry being extended, or the default (STAR for stories, Personal for decisions) for new entries. Include metrics where available from this session.
 
@@ -113,7 +119,7 @@ Before presenting any proposed update for approval, verify each against all of t
 - Non-contradictory: does not conflict with or duplicate existing source document content
 - Complete (Experience_Inventory.md entries only): Before writing, verify all required elements are present:
   - Action statement: present, atomic (one discrete action), not a polished CV bullet
-  - Tags: Capability, Role Level, and Org Context present on every entry. Outcome optional — include only when a genuine organizational outcome is attached to the action; omit for breadth-evidence, routine-task, and "did X" entries. Do not invent outcomes to satisfy the schema.
+  - Classification lines: `Capability:`, `Role Level:`, and `Org Context:` each present as their own line on every entry. `Outcome:` line is optional — include only when a genuine organizational outcome is attached to the action; omit the entire line for breadth-evidence, routine-task, and "did X" entries. Do not invent outcomes to satisfy the schema. All values must match the Tag Taxonomy header block in `knowledge/Experience_Inventory.md`; reject free-text values.
   - Metadata: `Added: YYYY-MM` set to current month and `Last Used:` left blank
   - For Director-level entries and above: determine whether this entry is likely to serve as an anchor citation for a critical requirement match in a CV session. If yes, and if both Context and Impact are absent, query the user for this information before writing. Do not write a Director+ anchor entry without at least one of Context or Impact annotated. Breadth and delivery evidence entries at this level do not require annotation — use judgment based on whether the entry describes a discrete, citable accomplishment or a general responsibility.
 - Complete (Career_Narratives.md entries only): the 5-line metadata block is present, all Tags/Archetype/Era values match the Tag Taxonomy header at the top of the document, `Added: YYYY-MM` is the current month, and `Last Used:` is blank.

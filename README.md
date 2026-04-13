@@ -222,6 +222,7 @@ The three knowledge documents carry schema metadata that skills read and write. 
 ### `knowledge/Experience_Inventory.md`
 
 - Tag Taxonomy header block at the top of the file is the authoritative source for controlled Capability, Role Level, Org Context, and Outcome values. Skills must not infer tag values from any other source.
+- Classification appears on separate lines per entry: `Capability:`, `Role Level:`, `Org Context:`, and (optional) `Outcome:`. No inline `Tags:` line. Capability and Outcome allow pipe-separated multi-values on their line; Role Level and Org Context take one value each. Omit the `Outcome:` line entirely when no genuine organizational outcome is attached.
 - Every entry under "All Tasks Performed" carries `Added: YYYY-MM` (stamped at entry creation) and `Last Used:` (blank at creation, updated on use).
 - `Added` is stamped by `experience_inventory_bootstrap` at extraction and by `source_document_update` when new entries are added post-session. Historical entries imported before the schema change carry `Added: pre-2026-04`.
 - `Last Used` is stamped only by output-producing skills at session close, only after explicit user acceptance of the final output: `cv_targeted` Phase 3a, `cv_general` Phase 5a, `interview_prep` Phase 4a. A single YYYY-MM is overwritten each time — no history.
