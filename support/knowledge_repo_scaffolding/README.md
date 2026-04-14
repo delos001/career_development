@@ -1,8 +1,8 @@
 # career_development_knowledge
 
-Private repository containing master source documents for the CV generation workflow in [career_development](https://github.com/<your-github-username>/career_development).
+Private repository containing master source documents and session artifacts for the CV generation workflow in [career_development](https://github.com/<your-github-username>/career_development).
 
-This repo is cloned into `career_development/personal/knowledge/` and is gitignored by the framework repo. Changes here are committed and pushed independently.
+This repo is cloned into `career_development/personal/` and is gitignored by the framework repo. Both `knowledge/` and `sessions/` subdirectories are tracked here and pushed to this private repo.
 
 ---
 
