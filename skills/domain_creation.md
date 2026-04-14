@@ -277,7 +277,7 @@ Perform QC per Global Rules:
 
 2. State the activation step explicitly to the user: to use the new domain, edit the `**Active Domain:**` line in the header of `personal/knowledge/Experience_Inventory.md` to the new slug. Any subsequent `role_evaluation`, `cv_targeted`, or `cv_general` session will load the new domain automatically.
 
-3. State the inventory-migration implication: if the user's existing Experience_Inventory entries carry tags that do not exist in the new domain's taxonomy, those entries will fail validation. If a domain switch is planned, recommend an inventory review pass (standalone `source_document_update` session in Annotation Enrichment style, or a dedicated migration) before the switch.
+3. State the inventory-migration implication: if the user's existing Experience_Inventory entries carry tags that do not exist in the new domain's taxonomy, those entries will fail validation. If a domain switch is planned, recommend an inventory review pass (standalone `source_document_update_adhoc` session, or a dedicated migration) before the switch.
 
 4. Trigger-source next steps:
    - If triggered from a role evaluation domain scope mismatch: the user can now activate the new domain and re-run `role_evaluation` against the role.

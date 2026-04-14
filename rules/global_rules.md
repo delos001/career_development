@@ -61,5 +61,5 @@ If any documents were loaded in the previous phase, verify Document Load Instruc
 At the start of execution, before Phase 1a, determine whether this is a fresh invocation or a continuation of a prior session or parent workflow.
 
 - **Fresh invocation:** proceed to Phase 1a (or the equivalent session setup phase for this skill).
-- **Triggered from within another skill** (e.g., `source_document_update` triggered by `cv_targeted`): confirm the parent session context is available. The calling skill should have defined the scope of "this session." If that scope is not present in context, flag the gap before proceeding — do not infer what the session covered.
+- **Triggered from within another skill** (e.g., `source_document_update_workflow` triggered by `cv_targeted`): confirm the parent session context is available. The calling skill should have defined the scope of "this session." If that scope is not present in context, flag the gap before proceeding — do not infer what the session covered.
 - **Resuming a prior session:** if the active skill has a Session Continuity rule, that rule governs resumption. If no Session Continuity rule is defined, start from Phase 1a.

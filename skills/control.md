@@ -127,7 +127,7 @@ If prerequisites exist, route directly. If not, identify the gap and route to th
 ---
 
 **Source document update request:**
-Confirm `personal/knowledge/Experience_Inventory.md` exists. If yes, route directly to `source_document_update`. If not, inform the user that the Experience Inventory must be built first via `experience_inventory_bootstrap`.
+Confirm `personal/knowledge/Experience_Inventory.md` exists. If yes, route directly to `source_document_update_adhoc`. If not, inform the user that the Experience Inventory must be built first via `experience_inventory_bootstrap`.
 
 ---
 

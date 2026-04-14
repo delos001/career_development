@@ -2,7 +2,7 @@
 
 ## Objective
 
-Build a structured, tagged Experience Inventory from raw career source documents (CVs, resumes, LinkedIn exports, or similar). The output is a fully assembled `Experience_Inventory.md` file ready for use by `cv_targeted` and `cv_general`. This skill handles discovery, taxonomy design, section architecture, extraction, deduplication, and assembly. Enrichment of individual entries (adding Impact and Context annotations) is handled separately by the Annotation Enrichment Phase in `skills/source_document_update.md`.
+Build a structured, tagged Experience Inventory from raw career source documents (CVs, resumes, LinkedIn exports, or similar). The output is a fully assembled `Experience_Inventory.md` file ready for use by `cv_targeted` and `cv_general`. This skill handles discovery, taxonomy design, section architecture, extraction, deduplication, and assembly. Enrichment of individual entries (adding Impact and Context annotations) is handled separately by `skills/source_document_update_adhoc.md`.
 
 ---
 
@@ -318,7 +318,7 @@ If an `Experience_Inventory.md` already exists at the output path, warn the user
 **Step 2 — Assemble document:**
 Assemble the full inventory document in the following structure:
 
-1. **Taxonomy Header Block** — the confirmed taxonomy from Phase 2, encoded as a reference block at the top of the document. This block is read by `skills/source_document_update.md` to validate tag values. Format:
+1. **Taxonomy Header Block** — the confirmed taxonomy from Phase 2, encoded as a reference block at the top of the document. This block is read at entry time to validate tag values on any write to the inventory. Format:
 
 ```
 # Experience Inventory
@@ -363,12 +363,12 @@ State: total entries written, sections included, and the list of enrichment prio
 
 ---
 
-## Handoff — Annotation Enrichment
+## Handoff — Inventory Enrichment
 
-The inventory is now populated but unenriched. Entries flagged as enrichment priorities in Phase 4 are the recommended starting point.
+The inventory is now populated but unenriched. Entries flagged as enrichment priorities in Phase 4 are the recommended starting point for adding Context, Impact, or additional tag values.
 
-Ask the user: "Would you like to begin annotation enrichment now, or stop here and continue in a future session?"
+Ask the user: "Would you like to begin enriching those flagged entries now, or stop here and come back to it later?"
 
-**If now:** Load `skills/source_document_update.md` and execute the Annotation Enrichment Phase. Use the enrichment priority entries flagged in Phase 4 as the starting target list — present them to the user as the recommended starting point rather than re-identifying targets from scratch.
+**If now:** Load `skills/source_document_update_adhoc.md` and supply the enrichment priority list flagged in Phase 4 as the pre-identified target list during that skill's Session Scope step. Present those entries as the recommended starting point rather than re-identifying targets from scratch.
 
-**If later:** Close the session. Remind the user that enrichment can be started at any time using the trigger phrase "let's do annotation work" or "enrich the inventory." Note that cv_targeted and cv_general can be used before enrichment is complete — unenriched entries are still retrievable, they just have less context for anchor citations.
+**If later:** Close the session. Remind the user that enrichment can be started at any time by invoking `skills/source_document_update_adhoc.md` directly, or by asking the control skill to route them to it. Note that `cv_targeted` and `cv_general` can be used before enrichment is complete — unenriched entries are still retrievable, they just have less context for anchor citations.

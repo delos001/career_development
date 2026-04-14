@@ -9,7 +9,7 @@ This skill handles three modes:
 - **Update sections:** An existing document exists. Revise or deepen specific sections.
 - **Full review:** An existing document exists. Review all sections for freshness and coherence, then make targeted updates.
 
-**Boundary with `source_document_update`:** Use that skill for capturing incremental framing language, new positioning statements, or corrections surfaced during a CV or interview session. Use this skill when building a section from scratch, significantly revising a section, or reviewing the document holistically.
+**Boundary with the source document update skills:** Use `source_document_update_workflow` for capturing incremental framing language, new positioning statements, or corrections surfaced during a CV or interview session. Use `source_document_update_adhoc` for capturing similar items ad-hoc (not tied to a workflow session). Use this skill when building a section from scratch, significantly revising a section, or reviewing the document holistically.
 
 ---
 
@@ -217,6 +217,6 @@ Write each approved section to `knowledge/Positioning.md` at the correct locatio
 **Step 3 — Handoff:**
 After all writes are complete, confirm the session is complete and summarize what was added or changed.
 
-If positioning work surfaced experience or framing that is not yet captured in `knowledge/Experience_Inventory.md` or `knowledge/Career_Narratives.md`, flag those items and offer to trigger `skills/source_document_update.md`.
+If positioning work surfaced experience or framing that is not yet captured in `knowledge/Experience_Inventory.md` or `knowledge/Career_Narratives.md`, flag those items and offer to trigger `skills/source_document_update_workflow.md`.
 
 **Phase 6a Closing:** Follow Standard Phase Closing. Session complete.

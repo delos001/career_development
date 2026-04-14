@@ -10,7 +10,7 @@
 
 ## 1. Tag Taxonomy
 
-Authoritative source for the tag vocabulary used in this domain. Experience_Inventory entries must conform to these dimensions and values. source_document_update validates writes against this taxonomy.
+Authoritative source for the tag vocabulary used in this domain. Experience_Inventory entries must conform to these dimensions and values. Writes are validated against this taxonomy at entry time.
 
 Dimensions:
 

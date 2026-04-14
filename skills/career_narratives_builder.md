@@ -194,6 +194,6 @@ Write each approved entry to `knowledge/Career_Narratives.md` at the confirmed l
 **Step 4 — Handoff:**
 After all writes are complete, confirm the session is complete and summarize what was added.
 
-If new stories or decisions surfaced experience, framing, or positioning language not yet captured in `knowledge/Experience_Inventory.md` or `knowledge/Positioning.md`, flag those items and offer to trigger `skills/source_document_update.md` to capture them.
+If new stories or decisions surfaced experience, framing, or positioning language not yet captured in `knowledge/Experience_Inventory.md` or `knowledge/Positioning.md`, flag those items and offer to trigger `skills/source_document_update_workflow.md` to capture them.
 
 **Phase 5a Closing:** Follow Standard Phase Closing. Session complete.

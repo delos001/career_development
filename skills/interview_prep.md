@@ -279,4 +279,4 @@ Perform QC per Global Rules:
 
 Dedicated to capturing information surfaced during this session that should be added to source documents.
 
-Load `skills/source_document_update.md` now and follow it completely. "This session" refers to all phases and interactions from Phase 1a through Phase 4b.
+Load `skills/source_document_update_workflow.md` now and follow it completely. "This session" refers to all phases and interactions from Phase 1a through Phase 4b.

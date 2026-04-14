@@ -21,7 +21,7 @@ experience_inventory_bootstrap → career_narratives_builder → positioning_bui
                                                              interview_followup
 
 [Standalone — any point]
-career_brief, cv_general, source_document_update
+career_brief, cv_general, source_document_update_adhoc
 ```
 
 Knowledge builder skills (experience_inventory_bootstrap, career_narratives_builder, positioning_builder) run once and are maintained over time. Role-specific skills (role_evaluation through interview_followup) run per application. Utility and standalone skills run on demand. Rules builder skills (archetype_creation, domain_creation) extend the repo itself — invoked only when the available archetype or domain coverage does not fit a target role; not part of per-role workflow.
@@ -284,13 +284,37 @@ The control skill uses the following ordered checks to determine where a user is
 
 ---
 
-### Source Document Update
+### Source Document Update — Workflow
 
-**File:** `skills/source_document_update.md`
+**File:** `skills/source_document_update_workflow.md`
 **Category:** Utility
-**Standalone:** Yes — but typically triggered from within other skills at session close
+**Standalone:** No — invoked only from the close of another workflow skill
+**Direct routing by control skill:** Never. This skill is triggered from within `role_evaluation`, `cv_targeted`, `cv_general`, `interview_prep`, `career_narratives_builder`, or `positioning_builder` at session close. The control skill does not route to it directly.
 
-**Trigger:** New experience descriptions, framing decisions, gap resolutions, or positioning language surfaced during any session that should be captured in source documents before the session closes; also triggered explicitly by other skills at Phase close.
+**Trigger:** A calling workflow skill is closing and has defined a session scope; new experience language, framing decisions, gap resolutions, or corrections surfaced during that session should be captured in source documents before the session closes.
+
+**Prerequisites:**
+- Active calling-skill session with defined session scope available in context
+- At least one target source document exists: `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, or `personal/knowledge/Positioning.md`
+
+**Completion Signal:** No specific file signal — source documents are updated in place.
+
+**Outputs:**
+- Updated `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, or `personal/knowledge/Positioning.md` as applicable
+
+**Shared Core:** Procedural content (Active Domain Load, Criteria for Capture, Format Requirements, Steps 1-5) lives in `rules/source_document_update_core.md`. This skill establishes session scope and delegates execution to the core file.
+
+**Typical Next Steps:** None — returns to the calling skill or closes
+
+---
+
+### Source Document Update — Ad-Hoc
+
+**File:** `skills/source_document_update_adhoc.md`
+**Category:** Utility
+**Standalone:** Yes — user-invoked entry point for source document updates outside any workflow session
+
+**Trigger:** User wants to capture new information (recent work, revisited stories, corrections) or enrich existing entries (Context, Impact, tags, narrative body content) in the source documents ad-hoc; also the destination for post-bootstrap inventory enrichment of entries flagged during `experience_inventory_bootstrap` and for inventory review passes before a domain switch recommended by `domain_creation`.
 
 **Prerequisites:**
 - At least one target source document exists: `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, or `personal/knowledge/Positioning.md`
@@ -300,7 +324,9 @@ The control skill uses the following ordered checks to determine where a user is
 **Outputs:**
 - Updated `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, or `personal/knowledge/Positioning.md` as applicable
 
-**Typical Next Steps:** None — returns to the calling skill or closes
+**Shared Core:** Procedural content (Active Domain Load, Criteria for Capture, Format Requirements, Steps 1-5) lives in `rules/source_document_update_core.md`. This skill prompts the user to establish session scope and then delegates execution to the core file.
+
+**Typical Next Steps:** None — standalone entry point
 
 ---
 

@@ -296,12 +296,31 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
 
 ---
 
-**`source_document_update.md` — Source Document Update**
-- Purpose: Capture experience, framing decisions, or gap resolutions into source documents after any working session.
+**`source_document_update_workflow.md` — Source Document Update (Workflow)**
+- Purpose: Capture experience, framing decisions, or gap resolutions into source documents at the close of a calling workflow skill. Invoked only from another workflow skill, never directly by the user or the control skill.
 - Inputs:
   - `rules/global_rules.md`
-  - Target source documents as needed: `personal/knowledge/Experience_Inventory.md`, `Career_Narratives.md`, `Positioning.md`
-  - `rules/cv/content_rules_leadership.md` (for annotation enrichment)
+  - `rules/source_document_update_core.md` (shared procedural core; Active Domain Load, Criteria for Capture, format requirements, Steps 1-5)
+  - Target source documents as needed:
+    - `personal/knowledge/Experience_Inventory.md`
+    - `personal/knowledge/Career_Narratives.md`
+    - `personal/knowledge/Positioning.md`
+- Outputs:
+  - Updated `personal/knowledge/Experience_Inventory.md` (as applicable)
+  - Updated `personal/knowledge/Career_Narratives.md` (as applicable)
+  - Updated `personal/knowledge/Positioning.md` (as applicable)
+
+---
+
+**`source_document_update_adhoc.md` — Source Document Update (Ad-Hoc)**
+- Purpose: Capture new entries or enrich existing entries in the source documents ad-hoc, outside any workflow session. User-invoked entry point; also the destination for post-bootstrap inventory enrichment and pre-domain-switch inventory review.
+- Inputs:
+  - `rules/global_rules.md`
+  - `rules/source_document_update_core.md` (shared procedural core; Active Domain Load, Criteria for Capture, format requirements, Steps 1-5)
+  - Target source documents as needed:
+    - `personal/knowledge/Experience_Inventory.md`
+    - `personal/knowledge/Career_Narratives.md`
+    - `personal/knowledge/Positioning.md`
 - Outputs:
   - Updated `personal/knowledge/Experience_Inventory.md` (as applicable)
   - Updated `personal/knowledge/Career_Narratives.md` (as applicable)
@@ -491,7 +510,6 @@ Current domain: `clinical_development/`
 - Read by:
   - `cv_targeted`
   - `cv_general`
-  - `source_document_update` (annotation step)
 - Written by:
   - None (manual maintenance)
 
@@ -641,11 +659,13 @@ Master source documents holding the user's career content. Located in `personal/
   - `career_narratives_builder` (optional reference)
   - `positioning_builder` (optional reference)
   - `career_brief` (fallback if Positioning lacks specificity)
-  - `source_document_update`
+  - `source_document_update_workflow`
+  - `source_document_update_adhoc`
   - `archetype_creation` (Active Domain header only)
 - Written by:
   - `experience_inventory_bootstrap` (initial creation)
-  - `source_document_update` (new entries post-session)
+  - `source_document_update_workflow` (new entries or enrichment post-session)
+  - `source_document_update_adhoc` (new entries or enrichment ad-hoc)
   - `cv_targeted` (Last Used stamps only)
   - `cv_general` (Last Used stamps only)
   - `interview_prep` (Last Used stamps only)
@@ -660,10 +680,12 @@ Master source documents holding the user's career content. Located in `personal/
   - `cv_general`
   - `interview_prep`
   - `positioning_builder` (optional reference)
-  - `source_document_update`
+  - `source_document_update_workflow`
+  - `source_document_update_adhoc`
 - Written by:
   - `career_narratives_builder`
-  - `source_document_update`
+  - `source_document_update_workflow`
+  - `source_document_update_adhoc`
   - `interview_prep` (Last Used stamps only)
 
 ---
@@ -676,10 +698,12 @@ Master source documents holding the user's career content. Located in `personal/
   - `cv_general`
   - `interview_prep`
   - `career_brief`
-  - `source_document_update`
+  - `source_document_update_workflow`
+  - `source_document_update_adhoc`
 - Written by:
   - `positioning_builder`
-  - `source_document_update`
+  - `source_document_update_workflow`
+  - `source_document_update_adhoc`
 
 ---
 
@@ -909,13 +933,23 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 1a step 2 | Header path resolution | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (path read from scratch file header) |
 | 1a step 3 | Round selection | Target round content parsed from `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` |
 
-### source_document_update
+### source_document_update_workflow
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| Step 1 | Identifying updates | Target source documents loaded as needed: `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
-| Annotation Step 1 | Annotation enrichment | `personal/knowledge/Experience_Inventory.md`; `rules/cv/content_rules_leadership.md` |
+| Session Scope | Scope check | Calling skill's session context (no file load) |
+| Procedure load | Procedure delegation | `rules/source_document_update_core.md` |
+| Core Step 1 | Identifying updates | Target source documents loaded as needed: `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md`; active domain pack from `rules/domains/<active_domain>/domain.md` |
+
+### source_document_update_adhoc
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| Session Scope | Scope prompt | No file load; scope gathered from user response |
+| Procedure load | Procedure delegation | `rules/source_document_update_core.md` |
+| Core Step 1 | Identifying updates | Target source documents loaded as needed: `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md`; active domain pack from `rules/domains/<active_domain>/domain.md` |
 
 ### experience_inventory_bootstrap
 
@@ -965,21 +999,21 @@ The three knowledge documents carry schema metadata that skills read and write. 
 - Active Domain pointer at the top of the file (`**Active Domain:** <slug>`) declares which domain pack governs the tag taxonomy for this inventory. Section 1 of `rules/domains/<active_domain>/domain.md` is the authoritative allowed-value list for Capability, Role Level, Org Context, Outcome, and Org Type. Skills must not infer tag values from any other source.
 - Classification appears on separate lines per entry: `Capability:`, `Role Level:`, `Org Context:`, and (optional) `Outcome:`. No inline `Tags:` line. Capability and Outcome allow pipe-separated multi-values on their line; Role Level and Org Context take one value each. Omit the `Outcome:` line entirely when no genuine organizational outcome is attached.
 - Every entry under "All Tasks Performed" carries `Added: YYYY-MM` (stamped at entry creation) and `Last Used:` (blank at creation, updated on use).
-- `Added` is stamped by `experience_inventory_bootstrap` at extraction and by `source_document_update` when new entries are added post-session. Historical entries imported before the schema change carry `Added: pre-2026-04`.
+- `Added` is stamped by `experience_inventory_bootstrap` at extraction and by `source_document_update_workflow` and `source_document_update_adhoc` when new entries are added. Historical entries imported before the schema change carry `Added: pre-2026-04`.
 - `Last Used` is stamped only by output-producing skills at session close, only after explicit user acceptance of the final output: `cv_targeted` Phase 3a, `cv_general` Phase 5a, `interview_prep` Phase 4a. A single YYYY-MM is overwritten each time, no history.
 
 ### `personal/knowledge/Career_Narratives.md`
 
 - Metadata header at the top of the file governs allowed values. Tags (Capability) are governed by Section 1 of the active domain pack (`rules/domains/<active_domain>/domain.md`). Archetype values come from `rules/registry_archetype.md`. Era values (by company) are listed in the Career_Narratives header itself (narrative-local dimension, not domain-governed). Free-text values are not permitted; unmatched values trigger either a mapping decision or a header/taxonomy extension.
 - Every story and decision entry carries a 5-line metadata block directly under the `## [Title]` heading: `Tags:`, `Archetype:`, `Era:`, `Added: YYYY-MM`, `Last Used:`. Entry headings are the title alone, no sequential numbering.
-- `Added` is stamped by `career_narratives_builder` at entry creation and by `source_document_update` when new narrative entries are added post-session. Historical entries carry `Added: pre-2026-04`.
+- `Added` is stamped by `career_narratives_builder` at entry creation and by `source_document_update_workflow` and `source_document_update_adhoc` when new narrative entries are added. Historical entries carry `Added: pre-2026-04`.
 - `Last Used` is stamped only by `interview_prep` at session close, only after explicit user acceptance of the prep doc. `cv_targeted` and `cv_general` load narratives for reference but do not stamp narrative Last Used.
 - Body structure per entry is governed by the format file loaded from `rules/career_narratives/` at session start (STAR, ATOLA, Personal for stories; ADR, Personal for decisions).
 
 ### `personal/knowledge/Positioning.md`
 
 - Read whole; no per-entry tags or dates. Single metadata line at the top: `Last Revised: YYYY-MM`, immediately under the document title.
-- `positioning_builder` updates this line on every Phase 6a write. `source_document_update` does not update this line; incremental positioning edits made via that skill should be followed by a positioning_builder pass when accumulated changes warrant a revised date.
+- `positioning_builder` updates this line on every Phase 6a write. Neither `source_document_update_workflow` nor `source_document_update_adhoc` updates this line; incremental positioning edits made via those skills should be followed by a `positioning_builder` pass when accumulated changes warrant a revised date.
 
 ---
 

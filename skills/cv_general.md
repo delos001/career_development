@@ -231,4 +231,4 @@ State the result of each check. Flag failures and invoke QC Failure Recovery.
 
 Dedicated to capturing information surfaced during this CV session that should be added to source documents.
 
-Load `skills/source_document_update.md` now and follow it completely. "This session" refers to all phases and interactions from Phase 1a through Phase 5b.
+Load `skills/source_document_update_workflow.md` now and follow it completely. "This session" refers to all phases and interactions from Phase 1a through Phase 5b.
