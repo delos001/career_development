@@ -2,6 +2,8 @@
 
 Private repository supporting job search and CV generation workflows.
 
+The framework is domain-pluggable: archetype skeletons are level-agnostic and decoupled from domain vocabulary, and a `domains/` directory holds one pack per career domain (taxonomy, vocabulary, per-archetype content). The active domain is declared in the user's `Experience_Inventory.md` header, which lets the same skill suite serve multiple domains and multiple testers with no skill changes. See `skills/domain_creation.md` to stand up a new domain pack.
+
 ---
 
 ## Repository Structure
@@ -17,6 +19,7 @@ career_development/
 │   ├── source_document_update.md
 │   ├── experience_inventory_bootstrap.md
 │   ├── archetype_creation.md
+│   ├── domain_creation.md
 │   ├── career_narratives_builder.md
 │   ├── positioning_builder.md
 │   ├── interview_prep.md
@@ -26,19 +29,28 @@ career_development/
 ├── rules/                                 ← rule sets read by skills during execution
 │   ├── global_rules.md                   ← shared: global rules loaded by every skill at execution start
 │   ├── sources.md                        ← shared: research citations for all skills
-│   ├── registry_archetype.md             ← shared: archetype catalog and selection criteria
+│   ├── registry_archetype.md             ← shared: archetype skeleton catalog and selection criteria
+│   ├── registry_domain.md                ← shared: domain pack catalog and activation criteria
 │   ├── registry_org_type.md              ← shared: organization type catalog and selection criteria
 │   ├── registry_company_type.md          ← shared: company type catalog and adaptive research branches for interview_prep
 │   ├── registry_skills.md                ← skill catalog with triggers, dependencies, completion signals; read by control skill
 │   ├── config.md                         ← machine-specific configuration (Python executable path); update per machine
-│   ├── Archetype_1_Transformation_Strategy.md
-│   ├── Archetype_1_IC_Transformation_Strategy.md
-│   ├── Archetype_2_Data_Analytics.md
-│   ├── Archetype_2_IC_Data_Analytics.md
-│   ├── Archetype_3_Process_Operations.md
-│   ├── Archetype_3_IC_Process_Operations.md
-│   ├── Archetype_4_Platform_Technology.md
-│   ├── Archetype_4_IC_Platform_Technology.md
+│   ├── archetypes/                       ← archetype skeletons (level-agnostic; identity, structural rules, pack contract)
+│   │   ├── Archetype_1_Transformation_Strategy.md
+│   │   ├── Archetype_2_Data_Analytics.md
+│   │   ├── Archetype_3_Process_Operations.md
+│   │   └── Archetype_4_Platform_Technology.md
+│   ├── domains/                          ← domain packs (scope-, vocabulary-, and level-specific content)
+│   │   └── clinical_development/         ← one directory per domain; active domain set in Experience_Inventory header
+│   │       ├── domain.md                 ← taxonomy, vocabulary, pack selection criteria
+│   │       ├── archetype1_leadership.md  ← 8 pack entries per domain:
+│   │       ├── archetype1_ic.md          ← one per archetype × level
+│   │       ├── archetype2_leadership.md
+│   │       ├── archetype2_ic.md
+│   │       ├── archetype3_leadership.md
+│   │       ├── archetype3_ic.md
+│   │       ├── archetype4_leadership.md
+│   │       └── archetype4_ic.md
 │   ├── cv/                               ← CV skill specific rule sets
 │   │   ├── content_rules_leadership.md
 │   │   ├── content_rules_ic.md
@@ -84,7 +96,8 @@ career_development/
 | CV General | `skills/cv_general.md` | Creating a generalized CV (not role-tailored) saved to `outputs/` |
 | Source Document Update | `skills/source_document_update.md` | Capturing experience, framing decisions, or gap resolutions to source documents after any working session |
 | Experience Inventory Bootstrap | `skills/experience_inventory_bootstrap.md` | Building the Experience Inventory from scratch using raw career source documents |
-| Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype when no existing archetype serves the target role |
+| Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype skeleton when no existing archetype serves the target role; produces skeleton only, pack entries are separate |
+| Domain Creation | `skills/domain_creation.md` | Creating a new domain pack (vocabulary, taxonomy, and per-archetype content) for roles outside currently covered domains; required when the repo is extended to a new career domain or a new tester |
 | Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `personal/knowledge/Career_Narratives.md` with new stories or decisions |
 | Positioning Builder | `skills/positioning_builder.md` | Building or updating `personal/knowledge/Positioning.md` |
 | Interview Prep | `skills/interview_prep.md` | Generating an interview prep document and pre-populated Interview Completion template for a target role; requires a completed GapAnalysis file from role_evaluation |
@@ -104,8 +117,9 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | None — job description, company, and title collected only |
-| 2a step 5 | Archetype confirmed (AD+) | `rules/registry_archetype.md`; primary archetype leadership file from `rules/`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
-| 2a step 5 | Archetype confirmed (IC) | `rules/registry_archetype.md`; primary archetype IC file from `rules/`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
+| 2a step 1 | JD read, domain load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); `rules/domains/<active_domain>/domain.md` for scope check |
+| 2a step 5 | Archetype confirmed (AD+) | `rules/registry_archetype.md`; primary archetype skeleton from `rules/archetypes/`; primary pack entry from `rules/domains/<active_domain>/archetype<N>_leadership.md`; secondary skeleton + pack entry and `rules/cv/dual_archetype.md` if dual-archetype identified |
+| 2a step 5 | Archetype confirmed (IC) | `rules/registry_archetype.md`; primary archetype skeleton from `rules/archetypes/`; primary pack entry from `rules/domains/<active_domain>/archetype<N>_ic.md`; secondary skeleton + pack entry and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 6 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted |
 | 3a step 1 | Fit evaluation begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
 | 3b | Gap rating judgment QC | `rules/judgment_qc.md` |
@@ -118,7 +132,8 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` |
 | 2a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
-| 2a step 2 | Archetype load | Primary archetype file (leadership or IC); secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified in Phase 1a |
+| 1a step 4 | Active domain consistency check | `personal/knowledge/Experience_Inventory.md` header (Active Domain) compared to GapAnalysis-captured domain |
+| 2a step 2 | Archetype load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); primary archetype skeleton from `rules/archetypes/`; primary pack entry from `rules/domains/<active_domain>/archetype<N>_<level>.md`; secondary skeleton + pack entry and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 3 | Source review begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
 | 2a step 4 | Experience architecture judgment QC | `rules/judgment_qc.md` (retained through Phase 2b) |
 | 2b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
@@ -132,7 +147,8 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | None — targeting context collected only |
-| 2a step 1 | Archetype selection begins | `rules/registry_archetype.md`; primary archetype file (leadership or IC); secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
+| 2a step 1 | Archetype selection begins | `rules/registry_archetype.md` |
+| 2a step 2 | Archetype load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); primary archetype skeleton from `rules/archetypes/`; primary pack entry from `rules/domains/<active_domain>/archetype<N>_<level>.md`; secondary skeleton + pack entry and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 3 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted for use in Phase 4a |
 | 3a step 1 | Source review begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
 | 3a step 3 | Experience architecture judgment QC | `rules/judgment_qc.md` (retained through Phase 4b) |
@@ -155,6 +171,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` |
+| 1a step 4 | Active domain consistency check | `personal/knowledge/Experience_Inventory.md` header (Active Domain) compared to GapAnalysis-captured domain |
 | 2a step 1 | Company type identification | `rules/registry_company_type.md` |
 | 3a step 1 | Content generation begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
 | 4a step 2 | Completion document generation | `templates/Interview_Completion_Template.md` |
@@ -205,8 +222,20 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1b step 1 | Boundary validation | `rules/registry_archetype.md` |
-| 3a step 5 | Tag verification (if needed) | `personal/knowledge/Experience_Inventory.md` |
+| 3a | Skeleton content design | `rules/archetypes/Archetype_1_Transformation_Strategy.md` (canonical skeleton pattern) |
 | 4a step 1 | File creation | `rules/registry_archetype.md` |
+| 5 | Handoff routing | `personal/knowledge/Experience_Inventory.md` header (Active Domain); `rules/registry_domain.md` |
+
+### domain_creation
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| 1b step 1 | Boundary validation against existing domains | `rules/registry_domain.md` |
+| 1b step 5 | Archetype coverage planning | `rules/registry_archetype.md` |
+| 3a | Domain header design | `rules/domains/clinical_development/domain.md` (canonical header pattern) |
+| 4a | Per-archetype pack entry drafting | `rules/domains/clinical_development/archetype1_leadership.md` and `archetype1_ic.md` (canonical pack entry patterns); relevant archetype skeletons from `rules/archetypes/` |
+| 5a step 6 | Registry update | `rules/registry_domain.md` |
 
 ### positioning_builder
 
@@ -224,7 +253,7 @@ The three knowledge documents carry schema metadata that skills read and write. 
 
 ### `personal/knowledge/Experience_Inventory.md`
 
-- Tag Taxonomy header block at the top of the file is the authoritative source for controlled Capability, Role Level, Org Context, and Outcome values. Skills must not infer tag values from any other source.
+- Active Domain pointer at the top of the file (`**Active Domain:** <slug>`) declares which domain pack governs the tag taxonomy for this inventory. Section 1 of `rules/domains/<active_domain>/domain.md` is the authoritative allowed-value list for Capability, Role Level, Org Context, Outcome, and Org Type. Skills must not infer tag values from any other source.
 - Classification appears on separate lines per entry: `Capability:`, `Role Level:`, `Org Context:`, and (optional) `Outcome:`. No inline `Tags:` line. Capability and Outcome allow pipe-separated multi-values on their line; Role Level and Org Context take one value each. Omit the `Outcome:` line entirely when no genuine organizational outcome is attached.
 - Every entry under "All Tasks Performed" carries `Added: YYYY-MM` (stamped at entry creation) and `Last Used:` (blank at creation, updated on use).
 - `Added` is stamped by `experience_inventory_bootstrap` at extraction and by `source_document_update` when new entries are added post-session. Historical entries imported before the schema change carry `Added: pre-2026-04`.
@@ -232,7 +261,7 @@ The three knowledge documents carry schema metadata that skills read and write. 
 
 ### `personal/knowledge/Career_Narratives.md`
 
-- Tag Taxonomy header block at the top of the file is the authoritative source for controlled Capability (shared with Experience_Inventory), Archetype (mirrors `rules/registry_archetype.md`), and Era (by company) values. Free-text values are not permitted; unmatched values trigger either a mapping decision or a taxonomy extension.
+- Metadata header at the top of the file governs allowed values. Tags (Capability) are governed by Section 1 of the active domain pack (`rules/domains/<active_domain>/domain.md`). Archetype values come from `rules/registry_archetype.md`. Era values (by company) are listed in the Career_Narratives header itself (narrative-local dimension, not domain-governed). Free-text values are not permitted; unmatched values trigger either a mapping decision or a header/taxonomy extension.
 - Every story and decision entry carries a 5-line metadata block directly under the `## [Title]` heading: `Tags:`, `Archetype:`, `Era:`, `Added: YYYY-MM`, `Last Used:`. Entry headings are the title alone — no sequential numbering.
 - `Added` is stamped by `career_narratives_builder` at entry creation and by `source_document_update` when new narrative entries are added post-session. Historical entries carry `Added: pre-2026-04`.
 - `Last Used` is stamped only by `interview_prep` at session close, only after explicit user acceptance of the prep doc. `cv_targeted` and `cv_general` load narratives for reference but do not stamp narrative Last Used.

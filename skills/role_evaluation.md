@@ -42,7 +42,9 @@ Naming convention: `[Company]_[Role]_[YYYY-MM]_SessionLog.md`
 *(Only after Phase 1a has been explicitly approved)*
 *(State each step before completing the step)*
 
-1. Read the provided job description carefully.
+1. Read the provided job description carefully. Then determine the active domain for this evaluation: read the `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md` (do not assume; read the file). Load `rules/domains/<active_domain>/domain.md` and confirm it loaded completely. The domain pack defines the scope, vocabulary, and selection criteria governing this evaluation.
+
+   Check the job description against the domain pack's Section 3 Pack Selection Criteria ("Use when" / "Do NOT use when"). If the role falls under a "Do NOT use when" condition, flag this as a domain scope mismatch. Present the mismatch to the user and obtain direction before proceeding: halt (a different domain pack may be needed), or continue as an explicit cross-domain evaluation with user acknowledgment of the mismatch.
 
 2. Review the job description and propose the role level (IC, AD, Dir, Sr. Dir, VP, etc.). If not explicitly stated in the title, infer it from required experience, scope of responsibilities, and reporting structure. State the inferred level with rationale and obtain explicit agreement before moving forward. The agreed role level governs seniority of voice, scope framing, and achievement selection throughout all subsequent phases.
 
@@ -56,13 +58,19 @@ Naming convention: `[Company]_[Role]_[YYYY-MM]_SessionLog.md`
 
    If the role spans two archetypes, identify a primary and secondary archetype and state both explicitly with rationale. Load `rules/cv/dual_archetype.md` now and confirm it loaded completely. Apply its rules throughout all subsequent phases.
 
-   Then load the archetype instruction document matching the confirmed primary archetype. Use the role level confirmed in Step 2 to select between the leadership and IC file — both file paths are listed in the registry entry for each archetype. If a dual-archetype was identified, also load the secondary archetype document using the same role-level logic.
+   Then load the archetype instruction set (three-layer) per `rules/registry_archetype.md`:
 
-   Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
+   a. Archetype skeleton: `rules/archetypes/Archetype_<N>_<Name>.md`.
+
+   b. Domain pack entry: `rules/domains/<active_domain>/archetype<N>_<level>.md`. `<level>` is `leadership` for AD+ roles, `ic` for IC roles, matching the role level confirmed in Step 2.
+
+   c. If a dual-archetype was identified, repeat (a) and (b) for the secondary archetype using the same level logic.
+
+   Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback. The skeleton governs archetype identity and level-agnostic structure; the pack entry governs match criteria, summary framing, tag priorities, calibration, and de-emphasis within the active domain.
 
 6. Read `rules/registry_org_type.md`. Identify the most appropriate org type and state why. Note the framing emphasis for the confirmed org type — it will govern how the organizational environment and operating context are described throughout content generation if the application proceeds.
 
-**Phase 2a Closing:** Follow Standard Phase Closing. Update the session log: append "Phase 2a — Complete" with date, confirmed role level, list of sources consulted in Step 3, critical requirements, archetype selection with rationale, dual-archetype details if applicable, and org type selection with rationale. Next phase is Phase 2b.
+**Phase 2a Closing:** Follow Standard Phase Closing. Update the session log: append "Phase 2a — Complete" with date, confirmed role level, active domain and any scope mismatch handling, list of sources consulted in Step 3, critical requirements, archetype selection with rationale, dual-archetype details if applicable, and org type selection with rationale. Next phase is Phase 2b.
 
 ---
 
@@ -74,7 +82,9 @@ Company Research: Confirm web search was performed in Phase 2a Step 3. State the
 
 Critical Requirements: Confirm 4-5 critical requirements were identified in Phase 2a Step 4. If fewer than 4 were identified, flag and complete before proceeding.
 
-Archetype Selection: Verify the primary archetype selection is defensible against the match criteria defined in the loaded archetype file. State the specific match criteria satisfied and cite the job description language that supports each. If the role does not clearly satisfy the match criteria, flag as a blocking issue — a wrong archetype selection propagates through every subsequent phase and cannot be corrected without restarting from Phase 2a.
+Archetype Selection: Verify the primary archetype selection is defensible against the match criteria defined in the loaded domain pack entry (`rules/domains/<active_domain>/archetype<N>_<level>.md`). State the specific match criteria satisfied and cite the job description language that supports each. If the role does not clearly satisfy the match criteria, flag as a blocking issue; a wrong archetype selection propagates through every subsequent phase and cannot be corrected without restarting from Phase 2a.
+
+Domain Scope: Confirm the active domain was read from the Experience Inventory header in Phase 2a Step 1, the domain pack was loaded, and the job description was checked against the pack's Section 3 Pack Selection Criteria. If a scope mismatch was flagged, confirm user direction was obtained before proceeding.
 
 If a dual-archetype was identified: verify the secondary archetype is explicitly evidenced in the job description — not inferred from peripheral language. Confirm the primary/secondary assignment reflects which dimension the role primarily evaluates candidates on. If the secondary is weak or speculative, recommend single-archetype treatment and obtain user agreement before proceeding.
 
@@ -150,7 +160,7 @@ Perform QC per Global Rules:
 **Fit Threshold Verification:** Confirm Phase 3a Step 6 applied the threshold correctly. State: the number of critical requirements, the number with strong source-citable matches, and verify the 65% calculation. Confirm the domain exclusion check was performed. Confirm the application recommendation outcome matches the threshold result. If the recommendation was Proceed as Speculative Application, confirm explicit user acknowledgment of risk was obtained and documented.
 
 **GapAnalysis File:** Before closing this phase, write a gap analysis file to `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` containing:
-1. Role context: company name, role title, role level, primary archetype name and instruction file path for the confirmed role level (and secondary archetype name and file path if applicable, with rationale for both), org type, and org-type framing emphasis
+1. Role context: company name, role title, role level, active domain, primary archetype number and name with skeleton path (`rules/archetypes/Archetype_<N>_<Name>.md`) and domain pack entry path for the confirmed role level (`rules/domains/<active_domain>/archetype<N>_<level>.md`), secondary archetype with the same paths if applicable, rationale for each archetype selection, org type, and org-type framing emphasis
 2. The list of critical requirements from Phase 2a and the source-citable match for each
 3. The full gap summary table including severity and resolution status for every gap
 4. The fit assessment summary from Phase 3a Step 6 including the threshold calculation and application recommendation

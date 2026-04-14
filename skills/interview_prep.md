@@ -25,15 +25,18 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 3. Extract and explicitly state the following:
    - Company name and role title
    - Role level
+   - Active domain
    - Primary archetype (and secondary if applicable)
    - Org type and framing emphasis
    - Critical requirements (full list)
    - Application recommendation from role evaluation
    - Research sources from role evaluation (these seed company research in Phase 2a)
 
-4. Ask the user for the absolute path to the output folder where both documents will be saved. This is the folder where application documents for this role are stored. Do not proceed until this path is confirmed.
+4. Active domain consistency check: read the current `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md`. Compare to the active domain captured in the GapAnalysis file. If the values differ, the active domain has changed since the evaluation was run. Halt and surface the mismatch: state both values and ask the user whether to (a) revert the inventory header to the GapAnalysis domain before proceeding, (b) re-run `role_evaluation` under the current active domain, or (c) explicitly override and proceed under the current active domain with acknowledgment that the role was evaluated under a different domain. Do not proceed silently.
 
-5. Confirm all context is in hand and state it explicitly before closing.
+5. Ask the user for the absolute path to the output folder where both documents will be saved. This is the folder where application documents for this role are stored. Do not proceed until this path is confirmed.
+
+6. Confirm all context is in hand and state it explicitly before closing.
 
 **Phase 1a Closing:** Follow Standard Phase Closing. Next phase is Phase 2a.
 

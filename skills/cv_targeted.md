@@ -43,12 +43,15 @@ Naming convention: `[Company]_[Role]_[YYYY-MM]_ContentDecisions.md`
 3. Extract and explicitly state the following from the GapAnalysis file:
    - Company name and role title
    - Role level
-   - Primary archetype (and secondary if applicable)
+   - Active domain
+   - Primary archetype (and secondary if applicable), with skeleton path and domain pack entry path
    - Org type and framing emphasis
    - Critical requirements (full list)
    - Application recommendation from role evaluation
 
-4. Confirm with the user that this context is accurate and that they want to proceed to CV generation. Do not proceed until confirmed.
+4. Active domain consistency check: read the current `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md`. Compare to the active domain captured in the GapAnalysis file. If the values differ, the active domain has changed since the evaluation was run. Halt and surface the mismatch: state both values and ask the user whether to (a) revert the inventory header to the GapAnalysis domain before proceeding, (b) re-run `role_evaluation` under the current active domain, or (c) explicitly override and proceed under the current active domain with acknowledgment that pack selection and archetype fit were evaluated under a different domain. Do not proceed silently.
+
+5. Confirm with the user that this context is accurate and that they want to proceed to CV generation. Do not proceed until confirmed.
 
 **Phase 1a Closing:** Follow Standard Phase Closing. Next phase is Phase 2a.
 
@@ -68,8 +71,24 @@ All rules in the content rules file apply actively throughout content generation
 
 Apply the org-type framing emphasis from Phase 1a throughout content generation. Framing emphasis governs how the organizational environment and operating context are described — archetype governs achievement selection and characterization.
 
-**Step 2 — Load archetype instruction set:**
-Load the archetype instruction document using the file path provided in the GapAnalysis file for the primary archetype. If a secondary archetype was identified in Phase 1a, load that document using its file path from the GapAnalysis file as well, and also load `rules/cv/dual_archetype.md`. Apply the dual-archetype rules throughout all subsequent phases. Confirm each loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
+**Step 2 — Load archetype instruction set (three-layer):**
+
+The archetype instruction set spans three files per the three-layer model defined in `rules/registry_archetype.md`: the archetype skeleton (level-agnostic structural rules and identity), the domain pack entry (domain- and level-specific summary framing, tag priorities, calibration, de-emphasis), and the content rules file (voice, register, CCAR, loaded in Step 1).
+
+1. Determine the active domain. Read the `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md`. Do not assume; read the file. If no Active Domain is declared, halt and prompt the user before continuing.
+
+2. Load the archetype skeleton for the primary archetype identified in Phase 1a:
+   - Path: `rules/archetypes/Archetype_<N>_<Name>.md` per `rules/registry_archetype.md`.
+
+3. Load the domain pack entry for the primary archetype at the role level confirmed in Phase 1a:
+   - Path pattern: `rules/domains/<active_domain>/archetype<N>_<level>.md`
+   - `<level>` is `leadership` for AD+ roles, `ic` for IC roles.
+
+4. If a secondary archetype was identified in Phase 1a, repeat steps 2 and 3 for the secondary archetype, and load `rules/cv/dual_archetype.md`. Apply the dual-archetype rules throughout all subsequent phases.
+
+5. Confirm each file loaded completely before proceeding. If loading fails, follow Document Load Instructions fallback.
+
+Skeleton governs archetype identity and level-agnostic structure. Pack entry governs vocabulary, summary framing, tag priorities, calibration, and de-emphasis within the active domain. Apply both together with the content rules loaded in Step 1.
 
 **Step 3 — Load source documents:**
 Load the following source documents now. Confirm each loaded completely before proceeding:

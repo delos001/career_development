@@ -18,6 +18,16 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 ---
 
+## Active Domain Load
+
+Before any validation or writes occur, determine the active domain and load its taxonomy:
+
+1. Read the `**Active Domain:**` value from the header of `knowledge/Experience_Inventory.md`. Do not assume; read the file. If no Active Domain is declared, halt and prompt the user.
+
+2. Load `rules/domains/<active_domain>/domain.md` and confirm it loaded completely. Section 1 (Tag Taxonomy) is the authoritative allowed-value list for Capability, Role Level, Org Context, Outcome, and Org Type. All tag validation in this skill references this file; do not infer tag values from archetype files or from the inventory header.
+
+---
+
 ## Criteria for Capture
 
 Review the session for information meeting any of the following criteria:
@@ -74,14 +84,9 @@ Last Used:
 
 New entries carry `Added: YYYY-MM` set to the current month; `Last Used:` is left blank. Last Used is stamped only by output-producing skills (`cv_targeted`, `cv_general`, `interview_prep`) at session close. Do not backfill Added with a reconstructed historical date; legacy entries carry `Added: pre-2026-04` from the migration.
 
-**Allowed tag values — reference the Tag Taxonomy header block at the top of `knowledge/Experience_Inventory.md` for the authoritative list. Do not infer tag values from archetype files. Current values:**
+**Allowed tag values — the authoritative list is Section 1 of the active domain pack (`rules/domains/<active_domain>/domain.md`), loaded at skill entry. Do not infer tag values from archetype files or from the inventory header.**
 
-- Capability: Clinical Trial Execution | Risk-Based Monitoring & Quality | Data & Analytics | Quality & Compliance | Process Design & Optimization | Technology Strategy & Implementation | Vendor Management & Oversight | Organizational Design | Governance & Risk Management | Strategic Planning & Roadmapping | Change Management & Adoption | Stakeholder Management & Influence | Team Leadership & Development | Financial Management & Budgeting | AI Engineering & Development
-- Role Level: IC | Manager | Senior Manager | Director | Senior Director | VP
-- Org Context: Greenfield | Scaling | Turnaround | Mature/Enterprise | Independent | Volunteer
-- Outcome: Capability Building | Quality Improvement | Risk Reduction | Efficiency Gain | Scalability/Growth Enablement | Cost Savings
-
-Capability and Outcome values are pipe-separated on their respective lines when multiple apply. Role Level and Org Context take one value per entry. Outcome is an optional line — omit the entire line when no genuine organizational outcome is attached.
+Dimensions governed by the domain pack: Capability, Role Level, Org Context, Outcome, Org Type. Capability and Outcome values are pipe-separated on their respective lines when multiple apply. Role Level and Org Context take one value per entry. Outcome is optional; omit the entire line when no genuine organizational outcome is attached.
 
 `knowledge/Career_Narratives.md` — Follow the structure and conventions of existing entries. Story and decision body formats are governed by files in `rules/career_narratives/`; select the format matching the existing entry being extended, or the default (STAR for stories, Personal for decisions) for new entries. Include metrics where available from this session.
 
@@ -99,7 +104,7 @@ Last Used:
 [body content per format file]
 ```
 
-Allowed metadata values must come from the Tag Taxonomy header block at the top of `knowledge/Career_Narratives.md`. Reject free-text values. If the user proposes a Capability, Archetype, or Era value not in the controlled list, flag it and ask whether to (a) map to an existing value or (b) extend the Tag Taxonomy header before proceeding. `Added: YYYY-MM` is set to the current month at creation; `Last Used:` is left blank. Entry headings are the title alone — no sequential numbering.
+Allowed metadata values by dimension: Tags (Capability) must come from Section 1 of the active domain pack (`rules/domains/<active_domain>/domain.md`). Archetype must come from `rules/registry_archetype.md`. Era must come from the Era list in the `knowledge/Career_Narratives.md` header block. Reject free-text values. If the user proposes a Capability value not in the domain pack, an Archetype not in the registry, or an Era not in the narratives header, flag it and ask whether to (a) map to an existing value or (b) extend the governing file before proceeding. `Added: YYYY-MM` is set to the current month at creation; `Last Used:` is left blank. Entry headings are the title alone — no sequential numbering.
 
 `knowledge/Positioning.md` — Entries are strategic positioning statements, not achievement bullets. Follow the framing conventions of existing entries.
 
@@ -115,14 +120,14 @@ Before presenting any proposed update for approval, verify each against all of t
 
 - Traceable: directly sourced from an explicit user statement or source document from this session
 - Not role-specific: the information generalizes to future roles and sessions
-- Convention-compliant: the proposed content matches the format and voice of existing entries in the target document. For `Experience_Inventory.md`, all required tag fields must be present and tag values must match the taxonomy header block in the document.
+- Convention-compliant: the proposed content matches the format and voice of existing entries in the target document. For `Experience_Inventory.md`, all required tag fields must be present and tag values must match Section 1 of the active domain pack.
 - Non-contradictory: does not conflict with or duplicate existing source document content
 - Complete (Experience_Inventory.md entries only): Before writing, verify all required elements are present:
   - Action statement: present, atomic (one discrete action), not a polished CV bullet
-  - Classification lines: `Capability:`, `Role Level:`, and `Org Context:` each present as their own line on every entry. `Outcome:` line is optional — include only when a genuine organizational outcome is attached to the action; omit the entire line for breadth-evidence, routine-task, and "did X" entries. Do not invent outcomes to satisfy the schema. All values must match the Tag Taxonomy header block in `knowledge/Experience_Inventory.md`; reject free-text values.
+  - Classification lines: `Capability:`, `Role Level:`, and `Org Context:` each present as their own line on every entry. `Outcome:` line is optional; include only when a genuine organizational outcome is attached to the action; omit the entire line for breadth-evidence, routine-task, and "did X" entries. Do not invent outcomes to satisfy the schema. All values must match Section 1 of the active domain pack (`rules/domains/<active_domain>/domain.md`); reject free-text values.
   - Metadata: `Added: YYYY-MM` set to current month and `Last Used:` left blank
   - For Director-level entries and above: determine whether this entry is likely to serve as an anchor citation for a critical requirement match in a CV session. If yes, and if both Context and Impact are absent, query the user for this information before writing. Do not write a Director+ anchor entry without at least one of Context or Impact annotated. Breadth and delivery evidence entries at this level do not require annotation — use judgment based on whether the entry describes a discrete, citable accomplishment or a general responsibility.
-- Complete (Career_Narratives.md entries only): the 5-line metadata block is present, all Tags/Archetype/Era values match the Tag Taxonomy header at the top of the document, `Added: YYYY-MM` is the current month, and `Last Used:` is blank.
+- Complete (Career_Narratives.md entries only): the 5-line metadata block is present, Tags (Capability) values match Section 1 of the active domain pack, Archetype values match `rules/registry_archetype.md`, Era values match the Era list in the `knowledge/Career_Narratives.md` header, `Added: YYYY-MM` is the current month, and `Last Used:` is blank.
 
 **Step 3 — Present for approval:**
 Present all verified proposed updates. For each item show the target document, insertion location, and the exact content to be written. State the total number of proposed updates and request explicit approval before writing. If the user wants to review individually rather than approve all at once, present one at a time and wait for approval before proceeding to the next.

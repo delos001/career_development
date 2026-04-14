@@ -22,7 +22,7 @@ experience_inventory_bootstrap → career_narratives_builder → positioning_bui
 career_brief, cv_general, source_document_update
 ```
 
-Knowledge builder skills (experience_inventory_bootstrap, career_narratives_builder, positioning_builder) run once and are maintained over time. Role-specific skills (role_evaluation through followup) run per application. Utility and standalone skills run on demand.
+Knowledge builder skills (experience_inventory_bootstrap, career_narratives_builder, positioning_builder) run once and are maintained over time. Role-specific skills (role_evaluation through followup) run per application. Utility and standalone skills run on demand. Rules builder skills (archetype_creation, domain_creation) extend the repo itself — invoked only when the available archetype or domain coverage does not fit a target role; not part of per-role workflow.
 
 ---
 
@@ -278,22 +278,48 @@ The control skill uses the following ordered checks to determine where a user is
 **File:** `skills/archetype_creation.md`
 **Category:** Rules Builder
 **Standalone:** No — internally triggered only
-**Direct routing by control skill:** Never. This skill is triggered from within `role_evaluation` when no existing archetype matches the target role. The control skill does not route to it directly.
+**Direct routing by control skill:** Never. This skill is triggered from within `role_evaluation` or `cv_general` when no existing archetype matches the target role. The control skill does not route to it directly.
 
-**Trigger:** No existing archetype in `rules/registry_archetype.md` fits the target role; `role_evaluation` has stalled at archetype selection.
+**Trigger:** No existing archetype in `rules/registry_archetype.md` fits the target role; `role_evaluation` or `cv_general` has stalled at archetype selection.
+
+**Scope:** Produces a level-agnostic archetype skeleton only. Does not produce domain pack content (match criteria, summary framing, tag priorities, calibration, de-emphasis). A pack entry must exist in the active domain before the new archetype can be used in CV generation; pack entries are created by `domain_creation` (when a new domain is being stood up) or by authoring per-archetype pack entries into an existing domain directory. Phase 5 of this skill routes the user to the appropriate path.
 
 **Prerequisites:**
-- Active `role_evaluation` session
-- Job description available
+- Active `role_evaluation` or `cv_general` session, or independent invocation with job description in hand
 - All existing archetypes reviewed and confirmed as poor fits
 
-**Completion Signal:** New archetype file created in `rules/`; `rules/registry_archetype.md` updated with new entry.
+**Completion Signal:** New skeleton file created at `rules/archetypes/Archetype_<N>_<Name>.md`; `rules/registry_archetype.md` updated with new entry.
 
 **Outputs:**
-- New archetype instruction file in `rules/`
+- New archetype skeleton file at `rules/archetypes/Archetype_<N>_<Name>.md`
 - Updated `rules/registry_archetype.md`
 
-**Typical Next Steps:** Resume `role_evaluation` from archetype selection step
+**Typical Next Steps:** Pack entry creation (via `domain_creation` for a new domain, or manual pack entry authoring for an existing domain), then resume `role_evaluation` or `cv_general` from archetype selection step
+
+---
+
+### Domain Creation
+
+**File:** `skills/domain_creation.md`
+**Category:** Rules Builder
+**Standalone:** Yes — invoked when a new career domain is needed
+**Direct routing by control skill:** Never. This skill is triggered when a domain scope mismatch is flagged during `role_evaluation`, when the user pivots to a career domain not currently covered, or when the repo is being extended to support a new tester. The control skill does not route to it directly.
+
+**Trigger:** No existing domain in `rules/registry_domain.md` covers the target roles; `role_evaluation` flagged a domain scope mismatch; the user is extending the repo to a new career domain or new tester.
+
+**Scope:** Produces one domain header file (`rules/domains/<slug>/domain.md`) and one pack entry per registered archetype and level (two per archetype). Does not create or modify archetype skeletons; those are governed by `archetype_creation`. Does not flip the Active Domain pointer in `personal/knowledge/Experience_Inventory.md`; activation is an explicit user action after the skill completes.
+
+**Prerequisites:**
+- User-supplied scope motivation (what domain and why)
+- Access to representative job descriptions and practitioner sources for the domain (research phase is gated; source plan must be approved before research executes)
+
+**Completion Signal:** `rules/domains/<slug>/` directory exists with `domain.md` and all archetype pack entries; `rules/registry_domain.md` updated with new entry.
+
+**Outputs:**
+- New domain pack directory at `rules/domains/<slug>/` with `domain.md` + one pack entry per archetype and level
+- Updated `rules/registry_domain.md`
+
+**Typical Next Steps:** Inventory migration review (if existing inventory entries use tags not present in the new domain's taxonomy), then user edits the Active Domain pointer in `personal/knowledge/Experience_Inventory.md` to activate the new domain
 
 ---
 

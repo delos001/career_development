@@ -13,7 +13,8 @@ This repo supports job search and CV generation workflows. See `README.md` for f
 | CV General | `skills/cv_general.md` | Creating a generalized CV (not role-tailored) saved to `outputs/` |
 | Source Document Update | `skills/source_document_update.md` | Capturing experience, framing decisions, or gap resolutions to source documents after any working session |
 | Experience Inventory Bootstrap | `skills/experience_inventory_bootstrap.md` | Building the Experience Inventory from scratch using raw career source documents |
-| Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype when no existing archetype serves the target role |
+| Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype skeleton when no existing archetype serves the target role; produces skeleton only, pack entries are separate |
+| Domain Creation | `skills/domain_creation.md` | Creating a new domain pack (vocabulary, taxonomy, per-archetype content) for roles outside currently covered domains; required when extending the repo to a new career domain or new tester |
 | Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `personal/knowledge/Career_Narratives.md` with new stories or decisions |
 | Positioning Builder | `skills/positioning_builder.md` | Building or updating `personal/knowledge/Positioning.md` |
 | Interview Prep | `skills/interview_prep.md` | Generating an interview prep document and pre-populated Interview Completion template for a target role; requires a completed GapAnalysis file from role_evaluation |

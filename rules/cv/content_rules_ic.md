@@ -71,8 +71,15 @@ Apply the CCAR framework. For IC bullets, Context and Challenge are compressed i
 
 ---
 
+## Tag Priority Query
+
+- Do not filter by Role Level when querying the Experience Inventory for tag priorities supplied by the active archetype's domain pack entry. Entries from any role level are eligible. Framing rules above govern how entries are presented at IC level.
+
+---
+
 ## Document Structure
 
-- Section order follows the active archetype instruction set — all four IC archetype files define the required section order explicitly
-- Target length: 2-3 pages for most IC roles — do not pad to leadership CV length
-- No unnecessary carriage returns — spacing is handled by formatting spec
+- Section order follows the active archetype skeleton (`rules/archetypes/Archetype_<N>_<Name>.md`). The skeleton supplies the required section order.
+- Core Competencies: 8 to 10 items. Specific prioritization (what capabilities to emphasize) comes from the active archetype's domain pack entry.
+- Target length: 2-3 pages for most IC roles. Do not pad to leadership CV length.
+- No unnecessary carriage returns. Spacing is handled by the formatting spec.
