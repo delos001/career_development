@@ -16,6 +16,7 @@ A personal framework for documenting professional experience and supporting the 
   - [Skills](#skills)
   - [Rules](#rules)
   - [Templates](#templates)
+  - [Support](#support)
   - [Knowledge Documents](#knowledge-documents)
   - [Session Artifacts](#session-artifacts)
   - [Outputs](#outputs)
@@ -104,6 +105,8 @@ career_development/
 │   ├── cv/                                ← CV-skill-specific rule sets
 │   └── career_narratives/                 ← career-narrative-skill-specific format rules
 ├── templates/                             ← structural templates used by skills during document generation
+├── support/                               ← scaffolding and resources for user-created artifacts
+│   └── knowledge_repo_scaffolding/        ← copied into personal/knowledge/ during initial setup
 ├── personal/                              ← personal data root, gitignored
 │   ├── knowledge/                         ← master source documents (separate private repo)
 │   └── sessions/                          ← transactional session artifacts
@@ -576,6 +579,52 @@ Structural templates used by skills during document generation. Located in `temp
 
 ---
 
+### Support
+
+One-time scaffolding resources. Not loaded by any skill at runtime. Located in `support/`.
+
+#### Knowledge repo scaffolding (`support/knowledge_repo_scaffolding/`)
+
+Template files copied into `personal/knowledge/` during initial setup. Required because `personal/` is gitignored, so a new user cloning the framework repo has no other way to obtain starter files for their own private knowledge repo.
+
+---
+
+**`README.md`** (scaffolding)
+- Purpose: Starter README for the user's private knowledge repo. Explains the purpose of each knowledge document and references the framework-repo schema contract.
+- Read by:
+  - User during initial setup
+- Written by:
+  - None in the framework repo (user edits their copy inside the knowledge repo)
+
+---
+
+**`SETUP.md`** (scaffolding)
+- Purpose: Canonical setup instructions for the knowledge repo. Copied into `personal/knowledge/` so the user has local documentation of the two-repo workflow and scaffolding provenance.
+- Read by:
+  - User during initial setup
+- Written by:
+  - None in the framework repo (user edits their copy inside the knowledge repo)
+
+---
+
+**`.gitignore`** (scaffolding)
+- Purpose: Starter `.gitignore` for the knowledge repo. Excludes editor/OS artifacts, scratch directories, and local-only notes.
+- Read by:
+  - Git, when operating inside the knowledge repo after copy
+- Written by:
+  - None in the framework repo (user edits their copy inside the knowledge repo)
+
+---
+
+**`Contact_Info.md`** (scaffolding)
+- Purpose: Skeleton `Contact_Info.md` with placeholder fields. Used because `Contact_Info.md` has no corresponding builder skill and must be filled manually.
+- Read by:
+  - User during initial setup (copied into knowledge repo, then populated)
+- Written by:
+  - None in the framework repo (user edits their copy inside the knowledge repo)
+
+---
+
 ### Knowledge Documents
 
 Master source documents holding the user's career content. Located in `personal/knowledge/`. Nested private git repo.
@@ -654,11 +703,11 @@ Master source documents holding the user's career content. Located in `personal/
 ---
 
 **`SETUP.md`**
-- Purpose: Setup instructions for the nested knowledge repo. Committed inside the knowledge repo itself.
+- Purpose: User's local copy of knowledge-repo setup instructions, copied from `support/knowledge_repo_scaffolding/SETUP.md` during initial setup. Serves the user across machines or when reinitializing the knowledge repo; the canonical framework-repo copy remains the authoritative source.
 - Read by:
-  - User during initial setup
+  - User during initial setup or cross-machine sync
 - Written by:
-  - None (manual maintenance)
+  - User (manual edits after copy)
 
 ---
 
@@ -948,12 +997,24 @@ The three knowledge documents carry schema metadata that skills read and write. 
 - Framework changes (skills, rules, README): commit and push in `career_development`
 - Master data changes (knowledge documents): commit and push from within `personal/knowledge/` to `career_development_knowledge`
 
-**Setup on a new machine:**
-1. Clone this framework repo: `git clone https://github.com/delos001/career_development.git`
-2. Create the `personal/` directory at the repo root.
-3. Clone the knowledge repo into `personal/knowledge/`: `git clone https://github.com/delos001/career_development_knowledge.git personal/knowledge/`
-4. Create `personal/sessions/` (gitignored, not committed).
-5. Create `outputs/` (gitignored, not committed).
-6. Update the Python executable path in `rules/config.md` to match the local machine's `python-docx`-enabled environment.
+**First-time setup (new user, no existing knowledge repo):**
+1. Clone this framework repo: `git clone https://github.com/<your-username>/career_development.git`
+2. Create a private GitHub repository for your knowledge data (suggested name: `career_development_knowledge`).
+3. Create the `personal/` directory at the framework repo root.
+4. Clone your new empty knowledge repo into `personal/knowledge/`: `git clone https://github.com/<your-username>/career_development_knowledge.git personal/knowledge/`
+5. Copy the contents of `support/knowledge_repo_scaffolding/` into `personal/knowledge/`. This gives you a starting `README.md`, `SETUP.md`, `.gitignore`, and `Contact_Info.md` skeleton.
+6. Commit and push the scaffolding files from within `personal/knowledge/` to the knowledge repo.
+7. Create `personal/sessions/` (gitignored, not committed).
+8. Create `outputs/` (gitignored, not committed).
+9. Update the Python executable path in `rules/config.md` to match the local machine's `python-docx`-enabled environment.
+10. Fill in `personal/knowledge/Contact_Info.md` with your personal contact details.
+11. Run the `control` skill to start the workflow; it will route you to `experience_inventory_bootstrap` as the first step in building your knowledge base.
+
+**Setup on a new machine (existing knowledge repo):**
+1. Clone this framework repo.
+2. Create the `personal/` directory at the framework repo root.
+3. Clone your existing knowledge repo into `personal/knowledge/`.
+4. Create `personal/sessions/` and `outputs/` (both gitignored).
+5. Update the Python executable path in `rules/config.md` to match this machine's environment.
 
 **Job descriptions.** Raw job descriptions are stored separately in OneDrive or the user's preferred storage, not in this repo.
