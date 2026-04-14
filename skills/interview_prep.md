@@ -2,7 +2,7 @@
 
 ## Objective
 
-Generate a role-specific interview preparation document and a pre-populated Interview Completion template for a target role. This skill uses the GapAnalysis file from `role_evaluation` as its primary input. It produces two output files: the interview prep reference document and the interview completion document. Both are saved to the application folder specified by the user.
+Generate a role-specific interview preparation document, a blank Interview Completion file, and a blank Interview Scratch file for a target role. This skill uses the GapAnalysis file from `role_evaluation` as its primary input. It produces three output files, all as `.md`: the interview prep reference document, the interview completion file (populated post-interview by `interview_capture`), and the interview scratch file (used by the user during each interview round as a minimal anchor-note surface). All three are saved to the application folder specified by the user.
 
 ---
 
@@ -34,7 +34,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 4. Active domain consistency check: read the current `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md`. Compare to the active domain captured in the GapAnalysis file. If the values differ, the active domain has changed since the evaluation was run. Halt and surface the mismatch: state both values and ask the user whether to (a) revert the inventory header to the GapAnalysis domain before proceeding, (b) re-run `role_evaluation` under the current active domain, or (c) explicitly override and proceed under the current active domain with acknowledgment that the role was evaluated under a different domain. Do not proceed silently.
 
-5. Ask the user for the absolute path to the output folder where both documents will be saved. This is the folder where application documents for this role are stored. Do not proceed until this path is confirmed.
+5. Ask the user for the absolute path to the output folder where all three documents will be saved. This is the folder where application documents for this role are stored. Do not proceed until this path is confirmed.
 
 6. Confirm all context is in hand and state it explicitly before closing.
 
@@ -175,19 +175,18 @@ Perform QC per Global Rules:
 *(State each step before completing the step)*
 
 **Step 1 — Generate interview prep document:**
-Generate the interview prep document as a `.docx` file using Python with python-docx. Load `rules/config.md` and use the Python executable path defined there. Write a Python script and execute it via Bash. Use Windows-style paths in all file operations.
+Generate the interview prep document as a `.md` file. Write the file directly — no Python or python-docx required.
 
-Naming convention: `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].docx`
+Naming convention: `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].md`
 
-Apply the following Word styles so the Navigation Pane is functional without manual formatting:
-- Document title (company and role): `Title` style
-- Section headers (the 13 section names below): `Heading 1` style
-- Sub-headers within sections where content has named groupings (e.g., individual research branches, story titles, question categories): `Heading 2` style
-- All body text: `Normal` style
-- Field labels or emphasis within body text: bold applied explicitly, not a heading style
+Use markdown heading hierarchy so the document is navigable in any markdown-aware editor:
+- Document title (company and role): `#` (H1)
+- Section headers (the 13 section names below): `##` (H2)
+- Sub-headers within sections where content has named groupings (e.g., individual research branches, story titles, question categories): `###` (H3)
+- Field labels or emphasis within body text: bold (`**label:**`), not a heading
 
 Sections in this order:
-1. Role and Company Snapshot — quick reference table: company, role title, role level, archetype, org type, application recommendation from role evaluation
+1. Role and Company Snapshot — quick reference list: company, role title, role level, archetype, org type, application recommendation from role evaluation
 2. Why This Role — finalized text from Phase 3a Step 7a
 3. Why This Company — finalized text from Phase 3a Step 7b
 4. Company Research — organized by research branch with all sources listed (URL or publication and date)
@@ -203,29 +202,31 @@ Sections in this order:
 
 Confirm the file was written before proceeding.
 
-**Step 2 — Generate interview completion document:**
-Load `templates/Interview_Completion_Template.md`. Confirm it loaded completely. Use its structure as the layout guide for the generated document.
+**Step 2 — Generate interview completion file:**
+Load `templates/Interview_Completion_Template.md`. Confirm it loaded completely. Write its content to the output path as-is, with the following header-field substitutions only:
+- Document title line: substitute `[Company]`, `[Role]`, and `[YYYY-MM]` with actual values
+- Application Reference block: substitute the hint-text HTML comments for Company, Job Title, GapAnalysis File, and Interview Prep File with the actual values
 
-Generate the Interview Completion document as a `.docx` file using Python with python-docx. Load `rules/config.md` and use the Python executable path defined there. Write a Python script and execute it via Bash. Use Windows-style paths in all file operations.
-
-Apply the following Word styles so the Navigation Pane is functional without manual formatting:
-- Document title (company and role): `Title` style
-- Round headers (Round 1, Round 2, Round 3, Round 4): `Heading 1` style
-- Sub-section headers within each round (Logistics, Interviewers, Questions and Responses, Round Debrief): `Heading 2` style
-- Field labels (e.g., "Type:", "Name:", "Q:", "Impression:"): bold applied explicitly using `Normal` style, not a heading style
-- Answer fields and notes: `Normal` style, left blank for user entry
-
-Populate the document as follows:
-- Header fields: company name, role title, YYYY-MM, GapAnalysis file path, prep document path
-- Round 1 Questions and Responses: populate with the full questions-to-ask list from Phase 3a Step 6, one question per Q field, all A fields left blank for the user to fill in
-- Rounds 2 through N: leave question fields blank as in the template structure
+Do not pre-populate any round's fields. All Logistics, Interviewers, Questions and Responses, and Round Debrief sections must retain their hint-text HTML comments verbatim. `interview_capture` is the skill that populates rounds post-interview; pre-population here would contaminate its writeback.
 
 Save to the output folder confirmed in Phase 1a. Naming convention:
-`InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].docx`
+`InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md`
 
 Confirm the file was written before proceeding.
 
-**Step 3 — Update questions library:**
+**Step 3 — Generate interview scratch file:**
+Load `templates/Interview_Scratch_Template.md`. Confirm it loaded completely. Write its content to the output path with the following substitutions:
+- Document title line: substitute `[Company]`, `[Role]`, and `[YYYY-MM]` with actual values
+- File References block: substitute the Interview Prep path (absolute path to the file written in Step 1) and the Interview Completion path (absolute path to the file written in Step 2)
+
+All round section headings (`## Round 1` through `## Round 4`) must remain with empty bodies below them. These are the surfaces the user will write anchor notes into during each interview round.
+
+Save to the output folder confirmed in Phase 1a. Naming convention:
+`InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md`
+
+Confirm the file was written before proceeding.
+
+**Step 4 — Update questions library:**
 Check for an existing file at `personal/knowledge/Questions_Library.md`. If it does not exist, create it with this header:
 
 ```
@@ -238,9 +239,9 @@ Append the questions from Phase 3a Step 6 to the library. For each entry include
 
 Confirm the library was updated before proceeding.
 
-**Step 4 — User acceptance and Last Used stamping:**
+**Step 5 — User acceptance and Last Used stamping:**
 
-State "Both documents are ready for your review." Ask the user to confirm acceptance of the generated prep and completion documents before any metadata stamping occurs. If the user requests revisions, loop back to the appropriate earlier phase and regenerate. Do not stamp Last Used on rejected or draft output.
+State "All three documents are ready for your review." Ask the user to confirm acceptance of the generated prep, completion, and scratch files before any metadata stamping occurs. If the user requests revisions, loop back to the appropriate earlier phase and regenerate. Do not stamp Last Used on rejected or draft output.
 
 After explicit user acceptance:
 
@@ -257,13 +258,15 @@ Narratives are the primary citation in this skill; inventory entries are seconda
 
 ## Phase 4b — Quality Control of Phase 4a
 
-**Interview Prep Document:** Confirm python-docx was used to generate the document via a Python script executed through Bash. Confirm the file was written to the correct output path as a `.docx`. Confirm all 13 sections are present in the specified order. Confirm `Title` style was applied to the document title and `Heading 1` style was applied to all 13 section headers. State the actual filename and confirm it matches the naming convention.
+**Interview Prep Document:** Confirm the file was written to the correct output path as a `.md`. Confirm all 13 sections are present in the specified order using `##` (H2) headings. State the actual filename and confirm it matches the naming convention.
 
-**Interview Completion Document:** Confirm python-docx was used to generate the document via a Python script executed through Bash. Confirm the file was written to the correct output path as a `.docx`. Confirm `Heading 1` was applied to round headers and `Heading 2` to sub-section headers within each round. Confirm Round 1 is pre-populated with questions from Phase 3a Step 6 and all A fields are blank. Confirm Rounds 2-4 follow the template structure. State the actual filename and confirm it matches the naming convention.
+**Interview Completion File:** Confirm the file was written to the correct output path as a `.md`. Confirm the document title and Application Reference block were populated with actual values (no `[Company]`, `[Role]`, `[YYYY-MM]` placeholders remain; no hint-text HTML comments remain in those four header fields). Confirm all round sections (Logistics, Interviewers, Questions and Responses, Round Debrief) retain their hint-text HTML comments verbatim — no round pre-population occurred. State the actual filename and confirm it matches the naming convention.
+
+**Interview Scratch File:** Confirm the file was written to the correct output path as a `.md`. Confirm the document title was populated with actual values. Confirm the File References block now contains absolute paths to the Interview Prep and Interview Completion files just written, and no hint-text HTML comments remain in those two references. Confirm all four `## Round N` headings are present with empty bodies. State the actual filename and confirm it matches the naming convention.
 
 **Questions Library:** Confirm `personal/knowledge/Questions_Library.md` was updated. State the number of questions added and confirm no semantic duplicates were added.
 
-**Template Load:** Confirm `templates/Interview_Completion_Template.md` was loaded before generating the completion document.
+**Template Load:** Confirm both `templates/Interview_Completion_Template.md` and `templates/Interview_Scratch_Template.md` were loaded before generating the respective files.
 
 Perform QC per Global Rules:
 - **Standard QC Document Verification**

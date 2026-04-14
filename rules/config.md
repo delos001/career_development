@@ -9,6 +9,6 @@ Machine-specific and environment-specific values used by skills during document 
 **Python executable path (python-docx operations):**
 `C:/Users/delos/miniconda3/envs/agents/python.exe`
 
-This path is used by any skill that generates or reads `.docx` files: `cv_targeted`, `cv_general`, `interview_prep`, `followup`. Update this value if your conda environment changes or you are setting up on a new machine.
+This path is used by any skill that generates or reads `.docx` files: `cv_targeted`, `cv_general`. Update this value if your conda environment changes or you are setting up on a new machine.
 
 Skills load this file at the phase where Python execution is required. Do not hardcode the path in skill files — always reference this file as the single source of truth.

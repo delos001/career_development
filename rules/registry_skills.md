@@ -16,13 +16,15 @@ experience_inventory_bootstrap → career_narratives_builder → positioning_bui
                                                        ↙              ↘
                                                cv_targeted       interview_prep
                                                                        ↓
-                                                                   followup
+                                                              interview_capture
+                                                                       ↓
+                                                             interview_followup
 
 [Standalone — any point]
 career_brief, cv_general, source_document_update
 ```
 
-Knowledge builder skills (experience_inventory_bootstrap, career_narratives_builder, positioning_builder) run once and are maintained over time. Role-specific skills (role_evaluation through followup) run per application. Utility and standalone skills run on demand. Rules builder skills (archetype_creation, domain_creation) extend the repo itself — invoked only when the available archetype or domain coverage does not fit a target role; not part of per-role workflow.
+Knowledge builder skills (experience_inventory_bootstrap, career_narratives_builder, positioning_builder) run once and are maintained over time. Role-specific skills (role_evaluation through interview_followup) run per application. Utility and standalone skills run on demand. Rules builder skills (archetype_creation, domain_creation) extend the repo itself — invoked only when the available archetype or domain coverage does not fit a target role; not part of per-role workflow.
 
 ---
 
@@ -33,6 +35,11 @@ The control skill uses the following ordered checks to determine where a user is
 1. **Knowledge base complete?**
    Check: `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` all exist with populated content.
    If no: route to the appropriate knowledge builder skill(s).
+
+   1a. **Active Domain declared?**
+   Check: `personal/knowledge/Experience_Inventory.md` header contains a populated `**Active Domain:** <slug>` line, and `<slug>` matches a registered domain in `rules/registry_domain.md`.
+   If missing: instruct the user to add the pointer before proceeding. Downstream skills (`role_evaluation` Phase 2a, `cv_targeted` Phase 1a/2a, `cv_general` Phase 2a, `interview_prep` Phase 1a) load the active domain pack by this pointer and will halt without it.
+   If present but unregistered: flag the mismatch. Either the pointer is wrong (correct it) or the referenced domain pack has not been built yet (route to `domain_creation`).
 
 2. **Role target identified?**
    Check: User has provided or referenced a company name and role title.
@@ -47,12 +54,13 @@ The control skill uses the following ordered checks to determine where a user is
    If no: `cv_targeted` is available. Ask if the user wants to generate the CV.
 
 5. **Interview prep complete?**
-   Check: `InterviewPrep_[Company]_[Role]_[YYYY-MM].docx` exists in the user's application folder.
+   Check: `InterviewPrep_[Company]_[Role]_[YYYY-MM].md`, `InterviewCompletion_[Company]_[Role]_[YYYY-MM].md`, and `InterviewScratch_[Company]_[Role]_[YYYY-MM].md` all exist in the user's application folder.
    If no: `interview_prep` is available if an interview is scheduled or approaching.
 
-6. **Interview round completed?**
-   Check: User confirms at least one round of the InterviewCompletion document has been filled in.
-   If yes: `followup` is available.
+6. **Interview round captured?**
+   Check: At least one round in `InterviewCompletion_[Company]_[Role]_[YYYY-MM].md` is populated (Interviewers and Questions and Responses sections contain captured content beyond hint-text HTML comments).
+   If no and a round has been completed: `interview_capture` is available.
+   If yes: `interview_followup` is available for any captured round.
 
 ---
 
@@ -200,36 +208,59 @@ The control skill uses the following ordered checks to determine where a user is
 **Prerequisites:**
 - `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`
 
-**Completion Signal:** `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].docx` exists in the user's application folder.
+**Completion Signal:** `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].md`, `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md`, and `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` all exist in the user's application folder.
 
 **Outputs:**
-- `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].docx` — reference document
-- `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].docx` — editable round-tracking document pre-populated with questions
+- `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].md` — reference document
+- `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` — blank round-tracking file; populated post-interview by `interview_capture`
+- `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` — blank scratch file used during each round for anchor notes; header references prep and completion files
 - `personal/knowledge/Questions_Library.md` updated
 - `personal/knowledge/Career_Narratives.md` — `Last Used: YYYY-MM` stamped on every narrative cited in the Stories Bank, Alignment Map, or Gap Handling Language (Phase 4a closing, post user acceptance)
 - `personal/knowledge/Experience_Inventory.md` — `Last Used: YYYY-MM` stamped on every inventory entry cited in the Alignment Map, Gap Handling Language, or supporting a Stories Bank entry (Phase 4a closing, post user acceptance)
 
-**Typical Next Steps:** `followup` (after completing at least one interview round)
+**Typical Next Steps:** `interview_capture` (after each interview round completes)
 
 ---
 
-### Follow-Up Letter
+### Interview Capture
 
-**File:** `skills/followup.md`
+**File:** `skills/interview_capture.md`
 **Category:** Output Delivery
-**Standalone:** No — requires a populated InterviewCompletion document
+**Standalone:** No — requires InterviewScratch and InterviewCompletion files from interview_prep
 
-**Trigger:** User has completed an interview round and wants to write a follow-up letter; InterviewCompletion document has at least one round filled in.
+**Trigger:** User has just completed an interview round and needs to capture interviewer details, questions asked, responses given, and round debrief into the InterviewCompletion file.
 
 **Prerequisites:**
-- `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].docx` with at least one round populated
+- `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md`
+- `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (referenced from the scratch file's header)
 
-**Completion Signal:** `Followup_[Company]_[AbbreviatedRole]_Round[N]_[YYYY-MM].md` exists in the user's application folder.
+**Completion Signal:** The target round in `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` is populated (Interviewers and Q&A sections contain captured content, hint-text HTML comments replaced for captured fields).
 
 **Outputs:**
-- Follow-up letter `.md` saved to application folder (one per round; individual files per recipient if multiple letters generated)
+- Updated `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` — one round populated per invocation
 
-**Typical Next Steps:** `followup` again for subsequent interview rounds
+**Typical Next Steps:** `interview_followup` for the round just captured
+
+---
+
+### Interview Follow-Up
+
+**File:** `skills/interview_followup.md`
+**Category:** Output Delivery
+**Standalone:** No — requires a populated InterviewCompletion file for the target round
+
+**Trigger:** User has captured an interview round via `interview_capture` and wants to write a follow-up letter.
+
+**Prerequisites:**
+- `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (header references the completion file)
+- `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` with at least the target round populated by `interview_capture`
+
+**Completion Signal:** `InterviewFollowup_[Company]_[AbbreviatedRole]_R[N]_[YYYY-MM].md` exists in the user's application folder.
+
+**Outputs:**
+- Follow-up letter `.md` saved to application folder (one per round; individual files per recipient if multiple letters generated, with recipient last name appended to filename)
+
+**Typical Next Steps:** `interview_capture` for the next interview round; `interview_followup` again after that round is captured
 
 ---
 

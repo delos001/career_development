@@ -23,7 +23,8 @@ career_development/
 │   ├── career_narratives_builder.md
 │   ├── positioning_builder.md
 │   ├── interview_prep.md
-│   ├── followup.md
+│   ├── interview_capture.md
+│   ├── interview_followup.md
 │   ├── career_brief.md
 │   └── control.md
 ├── rules/                                 ← rule sets read by skills during execution
@@ -100,8 +101,9 @@ career_development/
 | Domain Creation | `skills/domain_creation.md` | Creating a new domain pack (vocabulary, taxonomy, and per-archetype content) for roles outside currently covered domains; required when the repo is extended to a new career domain or a new tester |
 | Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `personal/knowledge/Career_Narratives.md` with new stories or decisions |
 | Positioning Builder | `skills/positioning_builder.md` | Building or updating `personal/knowledge/Positioning.md` |
-| Interview Prep | `skills/interview_prep.md` | Generating an interview prep document and pre-populated Interview Completion template for a target role; requires a completed GapAnalysis file from role_evaluation |
-| Follow-Up Letter | `skills/followup.md` | Generating a follow-up letter for a specific interview round; requires a completed Interview Completion document from interview_prep |
+| Interview Prep | `skills/interview_prep.md` | Generating an interview prep document, a blank Interview Completion file, and a blank Interview Scratch file for a target role; requires a completed GapAnalysis file from role_evaluation |
+| Interview Capture | `skills/interview_capture.md` | Capturing one completed interview round (logistics, interviewers, Q&A, debrief) into the InterviewCompletion file; runs immediately after each round using the InterviewScratch file as anchor material |
+| Interview Follow-Up | `skills/interview_followup.md` | Generating a follow-up letter for a specific interview round; requires the target round to be captured in the InterviewCompletion file by interview_capture |
 | Career Brief | `skills/career_brief.md` | Generating a short professional bio or summary paragraph for recruiter outreach, networking introductions, or speaker profiles |
 | Control | `skills/control.md` | Entry point and mid-workflow navigation aid; assesses current workflow state via file-based detection and routes to the appropriate skill; reads from registry_skills.md |
 
@@ -192,13 +194,25 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 2a step 1 | Generation begins | `personal/knowledge/Positioning.md`; `personal/knowledge/Experience_Inventory.md` only if Positioning.md lacks sufficient specificity |
 
-### followup
+### interview_capture
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a | Session start | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].docx` (extracted via python-docx from application folder) |
-| 1a step 2 | Python script execution | `rules/config.md` |
+| 1a step 1 | Session start | `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (user-supplied path) |
+| 1a step 2 | Header path resolution | `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].md`, `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (paths read from scratch file header) |
+| 1a step 3 | Round auto-detection | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` parsed for unpopulated round |
+| 1a step 4 | Anchor material load | Target round section of `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` |
+| 3a step 3 | Writeback | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` saved with target round populated |
+
+### interview_followup
+
+| Phase | Trigger | Documents Loaded |
+|---|---|---|
+| Execution start | Skill invoked | `rules/global_rules.md` |
+| 1a step 1 | Session start | `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (user-supplied path) |
+| 1a step 2 | Header path resolution | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (path read from scratch file header) |
+| 1a step 3 | Round selection | Target round content parsed from `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` |
 
 ### source_document_update
 

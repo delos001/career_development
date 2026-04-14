@@ -17,8 +17,9 @@ This repo supports job search and CV generation workflows. See `README.md` for f
 | Domain Creation | `skills/domain_creation.md` | Creating a new domain pack (vocabulary, taxonomy, per-archetype content) for roles outside currently covered domains; required when extending the repo to a new career domain or new tester |
 | Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `personal/knowledge/Career_Narratives.md` with new stories or decisions |
 | Positioning Builder | `skills/positioning_builder.md` | Building or updating `personal/knowledge/Positioning.md` |
-| Interview Prep | `skills/interview_prep.md` | Generating an interview prep document and pre-populated Interview Completion template for a target role; requires a completed GapAnalysis file from role_evaluation |
-| Follow-Up Letter | `skills/followup.md` | Generating a follow-up letter for a specific interview round; requires a completed Interview Completion document from interview_prep |
+| Interview Prep | `skills/interview_prep.md` | Generating an interview prep document, a blank Interview Completion file, and a blank Interview Scratch file for a target role; requires a completed GapAnalysis file from role_evaluation |
+| Interview Capture | `skills/interview_capture.md` | Capturing one completed interview round (logistics, interviewers, Q&A, debrief) into the InterviewCompletion file; runs immediately after each round using the InterviewScratch file as anchor material |
+| Interview Follow-Up | `skills/interview_followup.md` | Generating a follow-up letter for a specific interview round; requires the target round to be captured in the InterviewCompletion file by interview_capture |
 | Career Brief | `skills/career_brief.md` | Generating a short professional bio or summary paragraph for recruiter outreach, networking introductions, or speaker profiles |
 | Control | `skills/control.md` | Entry point for new users; mid-workflow navigation aid; assesses current workflow state and routes to the appropriate skill |
 
