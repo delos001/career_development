@@ -14,8 +14,8 @@ This repo supports job search and CV generation workflows. See `README.md` for f
 | Source Document Update (Workflow) | `skills/source_document_update_workflow.md` | Capturing experience, framing decisions, or gap resolutions to source documents at the close of a calling workflow skill |
 | Source Document Update (Ad-Hoc) | `skills/source_document_update_adhoc.md` | Ad-hoc user-initiated updates to source documents outside any workflow session; new entries or enrichment of existing entries |
 | Experience Inventory Bootstrap | `skills/experience_inventory_bootstrap.md` | Building the Experience Inventory from scratch using raw career source documents |
-| Archetype Creation | `skills/archetype_creation.md` | Creating a new role archetype skeleton when no existing archetype serves the target role; produces skeleton only, pack entries are separate |
-| Domain Creation | `skills/domain_creation.md` | Creating a new domain pack (vocabulary, taxonomy, per-archetype content) for roles outside currently covered domains; required when extending the repo to a new career domain or new tester |
+| Archetype Creation | `skills/archetype_creation.md` | Creating a new domain-agnostic, level-agnostic archetype file when no existing archetype serves the target role; immediately usable after creation |
+| Domain Creation | `skills/domain_creation.md` | Creating a new domain file (taxonomy, vocabulary, selection criteria, tech stack, per-archetype calibration examples) for roles outside currently covered domains |
 | Career Narratives Builder | `skills/career_narratives_builder.md` | Building or updating `personal/knowledge/Career_Narratives.md` with new stories or decisions |
 | Positioning Builder | `skills/positioning_builder.md` | Building or updating `personal/knowledge/Positioning.md` |
 | Interview Prep | `skills/interview_prep.md` | Generating an interview prep document, a blank Interview Completion file, and a blank Interview Scratch file for a target role; requires a completed GapAnalysis file from role_evaluation |

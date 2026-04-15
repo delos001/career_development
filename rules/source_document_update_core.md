@@ -10,7 +10,7 @@ Before any validation or writes occur, determine the active domain and load its 
 
 1. Read the `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md`. Do not assume; read the file. If no Active Domain is declared, halt and prompt the user.
 
-2. Load `rules/domains/<active_domain>/domain.md` and confirm it loaded completely. Section 1 (Tag Taxonomy) is the authoritative allowed-value list for Capability, Role Level, Org Context, Outcome, and Org Type. All tag validation in this procedure references this file; do not infer tag values from archetype files or from the inventory header.
+2. Load `rules/domains/<active_domain>.md` and confirm it loaded completely. Section 1 (Tag Taxonomy) is the authoritative allowed-value list for Capability, Role Level, Org Context, Outcome, and Org Type. All tag validation in this procedure references this file; do not infer tag values from archetype files or from the inventory header.
 
 ---
 
@@ -70,9 +70,9 @@ Last Used:
 
 New entries carry `Added: YYYY-MM` set to the current month; `Last Used:` is left blank. Last Used is stamped only by output-producing skills (`cv_targeted`, `cv_general`, `interview_prep`) at session close. Do not backfill Added with a reconstructed historical date; legacy entries carry `Added: pre-2026-04` from the migration.
 
-**Allowed tag values — the authoritative list is Section 1 of the active domain pack (`rules/domains/<active_domain>/domain.md`), loaded at entry. Do not infer tag values from archetype files or from the inventory header.**
+**Allowed tag values — the authoritative list is Section 1 of the active domain file (`rules/domains/<active_domain>.md`), loaded at entry. Do not infer tag values from archetype files or from the inventory header.**
 
-Dimensions governed by the domain pack: Capability, Role Level, Org Context, Outcome, Org Type. Capability and Outcome values are pipe-separated on their respective lines when multiple apply. Role Level and Org Context take one value per entry. Outcome is optional; omit the entire line when no genuine organizational outcome is attached.
+Dimensions governed by the domain file: Capability, Role Level, Org Context, Outcome, Org Type. Capability and Outcome values are pipe-separated on their respective lines when multiple apply. Role Level and Org Context take one value per entry. Outcome is optional; omit the entire line when no genuine organizational outcome is attached.
 
 **Enrichment of existing inventory entries:** Adding or revising Context, Impact, or tag values on an existing entry is governed by the same conventions as new entries. When enriching, preserve the original action statement verbatim unless the user explicitly confirms a rewording. Do not invent outcomes to satisfy a retrieval preference; if the user cannot describe a real outcome, omit the Outcome line.
 
@@ -92,7 +92,7 @@ Last Used:
 [body content per format file]
 ```
 
-Allowed metadata values by dimension: Tags (Capability) must come from Section 1 of the active domain pack (`rules/domains/<active_domain>/domain.md`). Archetype must come from `rules/registry_archetype.md`. Era must come from the Era list in the `personal/knowledge/Career_Narratives.md` header block. Reject free-text values. If the user proposes a Capability value not in the domain pack, an Archetype not in the registry, or an Era not in the narratives header, flag it and ask whether to (a) map to an existing value or (b) extend the governing file before proceeding. `Added: YYYY-MM` is set to the current month at creation; `Last Used:` is left blank. Entry headings are the title alone — no sequential numbering.
+Allowed metadata values by dimension: Tags (Capability) must come from Section 1 of the active domain file (`rules/domains/<active_domain>.md`). Archetype must come from `rules/registry_archetype.md`. Era must come from the Era list in the `personal/knowledge/Career_Narratives.md` header block. Reject free-text values. If the user proposes a Capability value not in the domain file, an Archetype not in the registry, or an Era not in the narratives header, flag it and ask whether to (a) map to an existing value or (b) extend the governing file before proceeding. `Added: YYYY-MM` is set to the current month at creation; `Last Used:` is left blank. Entry headings are the title alone — no sequential numbering.
 
 `personal/knowledge/Positioning.md` — Entries are strategic positioning statements, not achievement bullets. Follow the framing conventions of existing entries.
 
@@ -112,14 +112,14 @@ Before presenting any proposed update for approval, verify each against all of t
 
 - Traceable: directly sourced from an explicit user statement or source document within the session scope
 - Not role-specific: the information generalizes to future roles and sessions
-- Convention-compliant: the proposed content matches the format and voice of existing entries in the target document. For `Experience_Inventory.md`, all required tag fields must be present and tag values must match Section 1 of the active domain pack.
+- Convention-compliant: the proposed content matches the format and voice of existing entries in the target document. For `Experience_Inventory.md`, all required tag fields must be present and tag values must match Section 1 of the active domain file.
 - Non-contradictory: does not conflict with or duplicate existing source document content
 - Complete (Experience_Inventory.md entries only): Before writing, verify all required elements are present:
   - Action statement: present, atomic (one discrete action), not a polished CV bullet
-  - Classification lines: `Capability:`, `Role Level:`, and `Org Context:` each present as their own line on every entry. `Outcome:` line is optional; include only when a genuine organizational outcome is attached to the action; omit the entire line for breadth-evidence, routine-task, and "did X" entries. Do not invent outcomes to satisfy the schema. All values must match Section 1 of the active domain pack (`rules/domains/<active_domain>/domain.md`); reject free-text values.
+  - Classification lines: `Capability:`, `Role Level:`, and `Org Context:` each present as their own line on every entry. `Outcome:` line is optional; include only when a genuine organizational outcome is attached to the action; omit the entire line for breadth-evidence, routine-task, and "did X" entries. Do not invent outcomes to satisfy the schema. All values must match Section 1 of the active domain file (`rules/domains/<active_domain>.md`); reject free-text values.
   - Metadata: `Added: YYYY-MM` set to current month (new entries only) and `Last Used:` left blank (new entries only; existing entries retain their current value)
   - For Director-level entries and above: determine whether this entry is likely to serve as an anchor citation for a critical requirement match in a CV session. If yes, and if both Context and Impact are absent, query the user for this information before writing. Do not write a Director+ anchor entry without at least one of Context or Impact annotated. Breadth and delivery evidence entries at this level do not require annotation — use judgment based on whether the entry describes a discrete, citable accomplishment or a general responsibility.
-- Complete (Career_Narratives.md entries only): the 5-line metadata block is present, Tags (Capability) values match Section 1 of the active domain pack, Archetype values match `rules/registry_archetype.md`, Era values match the Era list in the `personal/knowledge/Career_Narratives.md` header, `Added: YYYY-MM` is the current month (new entries only), and `Last Used:` is blank (new entries only).
+- Complete (Career_Narratives.md entries only): the 5-line metadata block is present, Tags (Capability) values match Section 1 of the active domain file, Archetype values match `rules/registry_archetype.md`, Era values match the Era list in the `personal/knowledge/Career_Narratives.md` header, `Added: YYYY-MM` is the current month (new entries only), and `Last Used:` is blank (new entries only).
 - Enrichment honesty check (enrichment of existing entries only): Is the scope accurate per what the user described? Does the Impact claim reflect what was actually delivered, not what was intended or designed? Is the language defensible if questioned in an interview? Flag any overstated claims explicitly before presenting.
 
 **Step 3 — Present for approval:**

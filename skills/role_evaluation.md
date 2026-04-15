@@ -41,7 +41,7 @@ File Naming: `[Company]_[Role]_[YYYY-MM]_SessionLog.md`
 *(Only after Phase 1a has been explicitly approved)*
 *(State each step before completing it)*
 
-1. Read the job description. Read the `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md` (do not assume). Load `rules/domains/<active_domain>/domain.md` and confirm it loaded. Check the JD against the pack's Section 3 Pack Selection Criteria. If a "Do NOT use when" condition applies, flag the scope mismatch and obtain user direction before proceeding: halt for a different pack, or continue as an explicit cross-domain evaluation with acknowledged mismatch.
+1. Read the job description. Read the `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md` (do not assume). Load `rules/domains/<active_domain>.md` and confirm it loaded. Check the JD against the domain file's Section 3 Pack Selection Criteria. If a "Do NOT use when" condition applies, flag the scope mismatch and obtain user direction before proceeding: halt for a different domain, or continue as an explicit cross-domain evaluation with acknowledged mismatch.
 
 2. Propose the role level (IC, AD, Dir, Sr. Dir, VP). If not explicit in the title, infer from required experience, scope, and reporting structure. State rationale and obtain explicit agreement. The agreed level governs seniority of voice, scope framing, and achievement selection in all subsequent phases.
 
@@ -51,12 +51,7 @@ File Naming: `[Company]_[Role]_[YYYY-MM]_SessionLog.md`
 
 5. Read `rules/registry_archetype.md`. Identify the role archetype and state the framing angle. If no archetype satisfies the match criteria, halt: state which criteria failed for each archetype, inform the user that `skills/archetype_creation.md` must be completed first, and do not advance. If borderline between two archetypes, note the ambiguity. If the role spans two archetypes, identify a primary and secondary with rationale, then load `rules/cv/dual_archetype.md` and apply its rules throughout.
 
-   Load the three-layer archetype instruction set per `rules/registry_archetype.md`:
-   a. Archetype skeleton: `rules/archetypes/Archetype_<N>_<Name>.md`
-   b. Domain pack entry: `rules/domains/<active_domain>/archetype<N>_<level>.md`, where `<level>` is `leadership` for AD+ roles or `ic` for IC roles.
-   c. For a dual-archetype, repeat (a) and (b) for the secondary.
-
-   Confirm each loaded completely. The skeleton governs identity and level-agnostic structure; the pack entry governs match criteria, summary framing, tag priorities, calibration, and de-emphasis within the active domain.
+   Load the archetype file: `rules/archetypes/Archetype_<N>_<Name>.md`. For a dual-archetype, load the secondary archetype file as well. Confirm each loaded completely. The archetype file is authoritative on identity, match criteria, summary framing, tag priorities, achievement framing pattern, and de-emphasis. Domain vocabulary and calibration examples come from the domain file loaded in Step 1. Level voice comes from the content rules file (loaded later by `cv_targeted`; not needed for fit evaluation).
 
 6. Read `rules/registry_org_type.md`. Select the org type, state why, and note the framing emphasis that will govern organizational environment description in later content generation.
 
@@ -71,9 +66,9 @@ For each item, cite evidence from Phase 2a. Any Fail invokes QC Failure Recovery
 - **Role Level:** explicit user agreement is documented for the level stated in Step 2.
 - **Company Research:** Step 3 sources are listed with enough detail to revisit.
 - **Critical Requirements:** 4-5 items are present from Step 4; fewer than 4 fails.
-- **Archetype Selection:** the primary archetype is defensible against the match criteria in the loaded domain pack entry. Cite each satisfied criterion and the JD language supporting it. A wrong archetype propagates through every subsequent phase.
+- **Archetype Selection:** the primary archetype is defensible against the match criteria in the loaded archetype file. Cite each satisfied criterion and the JD language supporting it. A wrong archetype propagates through every subsequent phase.
 - **Dual-Archetype (if applicable):** the secondary archetype is explicitly evidenced in the JD, not inferred from peripheral language. Primary/secondary assignment reflects the dimension the role primarily evaluates on. Weak or speculative secondary fails; recommend single-archetype treatment and obtain user agreement.
-- **Domain Scope:** active domain was read from the Inventory header, the pack was loaded, and Section 3 was checked. If a scope mismatch was flagged, user direction is documented.
+- **Domain Scope:** active domain was read from the Inventory header, the domain file was loaded, and Section 3 was checked. If a scope mismatch was flagged, user direction is documented.
 - **Org Type:** selection is consistent with the JD and the Step 3 research. Cite the specific company characteristic that drove it.
 - **Standard QC Document Verification** per Global Rules.
 
@@ -142,7 +137,7 @@ For each item, cite evidence from Phase 3a. Any Fail invokes QC Failure Recovery
 - **Standard QC Document Verification** per Global Rules.
 
 **GapAnalysis File:** Before closing, write `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` containing:
-1. Role context: company, role title, role level, active domain, primary archetype (number, name, skeleton path, domain pack entry path) and secondary if applicable, rationale for each archetype, org type, and org-type framing emphasis.
+1. Role context: company, role title, role level, active domain (with domain file path `rules/domains/<active_domain>.md`), primary archetype (number, name, archetype file path `rules/archetypes/Archetype_<N>_<Name>.md`) and secondary if applicable, rationale for each archetype, org type, and org-type framing emphasis.
 2. Critical requirements from Phase 2a with the source-citable match for each.
 3. Full gap summary table with severity and resolution status per gap.
 4. Fit assessment summary from Phase 3a Step 6 including the threshold calculation and application recommendation.

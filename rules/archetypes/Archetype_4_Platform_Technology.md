@@ -1,70 +1,102 @@
 # Archetype 4: Platform & Technology
 
-## 1. Purpose and Scope
+## Identity
 
-Apply this skeleton when the confirmed archetype is Platform & Technology. Load alongside:
+A role fits this archetype when the primary deliverable is a technology platform, system, or vendor ecosystem that enables business capability. Characteristic contexts: platform ownership, system implementation and integration, vendor selection and management, product management for internal platforms, and translating domain requirements into platform features. Applies whether the candidate directs the platform strategy or contributes hands-on to implementation and configuration.
 
-- The active domain pack (declared in `personal/knowledge/Experience_Inventory.md` header). Supplies match criteria, summary content, tag priorities, calibration examples, and de-emphasis content for this archetype at the confirmed level.
-- The level-specific content rules file.
-  - Leadership roles: `rules/cv/content_rules_leadership.md`
-  - IC roles: `rules/cv/content_rules_ic.md`
+Applies at both Leadership and IC levels. Voice and register come from the active content rules file; vocabulary, systems list, and calibration examples come from the active domain file.
 
-## 2. Archetype Identity
+## Match Criteria
 
-A role fits this archetype when the primary deliverable is a technology platform, system, or vendor ecosystem that enables business capability. Characteristic contexts include platform ownership, system implementation and integration, vendor selection and management, product management for internal platforms, and translating domain requirements into platform features. The archetype applies whether the candidate directs the platform strategy or contributes hands-on to implementation and configuration.
+**Leadership:** technology strategy for domain-relevant platforms; platform implementation leadership; system integration and interoperability governance; vendor and tool ecosystem management; build-versus-buy decision authority; technology operating model design.
 
-The archetype applies at both Leadership and IC levels. Scope and authority claims adjust per the level rules. Specific match criteria and framing language are supplied by the active domain pack.
+**IC:** systems configuration, setup, or support; technology implementation participation (builds, integrations, deployments); system testing, validation, or UAT; domain expertise applied to technology work (translating operational requirements into system configurations, advising developers, evaluating platform fit); data flow and interoperability at the system level.
 
-## 3. Structural Rules
+Verify against Archetype 2 if technology is a supporting tool for data governance. Verify against Archetype 3 if technology is a supporting tool for process improvement. Verify against Archetype 1 if the role is primarily driving organizational adoption of a technology change rather than owning the technology itself.
 
-Required Section Order:
+## Summary Framing
+
+- **Lead with:** technology strategy, platform leadership, system governance (Leadership) or systems expertise, technology implementation experience, domain knowledge (IC)
+- **Do NOT lead with:** programming languages, data science methods, operational process work (Leadership); technology strategy ownership or enterprise platform governance (IC)
+- **Register:** Leadership = strategic leader defining technology direction and governing platform ecosystems. IC = technically capable practitioner with deep systems knowledge who implements, configures, supports, and improves technology platforms.
+- **Required summary elements:** years in domain-relevant technology environments, core capability signal per match criteria, evidence of strategic or technical depth (Leadership: enterprise platform selections, cross-functional governance, executive advisory; IC: specific systems, platforms, implementation contexts), forward-looking statement tying track record to the role's implied platform or modernization need.
+
+## Inventory Tag Priorities
+
+All queries for this archetype use compound tag combinations per the Compound Query Requirement below. Level filter on queries comes from the active content rules file.
+
+**Leadership High priority (at least two must be coverable):**
+- Capability: Technology Implementation AND Capability: Strategic Planning & Roadmapping
+- Capability: Technology Implementation AND Capability: Governance & Risk Management; Outcome: Capability Building OR Scalability/Growth Enablement
+- Capability: Technology Implementation AND Capability: Data & Analytics; Context: Scaling OR Mature/Enterprise
+
+**Leadership Medium:**
+- Technology Implementation AND Stakeholder Management & Influence (cross-functional technology alignment)
+- Strategic Planning & Roadmapping AND Technology Implementation; Context: Greenfield
+- Technology Implementation AND Change Management & Adoption (governing technology adoption at scale)
+
+**Leadership Avoid:**
+- Technology Implementation at IC or Manager level without strategic or governance framing
+- Process Design & Optimization without Technology Implementation (route to Archetype 3)
+- Data & Analytics without Technology Implementation (route to Archetype 2)
+
+**IC High priority (at least two must be coverable):**
+- Capability: Technology Implementation; Outcome: Capability Building OR Scalability/Growth Enablement
+- Capability: Technology Implementation; Outcome: Risk Reduction OR Quality Improvement
+- Capability: Technology Implementation AND Capability: Data & Analytics (platform or system work where domain knowledge of data requirements was the differentiator)
+
+**IC Medium:**
+- Technology Implementation AND Process Design & Optimization
+- Technology Implementation AND domain execution capability (vendor-side or consultant technology roles are strong candidates here)
+- Technology Implementation AND Stakeholder Management & Influence
+
+**IC Avoid:**
+- Technology Implementation without domain context (generic IT work)
+- Organizational governance and strategy language
+- Process Design & Optimization without Technology Implementation (route to Archetype 3 IC)
+
+## Achievement Framing Pattern
+
+**Leadership:** technology risk, platform limitation, or ecosystem complexity → strategic decision or governance solution → organizational or capability outcome. Technology problem or strategic need first. Do not lead with the solution, vendor selected, or system deployed. Outcome stated in organizational terms (risk reduced, capability enabled, scale achieved), not technical performance.
+
+**IC:** technology problem, system need, or platform limitation → specific technical contribution or implementation work → outcome or impact on system performance, data quality, or operational capability. Technical detail is appropriate at IC level. Name specific systems, configurations, and integrations where they explain the outcome. Outcome stated in impact terms.
+
+Calibration examples for this archetype are provided in the active domain file.
+
+## Archetype-Specific Handling: Compound Query Requirement
+
+Most inventories lack a dedicated Platform & Technology capability tag because platform work is typically tagged as Technology Implementation combined with a strategic or governance capability. Single-tag queries on Technology Implementation alone return too many non-strategic entries.
+
+- All tag priority queries for this archetype must be expressed as compound queries (Capability AND Capability, or Capability AND Context). Single-tag queries are not valid.
+- If fewer than two High priority compound queries return a qualifying entry, flag the gap before generating. This is an Inventory Coverage concern surfaced during Phase 2a of CV generation.
+
+## Archetype-Specific Handling: Technical Proficiencies and Domain Depth
+
+Technical Proficiencies is expanded relative to Archetypes 1 and 3 but handled differently from Archetype 2.
+
+- Core Competencies span three zones: (1) technology strategy and platform governance (4 to 5 items at Leadership; adjusted per level rules at IC), (2) systems and domain knowledge (3 to 4 items), (3) analytical or process credibility (2 to 3 items; do not expand beyond 3). The third zone signals cross-functional depth without displacing the technology strategy lead.
+- Technical Proficiencies expands to accommodate platform and system specifics. Systems and platforms are the priority subsection; the list must be current and domain-relevant.
+- For platform roles in regulated or domain-specialized environments, deep domain knowledge of the systems landscape is a differentiator many pure technology leaders lack. Surface domain depth where present in the inventory (understanding of how data or workflows move across the ecosystem; advisory or consulting experience bringing domain knowledge into platform design).
+- Specific systems, platforms, and technologies for Technical Proficiencies come from the active domain file.
+
+## De-Emphasize
+
+- Hands-on operational or execution work in the active domain unrelated to technology (earlier career context only)
+- Pure data science or analytical achievements without technology strategy framing (route to Archetype 2)
+- Process optimization without a technology dimension (route to Archetype 3)
+- Summary references to data science credentials or analytical methods
+- Tool configuration and system administration at hands-on level for Leadership CVs (earlier career only)
+
+## Section Order
 
 1. Professional Summary
 2. Core Competencies
 3. Professional Experience
-4. Selected Projects (include when entries exist in the Independent & Volunteer Projects inventory section; omit if empty)
+4. Selected Projects (include only if entries exist in Independent & Volunteer Projects)
 5. Education
 6. Certifications and Training
-7. Technical Proficiencies (last section; expanded relative to Process & Operations and Transformation archetypes, but still positioned last; see Section 6)
+7. Technical Proficiencies (expanded relative to Archetypes 1 and 3; see Technical Proficiencies handling above)
 
-Professional Summary structure: 3 to 4 sentences, four required elements. Specific lead-with, do-not-lead-with, register, and required-element content come from the domain pack.
+## Dual-Archetype
 
-Universal framing pattern: challenge or problem, approach, outcome. Level-general framing emphasis is governed by the active content rules file. Archetype-specific framing language is supplied by the domain pack.
-
-Achievement line count: 2 lines standard. 3 lines acceptable for the highest-complexity achievements only. 4 or more lines never acceptable.
-
-## 4. Pack-Supplied Content
-
-The active domain pack supplies the following for this archetype, organized into Leadership and IC sub-sections:
-
-- Match criteria
-- Summary framing (lead-with, do-not-lead-with, register, required-element content)
-- Inventory tag priorities (High, Medium, Use-if-space, Avoid), expressed as compound queries per Section 5
-- Achievement framing language and archetype-specific achievement elements
-- Calibration examples (WEAK, STRONG, REFRAME)
-- Content to de-emphasize
-- Technical Proficiencies content (specific systems, platforms, and technologies relevant to the domain)
-
-## 5. Archetype-Specific Handling: Compound Query Requirement
-
-Most inventories lack a dedicated Platform & Technology capability tag because platform work is typically tagged as Technology Implementation combined with a strategic or governance capability. Single-tag queries on Technology Implementation alone return too many non-strategic entries.
-
-Apply these pattern rules regardless of domain:
-
-- All tag priority queries for this archetype must be expressed as compound queries (Capability AND Capability, or Capability AND Context). Single-tag queries are not valid for this archetype.
-- The active domain pack supplies the specific compound combinations under Inventory Tag Priorities.
-- If fewer than two High Priority compound queries return a qualifying entry, flag the gap before generating. This is an Inventory Coverage concern that must be surfaced during Phase 2a of CV generation.
-
-## 6. Archetype-Specific Handling: Technical Proficiencies
-
-Technical Proficiencies for this archetype is expanded relative to Process & Operations and Transformation, but handled differently from Data & Analytics. Apply these pattern rules regardless of domain:
-
-- Core Competencies span three zones: (1) technology strategy and platform governance (4 to 5 items at Leadership; adjusted per level rules at IC), (2) systems and domain knowledge (3 to 4 items), (3) analytical or process credibility (2 to 3 items). The third zone signals cross-functional depth without displacing the technology strategy lead. Do not let the third zone expand beyond 3 items.
-
-- Technical Proficiencies expands to accommodate platform and system specifics. Systems and platforms are the priority subsection; ensure the list is current and domain-relevant.
-
-- Specific systems, platforms, and technologies to include are supplied by the domain pack under Technical Proficiencies content.
-
-## 7. Dual-Archetype
-
-If a dual-archetype was identified during role evaluation, apply primary framing from this archetype's pack content and secondary framing selectively within individual achievements only where both dimensions are genuinely present in the underlying experience. See `rules/cv/dual_archetype.md` for the full procedure.
+If a dual-archetype was identified, see `rules/cv/dual_archetype.md`.

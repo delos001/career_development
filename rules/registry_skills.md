@@ -38,8 +38,8 @@ The control skill uses the following ordered checks to determine where a user is
 
    1a. **Active Domain declared?**
    Check: `personal/knowledge/Experience_Inventory.md` header contains a populated `**Active Domain:** <slug>` line, and `<slug>` matches a registered domain in `rules/registry_domain.md`.
-   If missing: instruct the user to add the pointer before proceeding. Downstream skills (`role_evaluation` Phase 2a, `cv_targeted` Phase 1a/2a, `cv_general` Phase 2a, `interview_prep` Phase 1a) load the active domain pack by this pointer and will halt without it.
-   If present but unregistered: flag the mismatch. Either the pointer is wrong (correct it) or the referenced domain pack has not been built yet (route to `domain_creation`).
+   If missing: instruct the user to add the pointer before proceeding. Downstream skills (`role_evaluation` Phase 2a, `cv_targeted` Phase 1a/2a, `cv_general` Phase 2a, `interview_prep` Phase 1a) load the active domain file by this pointer and will halt without it.
+   If present but unregistered: flag the mismatch. Either the pointer is wrong (correct it) or the referenced domain file has not been built yet (route to `domain_creation`).
 
 2. **Role target identified?**
    Check: User has provided or referenced a company name and role title.
@@ -339,19 +339,19 @@ The control skill uses the following ordered checks to determine where a user is
 
 **Trigger:** No existing archetype in `rules/registry_archetype.md` fits the target role; `role_evaluation` or `cv_general` has stalled at archetype selection.
 
-**Scope:** Produces a level-agnostic archetype skeleton only. Does not produce domain pack content (match criteria, summary framing, tag priorities, calibration, de-emphasis). A pack entry must exist in the active domain before the new archetype can be used in CV generation; pack entries are created by `domain_creation` (when a new domain is being stood up) or by authoring per-archetype pack entries into an existing domain directory. Phase 5 of this skill routes the user to the appropriate path.
+**Scope:** Produces a single domain-agnostic, level-agnostic archetype file. Archetypes reference the active domain file for vocabulary and calibration and reference the content rules files for level voice; no per-domain or per-level authoring is needed. The new archetype is usable by CV generation immediately after creation.
 
 **Prerequisites:**
 - Active `role_evaluation` or `cv_general` session, or independent invocation with job description in hand
 - All existing archetypes reviewed and confirmed as poor fits
 
-**Completion Signal:** New skeleton file created at `rules/archetypes/Archetype_<N>_<Name>.md`; `rules/registry_archetype.md` updated with new entry.
+**Completion Signal:** New archetype file created at `rules/archetypes/Archetype_<N>_<Name>.md`; `rules/registry_archetype.md` updated with new entry.
 
 **Outputs:**
-- New archetype skeleton file at `rules/archetypes/Archetype_<N>_<Name>.md`
+- New archetype file at `rules/archetypes/Archetype_<N>_<Name>.md`
 - Updated `rules/registry_archetype.md`
 
-**Typical Next Steps:** Pack entry creation (via `domain_creation` for a new domain, or manual pack entry authoring for an existing domain), then resume `role_evaluation` or `cv_general` from archetype selection step
+**Typical Next Steps:** Resume `role_evaluation` or `cv_general` from archetype selection step. Optionally add a STRONG calibration example for the new archetype to the active domain file's Section 5.
 
 ---
 
@@ -364,16 +364,16 @@ The control skill uses the following ordered checks to determine where a user is
 
 **Trigger:** No existing domain in `rules/registry_domain.md` covers the target roles; `role_evaluation` flagged a domain scope mismatch; the user is extending the repo to a new career domain or new tester.
 
-**Scope:** Produces one domain header file (`rules/domains/<slug>/domain.md`) and one pack entry per registered archetype and level (two per archetype). Does not create or modify archetype skeletons; those are governed by `archetype_creation`. Does not flip the Active Domain pointer in `personal/knowledge/Experience_Inventory.md`; activation is an explicit user action after the skill completes.
+**Scope:** Produces a single flat file at `rules/domains/<slug>.md` containing taxonomy, vocabulary, selection criteria, tech stack, and per-archetype calibration examples. Does not create or modify archetype files; those are domain-agnostic and governed by `archetype_creation`. Does not flip the Active Domain pointer in `personal/knowledge/Experience_Inventory.md`; activation is an explicit user action after the skill completes.
 
 **Prerequisites:**
 - User-supplied scope motivation (what domain and why)
-- Access to representative job descriptions and practitioner sources for the domain (research phase is gated; source plan must be approved before research executes)
+- Access to representative job descriptions and practitioner sources (research phase is gated; source plan must be approved before research executes)
 
-**Completion Signal:** `rules/domains/<slug>/` directory exists with `domain.md` and all archetype pack entries; `rules/registry_domain.md` updated with new entry.
+**Completion Signal:** `rules/domains/<slug>.md` exists with all required sections; `rules/registry_domain.md` updated with new entry.
 
 **Outputs:**
-- New domain pack directory at `rules/domains/<slug>/` with `domain.md` + one pack entry per archetype and level
+- New domain file at `rules/domains/<slug>.md`
 - Updated `rules/registry_domain.md`
 
 **Typical Next Steps:** Inventory migration review (if existing inventory entries use tags not present in the new domain's taxonomy), then user edits the Active Domain pointer in `personal/knowledge/Experience_Inventory.md` to activate the new domain

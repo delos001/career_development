@@ -49,19 +49,17 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
    Obtain explicit user agreement on the archetype selection before proceeding.
 
-2. Load the archetype instruction set (three-layer) for the confirmed primary archetype. The set spans three files per the three-layer model defined in `rules/registry_archetype.md`: the archetype skeleton (level-agnostic structural rules and identity), the domain pack entry (domain- and level-specific summary framing, tag priorities, calibration, de-emphasis), and the content rules file (loaded in Phase 4a).
+2. Load the archetype and domain files for the confirmed primary archetype. Content generation uses three orthogonal sources: archetype (loaded here), domain (loaded here), and content rules (loaded in Phase 4a).
 
-   a. Determine the active domain. Read the `**Active Domain:**` value from the header of `knowledge/Experience_Inventory.md`. Do not assume; read the file. If no Active Domain is declared, halt and prompt the user before continuing.
+   a. Determine the active domain. Read the `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md`. Do not assume; read the file. If no Active Domain is declared, halt and prompt the user before continuing.
 
-   b. Load the archetype skeleton: `rules/archetypes/Archetype_<N>_<Name>.md` per `rules/registry_archetype.md`.
+   b. Load the archetype file: `rules/archetypes/Archetype_<N>_<Name>.md` per `rules/registry_archetype.md`. Authoritative on match criteria, summary framing pattern, tag priority intersections, achievement framing pattern, archetype-specific handling, and de-emphasis.
 
-   c. Load the domain pack entry for the archetype at the level confirmed in Phase 1a: `rules/domains/<active_domain>/archetype<N>_<level>.md`. `<level>` is `leadership` for AD+ roles, `ic` for IC roles.
+   c. Load the domain file: `rules/domains/<active_domain>.md`. Authoritative on tag taxonomy, vocabulary, framing conventions, pack selection criteria, technical proficiencies content, and archetype calibration examples.
 
-   d. If a dual-archetype was identified, repeat steps b and c for the secondary archetype using the same level logic.
+   d. If a dual-archetype was identified, load the secondary archetype file.
 
    Confirm each loaded completely before proceeding.
-
-   Skeleton governs archetype identity and level-agnostic structure. Pack entry governs vocabulary, summary framing, tag priorities, calibration, and de-emphasis within the active domain. The content rules file loaded in Phase 4a governs voice, register, and bullet construction.
 
 3. Read `rules/registry_org_type.md`. Confirm the org type selection from Phase 1a against the registry selection criteria. State the framing emphasis for the confirmed org type — it will govern how the organizational environment and operating context are described throughout content generation.
 
@@ -73,7 +71,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 **Archetype Selection:** Confirm the selected archetype satisfies the match criteria in the registry. State which specific criteria were met. If the selection was borderline, confirm the rationale was stated and user agreement was obtained.
 
-**Level Confirmation:** Confirm the level (leadership or IC) was explicitly stated by the user in Phase 1a and that the correct domain pack entry variant (`archetype<N>_leadership.md` or `archetype<N>_ic.md`) was loaded for that level.
+**Level Confirmation:** Confirm the level (leadership or IC) was explicitly stated by the user in Phase 1a. The level will govern voice at content generation time via the content rules file loaded in Phase 4a; no per-level archetype or domain file exists.
 
 **Org Type:** Confirm the org type was confirmed against the registry selection criteria and the framing emphasis was noted.
 
@@ -145,11 +143,11 @@ State the result of each check. Flag failures and invoke QC Failure Recovery bef
 
    Apply the org-type framing emphasis from the registry entry confirmed in Phase 2a throughout content generation. Framing emphasis governs how the organizational environment and operating context are described — archetype governs achievement selection and characterization.
 
-2. Confirm the archetype instruction set is still available in context. If not, reload it now before proceeding.
+2. Confirm the archetype file and domain file are still available in context. If not, reload them now before proceeding.
 
 3. Confirm the approved experience architecture from Phase 3a. This governs which roles appear in full and which receive summary treatment.
 
-4. Generate complete CV content applying all rules from the active archetype instruction set and the loaded content rules file simultaneously. Present content as fully drafted text organized by section in the order determined by the approved archetype. All bullets are final-form. This output is the complete content set placed into the document in Phase 5a.
+4. Generate complete CV content applying all rules from the archetype file, domain file, and content rules file simultaneously. Present content as fully drafted text organized by section in the order determined by the archetype. All bullets are final-form. This output is the complete content set placed into the document in Phase 5a.
 
    Because there is no job description, framing is governed entirely by the archetype's summary framing rules, achievement selection criteria, and content to de-emphasize — not by a specific role's requirements. The CV should read as a strong, principled representation of the user's capability in the stated targeting context.
 

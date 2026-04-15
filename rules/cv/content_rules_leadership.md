@@ -114,13 +114,13 @@ For project entries, apply these rules instead:
 
 ## Tag Priority Query
 
-- Filter by Role Level when querying the Experience Inventory for tag priorities supplied by the active archetype's domain pack entry. Leadership roles prioritize entries at Senior Manager, Director, or Senior Director level unless the archetype's tag priority combination specifies a different level.
+- Filter by Role Level when querying the Experience Inventory for tag priorities supplied by the active archetype file. Leadership roles prioritize entries at Senior Manager, Director, or Senior Director level unless the archetype's tag priority combination specifies a different level.
 
 ---
 
 ## Document Structure
 
-- Section order follows the active archetype skeleton (`rules/archetypes/Archetype_<N>_<Name>.md`). The skeleton supplies the required section order.
-- Core Competencies: 8 to 12 items. Specific prioritization (what capabilities to emphasize) comes from the active archetype's domain pack entry.
+- Section order follows the active archetype file (`rules/archetypes/Archetype_<N>_<Name>.md`). The archetype file supplies the required section order.
+- Core Competencies: 8 to 12 items. Specific prioritization (what capabilities to emphasize) comes from the active archetype file's tag priorities; vocabulary comes from the active domain file.
 - Target length: 4-5 pages, with flexibility if role depth warrants it. Do not artificially truncate relevant content.
 - No unnecessary carriage returns. Spacing is handled by the formatting spec.
