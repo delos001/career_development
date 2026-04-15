@@ -20,16 +20,16 @@ State each step before completing it. The user should know what is about to happ
 
 Document load instructions apply at any point in the active skill.
 
-Load documents at the phase and step specified in the active skill — no earlier, no later. This is a just-in-time loading workflow. Refer to `README.md` for the full loading map.
+This is a just-in-time loading workflow. Load documents at the phase and step specified in the active skill — not earlier or later. Refer to `README.md` for the full loading map.
 
-A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure.
+A document is loaded completely when all content is present with identifiable structure — not just a fragment. A document returning only fragments without structure must be flagged as a load failure regardless of when the document is being loaded.
 
 If any document fails loading, do not proceed using partial content:
 - Run bash with `cat [filepath]` for each failed document
 - Confirm the full document content is readable before proceeding
 - If the bash fallback also fails, report the specific file and error — do NOT proceed until resolved
 
-If a read returns incomplete content mid-phase, stop, run the fallback, confirm availability, then continue. Do not silently proceed with degraded source material.
+NEVER silently proceed with degraded source material.
 
 ---
 
@@ -52,7 +52,7 @@ If a QC phase identifies that a step was incomplete, non-compliant, or that outp
 
 ## Standard QC Document Verification
 
-If any documents were loaded in the previous phase, verify Document Load Instructions were followed. State verification status for each document: document name, verification method, result (pass/fail/fallback used), and structural element confirmed. All documents must pass verification before proceeding.
+If any documents were loaded in the previous phase, verify the documents were completely loaded and state the document and load verification status (pass/fail/fallback used), and structural element confirmed. All documents must pass verification before proceeding.
 
 ---
 
