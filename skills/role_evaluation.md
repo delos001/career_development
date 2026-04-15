@@ -16,7 +16,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 A session log persists work across sessions.  The log is created at Phase 1a close, appended at every subsequent action phase close only, and deleted at Phase 4 close. If a session ends mid-phase, resume from the start of that phase.
 
-Before Phase 1a, check `personal/sessions/` for files matching `*_SessionLog.md`. If any exist, list them and ask whether this is a new evaluation or resuming a previous evaluation. If resuming, load the log, state the last completed phase, confirm the resume point, and skip to the next incomplete phase. If starting new, proceed to Phase 1a.
+Before Phase 1a, check `personal/sessions/` for files matching `*_SessionLog.md`. If any exist, list them and ask whether this is a new evaluation or resuming a previous evaluation. If resuming, load the log, state the last completed phase, confirm the resume point, and skip to the start of the next incomplete phase. If starting new, proceed to Phase 1a.
 
 File Naming: `[Company]_[Role]_[YYYY-MM]_SessionLog.md`
 
