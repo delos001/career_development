@@ -84,7 +84,6 @@ For each item, cite evidence from Phase 2a. Any Fail invokes QC Failure Recovery
 1. Load the following. Confirm each loaded completely:
    - `personal/knowledge/Experience_Inventory.md`
    - `personal/knowledge/Career_Narratives.md`
-   - `personal/knowledge/Positioning.md`
 
 2. Map each critical requirement to the most relevant experience, citing the source document and specific achievement. Every claim must be traceable.
 

@@ -173,13 +173,12 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
 ---
 
 **`role_evaluation.md` — Role Evaluation**
-- Purpose: Evaluate a role's fit against established experience and positioning; decide whether to proceed with an application.
+- Purpose: Evaluate a role's fit against established experience; decide whether to proceed with an application.
 - Inputs:
   - `rules/global_rules.md`
   - Job description (user-supplied)
   - `personal/knowledge/Experience_Inventory.md`
   - `personal/knowledge/Career_Narratives.md`
-  - `personal/knowledge/Positioning.md`
   - Active archetype file from `rules/archetypes/`
   - Active domain file at `rules/domains/<active_domain>.md`
   - `rules/registry_archetype.md`
@@ -199,7 +198,6 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
   - `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`
   - `personal/knowledge/Experience_Inventory.md`
   - `personal/knowledge/Career_Narratives.md`
-  - `personal/knowledge/Positioning.md`
   - `personal/knowledge/Contact_Info.md`
   - Active archetype file from `rules/archetypes/`
   - Active domain file at `rules/domains/<active_domain>.md`
@@ -222,7 +220,6 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
   - `rules/global_rules.md`
   - `personal/knowledge/Experience_Inventory.md`
   - `personal/knowledge/Career_Narratives.md`
-  - `personal/knowledge/Positioning.md`
   - `personal/knowledge/Contact_Info.md`
   - Active archetype file from `rules/archetypes/`
   - Active domain file at `rules/domains/<active_domain>.md`
@@ -831,7 +828,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 2a step 1 | JD read, domain load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); `rules/domains/<active_domain>.md` for scope check |
 | 2a step 5 | Archetype confirmed | `rules/registry_archetype.md`; primary archetype file from `rules/archetypes/Archetype_<N>_<Name>.md`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 6 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted |
-| 3a step 1 | Fit evaluation begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
+| 3a step 1 | Fit evaluation begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md` |
 | 3b | Gap rating judgment QC | `rules/judgment_qc.md` |
 | Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
 
@@ -844,7 +841,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 1a step 4 | Active domain consistency check | `personal/knowledge/Experience_Inventory.md` header (Active Domain) compared to GapAnalysis-captured domain |
 | 2a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
 | 2a step 2 | Archetype and domain load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); primary archetype file from `rules/archetypes/Archetype_<N>_<Name>.md`; `rules/domains/<active_domain>.md`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
-| 2a step 3 | Source review begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
+| 2a step 3 | Source review begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md` |
 | 2a step 4 | Experience architecture judgment QC | `rules/judgment_qc.md` (retained through Phase 2b) |
 | 2b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
 | 3a step 1 | Document generation begins | `rules/cv/format_spec.md`; `personal/knowledge/Contact_Info.md` |
@@ -860,7 +857,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 2a step 1 | Archetype selection begins | `rules/registry_archetype.md` |
 | 2a step 2 | Archetype and domain load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); primary archetype file from `rules/archetypes/Archetype_<N>_<Name>.md`; `rules/domains/<active_domain>.md`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2a step 3 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted for use in Phase 4a |
-| 3a step 1 | Source review begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
+| 3a step 1 | Source review begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md` |
 | 3a step 3 | Experience architecture judgment QC | `rules/judgment_qc.md` (retained through Phase 4b) |
 | 4a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
 | 5a step 1 | Document generation begins | `rules/cv/format_spec.md`; `personal/knowledge/Contact_Info.md` |

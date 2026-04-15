@@ -89,9 +89,8 @@ State the result of each check. Flag failures and invoke QC Failure Recovery bef
 *(State each step before completing the step)*
 
 1. Load the following source documents now. Confirm each loaded completely before proceeding:
-   - `knowledge/Experience_Inventory.md`
-   - `knowledge/Career_Narratives.md`
-   - `knowledge/Positioning.md`
+   - `personal/knowledge/Experience_Inventory.md`
+   - `personal/knowledge/Career_Narratives.md`
 
 2. Review the loaded source documents against the confirmed archetype's inventory tag priorities. Identify which entries, themes, and narratives are most relevant to the targeting context. State the top-tier material explicitly — these are the achievements that must be represented in the finished CV.
 

@@ -89,7 +89,6 @@ Content generation uses three orthogonal sources: archetype (loaded here), domai
 Load the following source documents now. Confirm each loaded completely before proceeding:
 - `personal/knowledge/Experience_Inventory.md`
 - `personal/knowledge/Career_Narratives.md`
-- `personal/knowledge/Positioning.md`
 
 **Step 4 — Experience architecture:**
 All roles in the last 10 years belong in the main experience section to demonstrate career continuity. For those roles that don't add credibility to critical requirements from Phase 1a, a one or two-line summary entry may be used. A role that adds credibility to critical requirements from Phase 1a belongs in the main experience section regardless of age.
