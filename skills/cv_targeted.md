@@ -91,11 +91,14 @@ Content generation uses three orthogonal sources: archetype, domain, and content
 Load the following now and confirm each loaded completely:
 - `personal/knowledge/Experience_Inventory.md`
 - `personal/knowledge/Career_Narratives.md`
+- `personal/knowledge/Positioning.md`
 - `rules/judgment_qc.md`
 
 `rules/judgment_qc.md` is loaded here so that Modes 1-6 operate as active constraints during generation (Step 5), and Mode 8 applies during architecture design (Step 4). It is not re-applied as a retrospective bullet-by-bullet sweep.
 
 **Step 4 — Experience architecture:**
+
+Use Section 7 (Employment & Role History) of `personal/knowledge/Experience_Inventory.md` as the authoritative source for company, title, employment type, and date ranges when assessing 10-year continuity and proposing treatment per role.
 
 All roles in the last 10 years belong in the main experience section to demonstrate career continuity. For roles that don't add credibility to critical requirements from Phase 1a, a one or two-line summary entry may be used. A role that adds credibility to critical requirements from Phase 1a belongs in the main experience section regardless of age.
 

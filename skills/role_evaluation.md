@@ -45,7 +45,7 @@ File Naming: `[Company]_[Role]_[YYYY-MM]_SessionLog.md`
 
 2. Propose the role level (IC, AD, Dir, Sr. Dir, VP). If not explicit in the title, infer from required experience, scope, and reporting structure. State rationale and obtain explicit agreement. The agreed level governs seniority of voice, scope framing, and achievement selection in all subsequent phases.
 
-3. Research the company, industry, and role via web search to an expert-level understanding: company stage, culture, competitive landscape, organizational context, and what success looks like. Record each source (URL or publication and date); these go to the session log and GapAnalysis file at phase close.
+3. Research the company, industry, and role via web search to an expert-level understanding: company stage, culture, competitive landscape, organizational context, and what success looks like. Record each source (URL or publication and date); these go to the session log and GapAnalysis file at phase close. Use authoritative sources only (company/IR/regulatory filings, peer-reviewed or analyst publications, recognized trade press); do not cite Wikipedia, crowd-sourced wikis, forums, or unattributed blogs.
 
 4. Identify the 4-5 most critical requirements or themes in the job description.
 

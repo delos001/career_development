@@ -841,7 +841,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | 1a step 4 | Active domain consistency check | `personal/knowledge/Experience_Inventory.md` header (Active Domain) compared to GapAnalysis-captured domain |
 | 2 step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
 | 2 step 2 | Archetype and domain load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); primary archetype file from `rules/archetypes/Archetype_<N>_<Name>.md`; `rules/domains/<active_domain>.md`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
-| 2 step 3 | Source and judgment constraints | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `rules/judgment_qc.md` (Modes 1-6 apply as generation constraints in Step 5; Mode 8 applies in Step 4) |
+| 2 step 3 | Source and judgment constraints | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md`, `rules/judgment_qc.md` (Modes 1-6 apply as generation constraints in Step 5; Mode 8 applies in Step 4) |
 | 2 step 6 | Consolidated QC sweep | `rules/cv/qc_checklist.md` |
 | 3 step 1 | Document generation begins | `rules/cv/format_spec.md`; `personal/knowledge/Contact_Info.md` |
 | 3 step 2 | Python script execution | `rules/config.md` |
