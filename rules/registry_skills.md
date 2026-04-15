@@ -168,7 +168,7 @@ The control skill uses the following ordered checks to determine where a user is
 
 **Outputs:**
 - Tailored CV `.docx` saved to `outputs/`
-- `personal/knowledge/Experience_Inventory.md` — `Last Used: YYYY-MM` stamped on every entry cited in the accepted CV (Phase 3a closing, post user acceptance)
+- `personal/knowledge/Experience_Inventory.md` — `Last Used: YYYY-MM` stamped on every entry cited in the accepted CV (Phase 3 closing, post user acceptance)
 
 **Typical Next Steps:** `interview_prep`
 

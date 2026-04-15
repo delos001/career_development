@@ -839,13 +839,12 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Execution start | Skill invoked | `rules/global_rules.md` |
 | 1a | Session start | `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` |
 | 1a step 4 | Active domain consistency check | `personal/knowledge/Experience_Inventory.md` header (Active Domain) compared to GapAnalysis-captured domain |
-| 2a step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
-| 2a step 2 | Archetype and domain load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); primary archetype file from `rules/archetypes/Archetype_<N>_<Name>.md`; `rules/domains/<active_domain>.md`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
-| 2a step 3 | Source review begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md` |
-| 2a step 4 | Experience architecture judgment QC | `rules/judgment_qc.md` (retained through Phase 2b) |
-| 2b start | QC of generated CV content | `rules/cv/qc_checklist.md` |
-| 3a step 1 | Document generation begins | `rules/cv/format_spec.md`; `personal/knowledge/Contact_Info.md` |
-| 3a step 2 | Python script execution | `rules/config.md` |
+| 2 step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
+| 2 step 2 | Archetype and domain load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); primary archetype file from `rules/archetypes/Archetype_<N>_<Name>.md`; `rules/domains/<active_domain>.md`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
+| 2 step 3 | Source and judgment constraints | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `rules/judgment_qc.md` (Modes 1-6 apply as generation constraints in Step 5; Mode 8 applies in Step 4) |
+| 2 step 6 | Consolidated QC sweep | `rules/cv/qc_checklist.md` |
+| 3 step 1 | Document generation begins | `rules/cv/format_spec.md`; `personal/knowledge/Contact_Info.md` |
+| 3 step 2 | Python script execution | `rules/config.md` |
 | Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
 
 ### cv_general
@@ -985,7 +984,7 @@ The three knowledge documents carry schema metadata that skills read and write. 
 - Classification appears on separate lines per entry: `Capability:`, `Role Level:`, `Org Context:`, and (optional) `Outcome:`. No inline `Tags:` line. Capability and Outcome allow pipe-separated multi-values on their line; Role Level and Org Context take one value each. Omit the `Outcome:` line entirely when no genuine organizational outcome is attached.
 - Every entry under "All Tasks Performed" carries `Added: YYYY-MM` (stamped at entry creation) and `Last Used:` (blank at creation, updated on use).
 - `Added` is stamped by `experience_inventory_bootstrap` at extraction and by `source_document_update_workflow` and `source_document_update_adhoc` when new entries are added. Historical entries imported before the schema change carry `Added: pre-2026-04`.
-- `Last Used` is stamped only by output-producing skills at session close, only after explicit user acceptance of the final output: `cv_targeted` Phase 3a, `cv_general` Phase 5a, `interview_prep` Phase 4a. A single YYYY-MM is overwritten each time, no history.
+- `Last Used` is stamped only by output-producing skills at session close, only after explicit user acceptance of the final output: `cv_targeted` Phase 3, `cv_general` Phase 5a, `interview_prep` Phase 4a. A single YYYY-MM is overwritten each time, no history.
 
 ### `personal/knowledge/Career_Narratives.md`
 

@@ -8,9 +8,9 @@ This file defines the judgment failure modes that must be checked at specific ph
 
 ## Application Points
 
-- **Content-level checks (Modes 1-6):** applied in `cv_targeted` Phase 2b and `cv_general` post-content-generation QC, after content has been generated and before document assembly.
+- **Content-level checks (Modes 1-6):** applied as active generation constraints in `cv_targeted` Phase 2 Step 5 and `cv_general` equivalent. A consolidated post-generation QC sweep then surfaces composites or stretches via a judgment integrity attestation, not a mode-by-mode bullet-by-bullet audit.
 - **Evaluation-level check (Mode 7):** applied in `role_evaluation` Phase 3b, after gap analysis is drafted.
-- **Architecture-level check (Mode 8):** applied in `cv_targeted` Phase 2a Step 4 and `cv_general` equivalent, before the experience architecture is approved by the user.
+- **Architecture-level check (Mode 8):** applied in `cv_targeted` Phase 2 Step 4 and `cv_general` equivalent, before the experience architecture is approved by the user.
 
 The loading skill is responsible for invoking this file at the correct phase and applying only the sections relevant to that phase.
 
