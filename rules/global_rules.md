@@ -16,6 +16,12 @@ State each step before completing it. The user should know what is about to happ
 
 ---
 
+## One Item Per Exchange
+
+Any step that requires user input or sign-off is its own exchange. Ask, wait for response, then proceed. Do not bundle multiple input-requiring items. Silent non-response is not approval; an explicit response is required.
+
+---
+
 ## Document Load Instructions
 
 Document load instructions apply at any point in the active skill.

@@ -48,6 +48,8 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 Apply the routing logic below. Present the result clearly and decisively — what state the user is in, what is recommended next, and which skill to invoke. Do not present a menu of all possible skills. Identify the single most appropriate next action. The user can push back, but this skill leads.
 
+Do not expose state detection internals (check numbers, pass/fail reasoning, which check is "the blocker") to the user. When inputs are missing, ask for them directly in a short list. No diagnostic preamble.
+
 ---
 
 ### Routing by Entry Context and State
@@ -94,7 +96,7 @@ If multiple active roles were detected in Phase 1a, ask which to focus on before
 **Active SessionLog detected:**
 A `[Company]_[Role]_[YYYY-MM]_SessionLog.md` exists in `personal/sessions/`. State:
 
-"There is an active role evaluation session in progress for [Company] — [Role]. You can resume it by triggering `role_evaluation` — it will detect the session log and pick up from where you left off."
+"An active `role_evaluation` session exists for [Company] / [Role]. Resume it, or do something else?"
 
 If the user also has a specific intent for a different role, handle both: address the open session first, then route to the new intent.
 
@@ -108,10 +110,10 @@ State detection confirms all prerequisites for the requested skill exist. Route 
 **Specific intent — prerequisites missing:**
 State detection identifies a gap between what the user wants to do and what currently exists. Do not route to the requested skill. Instead:
 
-1. State clearly what is needed before the requested skill can run.
+1. State tersely what is needed before the requested skill can run. No diagnostic preamble.
 2. Identify which skill produces the missing prerequisite, referencing the registry entry.
 3. Offer to route to that prerequisite skill first.
-4. Once the user confirms, provide the handoff for the prerequisite skill — not the originally requested skill.
+4. Once the user confirms, provide the handoff for the prerequisite skill, not the originally requested skill.
 
 When the prerequisite skill completes and the user returns to the control skill, re-run state detection and route to the originally requested skill.
 
@@ -144,14 +146,15 @@ After presenting the summary, ask: "Where would you like to pick up?"
 
 ### Handoff Format
 
-Every routing outcome ends with three items stated explicitly:
+End routing with a brief transition. State:
 
-1. **Skill to invoke:** `skills/[filename].md`
-2. **What to bring:** File paths, context, or inputs the skill will need at Phase 1 (e.g., GapAnalysis file path, application folder path, job description)
-3. **State note:** Any relevant context from state detection (e.g., "The GapAnalysis for this role is at `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`"; "This is your first session for this role — no prior artifacts exist")
+1. Which skill is taking over next, framed as a transition (not as an instruction for the user to invoke it)
+2. Any input the user must provide or confirm before the next skill can start
 
-Example handoff:
-> Invoke `skills/interview_prep.md`. Bring the GapAnalysis file at `personal/sessions/Fortrea_ClinDataStratDelivLead_2025-03_GapAnalysis.md` and the absolute path to your Fortrea application folder. This is a new prep session — no InterviewPrep document exists yet for this role.
+Do not restate inputs already in context. Do not list role level, domain, archetype, or other items the next skill will establish in its own phases. Do not expose internal naming mechanics. If a session file name needs confirmation, ask for the confirmation directly.
+
+Example:
+> Next: `role_evaluation` takes over from here. Confirm the session file name `BeOne_ADBiostatCSM_2026-04_GapAnalysis.md`, or provide a different role short-name.
 
 ---
 
