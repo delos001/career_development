@@ -168,6 +168,7 @@ If more than three source documents are provided, confirm the processing order. 
 
 For standard employment roles:
 ```
+ID: EX-NNN
 Role: [Title] | [Company]
 **[Action statement — one discrete action, what specifically was done]**
 Impact: [outcome, metric, or problem solved — OPTIONAL, only if stated in source]
@@ -182,6 +183,7 @@ Last Used:
 
 For independent or volunteer project entries (Org Context: Independent or Volunteer):
 ```
+ID: PR-NNN
 Project: [Project Name]
 **[Action statement — one discrete action, what specifically was done]**
 Impact: [outcome, metric, or problem solved — OPTIONAL, only if stated in source]
@@ -201,6 +203,7 @@ Last Used:
 - Every entry must have `Capability:`, `Role Level:`, and `Org Context:` lines. The `Outcome:` line is optional — include an Outcome line only when the source indicates a genuine organizational outcome attached to the action (capability built, risk reduced, efficiency gained, etc.). Omit the `Outcome:` line entirely for breadth-evidence, routine-task, and "did X" entries where no such outcome exists. Do not invent outcomes to satisfy the schema; doing so pollutes the filter used by archetype-driven CV retrieval. Values for all dimensions must match the confirmed taxonomy — no free text
 - Role Level tag reflects the level at which the work was performed, not the target level. For entries spanning a promotion within the same company, tag each entry at the level held when that work was done
 - Org Context is inferred from the source documents and career profile where not explicitly stated — flag any inferences made
+- Every entry carries an `ID:` line as its first line: `EX-NNN` for role entries, `PR-NNN` for project entries. IDs are assigned sequentially in extraction order, starting from `001` per prefix. Zero-pad to 3 digits; widen naturally past 999. IDs are immutable once assigned
 - Every entry carries an `Added: YYYY-MM` stamp set to the current month at extraction time, and a `Last Used:` line left blank. Last Used is stamped only by output-producing skills (`cv_targeted`, `cv_general`, `interview_prep`) at session close — never during extraction or enrichment
 
 **Extraction process:**
@@ -287,7 +290,7 @@ For each entry in the sample, verify and state Pass or Fail for each of the foll
 - **Tag completeness:** Capability, Role Level, and Org Context are present on every entry — any missing dimension is a failure. Outcome is optional: present on entries with a genuine organizational outcome, absent on breadth-evidence or routine-task entries. Omitted Outcome is not a failure. An Outcome value that doesn't reflect a real outcome (forced-fit to satisfy the schema) IS a failure.
 - **Tag validity:** All tag values match the confirmed taxonomy from Phase 2. Any value outside the approved taxonomy fails.
 - **Role Level accuracy:** The Role Level tag reflects the seniority at which the work was performed, not the target role level.
-- **Metadata presence:** Every entry has an `Added: YYYY-MM` line carrying the current extraction month and a `Last Used:` line (blank at extraction). Missing or malformed lines fail.
+- **Metadata presence:** Every entry has an `ID: EX-NNN` or `ID: PR-NNN` line as its first line, an `Added: YYYY-MM` line carrying the current extraction month, and a `Last Used:` line (blank at extraction). IDs must be sequential with no gaps and unique per prefix. Missing or malformed lines fail.
 
 **Step 3 — Resolve failures and determine sweep scope:**
 If any sampled entry fails a check, identify all other entries likely affected by the same type of failure and run a targeted sweep before proceeding.

@@ -246,7 +246,7 @@ State "All three documents are ready for your review." Ask the user to confirm a
 After explicit user acceptance:
 
 1. Identify every `personal/knowledge/Career_Narratives.md` entry cited in the Stories Bank (Phase 3a Step 4), Alignment Map (Phase 3a Step 2), or Gap Handling Language (Phase 3a Step 3). Match via entry title (the `## [Title]` heading of the narrative).
-2. Identify every `personal/knowledge/Experience_Inventory.md` entry cited in the Alignment Map, Gap Handling Language, or supporting any Stories Bank entry. Match via the bold action statement line and the associated `Role:` line.
+2. Identify every `personal/knowledge/Experience_Inventory.md` entry cited in the Alignment Map, Gap Handling Language, or supporting any Stories Bank entry. Match via the `ID:` value of each source entry.
 3. For each cited narrative and inventory entry, overwrite the `Last Used:` line with the current `YYYY-MM`. Single date only — do not append or keep history.
 4. Write the updated files. State the count of narrative entries stamped, the count of inventory entries stamped, and the month written.
 

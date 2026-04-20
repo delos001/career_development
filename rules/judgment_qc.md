@@ -2,7 +2,7 @@
 
 Quality control for judgment failures that conventional QC cannot detect. Conventional QC (format, structure, traceability, bullet length, em dash) catches rule violations. It does not catch output that complies with every rule but misrepresents, miscalibrates, or inflates the underlying experience.
 
-This file defines the judgment failure modes that must be checked at specific phases of role_evaluation, cv_targeted, and cv_general. Each mode is structured as Pattern, Check, Evidence required, and Flag trigger. Apply the same evidence-citation discipline used in `rules/cv/qc_checklist.md`: cite specific bullets, gap rows, architecture lines, or inventory entries. General confirmations are not acceptable. Any Fail invokes QC Failure Recovery per Global Rules.
+This file defines the judgment failure modes that must be checked at specific phases of role_evaluation, cv_targeted, and cv_general. Each mode is structured as Pattern, Check, Evidence required, and Flag trigger. Apply the same evidence-citation discipline used in `rules/cv/qc_checklist.md`: cite specific bullets, gap rows, architecture lines, or inventory entries by `ID:`. General confirmations are not acceptable. Any Fail invokes QC Failure Recovery per Global Rules.
 
 ---
 

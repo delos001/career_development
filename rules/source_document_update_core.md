@@ -42,6 +42,7 @@ Load only the specific documents relevant to the updates being recommended.
 
 **Entry format — standard employment roles:**
 ```
+ID: EX-NNN
 Role: Title | Company
 **[Action statement — what specifically was done, one discrete action per entry]**
 Impact: [outcome, metric, or problem solved — OPTIONAL]
@@ -56,6 +57,7 @@ Last Used:
 
 **Entry format — independent or volunteer project entries (Org Context: Independent or Volunteer):**
 ```
+ID: PR-NNN
 Project: [Project Name]
 **[Action statement — what specifically was done, one discrete action per entry]**
 Impact: [outcome, metric, or problem solved — OPTIONAL]
@@ -67,6 +69,8 @@ Outcome: X [ — OPTIONAL line, omit entirely when no genuine organizational out
 Added: YYYY-MM
 Last Used:
 ```
+
+New entries receive a sequential `ID:` per prefix (`EX-` for role entries, `PR-` for project entries): scan `personal/knowledge/Experience_Inventory.md` for existing `ID:` values, take `max + 1` per prefix, and write zero-padded to 3 digits (`EX-191`, `PR-006`). Widen past 3 digits naturally once any prefix exceeds 999. IDs are immutable: never reused after an entry is deleted, never renumbered.
 
 New entries carry `Added: YYYY-MM` set to the current month; `Last Used:` is left blank. Last Used is stamped only by output-producing skills (`cv_targeted`, `cv_general`, `interview_prep`) at session close. Do not backfill Added with a reconstructed historical date; legacy entries carry `Added: pre-2026-04` from the migration.
 
@@ -117,7 +121,7 @@ Before presenting any proposed update for approval, verify each against all of t
 - Complete (Experience_Inventory.md entries only): Before writing, verify all required elements are present:
   - Action statement: present, atomic (one discrete action), not a polished CV bullet
   - Classification lines: `Capability:`, `Role Level:`, and `Org Context:` each present as their own line on every entry. `Outcome:` line is optional; include only when a genuine organizational outcome is attached to the action; omit the entire line for breadth-evidence, routine-task, and "did X" entries. Do not invent outcomes to satisfy the schema. All values must match Section 1 of the active domain file (`rules/domains/<active_domain>.md`); reject free-text values.
-  - Metadata: `Added: YYYY-MM` set to current month (new entries only) and `Last Used:` left blank (new entries only; existing entries retain their current value)
+  - Metadata: `ID:` assigned per the ID assignment rule (first line, unique per prefix, new entries only), `Added: YYYY-MM` set to current month (new entries only), and `Last Used:` left blank (new entries only; existing entries retain their current value)
   - For Director-level entries and above: determine whether this entry is likely to serve as an anchor citation for a critical requirement match in a CV session. If yes, and if both Context and Impact are absent, query the user for this information before writing. Do not write a Director+ anchor entry without at least one of Context or Impact annotated. Breadth and delivery evidence entries at this level do not require annotation — use judgment based on whether the entry describes a discrete, citable accomplishment or a general responsibility.
 - Complete (Career_Narratives.md entries only): the 5-line metadata block is present, Tags (Capability) values match Section 1 of the active domain file, Archetype values match `rules/registry_archetype.md`, Era values match the Era list in the `personal/knowledge/Career_Narratives.md` header, `Added: YYYY-MM` is the current month (new entries only), and `Last Used:` is blank (new entries only).
 - Enrichment honesty check (enrichment of existing entries only): Is the scope accurate per what the user described? Does the Impact claim reflect what was actually delivered, not what was intended or designed? Is the language defensible if questioned in an interview? Flag any overstated claims explicitly before presenting.

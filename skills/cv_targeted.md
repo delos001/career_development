@@ -138,7 +138,7 @@ Write to `personal/sessions/[Company]_[Role]_[YYYY-MM]_ContentDecisions.md`. If 
 3. **Experience Architecture:** for each role, state company, role title, treatment, and rationale tied to critical requirements
 4. **Selected Projects:** inclusion decision, rationale, and entries if included
 5. **Framing Decisions:** org-type framing emphasis as applied, primary archetype (and secondary plus dual-archetype handling if applicable), de-emphasis items carried from GapAnalysis, and any notable framing calls made during generation
-6. **Inventory Entries Cited:** per role block, the bold action statement and associated `Role:` line for every `personal/knowledge/Experience_Inventory.md` entry cited in Step 5. Match via the bold action statement and Role line to disambiguate same-verb entries across different roles.
+6. **Inventory Entries Cited:** per role block, the `ID:` value (`EX-NNN` or `PR-NNN`) for every `personal/knowledge/Experience_Inventory.md` entry cited in Step 5.
 7. **Generated CV Content:** the full final-form content set, organized by section in the approved archetype order
 8. **QC Pass Log:** Phase 2 pass date
 
@@ -182,7 +182,7 @@ State "File is ready for your review." Ask the user to confirm acceptance of the
 
 After explicit user acceptance:
 
-1. Use the **Inventory Entries Cited** list from the ContentDecisions file as the citation set. If the list is not present (e.g., a legacy session without a ContentDecisions file), identify every `personal/knowledge/Experience_Inventory.md` entry cited in the Phase 2 generated content by matching the bold action statement and the associated `Role:` line (to disambiguate same-verb entries across different roles).
+1. Use the **Inventory Entries Cited** list from the ContentDecisions file as the citation set. If the list is not present (e.g., a legacy session without a ContentDecisions file), identify every `personal/knowledge/Experience_Inventory.md` entry cited in the Phase 2 generated content by matching the `ID:` value of each source entry.
 2. For each cited entry, overwrite the `Last Used:` line with the current `YYYY-MM`. Single date only. Do not append or keep history.
 3. Write the updated inventory file. State the count of entries stamped and the month written.
 4. Update the ContentDecisions file: change Status to `Phase 3 Complete: YYYY-MM-DD`, and append a **Phase 3 Output** section containing the CV output filename, the count of inventory entries stamped, the stamp month, and the acceptance date.

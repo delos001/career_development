@@ -200,7 +200,7 @@ Perform QC per Global Rules:
 
    After explicit user acceptance:
 
-   a. Identify every `knowledge/Experience_Inventory.md` entry cited in the Phase 4a generated content. Match via the bold action statement line and the associated `Role:` line (to disambiguate same-verb entries across different roles).
+   a. Identify every `knowledge/Experience_Inventory.md` entry cited in the Phase 4a generated content. Match via the `ID:` value of each source entry.
    b. For each cited entry, overwrite the `Last Used:` line with the current `YYYY-MM`. Single date only — do not append or keep history.
    c. Write the updated inventory file. State the count of entries stamped and the month written.
 

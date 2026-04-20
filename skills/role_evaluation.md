@@ -132,7 +132,7 @@ Run QC internally against the checks below. Do not present passing checks to the
 
 - **Requirement Mapping:** every critical requirement from Phase 2a has a source-citable match per the strong-match definition.
 - **Gap Enumeration:** every gap from Step 3 appears in the Step 4 iteration.
-- **Gap Rating Judgment:** load `rules/judgment_qc.md` and confirm it loaded completely. Apply Mode 7 (Gap rating miscalibration) from Evaluation-Level Check to every gap. Cite the gap, the JD language, the supporting inventory entries, the assessed match distance, and the severity the evidence supports. Any stated severity that does not match the evidence fails.
+- **Gap Rating Judgment:** load `rules/judgment_qc.md` and confirm it loaded completely. Apply Mode 7 (Gap rating miscalibration) from Evaluation-Level Check to every gap. Cite the gap, the JD language, the supporting inventory entries by `ID:`, the assessed match distance, and the severity the evidence supports. Any stated severity that does not match the evidence fails.
 - **Gap Resolution Completeness:** every gap was worked through individually with a user response, and ends in one of: resolved via CV language, carried by interview narrative, or unresolved with explicit user acknowledgment.
 - **High-Severity Gaps:** every High gap has an explicit resolution. Any unresolved High gap without a user decision fails.
 - **De-Emphasis Approvals:** each Step 5 item has explicit user agreement.
