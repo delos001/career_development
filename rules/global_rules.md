@@ -8,7 +8,7 @@ Shared rules that govern all skills in this workflow. Every skill loads this fil
 
 Follow the active skill exactly. Steps will not be overridden by judgment without explicit user approval. Inference will not be applied in a way that violates the active skill without explicit user approval.
 
-If something is ambiguous, do not use judgment or inference without approval and state the ambiguity explicitly before moving to another step or phase.
+If something is ambiguous, state the ambiguity explicitly and get user input before moving to another step or phase.
 
 When in a phase, complete only steps from that phase. Do not perform steps or volunteer analysis from future phases.
 
@@ -18,7 +18,7 @@ State each step before completing it. The user should know what is about to happ
 
 ## One Item Per Exchange
 
-Any step that requires user input or sign-off is its own exchange. Ask, wait for response, then proceed. Do not bundle multiple input-requiring items. Silent non-response is not approval; an explicit response is required.
+Presnt items, concepts, framing, etc one item at a time.  Further, any step that requires user input or sign-off is its own exchange. Ask, wait for response, then proceed. Do not bundle multiple input-requiring items. Silent non-response is not approval; an explicit response is required.
 
 ---
 
@@ -39,14 +39,13 @@ NEVER silently proceed with degraded source material.
 
 ---
 
-## Standard Phase Closing
+## Workflow Context Check
 
-Applies to all action phases listed in the active skill.
+At the start of execution, before Phase 1a, determine whether this is a fresh invocation or a continuation of a prior session or parent workflow.
 
-At the close of each action phase:
-- List steps completed and steps not completed
-- Confirm with user if any other topics relevant to this phase's outputs should be discussed
-- Obtain explicit approval before proceeding to the next phase
+- **Fresh invocation:** proceed to Phase 1a (or the equivalent session setup phase for this skill).
+- **Triggered from within another skill** (e.g., `source_document_update_workflow` triggered by `cv_targeted`): confirm the parent session context is available. The calling skill should have defined the scope of "this session." If that scope is not present in context, flag the gap before proceeding — do not infer what the session covered.
+- **Resuming a prior session:** if the active skill has a Session Continuity rule, that rule governs resumption. If no Session Continuity rule is defined, start from Phase 1a.
 
 ---
 
@@ -62,10 +61,86 @@ If any documents were loaded in the previous phase, verify the documents were co
 
 ---
 
-## Workflow Context Check
+## Phases:
 
-At the start of execution, before Phase 1a, determine whether this is a fresh invocation or a continuation of a prior session or parent workflow.
+### Action Phase
 
-- **Fresh invocation:** proceed to Phase 1a (or the equivalent session setup phase for this skill).
-- **Triggered from within another skill** (e.g., `source_document_update_workflow` triggered by `cv_targeted`): confirm the parent session context is available. The calling skill should have defined the scope of "this session." If that scope is not present in context, flag the gap before proceeding — do not infer what the session covered.
-- **Resuming a prior session:** if the active skill has a Session Continuity rule, that rule governs resumption. If no Session Continuity rule is defined, start from Phase 1a.
+Does the substantive work: loads documents, derives, records, gathers input where required.
+
+- Silent execution. No drafts, narration, or summaries produced during the phase.
+- User input-gathering is permitted when the activity genuinely requires information only the user holds. This is distinct from presenting completed work back for review, which belongs in presentation
+phases.
+- Work products are recorded and held for presentation phases to surface.
+
+---
+
+## Action Phase Closing
+
+Applies to all action phases listed in the active skill.
+
+At the close of an action phase:
+- Produce the closing output in the format specified by the active skill for this phase. Do not list internal steps; silent execution applies through close unless specicifed otherwise in that phase.
+- Append to the session log per the active skill's session continuity rule (if the sesssion log has been created).
+
+### QC Phase
+
+Runs checks against the preceding action phase's work products.
+
+- Checks run internally. Passing checks are not presented to the user.
+- Only failures surface, routed through QC Failure Recovery.
+
+---
+
+  ## QC Phase Closing
+
+Applies to all QC phases. Overrides Standard Phase Closing for QC phases.
+
+At the close of a QC phase:
+- Output to user in one of the following formats:
+  - On pass: single line reading `Phase [N]b QC: pass.`
+  - On fail: one line per failed check, in the form `Phase [N]b QC fail: <check name>. Resolution: <applied resolution | awaiting user decision>.`
+- Do not list checks that passed.
+- Obtain explicit user approval before proceeding to the next phase.
+- Append to the session log per the active skill's session continuity rule, in the form `Phase [N]b complete, YYYY-MM-DD. QC outcome: <pass | fail; brief resolution>.`
+
+---
+
+### Presentation Phase
+
+Surfaces completed work products to the user for agreement, correction, or rejection.
+
+- One item per exchange. Each item is presented, the user responds explicitly, then the next item.
+- Silent non-response is not approval.
+- No new substantive work is performed in a presentation phase.
+
+---
+
+## Presentation Phase Closing
+
+Applies to presentation phases.
+
+At the close of a presentation phase:
+- Verify every presented item has a recorded user response (agreement, correction, or rejection). If any item does not, return to that item before closing.
+- Verify any deliverables specified by the active skill for this phase (file writes, session log appends) have been completed.
+- Obtain explicit user approval before proceeding to the next phase.
+- Append to the session log per the active skill's session continuity rule.
+
+Other places in the repo that reference "Standard Phase Closing" by name will need to be updated to "Action Phase Closing" or "Presentation Phase Closing" depending on which phase type they close. The
+cleanest way to find them is a repo-wide grep for the old phrase.
+
+---
+
+### Transition Phase
+
+Hands off control to another skill or to application next steps. Coordinates the move; does not produce new work.
+
+Applies to transition phases in the active skill.
+
+  At the close of each transition phase:
+  - Confirm the handoff target has completed, or the flow has ended.
+  - Perform any session cleanup specified by the skill (e.g., delete session logs).
+  - State that the skill is complete.
+
+
+
+

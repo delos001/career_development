@@ -824,14 +824,15 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a | Session start | None — job description, company, and title collected only |
-| 2a step 1 | Active domain load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); `rules/domains/<active_domain>.md` |
-| 2a step 5 | Archetype identified | `rules/registry_archetype.md`; `rules/cv/dual_archetype.md` if dual-archetype identified |
-| 2a step 6 | Archetype file load | primary archetype file from `rules/archetypes/Archetype_<N>_<Name>.md`; secondary archetype file if dual-archetype |
-| 2a step 7 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted |
+| 1a | Session start | None. Job description, company, and title collected only |
+| 2a step 1 | Active domain pointer | `personal/knowledge/Experience_Inventory.md` header (Active Domain) |
+| 2a step 2 | Domain file load | `rules/domains/<active_domain>.md` |
+| 2a step 7 | Archetype registry load | `rules/registry_archetype.md`; `rules/cv/dual_archetype.md` if dual-archetype identified |
+| 2a step 8 | Archetype file load | primary archetype file from `rules/archetypes/Archetype_<N>_<Name>.md`; secondary archetype file if dual-archetype |
+| 2a step 9 | Org type confirmed | `rules/registry_org_type.md`; framing emphasis noted |
 | 3a step 1 | Fit evaluation begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md` |
 | 3b | Gap rating judgment QC | `rules/judgment_qc.md` |
-| Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
+| Phase 4 | Source update workflow invocation | `skills/source_document_update_workflow.md`; specific knowledge docs loaded only as needed |
 
 ### cv_targeted
 
