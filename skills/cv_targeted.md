@@ -14,7 +14,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 **Session Continuity**
 
-A content decisions file persists Phase 2 outputs across sessions for a given target role. Before Phase 1a, check `personal/sessions/` for existing files matching `*_ContentDecisions.md`. If one or more exist, list them with the Status line from each and ask whether this is a new generation or a resume.
+A content decisions file persists Phase 2 outputs across sessions for a given target role. Before Phase 1a, check `personal/applications/*/` for existing files matching `ContentDecisions_*.md`. If one or more exist, list them (with the application folder name and Status line from each) and ask whether this is a new generation or a resume.
 
 If resuming:
 1. Load the GapAnalysis file and the ContentDecisions file for the target role. Confirm both loaded completely.
@@ -28,7 +28,7 @@ If starting new:
 
 The file is created at Phase 2 close and updated at Phase 3 close. Writes occur at phase close only. If a session ends mid-phase, resume from the start of that phase using the ContentDecisions file from prior completed phases.
 
-Naming convention: `[Company]_[Role]_[YYYY-MM]_ContentDecisions.md`
+Location: `personal/applications/[Company]_APP-NNN_[YYYY-MM]/ContentDecisions_[YYYY-MM].md`
 
 ---
 
@@ -36,7 +36,7 @@ Naming convention: `[Company]_[Role]_[YYYY-MM]_ContentDecisions.md`
 
 *(No documents are loaded before this phase. The GapAnalysis file is the required input)*
 
-1. Confirm a GapAnalysis file exists for the target role. If the file path is not provided, ask for the company name and role title and locate the file at `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`. If no file is found, inform the user that `role_evaluation` must be completed before `cv_targeted` can proceed. Do not continue until the file is located.
+1. Confirm a GapAnalysis file exists for the target role. If the file path is not provided, ask for the company name (and APP-NNN if known) and locate the file at `personal/applications/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md`. If only the company is provided, scan `personal/applications/[Company]_*/` for matching folders and list them (folder name and date) so the user can confirm which. If no matching folder is found, inform the user that `role_evaluation` must be completed before `cv_targeted` can proceed. Do not continue until the file is located.
 
 2. Load the GapAnalysis file now. Confirm it loaded completely.
 
@@ -129,9 +129,15 @@ Load `rules/cv/qc_checklist.md` now. Confirm it loaded completely. Run one conso
 
 Any Fail invokes QC Failure Recovery per Global Rules before presenting to the user.
 
-**Step 7 — Write ContentDecisions file:**
+**Step 7 — Present to user:**
 
-Write to `personal/sessions/[Company]_[Role]_[YYYY-MM]_ContentDecisions.md`. If a file with this name already exists, confirm user approval to overwrite (per Session Continuity). If the `personal/sessions/` directory does not exist, create it. The file must contain:
+State the content is ready for review. Wait for explicit approval before proceeding. If the user requests changes, loop to the appropriate earlier step and regenerate only the affected portion, then return to this step for re-presentation. Do not write the ContentDecisions file until approval is obtained — an approved-only artifact on disk is the invariant Session Continuity relies on.
+
+**Step 8 — Write ContentDecisions file:**
+
+*(Only after explicit Step 7 approval)*
+
+Write to `personal/applications/[Company]_APP-NNN_[YYYY-MM]/ContentDecisions_[YYYY-MM].md`. If a file with this name already exists, confirm user approval to overwrite (per Session Continuity). If the application folder does not exist, create it. The file must contain:
 
 1. **Status line:** `Phase 2 Complete: YYYY-MM-DD`
 2. **Reference:** path to the GapAnalysis file that anchored this session
@@ -144,10 +150,6 @@ Write to `personal/sessions/[Company]_[Role]_[YYYY-MM]_ContentDecisions.md`. If 
 
 Confirm the file was written before closing.
 
-**Step 8 — Present to user:**
-
-State the content is ready for review. Wait for explicit approval before proceeding to Phase 3. If the user requests changes, loop to the appropriate earlier step and regenerate only the affected portion.
-
 **Phase 2 Closing:** Follow Standard Phase Closing. Next phase is Phase 3.
 
 ---
@@ -157,7 +159,9 @@ State the content is ready for review. Wait for explicit approval before proceed
 *(Only after Phase 2 has been explicitly approved)*
 *(State each step before completing the step)*
 
-**Step 1 — Load formatting specification and contact information:**
+**Step 1 — Load ContentDecisions, formatting specification, and contact information:**
+
+Load `personal/applications/[Company]_APP-NNN_[YYYY-MM]/ContentDecisions_[YYYY-MM].md` now. Confirm it loaded completely. This file is the authoritative source for Phase 3 CV content, experience architecture, and framing decisions, regardless of whether this is a fresh run or a resumed session. Do not use Phase 2 content held in conversation context as the source; read from the ContentDecisions file so fresh and resume runs produce the same output.
 
 Load `rules/cv/format_spec.md` now. Confirm it loaded completely. All formatting decisions are governed by this file. It is the authoritative source; do not infer or recreate formatting from any other reference.
 
@@ -167,7 +171,7 @@ Load `personal/knowledge/Contact_Info.md` now. Confirm it loaded completely. All
 
 Generate the Word document programmatically using Python with python-docx. Load `rules/config.md` and use the Python executable path defined there. Write a Python script and execute it via Bash. All formatting decisions must reference `rules/cv/format_spec.md`; do not infer or recreate formatting from any other source. Use Windows-style paths in all Python file operations. Unix-style paths will fail.
 
-Structure decisions were made in Phase 2 and govern the output. Do not default to any reference document's structure. Do not omit or collapse roles because they do not appear in a reference. A role that adds credibility to critical requirements from Phase 1a belongs in the main experience section.
+Structure and content come from the ContentDecisions file loaded in Step 1. Do not default to any reference document's structure. Do not omit or collapse roles because they do not appear in a reference. A role that adds credibility to critical requirements from Phase 1a belongs in the main experience section.
 
 **Step 3 — Save output:**
 

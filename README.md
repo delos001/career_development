@@ -88,7 +88,7 @@ Open Claude Code in the repo root and invoke the `control` skill. Natural-langua
 
 The control skill assesses current workflow state by inspecting which knowledge documents and session artifacts exist, identifies the single most appropriate next action, and routes you to the correct skill. Use it as the entry point for a new workflow, as a "where am I?" check mid-workflow, or any time you are unsure which skill to run.
 
-First-time setup (cloning the knowledge repo, creating `personal/sessions/` and `outputs/`) is covered in the [Personal Data Storage](#personal-data-storage) section below.
+First-time setup (cloning the knowledge repo, creating `personal/knowledge/`, `personal/sessions/`, `personal/applications/`, `personal/do_not_pursue/`, and `outputs/`) is covered in the [Personal Data Storage](#personal-data-storage) section below.
 
 ---
 
@@ -109,8 +109,12 @@ career_development/
 │   └── knowledge_repo_scaffolding/        ← copied into personal/knowledge/ during initial setup
 ├── personal/                              ← nested private git repo (gitignored by framework)
 │   ├── knowledge/                         ← master source documents
-│   └── sessions/                          ← transactional session artifacts
-└── outputs/                               ← generated deliverables only (gitignored)
+│   ├── sessions/                          ← role_evaluation SessionLog files (retained for APP-NNN anchoring and history)
+│   ├── applications/                      ← per-application folders for roles pursued
+│   │   └── [Company]_APP-NNN_[YYYY-MM]/   ← GapAnalysis, ContentDecisions, InterviewPrep, InterviewScratch, InterviewCompletion, InterviewFollowup
+│   └── do_not_pursue/                     ← per-application folders for roles evaluated but not pursued
+│       └── [Company]_APP-NNN_[YYYY-MM]/   ← GapAnalysis only
+└── outputs/                               ← generated .docx CVs only (gitignored)
 ```
 
 Details of every file in `skills/`, `rules/`, `templates/`, and every expected file in `personal/` and `outputs/` are documented in [Framework Components](#framework-components) below.
@@ -186,8 +190,9 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
   - `rules/cv/dual_archetype.md` (if dual-archetype identified)
   - `rules/judgment_qc.md`
 - Outputs:
-  - `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`
-  - `personal/sessions/[Company]_[Role]_[YYYY-MM]_SessionLog.md` (temporary, deleted at skill close)
+  - `personal/sessions/[Company]_APP-NNN_[YYYY-MM]_SessionLog.md` (retained for history; anchors APP-NNN numbering)
+  - On Proceed / Speculative: `personal/applications/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md`
+  - On Do Not Pursue: `personal/do_not_pursue/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md`
 
 ---
 
@@ -195,9 +200,10 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
 - Purpose: Generate a role-tailored CV for a specific target role.
 - Inputs:
   - `rules/global_rules.md`
-  - `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md`
   - `personal/knowledge/Experience_Inventory.md`
   - `personal/knowledge/Career_Narratives.md`
+  - `personal/knowledge/Positioning.md`
   - `personal/knowledge/Contact_Info.md`
   - Active archetype file from `rules/archetypes/`
   - Active domain file at `rules/domains/<active_domain>.md`
@@ -209,7 +215,7 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
   - `rules/config.md`
 - Outputs:
   - `outputs/[Name]_CV_[Company]_[AbbreviatedRole]_[YYYY-MM].docx`
-  - `personal/sessions/[Company]_[Role]_[YYYY-MM]_ContentDecisions.md`
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/ContentDecisions_[YYYY-MM].md`
   - `Last Used` stamps on cited entries in `personal/knowledge/Experience_Inventory.md`
 
 ---
@@ -240,7 +246,7 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
 - Purpose: Generate interview prep document, blank Interview Completion file, and blank Interview Scratch file for a target role.
 - Inputs:
   - `rules/global_rules.md`
-  - `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md`
   - `personal/knowledge/Experience_Inventory.md`
   - `personal/knowledge/Career_Narratives.md`
   - `personal/knowledge/Positioning.md`
@@ -248,11 +254,10 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
   - `rules/registry_company_type.md`
   - `templates/Interview_Completion_Template.md`
   - `templates/Interview_Scratch_Template.md`
-  - `rules/config.md`
 - Outputs:
-  - `InterviewPrep_[Company]_[Role]_[YYYY-MM].md`
-  - `InterviewCompletion_[Company]_[Role]_[YYYY-MM].md` (blank, ready for capture)
-  - `InterviewScratch_[Company]_[Role]_[YYYY-MM].md` (blank, ready for in-round notes)
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewPrep_[YYYY-MM].md`
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewCompletion_[YYYY-MM].md` (blank, ready for capture)
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewScratch_[YYYY-MM].md` (blank, ready for in-round notes)
   - Updated `personal/knowledge/Questions_Library.md`
   - `Last Used` stamps on cited entries in `personal/knowledge/Career_Narratives.md`
   - `Last Used` stamps on cited entries in `personal/knowledge/Experience_Inventory.md`
@@ -263,11 +268,11 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
 - Purpose: Capture one completed interview round (logistics, interviewers, Q&A, debrief) into the InterviewCompletion file.
 - Inputs:
   - `rules/global_rules.md`
-  - `InterviewScratch_[Company]_[Role]_[YYYY-MM].md` (user-supplied path)
-  - `InterviewPrep_[Company]_[Role]_[YYYY-MM].md` (path read from scratch file header)
-  - `InterviewCompletion_[Company]_[Role]_[YYYY-MM].md` (path read from scratch file header)
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewScratch_[YYYY-MM].md` (user-supplied path)
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewPrep_[YYYY-MM].md` (path read from scratch file header)
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewCompletion_[YYYY-MM].md` (path read from scratch file header)
 - Outputs:
-  - Updated `InterviewCompletion_[Company]_[Role]_[YYYY-MM].md` (one round populated per invocation)
+  - Updated `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewCompletion_[YYYY-MM].md` (one round populated per invocation)
 
 ---
 
@@ -275,10 +280,10 @@ Workflow instruction sets that tell Claude what to do and how. Located in `skill
 - Purpose: Generate a follow-up letter for a specific captured interview round.
 - Inputs:
   - `rules/global_rules.md`
-  - `InterviewScratch_[Company]_[Role]_[YYYY-MM].md` (user-supplied path)
-  - `InterviewCompletion_[Company]_[Role]_[YYYY-MM].md` with the target round populated
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewScratch_[YYYY-MM].md`
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewCompletion_[YYYY-MM].md` with the target round populated
 - Outputs:
-  - `InterviewFollowup_[Company]_[Role]_R[N]_[YYYY-MM].md` (one per recipient if multiple)
+  - `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewFollowup_R[N]_[YYYY-MM].md` (one per recipient if multiple; recipient last name appended when per-recipient)
 
 ---
 
@@ -724,20 +729,20 @@ Master source documents holding the user's career content. Located in `personal/
 
 ### Session Artifacts
 
-Transactional per-role artifacts written during skill execution. Located in `personal/sessions/` or a user-designated per-application folder.
+Transactional per-application artifacts. SessionLog lives in `personal/sessions/`. Everything else lives in a per-application folder: `personal/applications/[Company]_APP-NNN_[YYYY-MM]/` for roles the user is pursuing, or `personal/do_not_pursue/[Company]_APP-NNN_[YYYY-MM]/` for roles evaluated but not pursued (GapAnalysis only).
 
 ---
 
-**`[Company]_[Role]_[YYYY-MM]_SessionLog.md`**
-- Purpose: Temporary progress log during role evaluation, used for in-session resume if the user steps away.
+**`personal/sessions/[Company]_APP-NNN_[YYYY-MM]_SessionLog.md`**
+- Purpose: Role evaluation progress log used for in-session resume. Retained permanently after skill close; anchors APP-NNN numbering for future evaluations.
 - Read by:
-  - `role_evaluation` (for resume)
+  - `role_evaluation` (for resume and APP-NNN max scan)
 - Written by:
-  - `role_evaluation` (deleted at skill close)
+  - `role_evaluation`
 
 ---
 
-**`[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`**
+**`GapAnalysis_[YYYY-MM].md`** (in application folder or do_not_pursue folder)
 - Purpose: Persistent role evaluation result: archetype selection, org type, fit assessment, identified gaps.
 - Read by:
   - `cv_targeted`
@@ -747,16 +752,16 @@ Transactional per-role artifacts written during skill execution. Located in `per
 
 ---
 
-**`[Company]_[Role]_[YYYY-MM]_ContentDecisions.md`**
-- Purpose: CV content decisions and resume path for `cv_targeted`; supports session continuity across breaks.
+**`ContentDecisions_[YYYY-MM].md`** (in application folder)
+- Purpose: CV content decisions and resume path for `cv_targeted`; supports session continuity across breaks. Phase 3 reads this as the authoritative source for document generation.
 - Read by:
-  - `cv_targeted` (on resume)
+  - `cv_targeted` (Phase 3 generation and on resume)
 - Written by:
-  - `cv_targeted`
+  - `cv_targeted` (written after Phase 2 user approval)
 
 ---
 
-**`InterviewPrep_[Company]_[Role]_[YYYY-MM].md`**
+**`InterviewPrep_[YYYY-MM].md`** (in application folder)
 - Purpose: Reference prep document: research, alignment map, stories bank, gap handling, anticipated questions.
 - Read by:
   - User during prep
@@ -766,7 +771,7 @@ Transactional per-role artifacts written during skill execution. Located in `per
 
 ---
 
-**`InterviewScratch_[Company]_[Role]_[YYYY-MM].md`**
+**`InterviewScratch_[YYYY-MM].md`** (in application folder)
 - Purpose: In-round scratch file for live note-taking during an interview. Header references the Prep and Completion files.
 - Read by:
   - `interview_capture`
@@ -777,7 +782,7 @@ Transactional per-role artifacts written during skill execution. Located in `per
 
 ---
 
-**`InterviewCompletion_[Company]_[Role]_[YYYY-MM].md`**
+**`InterviewCompletion_[YYYY-MM].md`** (in application folder)
 - Purpose: Per-round record: interviewers, Q&A, debrief. One round populated per `interview_capture` invocation.
 - Read by:
   - `interview_followup`
@@ -788,9 +793,18 @@ Transactional per-role artifacts written during skill execution. Located in `per
 
 ---
 
+**`InterviewFollowup_R[N]_[YYYY-MM].md`** (in application folder)
+- Purpose: Post-interview follow-up letter for one interview round. One file per recipient if multiple; recipient last name appended when per-recipient.
+- Read by:
+  - User
+- Written by:
+  - `interview_followup`
+
+---
+
 ### Outputs
 
-Final deliverables. Located in `outputs/` or a user-designated application folder. Gitignored.
+Final `.docx` CV deliverables. Located in `outputs/` at the framework repo root. Gitignored; backup is the user's responsibility. Non-CV deliverables (InterviewFollowup) live in the per-application folder under `personal/applications/` and are listed under [Session Artifacts](#session-artifacts) above.
 
 ---
 
@@ -808,13 +822,6 @@ Final deliverables. Located in `outputs/` or a user-designated application folde
 
 ---
 
-**`InterviewFollowup_[Company]_[Role]_R[N]_[YYYY-MM].md`**
-- Purpose: Post-interview follow-up letter for one interview round. One file per recipient; if multiple recipients, recipient last name is appended to the filename.
-- Produced by:
-  - `interview_followup`
-
----
-
 ## Document Loading Map
 
 Documents are loaded just-in-time. This map defines what is loaded, when, and why, at the phase level. For a flat list of every input and output per skill, see [Framework Components > Skills](#skills) above.
@@ -824,7 +831,7 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a | Session start | None. Job description, company, and title collected only |
+| 1a | Session start | None. Job description, company, title, and level collected; APP-NNN scanned from `personal/sessions/*_SessionLog.md` |
 | 2a step 1 | Active domain pointer | `personal/knowledge/Experience_Inventory.md` header (Active Domain) |
 | 2a step 2 | Domain file load | `rules/domains/<active_domain>.md` |
 | 2a step 7 | Archetype registry load | `rules/registry_archetype.md`; `rules/cv/dual_archetype.md` if dual-archetype identified |
@@ -839,13 +846,14 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a | Session start | `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` |
+| Session Continuity | Resume check | Scan `personal/applications/*/ContentDecisions_*.md`; if resuming, load the matching ContentDecisions file |
+| 1a | Session start | `personal/applications/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md` |
 | 1a step 4 | Active domain consistency check | `personal/knowledge/Experience_Inventory.md` header (Active Domain) compared to GapAnalysis-captured domain |
 | 2 step 1 | Content generation begins | `rules/cv/content_rules_leadership.md` (AD+) or `rules/cv/content_rules_ic.md` (IC) |
 | 2 step 2 | Archetype and domain load | `personal/knowledge/Experience_Inventory.md` header (Active Domain); primary archetype file from `rules/archetypes/Archetype_<N>_<Name>.md`; `rules/domains/<active_domain>.md`; secondary archetype file and `rules/cv/dual_archetype.md` if dual-archetype identified |
 | 2 step 3 | Source and judgment constraints | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md`, `rules/judgment_qc.md` (Modes 1-6 apply as generation constraints in Step 5; Mode 8 applies in Step 4) |
 | 2 step 6 | Consolidated QC sweep | `rules/cv/qc_checklist.md` |
-| 3 step 1 | Document generation begins | `rules/cv/format_spec.md`; `personal/knowledge/Contact_Info.md` |
+| 3 step 1 | Document generation begins | `personal/applications/[Company]_APP-NNN_[YYYY-MM]/ContentDecisions_[YYYY-MM].md`; `rules/cv/format_spec.md`; `personal/knowledge/Contact_Info.md` |
 | 3 step 2 | Python script execution | `rules/config.md` |
 | Phase 4 | Source update review | Specific knowledge docs loaded only as needed |
 
@@ -878,12 +886,12 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a | Session start | `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` |
+| 1a | Session start | `personal/applications/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md` |
 | 1a step 4 | Active domain consistency check | `personal/knowledge/Experience_Inventory.md` header (Active Domain) compared to GapAnalysis-captured domain |
 | 2a step 1 | Company type identification | `rules/registry_company_type.md` |
 | 3a step 1 | Content generation begins | `personal/knowledge/Experience_Inventory.md`, `personal/knowledge/Career_Narratives.md`, `personal/knowledge/Positioning.md` |
 | 4a step 2 | Completion document generation | `templates/Interview_Completion_Template.md` |
-| 4a steps 1-2 | Python script execution | `rules/config.md` |
+| 4a step 3 | Scratch document generation | `templates/Interview_Scratch_Template.md` |
 | Phase 5 | Source update review | Specific knowledge docs loaded only as needed |
 
 ### control
@@ -905,20 +913,20 @@ Documents are loaded just-in-time. This map defines what is loaded, when, and wh
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a step 1 | Session start | `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (user-supplied path) |
-| 1a step 2 | Header path resolution | `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].md`, `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (paths read from scratch file header) |
-| 1a step 3 | Round auto-detection | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` parsed for unpopulated round |
-| 1a step 4 | Anchor material load | Target round section of `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` |
-| 3a step 3 | Writeback | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` saved with target round populated |
+| 1a step 1 | Session start | `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewScratch_[YYYY-MM].md` (user-supplied path) |
+| 1a step 2 | Header path resolution | `InterviewPrep_[YYYY-MM].md`, `InterviewCompletion_[YYYY-MM].md` (paths read from scratch file header) |
+| 1a step 3 | Round auto-detection | `InterviewCompletion_[YYYY-MM].md` parsed for unpopulated round |
+| 1a step 4 | Anchor material load | Target round section of `InterviewScratch_[YYYY-MM].md` |
+| 3a step 3 | Writeback | `InterviewCompletion_[YYYY-MM].md` saved with target round populated |
 
 ### interview_followup
 
 | Phase | Trigger | Documents Loaded |
 |---|---|---|
 | Execution start | Skill invoked | `rules/global_rules.md` |
-| 1a step 1 | Session start | `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (user-supplied path) |
-| 1a step 2 | Header path resolution | `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` (path read from scratch file header) |
-| 1a step 3 | Round selection | Target round content parsed from `InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md` |
+| 1a step 1 | Session start | `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewScratch_[YYYY-MM].md` (located via company-name scan of `personal/applications/`) |
+| 1a step 2 | Header path resolution | `InterviewCompletion_[YYYY-MM].md` (path read from scratch file header) |
+| 1a step 3 | Round selection | Target round content parsed from `InterviewCompletion_[YYYY-MM].md` |
 
 ### source_document_update_workflow
 
@@ -1006,13 +1014,17 @@ The three knowledge documents carry schema metadata that skills read and write. 
 
 ## Personal Data Storage
 
-**Two-repo design.** This framework repo (`career_development`) holds skills, rules, templates, and the README. It contains no personal data and is safe to push to public or shared remotes. A separate private repo (`career_development_knowledge`) holds all personal data. It is cloned into `personal/` (the repo root is `personal/` itself, not `personal/knowledge/`) and version-controlled independently. Inside the nested repo, two subdirectories carry the content: `knowledge/` for master data (`Experience_Inventory.md`, `Career_Narratives.md`, `Positioning.md`, `Contact_Info.md`, `Questions_Library.md`, `SETUP.md`) and `sessions/` for per-role transactional artifacts.
+**Two-repo design.** This framework repo (`career_development`) holds skills, rules, templates, and the README. It contains no personal data and is safe to push to public or shared remotes. A separate private repo (`career_development_knowledge`) holds all personal data. It is cloned into `personal/` (the repo root is `personal/` itself, not `personal/knowledge/`) and version-controlled independently. Inside the nested repo, four subdirectories carry the content:
+- `knowledge/` — master data (`Experience_Inventory.md`, `Career_Narratives.md`, `Positioning.md`, `Contact_Info.md`, `Questions_Library.md`, `SETUP.md`)
+- `sessions/` — role_evaluation SessionLog files only; retained permanently to anchor APP-NNN numbering
+- `applications/` — one folder per pursued role at `[Company]_APP-NNN_[YYYY-MM]/`, holding GapAnalysis, ContentDecisions, InterviewPrep, InterviewScratch, InterviewCompletion, and InterviewFollowup files
+- `do_not_pursue/` — one folder per role evaluated but not pursued at `[Company]_APP-NNN_[YYYY-MM]/`, holding GapAnalysis only
 
 **What is gitignored by the framework repo.** `personal/` (entire directory) and `outputs/` are gitignored by the framework repo. Personal content never gets committed to the framework repo.
 
-**Session artifacts.** `personal/sessions/` holds transactional session artifacts (SessionLog, GapAnalysis, ContentDecisions, InterviewPrep, InterviewScratch, InterviewCompletion). These are tracked inside the `personal/` nested repo and push to the `career_development_knowledge` remote alongside knowledge files.
+**Session artifacts.** All four `personal/` subdirectories are tracked inside the nested `personal/` repo and push to the `career_development_knowledge` remote.
 
-**Outputs backup.** `outputs/` at the framework repo root holds final generated deliverables (CV `.docx` files, interview follow-up letters). Gitignored by the framework repo and not inside the nested `personal/` repo. Backup is the user's responsibility.
+**Outputs backup.** `outputs/` at the framework repo root holds generated `.docx` CV files only. Gitignored by the framework repo and not inside the nested `personal/` repo. Backup is the user's responsibility.
 
 **Two-repo commit workflow:**
 - Framework changes (skills, rules, README): commit and push from the framework repo root (`career_development`)
@@ -1022,7 +1034,7 @@ The three knowledge documents carry schema metadata that skills read and write. 
 1. Clone this framework repo: `git clone https://github.com/<your-username>/career_development.git`
 2. Create a private GitHub repository for your personal data (suggested name: `career_development_knowledge`).
 3. From the framework repo root, clone your empty knowledge repo to `personal/`: `git clone https://github.com/<your-username>/career_development_knowledge.git personal` (creates `personal/` as the nested repo root).
-4. Inside `personal/`, create subdirectories `knowledge/` and `sessions/`.
+4. Inside `personal/`, create subdirectories `knowledge/`, `sessions/`, `applications/`, and `do_not_pursue/`.
 5. Copy `support/knowledge_repo_scaffolding/.gitignore` to `personal/.gitignore`. Copy the remaining scaffolding files (`README.md`, `SETUP.md`, `Contact_Info.md`) to `personal/knowledge/`.
 6. Commit and push from within `personal/` to the knowledge repo.
 7. Create `outputs/` at the framework repo root (gitignored by the framework repo).
@@ -1032,7 +1044,7 @@ The three knowledge documents carry schema metadata that skills read and write. 
 
 **Setup on a new machine (existing knowledge repo):**
 1. Clone this framework repo.
-2. From the framework repo root, clone your existing knowledge repo to `personal/`: `git clone https://github.com/<your-username>/career_development_knowledge.git personal`. `knowledge/` and `sessions/` come with it.
+2. From the framework repo root, clone your existing knowledge repo to `personal/`: `git clone https://github.com/<your-username>/career_development_knowledge.git personal`. All tracked subdirectories (`knowledge/`, `sessions/`, `applications/`, `do_not_pursue/`) come with it.
 3. Create `outputs/` at the framework repo root.
 4. Update the Python executable path in `rules/config.md` to match this machine's environment.
 

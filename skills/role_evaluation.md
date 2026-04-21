@@ -18,11 +18,11 @@ Presentation Phases: 2c, 3c
 Transition Phases: 4
 
 **Session Continuity**
-A session log persists work across sessions. The log is created at Phase 1c close, appended at every subsequent phase close, and deleted at Phase 4 close. If a session ends mid-phase, resume from the start of that phase.
+A session log persists work across sessions. The log is created at Phase 1c close, appended at every subsequent phase close, and retained for history (no deletion at skill close). If a session ends mid-phase, resume from the start of that phase.
 
 Before Phase 1a, check `personal/sessions/` for files matching `*_SessionLog.md`. If any exist, list them and ask whether this is a new evaluation or resuming a previous evaluation. If resuming, load the log, state the last completed phase, confirm the resume point, and skip to the start of the next incomplete phase. If starting new, proceed to Phase 1a.
 
-Session Log File Naming Convention: `[Company]_[Role]_[YYYY-MM]_SessionLog.md`
+Session Log File Naming Convention: `[Company]_APP-NNN_[YYYY-MM]_SessionLog.md`
 
 ---
 
@@ -32,6 +32,7 @@ Session Log File Naming Convention: `[Company]_[Role]_[YYYY-MM]_SessionLog.md`
    - the user may paste it into the conversation or provide a location path or a URL for WebFetch
 2. Extract the company name and role title from the job description. If either is absent or ambiguous, ask the user to provide the information now.
 3. Determine the role level (IC, AD, Dir, Sr. Dir, VP); if not explicit in the title, infer from required experience, scope, and reporting structure. Record the rationale. Level governs seniority of voice, scope framing, and achievement selection throughout.
+4. Generate the application unique ID (APP-NNN). Scan `personal/sessions/` for files matching `*_SessionLog.md`. Extract the numeric portion from each filename's `APP-NNN` token. Find the maximum. Increment by 1. Zero-pad to 3 digits minimum (widen past 999 naturally). If no matching SessionLog files exist, start at `APP-001`. Record the assigned APP-NNN. This ID is used in the SessionLog filename for this evaluation and carries forward to any application folder if the user chooses to apply.
 
 **Phase 1a Closing:** Follow Global Rules Action Phase Closing. Next phase is Phase 1b.
 
@@ -46,6 +47,7 @@ Run QC internally against the checks below. Do not present passing checks to the
 - **JD Read:** the JD was read completely. Partial content or read failure fails.
 - **Company and Role Title:** both present and unambiguous or provided by the user. Any flagged ambiguity from Phase 1a Step 2 fails and requires resolution in Phase 1c.
 - **Role Level:** level is stated. If inferred, the rationale cites required experience, scope, or reporting structure. Unsupported inference fails.
+- **APP-NNN:** an APP-NNN was generated in Phase 1a Step 4. The value matches the format `APP-NNN` with three or more zero-padded digits. A scan of `personal/sessions/` was performed before assignment. Missing or malformed fails.
 - **Standard QC Document Verification** per Global Rules.
 
 **Phase 1b Closing:** Follow Global Rules QC Phase Closing. Next phase is Phase 1c.
@@ -59,8 +61,8 @@ Run QC internally against the checks below. Do not present passing checks to the
 1. Present the company name. Obtain agreement or correction.
 2. Present the role title. Obtain agreement or correction.
 3. Present the role level with rationale. Obtain agreement or correction.
-4. Create `personal/sessions/[Company]_[Role]_[YYYY-MM]_SessionLog.md` with the initial content including:
-   - Header metadata: company, role, level, session start date, JD source
+4. Create `personal/sessions/[Company]_APP-NNN_[YYYY-MM]_SessionLog.md` with the initial content including:
+   - Header metadata: company, role, level, APP-NNN, session start date, JD source
    - `Phase 1a complete, YYYY-MM-DD.`
    - `Phase 1b complete, YYYY-MM-DD. QC outcome: <pass | fail; brief resolution>.`
 
@@ -186,14 +188,18 @@ Run QC internally against the checks below. Do not present passing checks to the
    - Count of critical requirements and count with strong source-citable matches
    - Overall fit rating with brief rationale
    - Application recommendation: **Proceed**, **Proceed as speculative application**, or **Do not pursue**
-6. Write the GapAnalysis file at `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md` containing:
-   1. Role context: company, role title, role level, active domain (with domain file path `rules/domains/<active_domain>.md`), primary archetype (number, name, archetype file path `rules/archetypes/Archetype_<N>_<Name>.md`) and secondary if applicable, rationale for each archetype, org type, and org-type framing emphasis.
+6. Write the GapAnalysis file. The destination folder depends on the recommendation from Step 5:
+   - **Proceed** or **Proceed as speculative application**: `personal/applications/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md`
+   - **Do not pursue**: `personal/do_not_pursue/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md`
+
+   Create the destination folder if it does not exist. The file contents are the same regardless of outcome:
+   1. Role context: company, role title, role level, APP-NNN, active domain (with domain file path `rules/domains/<active_domain>.md`), primary archetype (number, name, archetype file path `rules/archetypes/Archetype_<N>_<Name>.md`) and secondary if applicable, rationale for each archetype, org type, and org-type framing emphasis.
    2. Critical requirements from Phase 2a with the source-citable match for each.
    3. Full gap summary table with severity and resolution status per gap.
    4. Fit assessment summary from Phase 3a Step 9 including the count math, threshold outcome, and application recommendation.
    5. Sources section listing every research source from Phase 2a Step 3 with enough detail to revisit.
 
-If `personal/sessions/` does not exist, create it. Confirm the file was written. This file is the terminal output of this skill and is used as input by `cv_targeted` and `interview_prep`.
+   Confirm the file was written. This file is used as input by `cv_targeted` and `interview_prep` when the recommendation is Proceed or Proceed as speculative application.
 
 Outcome mapping:
 - **Proceed**: both conditions clear.
@@ -207,7 +213,8 @@ Before presenting next steps, review the session for experience descriptions, fr
 **Application next steps:**
 - If the recommendation is Proceed or Proceed as Speculative Application: inform the user that `cv_targeted` can be triggered with the GapAnalysis file as context, and that `interview_prep` can begin in parallel using the same file.
 - If the recommendation is Do Not Pursue: ask whether to close the workflow.
-- Regardless of which application next step applies, delete the session log at `personal/sessions/[Company]_[Role]_[YYYY-MM]_SessionLog.md` and confirm deletion before closing.
+
+The SessionLog is retained at `personal/sessions/[Company]_APP-NNN_[YYYY-MM]_SessionLog.md` as a historical record; do not delete it.
 
 ---
 

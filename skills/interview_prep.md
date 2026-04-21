@@ -18,7 +18,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 *(No documents are loaded before this phase)*
 
-1. Confirm a GapAnalysis file exists for the target role. If the file path is not provided, ask for the company name and role title and locate the file at `personal/sessions/[Company]_[Role]_[YYYY-MM]_GapAnalysis.md`. If no file is found, inform the user that `role_evaluation` must be completed before `interview_prep` can proceed. If multiple files match the company and role name (e.g., from multiple application cycles), list them and ask the user to confirm which to use. Do not continue until a single file is confirmed.
+1. Confirm a GapAnalysis file exists for the target role. If the file path is not provided, ask for the company name and scan `personal/applications/` for folders matching `[Company]_APP-*`. The GapAnalysis file is at `personal/applications/[Company]_APP-NNN_[YYYY-MM]/GapAnalysis_[YYYY-MM].md`. If no folder is found, inform the user that `role_evaluation` must be completed (and the outcome must be Proceed or Speculative) before `interview_prep` can proceed. If multiple folders match the company name, list them with their APP-NNN and date, and ask the user to confirm which to use. Do not continue until a single folder is confirmed. Record the confirmed application folder path; it is the output path for all three files generated in Phase 4a.
 
 2. Load the GapAnalysis file. Confirm it loaded completely.
 
@@ -34,9 +34,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 4. Active domain consistency check: read the current `**Active Domain:**` value from the header of `personal/knowledge/Experience_Inventory.md`. Compare to the active domain captured in the GapAnalysis file. If the values differ, the active domain has changed since the evaluation was run. Halt and surface the mismatch: state both values and ask the user whether to (a) revert the inventory header to the GapAnalysis domain before proceeding, (b) re-run `role_evaluation` under the current active domain, or (c) explicitly override and proceed under the current active domain with acknowledgment that the role was evaluated under a different domain. Do not proceed silently.
 
-5. Ask the user for the absolute path to the output folder where all three documents will be saved. This is the folder where application documents for this role are stored. Do not proceed until this path is confirmed.
-
-6. Confirm all context is in hand and state it explicitly before closing.
+5. Confirm all context is in hand and state it explicitly before closing.
 
 **Phase 1a Closing:** Follow Standard Phase Closing. Next phase is Phase 2a.
 
@@ -177,7 +175,7 @@ Perform QC per Global Rules:
 **Step 1 — Generate interview prep document:**
 Generate the interview prep document as a `.md` file. Write the file directly — no Python or python-docx required.
 
-Naming convention: `InterviewPrep_[Company]_[AbbreviatedRole]_[YYYY-MM].md`
+Write to the application folder confirmed in Phase 1a. Naming convention: `InterviewPrep_[YYYY-MM].md`
 
 Use markdown heading hierarchy so the document is navigable in any markdown-aware editor:
 - Document title (company and role): `#` (H1)
@@ -209,8 +207,8 @@ Load `templates/Interview_Completion_Template.md`. Confirm it loaded completely.
 
 Do not pre-populate any round's fields. All Logistics, Interviewers, Questions and Responses, and Round Debrief sections must retain their hint-text HTML comments verbatim. `interview_capture` is the skill that populates rounds post-interview; pre-population here would contaminate its writeback.
 
-Save to the output folder confirmed in Phase 1a. Naming convention:
-`InterviewCompletion_[Company]_[AbbreviatedRole]_[YYYY-MM].md`
+Save to the application folder confirmed in Phase 1a. Naming convention:
+`InterviewCompletion_[YYYY-MM].md`
 
 Confirm the file was written before proceeding.
 
@@ -221,8 +219,8 @@ Load `templates/Interview_Scratch_Template.md`. Confirm it loaded completely. Wr
 
 All round section headings (`## Round 1` through `## Round 4`) must remain with empty bodies below them. These are the surfaces the user will write anchor notes into during each interview round.
 
-Save to the output folder confirmed in Phase 1a. Naming convention:
-`InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md`
+Save to the application folder confirmed in Phase 1a. Naming convention:
+`InterviewScratch_[YYYY-MM].md`
 
 Confirm the file was written before proceeding.
 

@@ -18,7 +18,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
 *(No documents are loaded before this phase)*
 
-1. Ask the user for the absolute path to the `InterviewScratch_[Company]_[AbbreviatedRole]_[YYYY-MM].md` file for the target role. This is the single input. Confirm the file exists and loaded completely. If the scratch file cannot be located, inform the user that `interview_prep` must be completed before this skill can proceed — it is the skill that generates the scratch file.
+1. Ask the user for the company name. Scan `personal/applications/` for folders matching `[Company]_APP-*`. The scratch file is at `personal/applications/[Company]_APP-NNN_[YYYY-MM]/InterviewScratch_[YYYY-MM].md`. If multiple folders match, list them with their APP-NNN and date and ask the user to confirm which to use. Load the confirmed scratch file and confirm it loaded completely. If the scratch file does not exist in the confirmed folder, inform the user that `interview_prep` must be completed before this skill can proceed — it is the skill that generates the scratch file. Record the confirmed application folder path; it is the output path for the follow-up letter(s) generated in Phase 3a.
 
 2. Read the scratch file's header block. Extract the path to the InterviewCompletion file recorded there. Confirm the path resolves on disk. If the path is missing from the header or not reachable, halt and inform the user — the scratch file is malformed and must be repaired before this skill can proceed.
 
@@ -26,9 +26,7 @@ Load `rules/global_rules.md` at the start of this skill. Confirm it loaded compl
 
    List the populated rounds to the user, then ask which round this follow-up is for. Once the round is confirmed, read the target round's full content: Logistics, Interviewers, Questions and Responses, and Round Debrief. If the Round Debrief fields contain only hint-text HTML comments rather than captured values, note this explicitly — the user will need to supply that context in Phase 2a. If no rounds are populated, inform the user that `interview_capture` must be run for the target round before this skill can proceed.
 
-4. Ask for the absolute path to the output folder where the follow-up letter will be saved.
-
-5. Confirm all context is in hand and state it explicitly before closing.
+4. Confirm all context is in hand and state it explicitly before closing.
 
 **Phase 1a Closing:** Follow Standard Phase Closing. Next phase is Phase 2a.
 
@@ -119,11 +117,11 @@ Apply the selected format from Prompt 1:
 If individual letters were confirmed in Phase 2b, repeat Step 2 for each recipient. Personalize the specific callback in Paragraph 1 and the relationship thread paragraph (if applicable) to each recipient individually. The alignment content and interest framing may be consistent across letters.
 
 **Step 4 — Save output:**
-Save completed letter(s) to the output folder confirmed in Phase 1a. Naming convention:
-`InterviewFollowup_[Company]_[AbbreviatedRole]_R[N]_[YYYY-MM].md`
+Save completed letter(s) to the application folder confirmed in Phase 1a. Naming convention:
+`InterviewFollowup_R[N]_[YYYY-MM].md`
 
 If individual letters were generated per recipient, append the recipient's last name:
-`InterviewFollowup_[Company]_[AbbreviatedRole]_R[N]_[LastName]_[YYYY-MM].md`
+`InterviewFollowup_R[N]_[LastName]_[YYYY-MM].md`
 
 Confirm each file was saved before closing.
 

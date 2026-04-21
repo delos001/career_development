@@ -184,7 +184,7 @@ Perform QC per Global Rules:
 
 1. Load `rules/cv/format_spec.md` now. Confirm it loaded completely. All formatting decisions are governed by this file — do not infer or recreate formatting from any other source.
 
-   Load `knowledge/Contact_Info.md` now. Confirm it loaded completely. All contact line values — name, email, phone, LinkedIn, GitHub, and any present Website — must be sourced from this file. Do not hardcode any contact information in the generated script.
+   Load `personal/knowledge/Contact_Info.md` now. Confirm it loaded completely. All contact line values — name, email, phone, LinkedIn, GitHub, and any present Website — must be sourced from this file. Do not hardcode any contact information in the generated script.
 
 2. Propose an output descriptor based on the targeting context confirmed in Phase 1a. The descriptor should reflect the combination of level, domain, and org type in a concise, readable format — for example: `Leadership_DataAnalytics_Enterprise` or `IC_Transformation_ScaleUp`. Present the proposed descriptor and obtain user confirmation or override before proceeding.
 
@@ -200,7 +200,7 @@ Perform QC per Global Rules:
 
    After explicit user acceptance:
 
-   a. Identify every `knowledge/Experience_Inventory.md` entry cited in the Phase 4a generated content. Match via the `ID:` value of each source entry.
+   a. Identify every `personal/knowledge/Experience_Inventory.md` entry cited in the Phase 4a generated content. Match via the `ID:` value of each source entry.
    b. For each cited entry, overwrite the `Last Used:` line with the current `YYYY-MM`. Single date only — do not append or keep history.
    c. Write the updated inventory file. State the count of entries stamped and the month written.
 
