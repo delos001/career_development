@@ -28,11 +28,11 @@ Session Log File Naming Convention: `[Company]_APP-NNN_[YYYY-MM]_SessionLog.md`
 
 ## Phase 1a — Session Setup
 
-1. Confirm the job description (JD) has been provided. If not, request it and do not proceed until user provides it.
-   - the user may paste it into the conversation or provide a location path or a URL for WebFetch
+1. Confirm the job description (JD) has been provided. If not, request the user paste it into the chat or provide a path or address where it can be retrieved.  Do not proceed until user provides it.
 2. Extract the company name and role title from the job description. If either is absent or ambiguous, ask the user to provide the information now.
-3. Determine the role level (IC, AD, Dir, Sr. Dir, VP); if not explicit in the title, infer from required experience, scope, and reporting structure. Record the rationale. Level governs seniority of voice, scope framing, and achievement selection throughout.
-4. Generate the application unique ID (APP-NNN). Scan `personal/sessions/` for files matching `*_SessionLog.md`. Extract the numeric portion from each filename's `APP-NNN` token. Find the maximum. Increment by 1. Zero-pad to 3 digits minimum (widen past 999 naturally). If no matching SessionLog files exist, start at `APP-001`. Record the assigned APP-NNN. This ID is used in the SessionLog filename for this evaluation and carries forward to any application folder if the user chooses to apply.
+3. Determine the role level (IC, AD, Dir, Sr. Dir, VP); if not explicit in the title, infer from required experience, scope, and reporting structure. Record the rationale. Role level governs seniority of voice, scope framing, and achievement selection throughout.
+4. Assign the application unique ID (APP-NNN) per `rules/global_rules.md`. Hold the value in working memory for recording at Phase 1c close when the SessionLog is created.
+5. Provide concise list of one-liners for each step taken.
 
 **Phase 1a Closing:** Follow Global Rules Action Phase Closing. Next phase is Phase 1b.
 

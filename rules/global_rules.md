@@ -17,6 +17,20 @@ Items, concepts, framing, requests for input, requests for sign-off or agreremen
 
 ---
 
+## Application Unique ID (APP-NNN)
+
+Every role evaluation is assigned a unique application ID in the form `APP-NNN`, where NNN is zero-padded to three digits minimum and widens past 999 naturally. The `APP-` prefix keeps the ID string-stable across tools that coerce numeric-looking strings to integers (e.g., Smartsheet).
+
+Assignment procedure:
+1. Scan `personal/sessions/` for files matching `*_SessionLog.md`.
+2. Extract the numeric portion from each filename's `APP-NNN` token.
+3. Find the maximum and increment by 1. Zero-pad to three digits minimum.
+4. If no matching SessionLog files exist, start at `APP-001`.
+
+The ID is assigned at the start of `role_evaluation` Phase 1a, held in working memory until Phase 1c close, then recorded when the SessionLog file is created. It carries forward into application and do_not_pursue folder names and any downstream artifacts for that application.
+
+---
+
 ## Workflow Context Check
 
 Before performing any skill directives, determine whether this is a fresh invocation or a continuation of a prior session or parent workflow.

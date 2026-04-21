@@ -12,7 +12,7 @@ This repo supports job search and CV generation workflows. See `README.md` for f
   - `sessions/` — role_evaluation SessionLog files only, at `[Company]_APP-NNN_[YYYY-MM]_SessionLog.md`; retained permanently to anchor APP-NNN numbering
   - `applications/` — per-application folders at `[Company]_APP-NNN_[YYYY-MM]/` for pursued roles, holding GapAnalysis, ContentDecisions, InterviewPrep, InterviewScratch, InterviewCompletion, InterviewFollowup files (all named `<DocType>_[YYYY-MM].md`)
   - `do_not_pursue/` — per-application folders at `[Company]_APP-NNN_[YYYY-MM]/` for roles evaluated but not pursued; holds GapAnalysis only
-- APP-NNN is a zero-padded three-digit (minimum) unique ID with `APP-` prefix (e.g., `APP-001`). Assigned at role_evaluation Phase 1a by scanning `personal/sessions/*_SessionLog.md` for the current max and incrementing. The hyphen prefix keeps the ID string-stable in Smartsheet (avoids coercion to integer).
+- APP-NNN is the unique application ID referenced in session, application, and do_not_pursue folder names. Assignment procedure is defined in `rules/global_rules.md`.
 - Framework repo (`career_development/`) gitignores `personal/` entirely. Commit framework changes from the framework repo root. Commit personal data changes from inside `personal/`.
 - `outputs/` at the framework repo root holds generated `.docx` CVs only. Gitignored and has no backup remote. Backup is the user's responsibility.
 
