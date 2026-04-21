@@ -9,7 +9,7 @@
 - Voice is strategic and outcome-focused throughout — not tactical or execution-focused
 - Framing reflects organizational leadership: decisions made, capabilities built, functions led, cross-functional influence exerted
 - No achievement reads as individual contributor work without explicit organizational or governance framing
-- Seniority of voice matches the role level confirmed in Phase 2a — Director language differs from Associate Director language in scope and authority framing
+- Seniority of voice matches the confirmed role level for this session — Director language differs from Associate Director language in scope and authority framing
 
 ---
 

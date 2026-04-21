@@ -9,7 +9,7 @@
 - Voice reflects individual contribution, technical execution, and subject matter expertise — not organizational leadership or strategic direction
 - Framing highlights what was built, delivered, analyzed, or solved — and the impact of that work on the team, project, or organization
 - Scope claims are accurate and appropriately scoped to the IC level — do not inflate to imply leadership, budget authority, or cross-functional ownership not present in source documents
-- Seniority of voice matches the role level confirmed in Phase 2a — a senior IC reads differently from a junior IC in depth, independence, and complexity of work
+- Seniority of voice matches the confirmed role level for this session — a senior IC reads differently from a junior IC in depth, independence, and complexity of work
 
 ---
 

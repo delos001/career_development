@@ -10,7 +10,9 @@ Generate a role-tailored CV for a specific target role. This skill begins after 
 
 Load `rules/global_rules.md` at the start of this skill. Confirm it loaded completely before proceeding. All rules in that file govern this skill.
 
-**Action Phases:** 1a, 2, 3
+**Phases**
+Action Phases: 1a, 2, 3
+Transition Phases: 4
 
 **Session Continuity**
 
@@ -53,7 +55,7 @@ Location: `personal/applications/[Company]_APP-NNN_[YYYY-MM]/ContentDecisions_[Y
 
 5. Confirm with the user that this context is accurate and that they want to proceed to CV generation. Do not proceed until confirmed.
 
-**Phase 1a Closing:** Follow Standard Phase Closing. Next phase is Phase 2.
+**Phase 1a Closing:** Follow Global Rules Action Phase Closing. Next phase is Phase 2.
 
 ---
 
@@ -150,7 +152,7 @@ Write to `personal/applications/[Company]_APP-NNN_[YYYY-MM]/ContentDecisions_[YY
 
 Confirm the file was written before closing.
 
-**Phase 2 Closing:** Follow Standard Phase Closing. Next phase is Phase 3.
+**Phase 2 Closing:** Follow Global Rules Action Phase Closing. Next phase is Phase 3.
 
 ---
 
@@ -193,7 +195,7 @@ After explicit user acceptance:
 
 Do not stamp entries that were not cited in the accepted output. `cv_targeted` does not stamp `Career_Narratives.md` entries. Narratives are loaded as reference depth for anchor bullets, but narrative Last Used is owned by `interview_prep`.
 
-**Phase 3 Closing:** Follow Standard Phase Closing. Next phase is Phase 4.
+**Phase 3 Closing:** Follow Global Rules Action Phase Closing. Next phase is Phase 4.
 
 ---
 
@@ -202,3 +204,5 @@ Do not stamp entries that were not cited in the accepted output. `cv_targeted` d
 Dedicated to capturing information surfaced during this CV session that should be added to source documents.
 
 Load `skills/source_document_update_workflow.md` now and follow it completely. "This session" refers to all phases and interactions from Phase 1a through Phase 3.
+
+**Phase 4 Closing:** Follow Global Rules Transition Phase Closing. This skill is complete.

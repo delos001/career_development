@@ -25,7 +25,7 @@ List the actual section order in the generated CV and confirm it matches the req
 Confirm the Technical Proficiencies section is the last section in the document.
 
 **U7 — Selected Projects section**
-Check the Independent & Volunteer Projects section of the Experience Inventory used in Phase 3a. If entries exist there, confirm a Selected Projects section is present in the generated CV, positioned as section 4 per the active archetype. If no entries exist, confirm the Selected Projects section is absent. A present-but-empty section or a missing section when entries exist are both failures — cite the inventory status and CV structure to confirm.
+Check the Independent & Volunteer Projects section of the Experience Inventory loaded by the active skill. If entries exist there, confirm a Selected Projects section is present in the generated CV, positioned as section 4 per the active archetype. If no entries exist, confirm the Selected Projects section is absent. A present-but-empty section or a missing section when entries exist are both failures — cite the inventory status and CV structure to confirm.
 
 ---
 
@@ -137,7 +137,7 @@ Confirm outcomes are concrete and measurable where source material supports it. 
 ## Archetype 4 Leadership: Platform & Technology
 
 **A4L-1 — Inventory coverage**
-Confirm at least two High Priority compound tag query results were retrieved at Director level or above during Phase 3a. If this was flagged as a gap in Phase 3a, confirm the gap resolution was documented and approved before proceeding.
+Confirm at least two High Priority compound tag query results were retrieved at Director level or above during source review. If this was flagged as a gap during source review, confirm the gap resolution was documented and approved before proceeding.
 
 **A4L-2 — Summary framing**
 Confirm the summary leads with technology strategy, platform governance, or clinical systems leadership. Confirm it does not lead with analytical, operational, or process capabilities. Cite the opening of the summary.
