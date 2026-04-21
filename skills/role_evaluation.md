@@ -42,7 +42,7 @@ Session Log File Naming Convention: `[Company]_APP-NNN_[YYYY-MM]_SessionLog.md`
 
 *(Only after Phase 1a has been explicitly approved)*
 
-Run QC internally against the checks below. Do not present passing checks to the user; only failures surface, per QC Failure Recovery.
+Run QC internally against the checks below. List all checks performed concisely in single line bullets.  Surface only failures, per QC Failure Recovery.
 
 - **JD Read:** the JD was read completely. Partial content or read failure fails.
 - **Company and Role Title:** both present and unambiguous or provided by the user. Any flagged ambiguity from Phase 1a Step 2 fails and requires resolution in Phase 1c.
@@ -99,10 +99,10 @@ Session log append: `Phase 2a complete, YYYY-MM-DD.`
 
 *(Only after Phase 2a has been explicitly approved)*
 
-Run QC internally against the checks below. Do not present passing checks to the user; only failures surface, per QC Failure Recovery.
+Run QC internally against the checks below. List all checks performed concisely in single line bullets.  Surface only failures, per QC Failure Recovery.
 
 - **Domain Scope:** active domain was read from the Inventory header, the domain file was loaded, and Section 3 was checked. If a scope mismatch was flagged, confirm it is recorded with the triggered criterion noted.
-- **Company Research:** Step 4 sources are listed with enough detail to revisit.
+- **Company Research:** Step 4 sources are listed with enough detail to revisit and do not cite Wikipedia, crowd-sourced wikis, forums, or unattributed blogs.
 - **Critical Requirements:** 4-5 items are present from Step 6; fewer than 4 fails.
 - **Archetype Selection:** an archetype was selected in Phase 2a Step 7 and is defensible against the match criteria in the loaded archetype file, with each satisfied criterion mapped to specific JD language. A recorded no-archetype-match condition fails and requires `skills/archetype_creation.md` to be completed before this skill can proceed (surface via QC Failure Recovery).
 - **Dual-Archetype (if applicable):** the secondary archetype is explicitly evidenced in the JD, not inferred from peripheral language. Primary/secondary assignment reflects the dimension the role primarily evaluates on. A weak or speculative secondary fails; surface via QC Failure Recovery, recommending single-archetype treatment.

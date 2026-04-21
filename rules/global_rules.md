@@ -97,17 +97,18 @@ At the close of an action phase:
 
 Runs checks against the preceding action phase's work products.
 
-- Checks run internally. Passing checks are not presented to the user.
-- Only failures surface, routed through QC Failure Recovery.
+- Checks run internally.
+- Failures are routed through QC Failure Recovery.
 
 ---
 
   ## QC Phase Closing
 
-Applies to all QC phases. Overrides Standard Phase Closing for QC phases.
+Applies to all QC phases.
 
 At the close of a QC phase:
 - Output to user in one of the following formats:
+  - List all checks performed concisely in single line bullets.
   - On pass: single line reading `Phase [N]b QC: pass.`
   - On fail: one line per failed check, in the form `Phase [N]b QC fail: <check name>. Resolution: <applied resolution | awaiting user decision>.`
 - Do not list checks that passed.
