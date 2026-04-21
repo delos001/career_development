@@ -107,8 +107,8 @@ career_development/
 ├── templates/                             ← structural templates used by skills during document generation
 ├── support/                               ← scaffolding and resources for user-created artifacts
 │   └── knowledge_repo_scaffolding/        ← copied into personal/knowledge/ during initial setup
-├── personal/                              ← personal data root, gitignored
-│   ├── knowledge/                         ← master source documents (separate private repo)
+├── personal/                              ← nested private git repo (gitignored by framework)
+│   ├── knowledge/                         ← master source documents
 │   └── sessions/                          ← transactional session artifacts
 └── outputs/                               ← generated deliverables only (gitignored)
 ```
@@ -1006,36 +1006,34 @@ The three knowledge documents carry schema metadata that skills read and write. 
 
 ## Personal Data Storage
 
-**Two-repo design.** This framework repo (`career_development`) holds skills, rules, templates, and the README. It contains no personal data and is safe to push to public or shared remotes. A separate private repo (`career_development_knowledge`) holds your master data: `Experience_Inventory.md`, `Career_Narratives.md`, `Positioning.md`, `Contact_Info.md`, `Questions_Library.md`, and `SETUP.md`. It is cloned into `personal/knowledge/` and version-controlled independently.
+**Two-repo design.** This framework repo (`career_development`) holds skills, rules, templates, and the README. It contains no personal data and is safe to push to public or shared remotes. A separate private repo (`career_development_knowledge`) holds all personal data. It is cloned into `personal/` (the repo root is `personal/` itself, not `personal/knowledge/`) and version-controlled independently. Inside the nested repo, two subdirectories carry the content: `knowledge/` for master data (`Experience_Inventory.md`, `Career_Narratives.md`, `Positioning.md`, `Contact_Info.md`, `Questions_Library.md`, `SETUP.md`) and `sessions/` for per-role transactional artifacts.
 
-**What is gitignored.** `personal/` (entire directory, including `knowledge/` and `sessions/`) and `outputs/` are gitignored by the framework repo. Personal content never gets committed to the framework repo.
+**What is gitignored by the framework repo.** `personal/` (entire directory) and `outputs/` are gitignored by the framework repo. Personal content never gets committed to the framework repo.
 
-**Session artifacts backup.** `personal/sessions/` holds transactional session artifacts (SessionLog, GapAnalysis, ContentDecisions, InterviewPrep, InterviewScratch, InterviewCompletion). These are gitignored. Backup is the user's responsibility; optionally track them in their own repo.
+**Session artifacts.** `personal/sessions/` holds transactional session artifacts (SessionLog, GapAnalysis, ContentDecisions, InterviewPrep, InterviewScratch, InterviewCompletion). These are tracked inside the `personal/` nested repo and push to the `career_development_knowledge` remote alongside knowledge files.
 
-**Outputs backup.** `outputs/` holds final generated deliverables (CV `.docx` files). Gitignored. Backup is the user's responsibility.
+**Outputs backup.** `outputs/` at the framework repo root holds final generated deliverables (CV `.docx` files, interview follow-up letters). Gitignored by the framework repo and not inside the nested `personal/` repo. Backup is the user's responsibility.
 
 **Two-repo commit workflow:**
-- Framework changes (skills, rules, README): commit and push in `career_development`
-- Master data changes (knowledge documents): commit and push from within `personal/knowledge/` to `career_development_knowledge`
+- Framework changes (skills, rules, README): commit and push from the framework repo root (`career_development`)
+- Personal data changes (knowledge documents and session artifacts): commit and push from within `personal/` to `career_development_knowledge`
 
 **First-time setup (new user, no existing knowledge repo):**
 1. Clone this framework repo: `git clone https://github.com/<your-username>/career_development.git`
-2. Create a private GitHub repository for your knowledge data (suggested name: `career_development_knowledge`).
-3. Create the `personal/` directory at the framework repo root.
-4. Clone your new empty knowledge repo into `personal/knowledge/`: `git clone https://github.com/<your-username>/career_development_knowledge.git personal/knowledge/`
-5. Copy the contents of `support/knowledge_repo_scaffolding/` into `personal/knowledge/`. This gives you a starting `README.md`, `SETUP.md`, `.gitignore`, and `Contact_Info.md` skeleton.
-6. Commit and push the scaffolding files from within `personal/knowledge/` to the knowledge repo.
-7. Create `personal/sessions/` (gitignored, not committed).
-8. Create `outputs/` (gitignored, not committed).
-9. Update the Python executable path in `rules/config.md` to match the local machine's `python-docx`-enabled environment.
-10. Fill in `personal/knowledge/Contact_Info.md` with your personal contact details.
-11. Run the `control` skill to start the workflow; it will route you to `experience_inventory_bootstrap` as the first step in building your knowledge base.
+2. Create a private GitHub repository for your personal data (suggested name: `career_development_knowledge`).
+3. From the framework repo root, clone your empty knowledge repo to `personal/`: `git clone https://github.com/<your-username>/career_development_knowledge.git personal` (creates `personal/` as the nested repo root).
+4. Inside `personal/`, create subdirectories `knowledge/` and `sessions/`.
+5. Copy `support/knowledge_repo_scaffolding/.gitignore` to `personal/.gitignore`. Copy the remaining scaffolding files (`README.md`, `SETUP.md`, `Contact_Info.md`) to `personal/knowledge/`.
+6. Commit and push from within `personal/` to the knowledge repo.
+7. Create `outputs/` at the framework repo root (gitignored by the framework repo).
+8. Update the Python executable path in `rules/config.md` to match the local machine's `python-docx`-enabled environment.
+9. Fill in `personal/knowledge/Contact_Info.md` with your personal contact details.
+10. Run the `control` skill to start the workflow; it will route you to `experience_inventory_bootstrap` as the first step in building your knowledge base.
 
 **Setup on a new machine (existing knowledge repo):**
 1. Clone this framework repo.
-2. Create the `personal/` directory at the framework repo root.
-3. Clone your existing knowledge repo into `personal/knowledge/`.
-4. Create `personal/sessions/` and `outputs/` (both gitignored).
-5. Update the Python executable path in `rules/config.md` to match this machine's environment.
+2. From the framework repo root, clone your existing knowledge repo to `personal/`: `git clone https://github.com/<your-username>/career_development_knowledge.git personal`. `knowledge/` and `sessions/` come with it.
+3. Create `outputs/` at the framework repo root.
+4. Update the Python executable path in `rules/config.md` to match this machine's environment.
 
 **Job descriptions.** Raw job descriptions are stored separately in OneDrive or the user's preferred storage, not in this repo.

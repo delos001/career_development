@@ -4,6 +4,17 @@ This repo supports job search and CV generation workflows. See `README.md` for f
 
 ---
 
+## Personal Data Architecture
+
+- `personal/` is a nested private git repo. Remote: `career_development_knowledge.git`. `personal/` itself is the repo root, not `personal/knowledge/`.
+- `personal/` tracks two subdirectories: `knowledge/` (master data: Experience_Inventory, Career_Narratives, Positioning, Contact_Info, Questions_Library, SETUP) and `sessions/` (per-role transactional artifacts: SessionLog, GapAnalysis, ContentDecisions, InterviewPrep, InterviewScratch, InterviewCompletion).
+- Framework repo (`career_development/`) gitignores `personal/` entirely. Commit framework changes from the framework repo root. Commit personal data changes from inside `personal/`.
+- `outputs/` at the framework repo root is gitignored and has no backup remote. Backup is the user's responsibility.
+
+Verification command if state is ever in doubt: `cd personal && git config --get remote.origin.url && git ls-files | head`. Do not infer the architecture from `git config` run inside a subdirectory alone; `git config` walks up the tree and can mislead.
+
+---
+
 ## Available Skills
 
 | Skill | File | Trigger |

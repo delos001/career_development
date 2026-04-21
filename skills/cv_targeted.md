@@ -172,7 +172,7 @@ Structure decisions were made in Phase 2 and govern the output. Do not default t
 **Step 3 — Save output:**
 
 Save the completed CV to `outputs/` using this naming convention:
-`Jason_Delosh_CV_[CompanyName]_[AbbreviatedRole]_[YYYY-MM].docx`
+`FirstName_LastName_CV_[CompanyName]_[AbbreviatedRole]_[YYYY-MM].docx`
 
 State the actual filename written and confirm it matches the convention.
 
